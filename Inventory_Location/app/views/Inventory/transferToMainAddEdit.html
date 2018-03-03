@@ -1,0 +1,136 @@
+﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
+            <h1 class="page-title txt-color-blueDark" data-bind="text: language.inventory[currentLanguage()] + ' - ' + title"></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <article class="col-xs-12">
+            <article class="row">
+                <article class="col-xs-12">
+                    <div class="well jarviswidget" data-widget-sortable="false" id="inventoryDocument">
+                        <header data-html2canvas-ignore="true" data-bind="css: { rtlTable: language.rtl[currentLanguage()] }"></header><!-- widget div-->
+                        <div>
+                            <div class="widget-body" data-bind="css: { rtlTable: language.rtl[currentLanguage()] }" style="overflow-x: hidden">
+                                <form class="smart-form" id="inventoryForm">
+                                    <fieldset>
+                                        <div class="row">
+                                            <section class="col col-sm-2">
+                                                <label class="label" data-bind="text: $root.language.branchNameEn[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                <label class="select">
+                                                    <select style="width: 100%" id="toBranch" name="toBranch" data-bind="value: branchId, options: branches, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: language.toBranch[currentLanguage()], allowClear: true }, attr: { dir: language.dir[currentLanguage()]}"></select>
+                                                </label>
+                                            </section>
+
+                                        </div>
+
+                                    </fieldset>
+                                    <footer style="text-align:center;border:0;background-color:#FFF;">
+                                        <button type="button" class="btn btn-default pull-left" id="addSiteRequestItemId" data-loading-text="Adding..." data-bind="click: $root.addSiteRequestItem, text: $root.language.transfer[$root.currentLanguage()], style: { float: $root.language.btnFloat[$root.currentLanguage()] }"></button>
+                                    </footer>
+                                </form>
+
+                                <table data-bind="visible: branchId()" class="table table-bordered table-striped table-hover table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <label data-bind="text: language.items[currentLanguage()], style: { 'text-align': language.direction[currentLanguage()] }"></label>
+                                            </th>
+                                            <th>
+                                                <label data-bind="text: $root.language.resourceCode[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                            </th>
+                                            <th>
+                                                <label data-bind="text: $root.language.quantity[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                            </th>
+                                            <!--<th>
+                                                <label data-bind="text: $root.language.price[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                            </th>-->
+                                            <th>
+                                                <label data-bind="text: $root.language.cost[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                            </th>
+                                            <!--<th>
+                                                <label data-bind="text: $root.language.totalPrice[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                            </th>-->
+                                            <th>
+                                                <label data-bind="text: $root.language.total[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                            </th>
+                                            <th>
+                                                <label data-bind="text: $root.language.Notes[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                            </th>
+                                            <th>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="foreach: insertedItems" class="smart-form">
+                                        <tr>
+                                            <td style="width:23%;">
+                                                <label class="select" style="width: 100%;">
+                                                    <select style="width :100%" id="itemId" name="itemId" data-bind="value: itemId, event:{ change: $parent.changeItem }, options: $parent.items, optionsText: 'description', optionsValue: 'itemId', optionsCaption: '', select2: { placeholder: $parent.language.items[$parent.currentLanguage()], allowClear: true }, attr: { dir: $root.language.dir[$root.currentLanguage()]}"></select>
+                                                </label>
+                                            </td>
+                                            <td style="width:17%;">
+                                                <section class="col col-lg-12" style="margin-bottom: 0;">
+                                                    <label class="input">
+                                                        <input type="text" required="" id="resourceCode" name="resourceCode" data-bind="value: resourceCode, attr: { placeholder: $root.language.resourceCode[$root.currentLanguage()] }" readonly>
+                                                    </label>
+                                                </section>
+                                            </td>
+                                            <td style="width:10%;">
+                                                <section class="col col-lg-12" style="margin-bottom: 0;">
+                                                    <label class="input">
+                                                        <input type="number" min="1" id="quantity" name="quantity" data-bind="value: quantity, valueUpdate: 'changed', attr: { placeholder: $root.language.quantity[$root.currentLanguage()] }" required>
+                                                    </label>
+                                                </section>
+                                            </td> 
+                                            <!--<td style="width:10%;">
+                                                <section class="col col-lg-12" style="margin-bottom: 0;">
+                                                    <label class="input">
+                                                        <input type="number" required="" id="price" name="price" data-bind="value: price, attr: { placeholder: $root.language.price[$root.currentLanguage()] }">
+                                                    </label>
+                                                </section>
+                                            </td>-->
+                                            <td style="width:10%;">
+                                                <section class="col col-lg-12" style="margin-bottom: 0;">
+                                                    <label class="input">
+                                                        <input type="number" required="" id="cost" name="cost" data-bind="value: cost, attr: { placeholder: $root.language.cost[$root.currentLanguage()] }">
+                                                    </label>
+                                                </section>
+                                            </td>
+                                            <!--<td style="width:8%;">
+                                                <section class="col col-lg-12" style="margin-bottom: 0;">
+                                                    <label class="input">
+                                                        <input type="text" required="" id="totalPrice" name="totalPrice" data-bind="value: totalPrice, attr: { placeholder: $root.language.total[$root.currentLanguage()] }" readonly>
+                                                    </label>
+                                                </section>
+                                            </td>--> 
+                                            <td style="width:8%;">
+                                                <section class="col col-lg-12" style="margin-bottom: 0;">
+                                                    <label class="input">
+                                                        <input type="text" required="" id="total" name="total" data-bind="value: total, attr: { placeholder: $root.language.total[$root.currentLanguage()] }" readonly>
+                                                    </label>
+                                                </section>
+                                            </td> 
+                                            <td style="width:10%;">
+                                                <section class="col col-lg-12" style="margin-bottom: 0;">
+                                                    <label class="input">
+                                                        <input type="text" class="form-control" id="reason" name="reason" data-bind="value: reason, attr: { placeholder: $root.language.Notes[$root.currentLanguage()] }">
+                                                    </label>
+                                                </section>
+                                            </td>
+                                            <td style="width:4%;">
+                                                <button type="button" class="btn btn-danger btn-sm" data-bind="click: function(){ $data.remove(); }">
+                                                    <span class="glyphicon glyphicon-trash small" style="margin:0;"></span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </article>
+        </article>
+    </div>
+</div>

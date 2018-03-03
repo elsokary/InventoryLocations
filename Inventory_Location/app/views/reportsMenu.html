@@ -1,0 +1,102 @@
+﻿<div id="content">
+    <section id="widget-grid">
+        <div class="row">
+            <div class="jarviswidget" id="wid-id-0">
+
+                <div class="widget-body" style="background: #008196 !important; ">
+                    <div class="row page-header-row">
+                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <span class="page-header-text" style="font-family: Lato; color: rgb(255, 255, 255); " data-bind="text: title"></span>
+                        </article>
+
+                    </div>
+
+                    <ul class="local-nav clearfix" style=" background: rgb(0, 129, 150);">
+                        <li>
+                            <ul class="hover-list" style=" background: rgb(0, 129, 150);">
+                                <li class="dropdown">
+                                    <a href="javaScript:void(0);" class="dropdown-toggle" id="projectReports" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" style="color: #f5f5f5;">
+                                        تقارير كارت الصنف<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="administratorLists" data-bind="foreach: reportsItems" style="background: rgb(0, 129, 150);">
+                                        <li data-bind="css: { active: isActive }" role="presentation">
+                                            <a  data-bind="click: $root.navigateToView,attr:{ href: '#'+route }" role="menuitem" tabindex="-1">
+                                                <span data-bind="text: title"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="hover-list" style=" background: rgb(0, 129, 150);">
+                                <li class="dropdown">
+                                    <a href="javaScript:void(0);" class="dropdown-toggle" id="contractsPo" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" style="color: #f5f5f5;">
+                                        تقارير المبيعات<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="administratorLists" data-bind="foreach: reportsSales" style=" background: rgb(0, 129, 150);">
+                                        <li data-bind="css: { active: isActive }" role="presentation">
+                                            <a data-bind="click: $root.navigateToView,attr:{ href: '#'+route }" role="menuitem" tabindex="-1">
+                                                <span data-bind="text: title"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="hover-list" style=" background: rgb(0, 129, 150);">
+                                <li class="dropdown">
+                                    <a href="javaScript:void(0);" class="dropdown-toggle" id="tasksReports" data-toggle="dropdown" style="color: #f5f5f5;" aria-haspopup="true" role="button" aria-expanded="false">
+                                        تقارير الموردين<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="administratorLists" data-bind="foreach: reportsSupplier" style=" background: rgb(0, 129, 150);">
+                                        <li data-bind="css: { active: isActive }" role="presentation">
+                                            <a data-bind="click: $root.navigateToView,attr:{ href: '#'+route }" role="menuitem" tabindex="-1">
+                                                <span data-bind="text: title"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="hover-list">
+                                <li class="dropdown">
+                                    <a href="javaScript:void(0);" class="dropdown-toggle" id="hr" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" style="color: #f5f5f5;">
+                                        تقارير المدفوعات<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="administratorLists" data-bind="foreach: reportsPayments" style="background: rgb(0, 129, 150);color:white;">
+                                        <li data-bind="css: { active: isActive }" role="presentation">
+                                            <a data-bind="click: $root.navigateToView,attr:{ href: '#'+route }" role="menuitem" tabindex="-1">
+                                                <span data-bind="text: title"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <section>
+                        <div class="modal  fade" id="showRports" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="showRports" style="display:none;">
+                            <div class="modal-dialog  modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-bind="style: { float: language.btnFloat[currentLanguage()] }" data-dismiss="modal" aria-hidden="true">
+                                            ×
+                                        </button>
+                                    </div>
+                                    <!-- ko compose: { model: currentRoute } -->
+                                    <!-- /ko -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

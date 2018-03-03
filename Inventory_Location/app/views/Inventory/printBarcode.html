@@ -1,0 +1,81 @@
+﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
+            <h1 class="page-title txt-color-blueDark" data-bind="text: language.inventory[currentLanguage()] + ' - ' + title"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <article class="col-xs-12">
+            <article class="row">
+                <article class="col-xs-12">
+                    <div class="well jarviswidget" data-widget-sortable="false" id="inventoryDocument">
+                        <header data-html2canvas-ignore="true" data-bind="css: { rtlTable: language.rtl[currentLanguage()] }"></header><!-- widget div-->
+                        <div>
+                            <div class="widget-body" data-bind="css: { rtlTable: language.rtl[currentLanguage()] }" style="overflow-x: hidden">
+                                <form class="smart-form" id="inventoryForm">
+                                    <fieldset>
+                                        <div class="row">
+                                            <section class="col col-sm-3">
+                                                <label class="label" data-bind="text: $root.language.resourceCode[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                <label class="input">
+                                                    <input type="text" class="form-control" id="itemId" name="itemId" data-bind="value: resourceCode, attr: { placeholder: $root.language.resourceCode[$root.currentLanguage()] }" tabindex="1" required>
+                                                </label>
+                                                <button type="button" class="btn btn-danger" data-bind="click: showItemModal">
+                                                    <span class="fa fa-search" style="margin: 0;"></span>
+                                                </button>
+                                            </section>
+                                            <section class="col col-sm-2">
+                                                <label class="label" data-bind="text: $root.language.numberOfBarcods[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                <label class="input">
+                                                    <input type="number" min="1" max="20" required="" id="numbers" name="numbers" data-bind="textInput: numberOfBarcods, attr: { placeholder: $root.language.numberOfBarcods[$root.currentLanguage()] }">
+                                                </label>
+                                            </section>
+                                            <section class="col col-sm-3">
+                                                <label class="label" data-bind="text: $root.language.description[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                <label class="input">
+                                                    <input type="text" readonly required="" id="description" disabled name="description" data-bind="value: description, attr: { placeholder: $root.language.description[$root.currentLanguage()] }">
+                                                </label>
+                                            </section>
+                                        </div>
+                                    </fieldset>
+                                    <footer style="text-align: center; border: 0; background-color: #FFF;">
+                                        <button type="button" class="btn btn-default pull-left" id="printBarcode" data-loading-text="Adding..." data-bind="click: $root.print, text: $root.language.print[$root.currentLanguage()], style: { float: $root.language.btnFloat[$root.currentLanguage()] }"></button>
+                                    </footer>
+                                </form>
+
+                                <hr class="simple" />
+                                <!-- ko if: resourceCode() -->
+                                <div id="barcodes" class="super-print" data-bind="foreach: { data: barcodes, afterAdd: drawBarcode }">
+                                    <img data-bind="attr: { id: 'inventory-barcode-' + $index() }" class="inventory-barcode" />
+                                    <span class="cBarcodeDesc">  <!-- ko text: 'Item code 20178 ya beeh'--><!--/ko--></span>
+                                </div>
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </article>
+        </article>
+    </div>
+</div>
+
+<div class="modal fade" id="searchItem" tabindex="-1" role="dialog" data-bind="attr: { dir: language.dir[currentLanguage()]}" aria-labelledby="searchItem" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-bind="style: { float: language.btnFloat[currentLanguage()] }" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+            </div>
+            <div class="modal-body">
+                <fieldset>
+                    <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 39px;">
+                        <!-- ko compose: { model: 'viewmodels/penals/searchItemByBranchId', view: 'views/penals/searchItemByBranchId' } -->
+                        <!-- /ko -->
+                    </section>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+</div>

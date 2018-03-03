@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a948b9f82a8c4fd78f88a7e20e0e16a3" Name="Diagram1">
+        <EntityTypeShape EntityType="favStoreModel.account" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.branch" Width="1.5" PointX="0.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.cashier" Width="1.5" PointX="8.5" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.cashier_items" Width="1.5" PointX="10.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.customer" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.default_list" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.groupPermission" Width="1.5" PointX="7.5" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.Group" Width="1.5" PointX="5.25" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.inven_Settings" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.invoice_items" Width="1.5" PointX="11.5" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.invoice" Width="1.5" PointX="8.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.itemsDecription" Width="1.5" PointX="7.5" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.location_items" Width="1.5" PointX="3.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.location" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.refund_iems" Width="1.5" PointX="13.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.refund" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.supplier" Width="1.5" PointX="5.25" PointY="47" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.supplyOrder" Width="1.5" PointX="11.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.supplyOrders_items" Width="1.5" PointX="14.5" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.transaction" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.transactionsHistory" Width="1.5" PointX="6" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="favStoreModel.transactionType" Width="1.5" PointX="3.75" PointY="34.75" IsExpanded="true" />
+        <AssociationConnector Association="favStoreModel.FK_account_branchId" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_accounts_accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_accounts_accounts1" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_Agants_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_branches_deletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_cashier_accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_cashier_accounts1" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_customers_deletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_Groups_deletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_invoices_accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_invoices_accounts1" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_itemsDecription_deletedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_refunds_accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_suppliers_accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_supplyOrders_accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_supplyOrders_accounts1" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_cashier_branches" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_invoices_branches" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_itemsDecription_branchId" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_refunds_branches" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_supplyOrders_branches" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_transactionsHistory_branches" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_transactionsHistory_branches1" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_cashier_customers" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_cashier_items_cashier" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_cashier_items_itemsDecription" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_groupPermissions_groupPermissions" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_invoice_items_invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_invoice_items_itemsDecription" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_itemsDecription_suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_refund_iems_itemsDecription" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_supplyOrders_items_itemsDecription" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_transactions_location_items" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_transactionsHistory_itemsDecription" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_refund_iems_refunds" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_supplyOrders_items_invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_transactionsHistory_transactionTypes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

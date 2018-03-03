@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html style="width: 745px;">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/smartadmin-production.css" rel="stylesheet" />
+    <link href="../css/smartadmin-skins.css" rel="stylesheet" />
+    <link href="../css/smartadmin-rtl.css" rel="stylesheet" />
+    <style type="text/css">
+        @media screen {
+            .lb-pdf {
+                font-weight: bold;
+                color: #4682B4;
+                font-size: 14px;
+                -webkit-text-fill-color: #4682B4;
+            }
+
+            #content {
+                margin: 0 40px;
+            }
+
+            .smart-style-2 {
+                font-size: 12px;
+            }
+
+            hr {
+                border-top-color: darkorange;
+            }
+
+            .val-pdf {
+                color: slategray;
+                font-size: 14px;
+                -webkit-text-fill-color: slategray;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            h1, h4 {
+                color: navy;
+                -webkit-text-fill-color: navy;
+            }
+
+            .header-footer-image {
+                max-width: 580px;
+                max-height: 85px;
+            }
+
+            .table thead tr.blue-header {
+                background: #4682B4;
+                background-image: -webkit-linear-gradient(top, #4682B4 0, #4682B4 100%);
+            }
+
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            tbody tr td {
+                color: slategray;
+                -webkit-text-fill-color: slategray;
+            }
+
+            .table-striped > tbody > tr:nth-child(odd) {
+                background: ghostwhite;
+            }
+
+            .table > thead > tr > th {
+                border: 0 !important;
+            }
+
+            .table-header-text-ellipses {
+                border: 0 !important;
+                overflow: hidden;
+                -moz-text-overflow: ellipsis;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .rtl-table-header {
+                text-align: right;
+            }
+
+            .rtl .col-xs-6 {
+                float: right;
+            }
+
+            .attachments-pdf-print {
+                padding-left: 0;
+            }
+
+                .attachments-pdf-print li {
+                    display: inline-block;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+
+            tr, td, th {
+                page-break-inside: avoid !important;
+            }
+
+            * {
+                overflow: hidden;
+            }
+
+            th, td {
+                padding: 4px 8px !important;
+            }
+
+
+            .inbox-download {
+                padding-bottom: 5px;
+                padding-top: 3px;
+            }
+
+            .landscape.well.well-sm.well-flow {
+                width: 85px !important;
+                height: 95px;
+            }
+
+                .landscape.well.well-sm.well-flow strong {
+                    font-size: 9.7px;
+                }
+
+                .landscape.well.well-sm.well-flow img {
+                    width: 100% !important;
+                    height: 35px !important;
+                }
+        }
+
+        @media print {
+            .lb-pdf {
+                font-weight: bold;
+                font-size: 14px;
+                color: #4682B4;
+                -webkit-text-fill-color: #4682B4;
+            }
+
+            #content {
+            }
+
+            .smart-style-2 {
+                font-size: 12px;
+            }
+
+            hr {
+                border-top-color: darkorange;
+            }
+
+            .val-pdf {
+                color: slategray;
+                font-size: 14px;
+                -webkit-text-fill-color: slategray;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            h1, h4 {
+                color: navy;
+                -webkit-text-fill-color: navy;
+            }
+
+            .header-footer-image {
+                max-width: 580px;
+                max-height: 85px;
+            }
+
+            .table thead tr.blue-header {
+                background: #4682B4;
+                background-image: -webkit-linear-gradient(top, #4682B4 0, #4682B4 100%);
+            }
+
+            h4 {
+                margin-bottom: 10px;
+            }
+
+            tbody tr td {
+                color: slategray;
+                -webkit-text-fill-color: slategray;
+            }
+
+            .table-header-text-ellipses {
+                border: 0 !important;
+                overflow: hidden;
+                -moz-text-overflow: ellipsis;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .rtl-table-header {
+                text-align: right;
+            }
+
+            .rtl .col-xs-6 {
+                float: right;
+            }
+
+            .no-break {
+                -moz-page-break-inside: avoid;
+                page-break-inside: avoid;
+                display: inline;
+            }
+
+            .unbreakable {
+                /* page-break-inside: avoid !important; <-- doesn't work*/
+                display: inline-block !important;
+            }
+
+                .unbreakable:after {
+                    content: '';
+                    display: block;
+                    height: 0px;
+                    visibility: hidden;
+                }
+
+            .attachments-pdf-print {
+                padding-left: 0;
+            }
+
+                .attachments-pdf-print li {
+                    display: inline-block;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+
+            tr, td, th {
+                page-break-inside: avoid !important;
+            }
+
+            * {
+                overflow: hidden;
+            }
+
+            th, td {
+                padding: 4px 8px !important;
+            }
+
+
+            .inbox-download {
+                padding-bottom: 5px;
+                padding-top: 3px;
+            }
+
+            .landscape.well.well-sm.well-flow {
+                width: 85px !important;
+                height: 95px;
+            }
+
+                .landscape.well.well-sm.well-flow strong {
+                    font-size: 9.7px;
+                }
+
+                .landscape.well.well-sm.well-flow img {
+                    width: 100% !important;
+                    height: 35px !important;
+                }
+        }
+    </style>
+</head>
+<body class="smart-style-2" data-bind="style: { direction:  'rtl' }, css: { rtl: true }">
+    <div id="main" style="margin: 0;" role="main">
+        <div id="content">
+            <h1 class="page-header" data-bind="text: documentTitle"></h1>
+
+            <div id="printTable">
+                <!-- ko if: itemsTable().length -->
+                <hr style="margin-bottom: 5px;" />
+
+                <table style="margin-right: 1px; table-layout: fixed;" class="table">
+                    <thead style="display: table-row-group;" data-bind="with: itemsColumnDefenition">
+                        <tr class="blue-header" data-bind="foreach: friendlyNames">
+                            <th data-bind="style: { width: $parent.widths[$index()] }">
+                                <div class="table-header-text-ellipses" data-bind="text: $data, css: { 'rtl-table-header': true }"></div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody style="display: table-row-group;" data-bind="foreach: itemsTable">
+                        <tr data-bind="foreach: $parent.itemsColumnDefenition().fields">
+                            <td data-bind="text: $parent[$data]"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- /ko -->
+
+            </div>
+        </div>
+    </div>
+    <script src="../lib/jquery-2.1.1.js"></script>
+    <script src="../lib/knockout-3.2.0.js"></script>
+    <script src="../lib/lodash.min.js"></script>
+    <script src="PrintPdf.js"></script>
+</body>
+</html>

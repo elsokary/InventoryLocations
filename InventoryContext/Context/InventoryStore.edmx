@@ -1,0 +1,2343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="favStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accounts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="nvarchar(max)" />
+          <Property Name="contactName" Type="nvarchar" MaxLength="500" />
+          <Property Name="passWord" Type="nvarchar(max)" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="groupId" Type="int" />
+          <Property Name="supervisorId" Type="int" />
+          <Property Name="userType" Type="nvarchar" MaxLength="50" />
+          <Property Name="branchId" Type="int" />
+          <Property Name="loggedTime" Type="time" Precision="7" />
+          <Property Name="shiftIn" Type="time" Precision="7" />
+          <Property Name="shiftOut" Type="time" Precision="7" />
+          <Property Name="deletedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="branches">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="500" />
+          <Property Name="address" Type="nvarchar" MaxLength="500" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="500" />
+          <Property Name="deletedBy" Type="int" />
+          <Property Name="isDefault" Type="bit" />
+        </EntityType>
+        <EntityType Name="cashier">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="openedBy" Type="int" />
+          <Property Name="date" Type="date" />
+          <Property Name="serial" Type="int" />
+          <Property Name="time" Type="time" Precision="7" />
+          <Property Name="total" Type="float" />
+          <Property Name="paymentType" Type="nvarchar" MaxLength="50" />
+          <Property Name="customerId" Type="int" />
+          <Property Name="notes" Type="nvarchar" MaxLength="500" />
+          <Property Name="deletedBy" Type="int" />
+          <Property Name="deletedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="cashier_items">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+            <PropertyRef Name="cashierId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="cashierId" Type="int" Nullable="false" />
+          <Property Name="itemId" Type="int" />
+          <Property Name="quantity" Type="float" />
+          <Property Name="price" Type="float" />
+          <Property Name="total" Type="float" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="customers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="500" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="isCash" Type="bit" />
+          <Property Name="currentCredit" Type="float" />
+          <Property Name="deletedBy" Type="int" />
+          <Property Name="dueDay" Type="int" />
+        </EntityType>
+        <EntityType Name="default_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="action" Type="int" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="groupPermissions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="groupId" Type="int" />
+          <Property Name="permissionCode" Type="int" />
+          <Property Name="value" Type="bit" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="groupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="deletedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="inven_Settings">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="checkDays" Type="int" />
+          <Property Name="lastCheckDate" Type="date" />
+        </EntityType>
+        <EntityType Name="invoice_items">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="invoiceId" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invoiceId" Type="int" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="itemId" Type="int" />
+          <Property Name="cost" Type="float" />
+          <Property Name="price" Type="float" />
+          <Property Name="quantity" Type="float" />
+          <Property Name="total" Type="float" StoreGeneratedPattern="Computed" />
+          <Property Name="notes" Type="nvarchar" MaxLength="50" />
+          <Property Name="tax" Type="float" />
+          <Property Name="taxValue" Type="float" />
+          <Property Name="totalWithTax" Type="float" />
+        </EntityType>
+        <EntityType Name="invoices">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="supplierId" Type="int" />
+          <Property Name="invoiceDate" Type="date" />
+          <Property Name="refNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="serialNo" Type="int" />
+          <Property Name="discountCash" Type="float" />
+          <Property Name="discountCommercial" Type="float" />
+          <Property Name="extraExpenses" Type="float" />
+          <Property Name="totalInvoice" Type="float" StoreGeneratedPattern="Computed" />
+          <Property Name="total" Type="float" />
+          <Property Name="openedBy" Type="int" />
+          <Property Name="creationDate" Type="date" />
+          <Property Name="deletedBy" Type="int" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="tax" Type="float" />
+          <Property Name="taxValue" Type="float" />
+          <Property Name="departmentId" Type="int" />
+          <Property Name="categoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="itemsDecription">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subject" Type="nvarchar" MaxLength="150" />
+          <Property Name="cost" Type="float" />
+          <Property Name="price" Type="float" />
+          <Property Name="supplierId" Type="int" />
+          <Property Name="code" Type="nvarchar" MaxLength="50" />
+          <Property Name="branchId" Type="int" />
+          <Property Name="lastEditBy" Type="int" />
+          <Property Name="lastEditDate" Type="date" />
+          <Property Name="deletedBy" Type="int" />
+          <Property Name="expirationDate" Type="date" />
+        </EntityType>
+        <EntityType Name="location-items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="itemId" Type="int" />
+          <Property Name="palltaId" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="palltaType" Type="int" />
+        </EntityType>
+        <EntityType Name="locations">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+          <Property Name="code" Type="nvarchar" MaxLength="50" />
+          <Property Name="parentId" Type="int" />
+          <Property Name="isPallta" Type="bit" />
+          <Property Name="serial" Type="int" />
+        </EntityType>
+        <EntityType Name="refund_iems">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="refundId" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="refundId" Type="int" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="itemId" Type="int" />
+          <Property Name="quantity" Type="float" />
+          <Property Name="price" Type="float" />
+          <Property Name="total" Type="float" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="refunds">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="cashierId" Type="int" />
+          <Property Name="openedBy" Type="int" />
+          <Property Name="serial" Type="int" />
+          <Property Name="total" Type="float" />
+          <Property Name="date" Type="date" />
+          <Property Name="deletedBy" Type="int" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="suppliers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="500" />
+          <Property Name="currentCredit" Type="float" />
+          <Property Name="deletedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="supplyOrders">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="supplierId" Type="int" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="serialNo" Type="int" />
+          <Property Name="total" Type="float" />
+          <Property Name="openedBy" Type="int" />
+          <Property Name="creationDate" Type="date" />
+          <Property Name="deletedBy" Type="int" />
+          <Property Name="deletedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="supplyOrders_items">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="supplyOrderId" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="supplyOrderId" Type="int" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="itemId" Type="int" />
+          <Property Name="cost" Type="float" />
+          <Property Name="quantity" Type="float" />
+          <Property Name="balance" Type="float" />
+          <Property Name="total" Type="float" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="transactions">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+            <PropertyRef Name="locationItemId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchId" Type="int" Nullable="false" />
+          <Property Name="locationItemId" Type="int" Nullable="false" />
+          <Property Name="resourceCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="150" />
+          <Property Name="cost" Type="float" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="price" Type="float" />
+          <Property Name="discount" Type="float" />
+          <Property Name="finishDate" Type="date" />
+          <Property Name="total" Type="float" StoreGeneratedPattern="Computed" />
+          <Property Name="editById" Type="int" />
+          <Property Name="editDate" Type="date" />
+          <Property Name="comment" Type="nvarchar" MaxLength="50" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="transactionsHistory">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="transactionId" />
+            <PropertyRef Name="currentBranchId" />
+            <PropertyRef Name="locationItemId" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transactionId" Type="int" Nullable="false" />
+          <Property Name="currentBranchId" Type="int" Nullable="false" />
+          <Property Name="locationItemId" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="cost" Type="float" />
+          <Property Name="transactionTypeId" Type="int" />
+          <Property Name="fromBranchId" Type="int" />
+          <Property Name="toBranchId" Type="int" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="total" Type="float" StoreGeneratedPattern="Computed" />
+          <Property Name="creationDate" Type="date" />
+          <Property Name="serialNo" Type="int" />
+        </EntityType>
+        <EntityType Name="transactionTypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="action" Type="int" />
+          <Property Name="notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_account_branchId">
+          <End Role="branches" Type="Self.branches" Multiplicity="0..1" />
+          <End Role="accounts" Type="Self.accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_accounts_accounts">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="accounts1" Type="Self.accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts1">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_accounts_accounts1">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="accounts1" Type="Self.accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts1">
+              <PropertyRef Name="supervisorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agants_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="accounts" Type="Self.accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_branches_deletedBy">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="branches" Type="Self.branches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="branches">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_accounts">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_accounts1">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_branches">
+          <End Role="branches" Type="Self.branches" Multiplicity="1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_customers">
+          <End Role="customers" Type="Self.customers" Multiplicity="0..1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_items_cashier">
+          <End Role="cashier" Type="Self.cashier" Multiplicity="1" />
+          <End Role="cashier_items" Type="Self.cashier_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cashier">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="cashier_items">
+              <PropertyRef Name="cashierId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_items_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="cashier_items" Type="Self.cashier_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier_items">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customers_deletedBy">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="customers" Type="Self.customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="customers">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_groupPermissions_groupPermissions">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="groupPermissions" Type="Self.groupPermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="groupPermissions">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_deletedBy">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="Groups" Type="Self.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_items_invoices">
+          <End Role="invoices" Type="Self.invoices" Multiplicity="1" />
+          <End Role="invoice_items" Type="Self.invoice_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoices">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="invoice_items">
+              <PropertyRef Name="invoiceId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_items_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="invoice_items" Type="Self.invoice_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoice_items">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoices_accounts">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="invoices" Type="Self.invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoices">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoices_accounts1">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="invoices" Type="Self.invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoices">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoices_branches">
+          <End Role="branches" Type="Self.branches" Multiplicity="1" />
+          <End Role="invoices" Type="Self.invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoices">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itemsDecription_branchId">
+          <End Role="branches" Type="Self.branches" Multiplicity="0..1" />
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="itemsDecription">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itemsDecription_deletedBy">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="itemsDecription">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itemsDecription_suppliers">
+          <End Role="suppliers" Type="Self.suppliers" Multiplicity="0..1" />
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="itemsDecription">
+              <PropertyRef Name="supplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refund_iems_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="refund_iems" Type="Self.refund_iems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="refund_iems">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refund_iems_refunds">
+          <End Role="refunds" Type="Self.refunds" Multiplicity="1" />
+          <End Role="refund_iems" Type="Self.refund_iems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="refunds">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="refund_iems">
+              <PropertyRef Name="refundId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refunds_accounts">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="refunds" Type="Self.refunds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="refunds">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refunds_branches">
+          <End Role="branches" Type="Self.branches" Multiplicity="1" />
+          <End Role="refunds" Type="Self.refunds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="refunds">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_suppliers_accounts">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="suppliers" Type="Self.suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="suppliers">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_accounts">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="supplyOrders" Type="Self.supplyOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_accounts1">
+          <End Role="accounts" Type="Self.accounts" Multiplicity="0..1" />
+          <End Role="supplyOrders" Type="Self.supplyOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_branches">
+          <End Role="branches" Type="Self.branches" Multiplicity="1" />
+          <End Role="supplyOrders" Type="Self.supplyOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_items_invoices">
+          <End Role="supplyOrders" Type="Self.supplyOrders" Multiplicity="1" />
+          <End Role="supplyOrders_items" Type="Self.supplyOrders_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplyOrders">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="supplyOrders_items">
+              <PropertyRef Name="supplyOrderId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_items_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="supplyOrders_items" Type="Self.supplyOrders_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders_items">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_location-items">
+          <End Role="location-items" Type="Self.location-items" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location-items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="locationItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_branches">
+          <End Role="branches" Type="Self.branches" Multiplicity="0..1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="fromBranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_branches1">
+          <End Role="branches" Type="Self.branches" Multiplicity="0..1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="toBranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_itemsDecription">
+          <End Role="location-items" Type="Self.location-items" Multiplicity="1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location-items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="locationItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_transactionTypes">
+          <End Role="transactionTypes" Type="Self.transactionTypes" Multiplicity="0..1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transactionTypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="transactionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="favStoreModelStoreContainer">
+          <EntitySet Name="accounts" EntityType="Self.accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="branches" EntityType="Self.branches" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cashier" EntityType="Self.cashier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cashier_items" EntityType="Self.cashier_items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="default_list" EntityType="Self.default_list" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="groupPermissions" EntityType="Self.groupPermissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inven_Settings" EntityType="Self.inven_Settings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoice_items" EntityType="Self.invoice_items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoices" EntityType="Self.invoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="itemsDecription" EntityType="Self.itemsDecription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="location-items" EntityType="Self.location-items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="locations" EntityType="Self.locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="refund_iems" EntityType="Self.refund_iems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="refunds" EntityType="Self.refunds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="suppliers" EntityType="Self.suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="supplyOrders" EntityType="Self.supplyOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="supplyOrders_items" EntityType="Self.supplyOrders_items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transactions" EntityType="Self.transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transactionsHistory" EntityType="Self.transactionsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transactionTypes" EntityType="Self.transactionTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_account_branchId" Association="Self.FK_account_branchId">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="accounts" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_accounts_accounts" Association="Self.FK_accounts_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="accounts1" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_accounts_accounts1" Association="Self.FK_accounts_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="accounts1" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agants_Groups" Association="Self.FK_Agants_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="accounts" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_branches_deletedBy" Association="Self.FK_branches_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="branches" EntitySet="branches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_accounts" Association="Self.FK_cashier_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="cashier" EntitySet="cashier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_accounts1" Association="Self.FK_cashier_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="cashier" EntitySet="cashier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_branches" Association="Self.FK_cashier_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="cashier" EntitySet="cashier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_customers" Association="Self.FK_cashier_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="cashier" EntitySet="cashier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_items_cashier" Association="Self.FK_cashier_items_cashier">
+            <End Role="cashier" EntitySet="cashier" />
+            <End Role="cashier_items" EntitySet="cashier_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_items_itemsDecription" Association="Self.FK_cashier_items_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecription" />
+            <End Role="cashier_items" EntitySet="cashier_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customers_deletedBy" Association="Self.FK_customers_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="customers" EntitySet="customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_groupPermissions_groupPermissions" Association="Self.FK_groupPermissions_groupPermissions">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="groupPermissions" EntitySet="groupPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_deletedBy" Association="Self.FK_Groups_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_items_invoices" Association="Self.FK_invoice_items_invoices">
+            <End Role="invoices" EntitySet="invoices" />
+            <End Role="invoice_items" EntitySet="invoice_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_items_itemsDecription" Association="Self.FK_invoice_items_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecription" />
+            <End Role="invoice_items" EntitySet="invoice_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoices_accounts" Association="Self.FK_invoices_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="invoices" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoices_accounts1" Association="Self.FK_invoices_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="invoices" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoices_branches" Association="Self.FK_invoices_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="invoices" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itemsDecription_branchId" Association="Self.FK_itemsDecription_branchId">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="itemsDecription" EntitySet="itemsDecription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itemsDecription_deletedBy" Association="Self.FK_itemsDecription_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="itemsDecription" EntitySet="itemsDecription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itemsDecription_suppliers" Association="Self.FK_itemsDecription_suppliers">
+            <End Role="suppliers" EntitySet="suppliers" />
+            <End Role="itemsDecription" EntitySet="itemsDecription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refund_iems_itemsDecription" Association="Self.FK_refund_iems_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecription" />
+            <End Role="refund_iems" EntitySet="refund_iems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refund_iems_refunds" Association="Self.FK_refund_iems_refunds">
+            <End Role="refunds" EntitySet="refunds" />
+            <End Role="refund_iems" EntitySet="refund_iems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refunds_accounts" Association="Self.FK_refunds_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="refunds" EntitySet="refunds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refunds_branches" Association="Self.FK_refunds_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="refunds" EntitySet="refunds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_suppliers_accounts" Association="Self.FK_suppliers_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="suppliers" EntitySet="suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_accounts" Association="Self.FK_supplyOrders_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_accounts1" Association="Self.FK_supplyOrders_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_branches" Association="Self.FK_supplyOrders_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_items_invoices" Association="Self.FK_supplyOrders_items_invoices">
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+            <End Role="supplyOrders_items" EntitySet="supplyOrders_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_items_itemsDecription" Association="Self.FK_supplyOrders_items_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecription" />
+            <End Role="supplyOrders_items" EntitySet="supplyOrders_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_location-items" Association="Self.FK_transactions_location-items">
+            <End Role="location-items" EntitySet="location-items" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_branches" Association="Self.FK_transactionsHistory_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_branches1" Association="Self.FK_transactionsHistory_branches1">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_itemsDecription" Association="Self.FK_transactionsHistory_itemsDecription">
+            <End Role="location-items" EntitySet="location-items" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_transactionTypes" Association="Self.FK_transactionsHistory_transactionTypes">
+            <End Role="transactionTypes" EntitySet="transactionTypes" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="favStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contactName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="passWord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="groupId" Type="Int32" />
+          <Property Name="supervisorId" Type="Int32" />
+          <Property Name="userType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="branchId" Type="Int32" />
+          <Property Name="loggedTime" Type="Time" Precision="7" />
+          <Property Name="shiftIn" Type="Time" Precision="7" />
+          <Property Name="shiftOut" Type="Time" Precision="7" />
+          <Property Name="deletedBy" Type="Int32" />
+          <NavigationProperty Name="branch" Relationship="Self.FK_account_branchId" FromRole="accounts" ToRole="branches" />
+          <NavigationProperty Name="accounts1" Relationship="Self.FK_accounts_accounts" FromRole="accounts" ToRole="accounts1" />
+          <NavigationProperty Name="account1" Relationship="Self.FK_accounts_accounts" FromRole="accounts1" ToRole="accounts" />
+          <NavigationProperty Name="accounts11" Relationship="Self.FK_accounts_accounts1" FromRole="accounts" ToRole="accounts1" />
+          <NavigationProperty Name="account2" Relationship="Self.FK_accounts_accounts1" FromRole="accounts1" ToRole="accounts" />
+          <NavigationProperty Name="Group" Relationship="Self.FK_Agants_Groups" FromRole="accounts" ToRole="Groups" />
+          <NavigationProperty Name="branches" Relationship="Self.FK_branches_deletedBy" FromRole="accounts" ToRole="branches" />
+          <NavigationProperty Name="cashiers" Relationship="Self.FK_cashier_accounts" FromRole="accounts" ToRole="cashier" />
+          <NavigationProperty Name="cashiers1" Relationship="Self.FK_cashier_accounts1" FromRole="accounts" ToRole="cashier" />
+          <NavigationProperty Name="customers" Relationship="Self.FK_customers_deletedBy" FromRole="accounts" ToRole="customers" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK_Groups_deletedBy" FromRole="accounts" ToRole="Groups" />
+          <NavigationProperty Name="invoices" Relationship="Self.FK_invoices_accounts" FromRole="accounts" ToRole="invoices" />
+          <NavigationProperty Name="invoices1" Relationship="Self.FK_invoices_accounts1" FromRole="accounts" ToRole="invoices" />
+          <NavigationProperty Name="itemsDecriptions" Relationship="Self.FK_itemsDecription_deletedBy" FromRole="accounts" ToRole="itemsDecription" />
+          <NavigationProperty Name="refunds" Relationship="Self.FK_refunds_accounts" FromRole="accounts" ToRole="refunds" />
+          <NavigationProperty Name="suppliers" Relationship="Self.FK_suppliers_accounts" FromRole="accounts" ToRole="suppliers" />
+          <NavigationProperty Name="supplyOrders" Relationship="Self.FK_supplyOrders_accounts" FromRole="accounts" ToRole="supplyOrders" />
+          <NavigationProperty Name="supplyOrders1" Relationship="Self.FK_supplyOrders_accounts1" FromRole="accounts" ToRole="supplyOrders" />
+        </EntityType>
+        <EntityType Name="branch">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="deletedBy" Type="Int32" />
+          <Property Name="isDefault" Type="Boolean" />
+          <NavigationProperty Name="accounts" Relationship="Self.FK_account_branchId" FromRole="branches" ToRole="accounts" />
+          <NavigationProperty Name="account" Relationship="Self.FK_branches_deletedBy" FromRole="branches" ToRole="accounts" />
+          <NavigationProperty Name="cashiers" Relationship="Self.FK_cashier_branches" FromRole="branches" ToRole="cashier" />
+          <NavigationProperty Name="invoices" Relationship="Self.FK_invoices_branches" FromRole="branches" ToRole="invoices" />
+          <NavigationProperty Name="itemsDecriptions" Relationship="Self.FK_itemsDecription_branchId" FromRole="branches" ToRole="itemsDecription" />
+          <NavigationProperty Name="refunds" Relationship="Self.FK_refunds_branches" FromRole="branches" ToRole="refunds" />
+          <NavigationProperty Name="supplyOrders" Relationship="Self.FK_supplyOrders_branches" FromRole="branches" ToRole="supplyOrders" />
+          <NavigationProperty Name="transactionsHistories" Relationship="Self.FK_transactionsHistory_branches" FromRole="branches" ToRole="transactionsHistory" />
+          <NavigationProperty Name="transactionsHistories1" Relationship="Self.FK_transactionsHistory_branches1" FromRole="branches" ToRole="transactionsHistory" />
+        </EntityType>
+        <EntityType Name="cashier">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="openedBy" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="serial" Type="Int32" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <Property Name="total" Type="Double" />
+          <Property Name="paymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customerId" Type="Int32" />
+          <Property Name="notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="deletedBy" Type="Int32" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="account" Relationship="Self.FK_cashier_accounts" FromRole="cashier" ToRole="accounts" />
+          <NavigationProperty Name="account1" Relationship="Self.FK_cashier_accounts1" FromRole="cashier" ToRole="accounts" />
+          <NavigationProperty Name="branch" Relationship="Self.FK_cashier_branches" FromRole="cashier" ToRole="branches" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_cashier_customers" FromRole="cashier" ToRole="customers" />
+          <NavigationProperty Name="cashier_items" Relationship="Self.FK_cashier_items_cashier" FromRole="cashier" ToRole="cashier_items" />
+        </EntityType>
+        <EntityType Name="cashier_items">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+            <PropertyRef Name="cashierId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="cashierId" Type="Int32" Nullable="false" />
+          <Property Name="itemId" Type="Int32" />
+          <Property Name="quantity" Type="Double" />
+          <Property Name="price" Type="Double" />
+          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="cashier" Relationship="Self.FK_cashier_items_cashier" FromRole="cashier_items" ToRole="cashier" />
+          <NavigationProperty Name="itemsDecription" Relationship="Self.FK_cashier_items_itemsDecription" FromRole="cashier_items" ToRole="itemsDecription" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isCash" Type="Boolean" />
+          <Property Name="currentCredit" Type="Double" />
+          <Property Name="deletedBy" Type="Int32" />
+          <Property Name="dueDay" Type="Int32" />
+          <NavigationProperty Name="account" Relationship="Self.FK_customers_deletedBy" FromRole="customers" ToRole="accounts" />
+          <NavigationProperty Name="cashiers" Relationship="Self.FK_cashier_customers" FromRole="customers" ToRole="cashier" />
+        </EntityType>
+        <EntityType Name="default_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="action" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="groupPermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="groupId" Type="Int32" />
+          <Property Name="permissionCode" Type="Int32" />
+          <Property Name="value" Type="Boolean" />
+          <NavigationProperty Name="Group" Relationship="Self.FK_groupPermissions_groupPermissions" FromRole="groupPermissions" ToRole="Groups" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="groupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deletedBy" Type="Int32" />
+          <NavigationProperty Name="accounts" Relationship="Self.FK_Agants_Groups" FromRole="Groups" ToRole="accounts" />
+          <NavigationProperty Name="account" Relationship="Self.FK_Groups_deletedBy" FromRole="Groups" ToRole="accounts" />
+          <NavigationProperty Name="groupPermissions" Relationship="Self.FK_groupPermissions_groupPermissions" FromRole="Groups" ToRole="groupPermissions" />
+        </EntityType>
+        <EntityType Name="inven_Settings">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="checkDays" Type="Int32" />
+          <Property Name="lastCheckDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="invoice_items">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="invoiceId" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="invoiceId" Type="Int32" Nullable="false" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="itemId" Type="Int32" />
+          <Property Name="cost" Type="Double" />
+          <Property Name="price" Type="Double" />
+          <Property Name="quantity" Type="Double" />
+          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tax" Type="Double" />
+          <Property Name="taxValue" Type="Double" />
+          <Property Name="totalWithTax" Type="Double" />
+          <NavigationProperty Name="invoice" Relationship="Self.FK_invoice_items_invoices" FromRole="invoice_items" ToRole="invoices" />
+          <NavigationProperty Name="itemsDecription" Relationship="Self.FK_invoice_items_itemsDecription" FromRole="invoice_items" ToRole="itemsDecription" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="supplierId" Type="Int32" />
+          <Property Name="invoiceDate" Type="DateTime" Precision="0" />
+          <Property Name="refNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="serialNo" Type="Int32" />
+          <Property Name="discountCash" Type="Double" />
+          <Property Name="discountCommercial" Type="Double" />
+          <Property Name="extraExpenses" Type="Double" />
+          <Property Name="totalInvoice" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="total" Type="Double" />
+          <Property Name="openedBy" Type="Int32" />
+          <Property Name="creationDate" Type="DateTime" Precision="0" />
+          <Property Name="deletedBy" Type="Int32" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="tax" Type="Double" />
+          <Property Name="taxValue" Type="Double" />
+          <Property Name="departmentId" Type="Int32" />
+          <Property Name="categoryId" Type="Int32" />
+          <NavigationProperty Name="account" Relationship="Self.FK_invoices_accounts" FromRole="invoices" ToRole="accounts" />
+          <NavigationProperty Name="account1" Relationship="Self.FK_invoices_accounts1" FromRole="invoices" ToRole="accounts" />
+          <NavigationProperty Name="branch" Relationship="Self.FK_invoices_branches" FromRole="invoices" ToRole="branches" />
+          <NavigationProperty Name="invoice_items" Relationship="Self.FK_invoice_items_invoices" FromRole="invoices" ToRole="invoice_items" />
+        </EntityType>
+        <EntityType Name="itemsDecription">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subject" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="cost" Type="Double" />
+          <Property Name="price" Type="Double" />
+          <Property Name="supplierId" Type="Int32" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="branchId" Type="Int32" />
+          <Property Name="lastEditBy" Type="Int32" />
+          <Property Name="lastEditDate" Type="DateTime" Precision="0" />
+          <Property Name="deletedBy" Type="Int32" />
+          <Property Name="expirationDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="account" Relationship="Self.FK_itemsDecription_deletedBy" FromRole="itemsDecription" ToRole="accounts" />
+          <NavigationProperty Name="branch" Relationship="Self.FK_itemsDecription_branchId" FromRole="itemsDecription" ToRole="branches" />
+          <NavigationProperty Name="cashier_items" Relationship="Self.FK_cashier_items_itemsDecription" FromRole="itemsDecription" ToRole="cashier_items" />
+          <NavigationProperty Name="invoice_items" Relationship="Self.FK_invoice_items_itemsDecription" FromRole="itemsDecription" ToRole="invoice_items" />
+          <NavigationProperty Name="supplier" Relationship="Self.FK_itemsDecription_suppliers" FromRole="itemsDecription" ToRole="suppliers" />
+          <NavigationProperty Name="refund_iems" Relationship="Self.FK_refund_iems_itemsDecription" FromRole="itemsDecription" ToRole="refund_iems" />
+          <NavigationProperty Name="supplyOrders_items" Relationship="Self.FK_supplyOrders_items_itemsDecription" FromRole="itemsDecription" ToRole="supplyOrders_items" />
+        </EntityType>
+        <EntityType Name="location_items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="itemId" Type="Int32" />
+          <Property Name="palltaId" Type="Int32" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="palltaType" Type="Int32" />
+          <NavigationProperty Name="transactions" Relationship="Self.FK_transactions_location_items" FromRole="location_items" ToRole="transactions" />
+          <NavigationProperty Name="transactionsHistories" Relationship="Self.FK_transactionsHistory_itemsDecription" FromRole="location_items" ToRole="transactionsHistory" />
+        </EntityType>
+        <EntityType Name="location">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="parentId" Type="Int32" />
+          <Property Name="isPallta" Type="Boolean" />
+          <Property Name="serial" Type="Int32" />
+        </EntityType>
+        <EntityType Name="refund_iems">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="refundId" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="refundId" Type="Int32" Nullable="false" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="itemId" Type="Int32" />
+          <Property Name="quantity" Type="Double" />
+          <Property Name="price" Type="Double" />
+          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="itemsDecription" Relationship="Self.FK_refund_iems_itemsDecription" FromRole="refund_iems" ToRole="itemsDecription" />
+          <NavigationProperty Name="refund" Relationship="Self.FK_refund_iems_refunds" FromRole="refund_iems" ToRole="refunds" />
+        </EntityType>
+        <EntityType Name="refund">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="cashierId" Type="Int32" />
+          <Property Name="openedBy" Type="Int32" />
+          <Property Name="serial" Type="Int32" />
+          <Property Name="total" Type="Double" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="deletedBy" Type="Int32" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <NavigationProperty Name="account" Relationship="Self.FK_refunds_accounts" FromRole="refunds" ToRole="accounts" />
+          <NavigationProperty Name="branch" Relationship="Self.FK_refunds_branches" FromRole="refunds" ToRole="branches" />
+          <NavigationProperty Name="refund_iems" Relationship="Self.FK_refund_iems_refunds" FromRole="refunds" ToRole="refund_iems" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="currentCredit" Type="Double" />
+          <Property Name="deletedBy" Type="Int32" />
+          <NavigationProperty Name="account" Relationship="Self.FK_suppliers_accounts" FromRole="suppliers" ToRole="accounts" />
+          <NavigationProperty Name="itemsDecriptions" Relationship="Self.FK_itemsDecription_suppliers" FromRole="suppliers" ToRole="itemsDecription" />
+        </EntityType>
+        <EntityType Name="supplyOrder">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="supplierId" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="serialNo" Type="Int32" />
+          <Property Name="total" Type="Double" />
+          <Property Name="openedBy" Type="Int32" />
+          <Property Name="creationDate" Type="DateTime" Precision="0" />
+          <Property Name="deletedBy" Type="Int32" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="account" Relationship="Self.FK_supplyOrders_accounts" FromRole="supplyOrders" ToRole="accounts" />
+          <NavigationProperty Name="account1" Relationship="Self.FK_supplyOrders_accounts1" FromRole="supplyOrders" ToRole="accounts" />
+          <NavigationProperty Name="branch" Relationship="Self.FK_supplyOrders_branches" FromRole="supplyOrders" ToRole="branches" />
+          <NavigationProperty Name="supplyOrders_items" Relationship="Self.FK_supplyOrders_items_invoices" FromRole="supplyOrders" ToRole="supplyOrders_items" />
+        </EntityType>
+        <EntityType Name="supplyOrders_items">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="supplyOrderId" />
+            <PropertyRef Name="branchId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplyOrderId" Type="Int32" Nullable="false" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="itemId" Type="Int32" />
+          <Property Name="cost" Type="Double" />
+          <Property Name="quantity" Type="Double" />
+          <Property Name="balance" Type="Double" />
+          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="itemsDecription" Relationship="Self.FK_supplyOrders_items_itemsDecription" FromRole="supplyOrders_items" ToRole="itemsDecription" />
+          <NavigationProperty Name="supplyOrder" Relationship="Self.FK_supplyOrders_items_invoices" FromRole="supplyOrders_items" ToRole="supplyOrders" />
+        </EntityType>
+        <EntityType Name="transaction">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+            <PropertyRef Name="locationItemId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="locationItemId" Type="Int32" Nullable="false" />
+          <Property Name="resourceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="cost" Type="Double" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <Property Name="discount" Type="Double" />
+          <Property Name="finishDate" Type="DateTime" Precision="0" />
+          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="editById" Type="Int32" />
+          <Property Name="editDate" Type="DateTime" Precision="0" />
+          <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="location_items" Relationship="Self.FK_transactions_location_items" FromRole="transactions" ToRole="location_items" />
+        </EntityType>
+        <EntityType Name="transactionsHistory">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="transactionId" />
+            <PropertyRef Name="currentBranchId" />
+            <PropertyRef Name="locationItemId" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transactionId" Type="Int32" Nullable="false" />
+          <Property Name="currentBranchId" Type="Int32" Nullable="false" />
+          <Property Name="locationItemId" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Double" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="cost" Type="Double" />
+          <Property Name="transactionTypeId" Type="Int32" />
+          <Property Name="fromBranchId" Type="Int32" />
+          <Property Name="toBranchId" Type="Int32" />
+          <Property Name="reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="creationDate" Type="DateTime" Precision="0" />
+          <Property Name="serialNo" Type="Int32" />
+          <NavigationProperty Name="branch" Relationship="Self.FK_transactionsHistory_branches" FromRole="transactionsHistory" ToRole="branches" />
+          <NavigationProperty Name="branch1" Relationship="Self.FK_transactionsHistory_branches1" FromRole="transactionsHistory" ToRole="branches" />
+          <NavigationProperty Name="location_items" Relationship="Self.FK_transactionsHistory_itemsDecription" FromRole="transactionsHistory" ToRole="location_items" />
+          <NavigationProperty Name="transactionType" Relationship="Self.FK_transactionsHistory_transactionTypes" FromRole="transactionsHistory" ToRole="transactionTypes" />
+        </EntityType>
+        <EntityType Name="transactionType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="action" Type="Int32" />
+          <Property Name="notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="transactionsHistories" Relationship="Self.FK_transactionsHistory_transactionTypes" FromRole="transactionTypes" ToRole="transactionsHistory" />
+        </EntityType>
+        <Association Name="FK_account_branchId">
+          <End Role="branches" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="accounts" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_accounts_accounts">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="accounts1" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts1">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_accounts_accounts1">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="accounts1" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts1">
+              <PropertyRef Name="supervisorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agants_Groups">
+          <End Role="Groups" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="accounts" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_branches_deletedBy">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="branches" Type="Self.branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="branches">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_accounts">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_accounts1">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customers_deletedBy">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="customers" Type="Self.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="customers">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_deletedBy">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="Groups" Type="Self.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoices_accounts">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="invoices" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoices">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoices_accounts1">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="invoices" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoices">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itemsDecription_deletedBy">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="itemsDecription">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refunds_accounts">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="refunds" Type="Self.refund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="refunds">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_suppliers_accounts">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="suppliers" Type="Self.supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="suppliers">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_accounts">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="supplyOrders" Type="Self.supplyOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders">
+              <PropertyRef Name="openedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_accounts1">
+          <End Role="accounts" Type="Self.account" Multiplicity="0..1" />
+          <End Role="supplyOrders" Type="Self.supplyOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders">
+              <PropertyRef Name="deletedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_branches">
+          <End Role="branches" Type="Self.branch" Multiplicity="1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoices_branches">
+          <End Role="branches" Type="Self.branch" Multiplicity="1" />
+          <End Role="invoices" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoices">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itemsDecription_branchId">
+          <End Role="branches" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="itemsDecription">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refunds_branches">
+          <End Role="branches" Type="Self.branch" Multiplicity="1" />
+          <End Role="refunds" Type="Self.refund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="refunds">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_branches">
+          <End Role="branches" Type="Self.branch" Multiplicity="1" />
+          <End Role="supplyOrders" Type="Self.supplyOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders">
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_branches">
+          <End Role="branches" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="fromBranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_branches1">
+          <End Role="branches" Type="Self.branch" Multiplicity="0..1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="branches">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="toBranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_customers">
+          <End Role="customers" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="cashier" Type="Self.cashier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_items_cashier">
+          <End Role="cashier" Type="Self.cashier" Multiplicity="1" />
+          <End Role="cashier_items" Type="Self.cashier_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cashier">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="cashier_items">
+              <PropertyRef Name="cashierId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cashier_items_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="cashier_items" Type="Self.cashier_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cashier_items">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_groupPermissions_groupPermissions">
+          <End Role="Groups" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="groupPermissions" Type="Self.groupPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="groupPermissions">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_items_invoices">
+          <End Role="invoices" Type="Self.invoice" Multiplicity="1" />
+          <End Role="invoice_items" Type="Self.invoice_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoices">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="invoice_items">
+              <PropertyRef Name="invoiceId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_items_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="invoice_items" Type="Self.invoice_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoice_items">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itemsDecription_suppliers">
+          <End Role="suppliers" Type="Self.supplier" Multiplicity="0..1" />
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="itemsDecription">
+              <PropertyRef Name="supplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refund_iems_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="refund_iems" Type="Self.refund_iems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="refund_iems">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_items_itemsDecription">
+          <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
+          <End Role="supplyOrders_items" Type="Self.supplyOrders_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="supplyOrders_items">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_location_items">
+          <End Role="location_items" Type="Self.location_items" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location_items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="locationItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_itemsDecription">
+          <End Role="location_items" Type="Self.location_items" Multiplicity="1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location_items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="locationItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refund_iems_refunds">
+          <End Role="refunds" Type="Self.refund" Multiplicity="1" />
+          <End Role="refund_iems" Type="Self.refund_iems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="refunds">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="refund_iems">
+              <PropertyRef Name="refundId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_supplyOrders_items_invoices">
+          <End Role="supplyOrders" Type="Self.supplyOrder" Multiplicity="1" />
+          <End Role="supplyOrders_items" Type="Self.supplyOrders_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplyOrders">
+              <PropertyRef Name="id" />
+              <PropertyRef Name="branchId" />
+            </Principal>
+            <Dependent Role="supplyOrders_items">
+              <PropertyRef Name="supplyOrderId" />
+              <PropertyRef Name="branchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactionsHistory_transactionTypes">
+          <End Role="transactionTypes" Type="Self.transactionType" Multiplicity="0..1" />
+          <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transactionTypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactionsHistory">
+              <PropertyRef Name="transactionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="favStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accounts" EntityType="Self.account" />
+          <EntitySet Name="branches" EntityType="Self.branch" />
+          <EntitySet Name="cashiers" EntityType="Self.cashier" />
+          <EntitySet Name="cashier_items" EntityType="Self.cashier_items" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="default_list" EntityType="Self.default_list" />
+          <EntitySet Name="groupPermissions" EntityType="Self.groupPermission" />
+          <EntitySet Name="Groups" EntityType="Self.Group" />
+          <EntitySet Name="inven_Settings" EntityType="Self.inven_Settings" />
+          <EntitySet Name="invoice_items" EntityType="Self.invoice_items" />
+          <EntitySet Name="invoices" EntityType="Self.invoice" />
+          <EntitySet Name="itemsDecriptions" EntityType="Self.itemsDecription" />
+          <EntitySet Name="location_items" EntityType="Self.location_items" />
+          <EntitySet Name="locations" EntityType="Self.location" />
+          <EntitySet Name="refund_iems" EntityType="Self.refund_iems" />
+          <EntitySet Name="refunds" EntityType="Self.refund" />
+          <EntitySet Name="suppliers" EntityType="Self.supplier" />
+          <EntitySet Name="supplyOrders" EntityType="Self.supplyOrder" />
+          <EntitySet Name="supplyOrders_items" EntityType="Self.supplyOrders_items" />
+          <EntitySet Name="transactions" EntityType="Self.transaction" />
+          <EntitySet Name="transactionsHistories" EntityType="Self.transactionsHistory" />
+          <EntitySet Name="transactionTypes" EntityType="Self.transactionType" />
+          <AssociationSet Name="FK_account_branchId" Association="Self.FK_account_branchId">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="accounts" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_accounts_accounts" Association="Self.FK_accounts_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="accounts1" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_accounts_accounts1" Association="Self.FK_accounts_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="accounts1" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agants_Groups" Association="Self.FK_Agants_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="accounts" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_branches_deletedBy" Association="Self.FK_branches_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="branches" EntitySet="branches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_accounts" Association="Self.FK_cashier_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="cashier" EntitySet="cashiers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_accounts1" Association="Self.FK_cashier_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="cashier" EntitySet="cashiers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customers_deletedBy" Association="Self.FK_customers_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="customers" EntitySet="customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_deletedBy" Association="Self.FK_Groups_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoices_accounts" Association="Self.FK_invoices_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="invoices" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoices_accounts1" Association="Self.FK_invoices_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="invoices" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itemsDecription_deletedBy" Association="Self.FK_itemsDecription_deletedBy">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refunds_accounts" Association="Self.FK_refunds_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="refunds" EntitySet="refunds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_suppliers_accounts" Association="Self.FK_suppliers_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="suppliers" EntitySet="suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_accounts" Association="Self.FK_supplyOrders_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_accounts1" Association="Self.FK_supplyOrders_accounts1">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_branches" Association="Self.FK_cashier_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="cashier" EntitySet="cashiers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoices_branches" Association="Self.FK_invoices_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="invoices" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itemsDecription_branchId" Association="Self.FK_itemsDecription_branchId">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refunds_branches" Association="Self.FK_refunds_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="refunds" EntitySet="refunds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_branches" Association="Self.FK_supplyOrders_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_branches" Association="Self.FK_transactionsHistory_branches">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_branches1" Association="Self.FK_transactionsHistory_branches1">
+            <End Role="branches" EntitySet="branches" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_customers" Association="Self.FK_cashier_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="cashier" EntitySet="cashiers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_items_cashier" Association="Self.FK_cashier_items_cashier">
+            <End Role="cashier" EntitySet="cashiers" />
+            <End Role="cashier_items" EntitySet="cashier_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cashier_items_itemsDecription" Association="Self.FK_cashier_items_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+            <End Role="cashier_items" EntitySet="cashier_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_groupPermissions_groupPermissions" Association="Self.FK_groupPermissions_groupPermissions">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="groupPermissions" EntitySet="groupPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_items_invoices" Association="Self.FK_invoice_items_invoices">
+            <End Role="invoices" EntitySet="invoices" />
+            <End Role="invoice_items" EntitySet="invoice_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_items_itemsDecription" Association="Self.FK_invoice_items_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+            <End Role="invoice_items" EntitySet="invoice_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itemsDecription_suppliers" Association="Self.FK_itemsDecription_suppliers">
+            <End Role="suppliers" EntitySet="suppliers" />
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refund_iems_itemsDecription" Association="Self.FK_refund_iems_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+            <End Role="refund_iems" EntitySet="refund_iems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_items_itemsDecription" Association="Self.FK_supplyOrders_items_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+            <End Role="supplyOrders_items" EntitySet="supplyOrders_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_location_items" Association="Self.FK_transactions_location_items">
+            <End Role="location_items" EntitySet="location_items" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_itemsDecription" Association="Self.FK_transactionsHistory_itemsDecription">
+            <End Role="location_items" EntitySet="location_items" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refund_iems_refunds" Association="Self.FK_refund_iems_refunds">
+            <End Role="refunds" EntitySet="refunds" />
+            <End Role="refund_iems" EntitySet="refund_iems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_supplyOrders_items_invoices" Association="Self.FK_supplyOrders_items_invoices">
+            <End Role="supplyOrders" EntitySet="supplyOrders" />
+            <End Role="supplyOrders_items" EntitySet="supplyOrders_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactionsHistory_transactionTypes" Association="Self.FK_transactionsHistory_transactionTypes">
+            <End Role="transactionTypes" EntitySet="transactionTypes" />
+            <End Role="transactionsHistory" EntitySet="transactionsHistories" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="favStoreModelStoreContainer" CdmEntityContainer="favStoreEntities">
+          <EntitySetMapping Name="accounts">
+            <EntityTypeMapping TypeName="favStoreModel.account">
+              <MappingFragment StoreEntitySet="accounts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="contactName" ColumnName="contactName" />
+                <ScalarProperty Name="passWord" ColumnName="passWord" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+                <ScalarProperty Name="supervisorId" ColumnName="supervisorId" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="loggedTime" ColumnName="loggedTime" />
+                <ScalarProperty Name="shiftIn" ColumnName="shiftIn" />
+                <ScalarProperty Name="shiftOut" ColumnName="shiftOut" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="branches">
+            <EntityTypeMapping TypeName="favStoreModel.branch">
+              <MappingFragment StoreEntitySet="branches">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+                <ScalarProperty Name="isDefault" ColumnName="isDefault" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cashiers">
+            <EntityTypeMapping TypeName="favStoreModel.cashier">
+              <MappingFragment StoreEntitySet="cashier">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="openedBy" ColumnName="openedBy" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="serial" ColumnName="serial" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cashier_items">
+            <EntityTypeMapping TypeName="favStoreModel.cashier_items">
+              <MappingFragment StoreEntitySet="cashier_items">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="cashierId" ColumnName="cashierId" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="favStoreModel.customer">
+              <MappingFragment StoreEntitySet="customers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="isCash" ColumnName="isCash" />
+                <ScalarProperty Name="currentCredit" ColumnName="currentCredit" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+                <ScalarProperty Name="dueDay" ColumnName="dueDay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="default_list">
+            <EntityTypeMapping TypeName="favStoreModel.default_list">
+              <MappingFragment StoreEntitySet="default_list">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="groupPermissions">
+            <EntityTypeMapping TypeName="favStoreModel.groupPermission">
+              <MappingFragment StoreEntitySet="groupPermissions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+                <ScalarProperty Name="permissionCode" ColumnName="permissionCode" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="favStoreModel.Group">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inven_Settings">
+            <EntityTypeMapping TypeName="favStoreModel.inven_Settings">
+              <MappingFragment StoreEntitySet="inven_Settings">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="checkDays" ColumnName="checkDays" />
+                <ScalarProperty Name="lastCheckDate" ColumnName="lastCheckDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoice_items">
+            <EntityTypeMapping TypeName="favStoreModel.invoice_items">
+              <MappingFragment StoreEntitySet="invoice_items">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="invoiceId" ColumnName="invoiceId" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="taxValue" ColumnName="taxValue" />
+                <ScalarProperty Name="totalWithTax" ColumnName="totalWithTax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoices">
+            <EntityTypeMapping TypeName="favStoreModel.invoice">
+              <MappingFragment StoreEntitySet="invoices">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="supplierId" ColumnName="supplierId" />
+                <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
+                <ScalarProperty Name="refNo" ColumnName="refNo" />
+                <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+                <ScalarProperty Name="discountCash" ColumnName="discountCash" />
+                <ScalarProperty Name="discountCommercial" ColumnName="discountCommercial" />
+                <ScalarProperty Name="extraExpenses" ColumnName="extraExpenses" />
+                <ScalarProperty Name="totalInvoice" ColumnName="totalInvoice" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="openedBy" ColumnName="openedBy" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="taxValue" ColumnName="taxValue" />
+                <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="itemsDecriptions">
+            <EntityTypeMapping TypeName="favStoreModel.itemsDecription">
+              <MappingFragment StoreEntitySet="itemsDecription">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="supplierId" ColumnName="supplierId" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="lastEditBy" ColumnName="lastEditBy" />
+                <ScalarProperty Name="lastEditDate" ColumnName="lastEditDate" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+                <ScalarProperty Name="expirationDate" ColumnName="expirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="location_items">
+            <EntityTypeMapping TypeName="favStoreModel.location_items">
+              <MappingFragment StoreEntitySet="location-items">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="palltaId" ColumnName="palltaId" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="palltaType" ColumnName="palltaType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="locations">
+            <EntityTypeMapping TypeName="favStoreModel.location">
+              <MappingFragment StoreEntitySet="locations">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="isPallta" ColumnName="isPallta" />
+                <ScalarProperty Name="serial" ColumnName="serial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="refund_iems">
+            <EntityTypeMapping TypeName="favStoreModel.refund_iems">
+              <MappingFragment StoreEntitySet="refund_iems">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="refundId" ColumnName="refundId" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="refunds">
+            <EntityTypeMapping TypeName="favStoreModel.refund">
+              <MappingFragment StoreEntitySet="refunds">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="cashierId" ColumnName="cashierId" />
+                <ScalarProperty Name="openedBy" ColumnName="openedBy" />
+                <ScalarProperty Name="serial" ColumnName="serial" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suppliers">
+            <EntityTypeMapping TypeName="favStoreModel.supplier">
+              <MappingFragment StoreEntitySet="suppliers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="currentCredit" ColumnName="currentCredit" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supplyOrders">
+            <EntityTypeMapping TypeName="favStoreModel.supplyOrder">
+              <MappingFragment StoreEntitySet="supplyOrders">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="supplierId" ColumnName="supplierId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="openedBy" ColumnName="openedBy" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="deletedBy" ColumnName="deletedBy" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supplyOrders_items">
+            <EntityTypeMapping TypeName="favStoreModel.supplyOrders_items">
+              <MappingFragment StoreEntitySet="supplyOrders_items">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="supplyOrderId" ColumnName="supplyOrderId" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transactions">
+            <EntityTypeMapping TypeName="favStoreModel.transaction">
+              <MappingFragment StoreEntitySet="transactions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="locationItemId" ColumnName="locationItemId" />
+                <ScalarProperty Name="resourceCode" ColumnName="resourceCode" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="finishDate" ColumnName="finishDate" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="editById" ColumnName="editById" />
+                <ScalarProperty Name="editDate" ColumnName="editDate" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transactionsHistories">
+            <EntityTypeMapping TypeName="favStoreModel.transactionsHistory">
+              <MappingFragment StoreEntitySet="transactionsHistory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="transactionId" ColumnName="transactionId" />
+                <ScalarProperty Name="currentBranchId" ColumnName="currentBranchId" />
+                <ScalarProperty Name="locationItemId" ColumnName="locationItemId" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="transactionTypeId" ColumnName="transactionTypeId" />
+                <ScalarProperty Name="fromBranchId" ColumnName="fromBranchId" />
+                <ScalarProperty Name="toBranchId" ColumnName="toBranchId" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transactionTypes">
+            <EntityTypeMapping TypeName="favStoreModel.transactionType">
+              <MappingFragment StoreEntitySet="transactionTypes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

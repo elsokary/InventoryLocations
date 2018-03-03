@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<head>
+    <title></title>
+    <meta charset="utf-8" /> 
+    <link href="../css/smartadmin-skins.css" rel="stylesheet" />
+    <link href="../css/smartadmin-rtl.css" rel="stylesheet" />
+    <style type="text/css">
+        .label {
+            font-size: 10pt;
+            font-weight: bold;
+            font-family: Arial;
+        }
+
+        .contents {
+            border: 1px dotted black;
+            padding: 5px;
+            width: 300px;
+        }
+
+        .name {
+            color: #18B5F0;
+        }
+
+        .left {
+            float: left;
+            width: 50px;
+            height: 50px;
+        }
+
+        .right {
+            margin-left: 60px;
+            line-height: 50px;
+        }
+
+        .clear {
+            clear: both;
+        }
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+</head>
+<body data-bind="style: { direction:  'rtl' }, css: { rtl: true }">
+    <div id="main" class="site-main clearfix" role="main">
+        <div id="content" class="content-area">
+            <h1 class="page-header" data-bind="text: documentTitle"></h1>
+            <div class="row">
+                <div class="col-xs-18 col-md-12">
+                    <div class="media" style="margin-top: 0;">
+
+                        <div class="media-body demo-content">
+                            <hr />
+                            <div id="dvContents">
+                                <!-- ko if: itemsTable().length -->
+
+                                <div class="contents">
+                                    <table style="direction: rtl; margin-right: 20px; table-layout: fixed; width: 200%;" class="table" id="printTable">
+                                        <thead style="display: table-row-group;" data-bind="with: itemsColumnDefenition">
+                                            <tr class="blue-header" data-bind="foreach: friendlyNames">
+                                                <th data-bind="style: { width: $parent.widths[$index()] }">
+                                                    <div class="table-header-text-ellipses" data-bind="text: $data, css: { 'rtl-table-header': true }"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="display: table-row-group;" data-bind="foreach: itemsTable">
+                                            <tr data-bind="foreach: $parent.itemsColumnDefenition().fields">
+                                                <td data-bind="text: $parent[$data]"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /ko -->
+                            </div>
+                            <button id="btnPrint" value="Print">xxx</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="../lib/jquery-1.4.4.min.js"></script>
+    <script src="../lib/jquery.printPage.js"></script>
+    <script src="../lib/knockout-3.2.0.js"></script>
+    <script src="../lib/lodash.min.js"></script>
+    <script src="PrintPdf.js"></script>
+</body> 

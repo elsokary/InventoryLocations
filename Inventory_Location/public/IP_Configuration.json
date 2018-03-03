@@ -1,0 +1,7 @@
+﻿{ 
+  "isCashier": "false",
+  "isInventory": "true",
+  "allFeatures": "true",
+  "basicFeatures": "true",
+  "defaultThem": "true"
+}

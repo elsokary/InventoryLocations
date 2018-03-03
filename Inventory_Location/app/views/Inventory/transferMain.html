@@ -1,0 +1,51 @@
+﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
+    <div class="fixed-action-btn" data-toggle="tooltip" data-placement="right" data-bind="attr: { title: language.add[currentLanguage()] }, click: add">
+        <a class="btn-floating btn-large waves-effect red">
+            <i class="mdi-content-add"></i>
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
+            <h1 class="page-title txt-color-blueDark" data-bind="text: language.inventory[currentLanguage()] + ' - ' + language.transferToMainBranches[currentLanguage()]"></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="widget-grid">
+            <!-- row -->
+            <div class="row">
+                <!-- SINGLE GRID -->
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="well jarviswidget no-padding" data-widget-sortable="false" id="wid-id-0">
+                        <header data-bind="css: { rtlTable: language.rtl[currentLanguage()] }"></header><!-- widget div-->
+                        <div>
+                            <!-- widget content -->
+                            <div class="widget-body" data-bind="css: { rtlTable: language.rtl[currentLanguage()] }">
+                                <div id="rootwizard" style="margin-top: 20px;" class="hidden-print">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active" data-bind="css: { active: currentTab() === 'to' }">
+                                            <a href="#to" data-toggle="tab" data-bind="click: changeTab"><span class="hidden-mobile hidden-tablet" data-bind="click: changeTab, text: language.transferTo[currentLanguage()]"></span> </a>
+                                        </li>
+                                        <li class="active" data-bind="css: { active: currentTab() === 'from' }">
+                                            <a href="#from" data-toggle="tab" data-bind="click: changeTab"><span class="hidden-mobile hidden-tablet" data-bind="text: language.transferFrom[currentLanguage()]"></span> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-content col-xs-12">
+                                    <div class="tab-pane" id="to" data-bind="css: { active: currentTab() === 'to' }">
+                                        <!-- ko compose: { model: 'viewmodels/Inventory/transferToMain' } --><!-- /ko -->
+                                    </div>
+                                    <div class="tab-pane" id="from" data-bind="css: { active: currentTab() === 'from' }">
+                                        <!-- ko compose: { model: 'viewmodels/Inventory/transferFromMain' } --><!-- /ko -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,296 @@
+﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
+            <h1 class="page-title txt-color-blueDark" data-bind="text: language.personal[currentLanguage()] + ' - ' + language.itemDescription[currentLanguage()]"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="widget-grid">
+            <!-- row -->
+            <div class="row">
+                <!-- SINGLE GRID -->
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="jarviswidget" data-widget-sortable="false" id="wid-id-0">
+
+                        <div>
+                            <!-- widget content -->
+                            <div class="widget-body" data-bind="attr: { dir: language.dir[currentLanguage()]}">
+                                <div class="row">
+                                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <button class="btn btn-default btn-xs pull-right dropdown-toggle" id="exportDropdownMenu" data-bind="css: language.pullRight[currentLanguage()]" data-toggle="dropdown">
+                                            <i class="fa fa-gear fa-2x"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" data-bind="css: language.pullRight[currentLanguage()], attr: { dir: language.dir[currentLanguage()]}, style: { 'language[dir][currentLanguage()]':'15px;'}" role="menu" aria-labelledby="exportDropdownMenu">
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" data-bind="click: exportToExcel" href="javascript:void(0);">Excel</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" data-bind="click: exportToWord" href="javascript:void(0);">Word</a>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="row">
+                                    <form class="smart-form" id="itemAddForm" novalidate="novalidate">
+                                        <fieldset data-bind="with: item">
+                                            <div class="row">
+                                                <section class="col col-3">
+                                                    <label class="label" data-bind="text: $root.language.supplierName[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                    <label class="select">
+                                                        <select style="width:100%" id="supplierId" name="supplierId" data-bind="value: $root.supplierId, options: $root.suppliers, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="6"></select>
+                                                    </label>
+                                                </section>
+
+                                                <section class="col col-3">
+                                                    <label class="label" data-bind="text: $root.language.departmentName[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                    <label class="select">
+                                                        <select style="width:100%" id="departmentId" name="departmentId" data-bind="value: $root.departmentId,options: $root.departments, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="6"></select>
+                                                    </label>
+                                                </section>
+                                                <section class="col col-3">
+                                                    <label class="label" data-bind="text: $root.language.primaryBrand[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                    <label class="select">
+                                                        <select style="width:100%" id="categoryId" name="categoryId" data-bind="value: $root.categoryId, options: $root.categories, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="5"></select>
+                                                    </label>
+                                                </section>
+                                                <section class="col col-3" data-bind="visible: $root.showChild()">
+                                                    <label class="label" data-bind="text: $root.language.categoryChild[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                    <label class="select">
+                                                        <select style="width:100%" id="categoryIdItemId" name="categoryIdItemId" data-bind="value: $root.categoryChildId, options: $root.categoriesChilds, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="5"></select>
+                                                    </label>
+                                                </section>
+                                            </div>
+                                        </fieldset>
+                                        <footer style="text-align:center;border:0;background-color:#FFF;">
+                                            <!--<button type="button" class="btn btn-default pull-left" id="btnSearch" data-bind="click: $root.searchItems , text: $root.language.search[$root.currentLanguage()], style: { float: $root.language.btnFloat[$root.currentLanguage()] }" tabindex="7"></button>-->
+                                            <button type="button" class="btn btn-default pull-left" tabindex="7" style="margin-left: 5px;" id="btnSearch" data-bind="click: searchItems, text: language.search[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
+
+                                        </footer>
+                                    </form>
+                                </div>
+                                <hr />
+
+                                <button type="button" class="btn btn-default" id="loadMore" data-bind="click: loadMore, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }">
+                                    <i class="fa fa-download"></i>
+                                </button>
+
+                                <table id="card-description-list-table" class="table table-striped table-bordered table-hover smart-form" data-bind="koTable: { pageSize: 50, showSearch: true, initialSortProperty: 'resourceCode', initialSortDirection: 'desc' }">
+                                    <thead>
+                                        <tr>
+                                            <td width="10%">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" data-bind="checked: isCheckedAll" name="checkbox-inline">
+                                                    <i></i>
+                                                </label>
+                                                <button type="button" class="btn btn-info btn-sm" data-bind="style: {    'margin-right': '25px', visibility: arraySelected().length ? 'visible' : 'hidden' }, click: fireEditCost">
+                                                    <i class="fa fa-pencil-square-o"></i> <span>تعديل التكلفة</span>
+                                                </button>
+                                                <button type="button" class="btn btn-info btn-sm" data-bind="style: { visibility: arraySelected().length ? 'visible' : 'hidden' }, click: fireEditPrice">
+                                                    <i class="fa fa-pencil-square-o"></i> <span>تعديل السعر</span>
+                                                </button>
+                                            </td>
+                                            <th width="15%" data-sort-property="description" data-bind="text: language.name[currentLanguage()]"></th>
+                                            <th width="10%" data-sort-property="resourceCode" data-bind="text: language.itemCode[currentLanguage()]"></th>
+                                            <th width="5%" data-sort-property="quantity" data-bind="text: language.quantity[currentLanguage()]"></th>
+                                            <th width="10%" data-sort-property="cost" data-bind="text: language.cost[currentLanguage()]"></th>
+                                            <th width="10%" data-sort-property="price" data-bind="text: language.price[currentLanguage()]"></th>
+                                            <th width="5%" data-sort-property="supplierName" data-bind="text: language.supplierName[currentLanguage()]"></th>
+                                            <th width="5%" data-sort-property="categoryName" data-bind="text: language.categoryName[currentLanguage()]"></th>
+                                            <th width="5%" data-sort-property="department" data-bind="text: language.departmentName[currentLanguage()]"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody data-bind="foreach: koTable.pagedItems">
+                                        <tr>
+                                            <td>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" data-bind="checkedValue: id, checked: $parent.arraySelected" name="checkbox-inline">
+                                                    <i></i>
+                                                </label>
+                                            </td>
+                                            <td><span data-bind="text: description"></span></td>
+                                            <td><span data-bind="text: resourceCode"></span></td>
+                                            <td><span data-bind="text: quantity"></span></td>
+                                            <td>
+                                                <label class="input">
+                                                    <input type="number" required="" id="costEdit" name="costEdit" style="width: 100%; border: none; border-radius: 10px;" data-bind="value: cost, event:{ change: $parent.changeCost }, attr: { placeholder: $root.language.price[$root.currentLanguage()] }">
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="input">
+                                                    <input type="number" required="" id="priceEdit" name="priceEdit" style="width: 100%; border: none; border-radius: 10px;" data-bind="value: price, event:{ change: $parent.changePrice }, attr: { placeholder: $root.language.price[$root.currentLanguage()] }">
+                                                </label>
+                                            </td>
+                                            <td><span data-bind="text: supplierName"></span></td>
+                                            <td><span data-bind="text: categoryName"></span></td>
+                                            <td><span data-bind="text: department"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal  fade" id="ViewModalList" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="ViewModalList" style="display:none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="style: {float: language.btnFloat[currentLanguage()] }">
+                                                x
+                                            </button>
+                                            <h4 class="modal-title" data-bind="text: language.goEdit[currentLanguage()]"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="smart-form" id="itemEditCost" novalidate="novalidate">
+                                                <fieldset>
+                                                    <section>
+                                                        <label class="label" data-bind="text: language.cost[currentLanguage()]"></label>
+                                                        <label class="input">
+                                                            <input type="text" name="cost" id="cost" data-bind="value: newCost, attr: { placeholder: language.cost[currentLanguage()] }" />
+                                                        </label>
+                                                    </section>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" id="addRow" data-bind="click: $root.editCostActual , text: $root.language.add[$root.currentLanguage()], style: { float: language.btnFloat[currentLanguage()] }"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal  fade" id="ViewModalPrice" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="ViewModalPrice" style="display:none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="style: {float: language.btnFloat[currentLanguage()] }">
+                                                x
+                                            </button>
+                                            <h4 class="modal-title" data-bind="text: language.goEdit[currentLanguage()]"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="smart-form" id="itemEditprice" novalidate="novalidate">
+
+                                                <section class="row">
+                                                    <div class="inline-group" style="margin-top:25px">
+                                                        <label class="radio radio-inline">
+                                                            <input type="radio" name="isValue" value="false" class="radiobox" id="isValue" data-bind="checked: isValue">
+                                                            <span data-bind="text: $root.language.percentageValue[$root.currentLanguage()]"></span>
+                                                        </label>
+                                                        <label class="radio radio-inline">
+                                                            <input type="radio" name="isValue" value="true" class="radiobox" id="isValue" data-bind="checked: isValue">
+                                                            <span data-bind="text: $root.language.percentageValue2[$root.currentLanguage()]"></span>
+                                                        </label>
+                                                    </div>
+                                                </section>
+                                                <!--ko if: isValue()=='true'-->
+                                                <section class="row">
+                                                    <label class="label" data-bind="text: language.price[currentLanguage()]"></label>
+                                                    <label class="input">
+                                                        <input type="text" name="price" id="price" data-bind="value: newPrice, attr: { placeholder: language.price[currentLanguage()] }" />
+                                                    </label>
+                                                </section>
+                                                <!--/ko-->
+                                                <!--ko if: isValue()=='false'-->
+                                                <section class="row">
+                                                    <label class="label" data-bind="text: language.percentageValue[currentLanguage()]"></label>
+                                                    <label class="input">
+                                                        <input type="text" max="1" name="price" id="price" data-bind="value: newPrice, attr: { placeholder: language.price[currentLanguage()] }" />
+                                                    </label>
+                                                </section>
+                                                <!--/ko-->
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" id="addRow" data-loading-text="Saving...." data-bind="click: $root.editPriceActual , text: $root.language.add[$root.currentLanguage()], style: { float: language.btnFloat[currentLanguage()] }"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="ViewModalEdit" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="ViewModalEdit" style="display:none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style=" padding: 2px !important;">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="style: {float: $root.language.btnFloat[$root.currentLanguage()] }">
+                                                x
+                                            </button>
+                                            <h4 class="modal-title" data-bind=" text: $root.language.edit[$root.currentLanguage()]"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="smart-form" id="itemEditForm" novalidate="novalidate" style=" margin: -20px !important;">
+                                                <fieldset data-bind="with: itemEdit">
+                                                    <div class="row">
+                                                        <section class="col col-4">
+                                                            <label class="label" data-bind="text:$root.language.referenceCode[$root.currentLanguage()]"></label>
+                                                            <label class="input">
+                                                                <input type="text" name="codeEdit" id="codeEdit" data-bind="value: code, valueUpdate: 'changeRefCodeEdit', attr: { placeholder: $root.language.referenceCode[$root.currentLanguage()] }" />
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-4">
+                                                            <label class="label" data-bind="text:$root.language.description[$root.currentLanguage()]"></label>
+                                                            <label class="input">
+                                                                <input type="text" name="subjectEdit" id="subjectEdit" data-bind="value: subject, attr: { placeholder: $root.language.description[$root.currentLanguage()] }" />
+                                                            </label>
+                                                        </section>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <section class="col col-4">
+                                                            <label class="label" data-bind="text: $root.language.supplierName[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                            <label class="select">
+                                                                <select style="width:100%" id="supplierIdEdit" name="supplierIdEdit" data-bind="value: $root.supplierIdEdit,options: $root.suppliers, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }"></select>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-4">
+                                                            <label class="label" data-bind="text: $root.language.primaryBrand[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                            <label class="select">
+                                                                <select style="width: 100%;" id="categoryIdEdit" name="categoryIdEdit" data-bind="value: $root.categoryIdEdit,valueAllowUnset :true,options: $root.categories, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }"></select>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-4" data-bind="visible: $root.showChildEdit()">
+                                                            <label class="label" data-bind="text: $root.language.categoryChild[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                            <label class="select">
+                                                                <select style="width:100%" id="categoryIdItemIdEdit" name="categoryIdItemIdEdit" data-bind="value: $root.categoryChildIdEdit, valueAllowUnset :true,options: $root.categoriesChildsEdits, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }"></select>
+                                                            </label>
+                                                        </section>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <section class="col col-4">
+                                                            <label class="label" data-bind="text:$root.language.cost[$root.currentLanguage()]"></label>
+                                                            <label class="input">
+                                                                <input type="text" name="costEdit" id="costEdit" data-bind="value: cost, attr: { placeholder: $root.language.cost[$root.currentLanguage()] }" />
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-4">
+                                                            <label class="label" data-bind="text:$root.language.price[$root.currentLanguage()]"></label>
+                                                            <label class="input">
+                                                                <input type="text" name="priceEdit" id="priceEdit" data-bind="value: price, attr: { placeholder: $root.language.price[$root.currentLanguage()] }" />
+                                                            </label>
+                                                        </section>
+                                                    </div>
+                                                </fieldset>
+                                                <!--ko if: changeStatus()-->
+                                                <section class="col col-lg-12" style="margin-bottom: 39px;">
+                                                    <!-- ko compose: { model: 'viewmodels/penals/audit', view: 'views/penals/audit' } -->
+                                                    <!-- /ko -->
+                                                </section>
+                                                <!-- /ko -->
+                                                <footer>
+                                                    <button type="button" class="btn btn-primary TabOnEnter pull-left" style="margin-left: 5px;" id="editRow" data-bind="click: editItem, visible: changeStatus(), text: language.edit[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
+
+                                                </footer>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- end widget div -->
+                    </div><!-- end widget -->
+                </article>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->

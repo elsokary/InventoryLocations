@@ -1,0 +1,89 @@
+﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
+            <h1 class="page-title txt-color-blueDark" data-bind="text: language.Reports[currentLanguage()] + ' - ' + language.salesEmployee[currentLanguage()]"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="widget-grid">
+            <!-- row -->
+            <div class="row">
+                <!-- SINGLE GRID -->
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="jarviswidget" data-widget-sortable="false" id="wid-id-0">
+                        <div>
+                            <!-- widget content -->
+                            <div class="widget-body" data-bind="css: { rtlTable: language.rtl[currentLanguage()] }">
+                                <div class="row">
+                                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <button class="btn btn-default btn-xs pull-right dropdown-toggle" id="exportDropdownMenu" data-bind="css: language.pullRight[currentLanguage()]" data-toggle="dropdown">
+                                            <i class="fa fa-gear fa-2x"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" data-bind="css: language.pullRight[currentLanguage()], attr: { dir: language.dir[currentLanguage()]}, style: { 'language[dir][currentLanguage()]':'15px;'}" role="menu" aria-labelledby="exportDropdownMenu">
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" data-bind="click: exportToExcel" href="javascript:void(0);">Excel</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" data-bind="click: exportToWord" href="javascript:void(0);">Word</a>
+                                            </li>
+                                        </ul>
+                                        <button class="btn btn-default btn-xs btnPrint" id="printMode" data-bind="click: PrintToExcel ,css: language.pullRight[currentLanguage()]">
+                                            <i class="fa fa-print fa-2x"></i>
+                                        </button>
+                                    </article>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <fieldset>
+                                        <table id="card-description-table" class="table table-striped table-bordered table-hover" data-bind="koTable: { pageSize: 20, showSearch: true, initialSortProperty: 'resourceCode', initialSortDirection: 'desc', showDeleteButton: false }">
+                                            <thead>
+                                                <tr>
+                                                    <th data-sort-property="resourceCode" data-bind="text: language.paymentType[currentLanguage()]"></th>
+                                                    <th data-sort-property="quantity" data-bind="text: language.openedBy[currentLanguage()]"></th>
+                                                    <th data-sort-property="price" data-bind="text: language.serialNo[currentLanguage()]"></th>
+                                                    <th data-sort-property="cost" data-bind="text: language.total[currentLanguage()]"></th>
+                                                    <th data-sort-property="type" data-bind="text: language.transactionType[currentLanguage()]"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody data-bind="foreach: koTable.pagedItems">
+                                                <tr>
+                                                    <td><span data-bind="text: (paymentType ?  'نقد': 'اجل')"></span></td>
+                                                    <td><span data-bind="text: enteredByName"></span></td>
+                                                    <td><span data-bind="text: serial"></span></td>
+                                                    <td><span data-bind="text: total"></span></td>
+                                                    <td><span data-bind="text: transactionType"></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div><!-- end widget div -->
+                    </div><!-- end widget -->
+                </article>
+            </div>
+        </section>
+    </div>
+</div>
+<div style="visibility: hidden;">
+    <div id="dvContents">
+        <h1 class="page-header" style="direction: rtl; text-align: center;" data-bind="text: language.salesEmployee[currentLanguage()]"></h1>
+        <div class="contents">
+            <table style=" direction :rtl; margin-right :20px; table-layout :fixed; width :200%;" class="table" id="printTable">
+                <thead style="display: table-row-group;" data-bind="with: itemsColumnDefenition">
+                    <tr class="blue-header" data-bind="foreach: friendlyNames">
+                        <th data-bind="style: { width: $parent.widths[$index()] }">
+                            <div class="table-header-text-ellipses" data-bind="text: $data, css: { 'rtl-table-header': true }"></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="display: table-row-group;" data-bind="foreach: itemsTable">
+                    <tr data-bind="foreach: $parent.itemsColumnDefenition().fields">
+                        <td data-bind="text: $parent[$data]"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->

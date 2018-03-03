@@ -1,0 +1,158 @@
+﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
+    <div class="fixed-action-btn" data-toggle="tooltip" data-placement="left">
+        <a class="btn-floating btn-large waves-effect red" data-placement="left" data-bind="click: addModal, attr: { title: language.add[currentLanguage()] }">
+            <i class="mdi-content-add"></i>
+        </a>
+    </div>
+    <div class="row" style="margin-top: 45px;">
+        <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="widget-grid-locations">
+            <!-- row -->
+
+            <div class="row">
+                <article class="col col-sm-12 col-xs-12 col-md-12 col-lg-12">
+                    <div class="jarviswidget well well-has-header" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
+                        <div>
+                            <!-- widget content -->
+
+
+                            <div class="widget-body" data-bind="css: { rtlTable: language.rtl[currentLanguage()] }" style="overflow-x: hidden">
+                                <div class="row">
+                                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <button class="btn btn-default btn-xs pull-right dropdown-toggle" id="exportDropdownMenu" data-bind="css: language.pullRight[currentLanguage()]" data-toggle="dropdown">
+                                            <i class="fa fa-gear fa-2x"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" data-bind="css: language.pullRight[currentLanguage()], attr: { dir: language.dir[currentLanguage()]}, style: { 'language[dir][currentLanguage()]':'15px;'}" role="menu" aria-labelledby="exportDropdownMenu">
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1" data-bind="click: exportToExcel" href="javascript:void(0);">Excel</a>
+                                            </li> 
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="row page-header-row">
+                                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <span class="page-header-text" style="font-family: Lato; color: rgb(37, 128, 247);" data-bind="text: language.category[currentLanguage()]"></span>
+                                    </article>
+                                </div>
+                                <hr />
+                                <form class="smart-form" id="eFormAllTree">
+                                    <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <fieldset>
+                                            <section>
+                                                <label class="input">
+                                                    <input type="text" id="searchTree" name="searchTree" placeholder="البحث..." class="form-control" data-bind="textInput: searchValue" />
+                                                </label>
+                                                <div class="tree smart-form">
+                                                    <ul role="tree" data-bind="template: { name: 'chartsTemplate', foreach: $root.categories() }" id="tvAccounts"></ul>
+                                                </div>
+                                                <!-- Template -->
+                                                <script type="text/html" id="chartsTemplate">
+                                                    <li class="parent_li" role="treeitem" data-bind="visible: visible">
+                                                        <span title="Collapse this branch" data-bind="css: { 'is-rtl': ($root.currentLanguage() === 'ar') }">
+                                                            <i class="fa fa-lg fa-plus-circle" data-bind="click: $root.expandCollapseTreeNode, visible: trees().length"></i>
+                                                            <label data-bind="text: name" style="cursor: pointer;"></label>
+                                                            <ol>
+                                                                <li style="width: 20px;padding-left:20px !important;">
+                                                                    <!--ko if: arrange() < 2 -->
+                                                                    <a class="btn-floating waves-effect" data-placement="top" data-bind="click: $root.viewAddModal, attr:{ title: $root.language.add[$root.currentLanguage()] }">
+                                                                        <i class="fa fa-plus"></i>
+                                                                    </a>
+                                                                    <!--/ko-->
+                                                                </li>
+
+                                                                <li style="width: 20px; padding-left: 20px !important;">
+                                                                    <a class="btn-floating waves-effect" style="background-color: peru;" data-placement="top" data-bind="click: $root.viewEditModal, attr:{ title: $root.language.edit[$root.currentLanguage()] }">
+                                                                        <i class="fa fa-pencil"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li style="width: 5px; padding-left: 20px !important;">
+                                                                    <a class="btn-floating waves-effect red" data-placement="top" data-bind="click: $root.deleteAccountTreeNode.bind($parent), attr:{ title: $root.language.delete[$root.currentLanguage()] }">
+                                                                        <i class="fa fa-trash-o"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ol>
+                                                        </span>
+                                                        <ul data-bind="template: { name: 'chartsTemplate', foreach: trees() }, css: { toolTipDone: $root.toolTipDone() }"></ul>
+                                                    </li>
+                                                </script>
+                                            </section>
+                                        </fieldset>
+                                    </section>
+                                </form>
+
+                                <div class="modal fade" id="ViewModal" tabindex="-1" role="dialog" aria-labelledby="ViewModal" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-bind="style: { float: $root.language.btnFloat[$root.currentLanguage()] }" data-dismiss="modal" aria-hidden="true">
+                                                    ×
+                                                </button>
+                                                <h4 class="modal-title" data-bind=" visible: !$root.changeStatus(), text: $root.language.editTitle[$root.currentLanguage()]"></h4>
+                                                <h4 class="modal-title" data-bind=" visible:  $root.changeStatus(), text: $root.language.addTitle[$root.currentLanguage()]"></h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="smart-form" id="categoryForm" novalidate="novalidate">
+                                                    <div class="smart-form" id="eForm" data-bind="attr: { dir: $root.language.dir[$root.currentLanguage()]}">
+                                                        <fieldset data-bind="with: category">
+                                                            <div class="row">
+                                                                <section class="col col-4">
+                                                                    <label class="label" data-bind="text: $root.currentArrange()==0 ? $root.language.departmentName[$root.currentLanguage()]: $root.language.categoryName[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                                    <label class="input">
+                                                                        <input type="text" name="title" id="title" data-bind="value: name, valueUpdate: 'changeRefName', attr: { placeholder: $root.currentArrange()==0 ? $root.language.departmentName[$root.currentLanguage()]: $root.language.categoryName[$root.currentLanguage()] }" />
+                                                                    </label>
+                                                                </section>
+                                                                <section class="col col-4">
+                                                                    <label class="label" data-bind="text: $root.language.referenceCode[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                                    <label class="input">
+                                                                        <input type="text" name="code" data-bind="value: code, valueUpdate: 'changeRefCode', attr: { placeholder: $root.language.referenceCode[$root.currentLanguage()] }">
+                                                                    </label>
+                                                                </section>
+                                                                <!--ko if: $root.currentArrange() == 1 -->
+                                                                <section class="col col-4">
+                                                                    <label class="label" data-bind="text: $root.language.serial[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                                    <label class="input">
+                                                                        <input type="text" name="serial" data-bind="value: serial, valueUpdate: 'changeRefCode', attr: { placeholder: $root.language.serial[$root.currentLanguage()] }">
+                                                                    </label>
+                                                                </section>
+                                                                <!--/ko-->
+                                                            </div>
+                                                            <!--ko if: $root.currentArrange() > 1 -->
+                                                            <div class="row">
+                                                                <section class="col col-4">
+                                                                    <label class="label" data-bind="text: $root.language.days[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
+                                                                    <label class="input">
+                                                                        <input type="text" name="days" id="days" data-bind="value: alertDays, attr: { placeholder: $root.language.days[$root.currentLanguage()] }" />
+                                                                    </label>
+                                                                </section>
+                                                            </div>
+                                                            <!--/ko-->
+                                                        </fieldset>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-default" style="margin-left: 5px;" id="addRow" data-bind="visible: !changeStatus(),click: addRowItem, text: language.save[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
+
+                                                <button type="button" class="btn btn-default" style="margin-left: 5px;" id="editRow" data-bind="visible: changeStatus(),click: editRow,text: language.save[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
+
+
+                                                <!--<button type="button" class="btn btn-default" data-loading-text="Adding..." data-bind="visible: !changeStatus(), click: addRowItem ,text: $root.language.save[$root.currentLanguage()]" id="addRow"></button>
+                                                <button type="button" class="btn btn-default" data-loading-text="Editing..." data-bind="visible: changeStatus(), click: editRow ,text: $root.language.save[$root.currentLanguage()]" id="editRow"></button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end widget content -->
+
+                        </div>
+
+                    </div>
+
+                </article>
+            </div>
+        </section>
+        <!-- End Widget -->
+    </div>
+</div>
+
