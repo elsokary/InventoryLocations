@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 namespace Interface.IDataService
 {
     public interface IInventorylogRepository : IGenericRepository<transactionsHistory>
-    { 
+    {
+        IQueryable<DtoInventorylog> GetItemFromBranch( string lang, int pageNumber, int pageSize);
     }
 }
 

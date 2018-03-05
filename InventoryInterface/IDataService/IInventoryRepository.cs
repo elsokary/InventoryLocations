@@ -12,7 +12,7 @@ namespace Interface.IDataService
 {
     public interface IInventoryRepository : IGenericRepository<transaction>
     {
-       
+        int GetNextArrange();
         
     }
 }

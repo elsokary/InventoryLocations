@@ -752,5 +752,116 @@ namespace Inventory_Location.api.inventory
 
         #endregion
 
+        #region store
+
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetTransferItemsFromMain")]
+        public IHttpActionResult GetTransferItemsFromMain(int pageNumber, int pageSize)
+        {
+            var result = _inventoryHistory.GetItemFromBranch(_language, pageNumber, pageSize).ToList();
+
+            return Ok(result);
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("transferItemFromMainBranch")]
+        public IHttpActionResult transferItemFromMainBranch(DtoInventorylog item)
+        {
+            item.fromBranchId = defaultBranchId;
+            item.toBranchId = item.toBranchId;
+            AddItemItemToInventory(item);
+
+            return Ok();
+        }
+        private void AddItemItemToInventory(DtoInventorylog item)
+        {
+            var itemInven = _inventory.FindBy(x => x.itemId == item.itemId && x.branchId == item.toBranchId).FirstOrDefault();
+
+            if (itemInven != null)
+            {
+                #region update Inventory that related to this branch
+
+                item.InventoryId = itemInven.id;
+
+                itemInven.quantity = itemInven.quantity + item.quantity;
+                _inventory.Edit(itemInven);
+                _inventory.Save();
+
+                #endregion
+            }
+            else
+            {
+                #region add this item to inventory that will related to branch
+
+                itemInven = new InventoryContext.Context.transaction
+                {
+                    itemId = item.itemId,
+                    quantity = item.quantity,
+                    resourceCode = item.resourceCod,
+                    cost = item.cost,
+                    branchId = (int)item.toBranchId,
+                    description = item.description,
+                    discount = 0,
+                    price = item.price
+                };
+
+                _inventory.Add(itemInven);
+                _inventory.Save();
+                _inventory.Reload(itemInven);
+
+
+                item.InventoryId = itemInven.id;
+
+                #endregion
+
+            }
+
+            #region will descrease credit from current branch to another branch
+
+            var currItem = _inventory.FindBy(x => x.itemId == item.itemId && x.branchId == item.fromBranchId).FirstOrDefault();
+
+            if (currItem != null)
+            {
+                #region update Inventory that related to this branch
+
+                currItem.quantity = itemInven.quantity - item.quantity;
+                _inventory.Edit(currItem);
+                _inventory.Save();
+
+                #endregion
+            }
+
+            #endregion
+
+            var serial = _inventory.GetNextArrange();
+            var obj = new transactionsHistory
+            {
+                itemId = item.itemId,
+                reason = item.reason,
+                fromBranchId = item.fromBranchId,
+                price = item.price,
+                cost = item.cost,
+                quantity = item.quantity,
+                toBranchId = item.toBranchId,
+                transactionTypeId = (int)transactionsType.transfer,
+                transactionId = item.InventoryId,
+                creationDate = DateTime.Now.Date,
+                currentBranchId = _branchId,
+                serialNo = serial
+            };
+
+            _inventoryHistory.Add(obj);
+            _inventoryHistory.Save();
+            _inventoryHistory.Reload(obj);
+
+            #region save in Log Table
+
+            #endregion
+        }
+
+        #endregion
+
     }
 }
