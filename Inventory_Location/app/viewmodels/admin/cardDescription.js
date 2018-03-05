@@ -13,13 +13,7 @@
 
         config.exportJson(exportData, exportColumns, 'excel', 'Items');
     };
-
-    var exportToWord = function () {
-        var exportData = ko.toJS(ko.toJS(vm.koTable.allItems()));
-
-        config.exportJson(exportData, exportColumns, 'word', 'Items');
-    };
-
+     
     var itemDto = function (data) {
         var self = this;
 
@@ -51,23 +45,7 @@
             self.categoryId = data.categoryId;
         }
     };
-
-    var suppliers = ko.observableArray([]);
-
-    var categories = ko.observableArray([]);
-
-    var categoriesChilds = ko.observableArray([]);
-
-    var categoriesSecond = ko.observableArray([]);
-
-    var suppliersItems = ko.observableArray([]);
-
-    var categoryId = ko.observable();
-
-    var categoryChildId = ko.observable();
-
-    var supplierId = ko.observable();
-
+     
     var item = ko.observable(new itemDto());
 
     item().value.subscribe(function () {
@@ -77,86 +55,13 @@
     });
 
     var itemEdit = ko.observable(new itemDto());
-
-    var showChild = ko.observable(false);
-
-    supplierId.subscribe(function () {
-        if (supplierId()) {
-
-            item().supplierId(supplierId());
-
-            dataservice.getCategoriesFirstLevelBysupplierId(supplierId()).done(function (result) {
-                categories(result);
-
-            });
-        }
-    });
-
-    categoryId.subscribe(function () {
-
-        if (categoryId()) {
-
-            item().categoryId(categoryId());
-
-            dataservice.getChildsCategories(categoryId()).done(function (result) {
-                categoriesChilds(result);
-                if (categoriesChilds().length > 0) {
-                    showChild(true);
-                }
-            });
-        }
-    });
-
-    categoryChildId.subscribe(function () {
-        if (categoryChildId()) {
-            item().categoryId(categoryChildId());
-        }
-    });
-
-    var showSuppliers = ko.observable(false);
-
+     
     function attached() {
 
         $(".fixed-action-btn").tooltip();
 
         $('#code').focus();
-
-        var isCtrl = false;
-
-        document.onkeydown = function (e) {
-
-            if (e.keyCode == 17) isCtrl = true;
-
-            if (e.keyCode == 83 && isCtrl == true) {
-
-                if (changeStatus() == false) {
-                    var isValid = $('#itemAddForm').valid();
-
-                    if (isValid) {
-                        saveData();
-
-                    } else {
-                        $('#itemAddForm').validate();
-
-                    }
-
-                    isCtrl = false
-
-                } else {
-                    var isValid = $('#itemEditForm').valid();
-
-                    if (isValid) {
-                        saveEdit();
-                    } else {
-                        $('#itemEditForm').validate();
-                    }
-
-                    isCtrl = false
-                }
-                return false;
-            }
-        }
-
+         
         $("#itemAddForm").validate({
             rules: {
                 name: {
@@ -166,28 +71,11 @@
                 cost: {
                     required: true,
                     number: true
-                },
-                price: {
-                    required: true,
-                    digits: true
-                },
+                }, 
                 code: {
                     required: true,
                     //digits: true
-                },
-                supplierId: {
-                    required: true,
-                    digits: true
-                },
-                categoryId: {
-                    required: true,
-                    digits: true
-                },
-                percentage: {
-                    digits: true,
-                    min: 0,
-                    max: 100
-                }
+                } 
             },
             messages: {
                 name: {
@@ -197,56 +85,17 @@
                 cost: {
                     required: config.language.cost[config.currentLanguage()],
                     number: config.language.onlyNumbers[config.currentLanguage()]
-                },
-                price: {
-                    required: config.language.price[config.currentLanguage()],
-                    digits: config.language.onlyNumbers[config.currentLanguage()]
-                },
+                } ,
                 code: {
                     required: config.language.referenceCode[config.currentLanguage()],
-                   // digits: config.language.onlyNumbers[config.currentLanguage()]
-                },
-                supplierId: {
-                    required: config.language.supplierName[config.currentLanguage()],
-                    digits: config.language.onlyNumbers[config.currentLanguage()]
-                },
-                categoryId: {
-                    required: config.language.categoryName[config.currentLanguage()],
-                    digits: config.language.onlyNumbers[config.currentLanguage()]
-                },
-                percentage: {
-                    digits: 'Numbers Only',
-                    min: 0,
-                    max: 100
-                }
+                    // digits: config.language.onlyNumbers[config.currentLanguage()]
+                } 
             },
             errorPlacement: function (error, element) {
                 error.insertAfter(element.parent());
             }
         });
-
-        $("#itemEditForm").validate({
-            rules: {
-                supplierIdMulti: {
-                    required: true
-                },
-                categoryIdMulti: {
-                    required: true
-                }
-            },
-            messages: {
-                supplierIdMulti: {
-                    required: config.language.supplierName[config.currentLanguage()]
-                },
-                categoryIdMulti: {
-                    required: config.language.categoryName[config.currentLanguage()]
-                }
-            },
-            errorPlacement: function (error, element) {
-                error.insertAfter(element.parent());
-            }
-        });
-
+         
         $("#viewModalMultipleItemsForm").validate({
             rules: {
                 subject: {
@@ -255,11 +104,7 @@
                 cost: {
                     required: true,
                     number: true
-                },
-                price: {
-                    required: true,
-                    number: true
-                },
+                } ,
                 code: {
                     required: true,
                     digits: true
@@ -272,11 +117,7 @@
                 cost: {
                     required: config.language.Address[config.currentLanguage()],
                     number: config.language.onlyNumbers[config.currentLanguage()]
-                },
-                price: {
-                    number: config.language.onlyNumbers[config.currentLanguage()],
-                    required: config.language.email[config.currentLanguage()]
-                },
+                } ,
                 code: {
                     required: config.language.referenceCode[config.currentLanguage()],
                     digits: config.language.onlyNumbers[config.currentLanguage()]
@@ -289,20 +130,15 @@
     };
 
     function activate() {
+
         item(new itemDto());
 
         exportColumns = [
                  new config.ExportColumn(config.language.name[config.currentLanguage()], 'subject', 's'),
                  new config.ExportColumn(config.language.referenceCode[config.currentLanguage()], 'code', 's'),
-                 new config.ExportColumn(config.language.cost[config.currentLanguage()], 'cost', 's'),
-                 new config.ExportColumn(config.language.price[config.currentLanguage()], 'price', 's'),
-                 new config.ExportColumn(config.language.categoryName[config.currentLanguage()], 'categoryName', 's'),
-                 new config.ExportColumn(config.language.supplierName[config.currentLanguage()], 'supplierName', 's')
+                 new config.ExportColumn(config.language.cost[config.currentLanguage()], 'cost', 's') 
         ];
 
-        dataservice.getSupplierForList().done(function (result) {
-            suppliers(result);
-        });
     };
 
     var addItem = function (obj, e) {
@@ -439,8 +275,6 @@
 
     var changeRefCode = ko.computed(function () {
 
-        showSuppliers(false);
-
         if (item().code()) {
 
             var exist = false;
@@ -457,15 +291,9 @@
                         iconSmall: "fa fa-times fa-2x fadeInRight animated",
                         timeout: 2000
                     });
-
-                    dataservice.getItemsByItemCode(item().code()).done(function (result) {
-                        suppliersItems(result);
-                    });
-
                 }
             });
 
-            showSuppliers(true);
         }
     });
 
@@ -565,78 +393,18 @@
         //  return event.keyCode;
 
     };
-
-    var currentFilteredData = ko.observableArray([]);
-
-    var filteredData = ko.observableArray([]);
-
+     
     var koTableReady = function () {
 
         vm.koTable.addRowDeleteHandler(deleteItem);
         vm.koTable.addRowClickedHandler(viewEditModal);
 
         dataservice.getItemsdecriptionPagination(pageNumber(), config.pageSize()).success(function (data) {
-            vm.koTable.setItems(data);
-            currentFilteredData(data);
-            filteredData(data);
-
+            vm.koTable.setItems(data); 
         });
     };
-
-    var supplierName = ko.observable("");
-
-    var primaryBrand = ko.observable("");
-
-    var searchBySupplierName = function () {
-        var exportData = currentFilteredData();
-
-        var FilterResult = ko.utils.arrayFilter(exportData, function (obj) {
-            if (supplierName() == "") {
-                return true;
-            }
-            return obj.supplierName.toLowerCase().indexOf(supplierName().toLowerCase()) > -1;
-        });
-
-        filteredData(FilterResult);
-
-        vm.koTable.setItems(FilterResult);
-    };
-
-    var searchByCategoryName = function () {
-
-        var exportData = currentFilteredData();
-
-        var FilterResult = ko.utils.arrayFilter(exportData, function (obj) {
-            if (primaryBrand() == "") {
-                return true;
-            }
-            return obj.categoryName.toLowerCase().indexOf(primaryBrand().toLowerCase()) > -1;
-        });
-
-        filteredData(FilterResult);
-
-        vm.koTable.setItems(FilterResult);
-    };
-
-    var onSubmitSupplierName = function () {
-
-        if (supplierName() != "") {
-
-            searchBySupplierName();
-
-        } else {
-            if (primaryBrand() != "") {
-
-                searchByCategoryName();
-
-            } else {
-                filteredData(currentFilteredData());
-
-                vm.koTable.setItems(currentFilteredData());
-            }
-        }
-    };
-
+     
+     
     var onSubmit = function () {
 
         if (primaryBrand() != "") {
@@ -654,38 +422,9 @@
             }
         }
     };
-
-    var supplierIdMulti = ko.observable();
-
-    var brandId = ko.observable();
-
-    var secondaryId = ko.observable();
-
+     
     var showCategory = ko.observable(false);
-
-    brandId.subscribe(function () {
-        if (brandId()) {
-            dataservice.getChildsCategories(brandId()).done(function (result) {
-                categoriesSecond(result);
-                if (categoriesSecond().length > 0) {
-
-                    showCategory(true);
-                }
-            });
-        }
-    });
-
-    supplierIdMulti.subscribe(function () {
-
-        if (supplierIdMulti()) {
-
-            dataservice.getCategoriesFirstLevelBysupplierId(supplierIdMulti()).done(function (result) {
-                categories(result);
-
-            });
-        }
-    });
-
+ 
     function upload(obj, e) {
         var isValid = $('#viewModalMultipleItemsForm').valid();
 
@@ -781,17 +520,7 @@
 
         });
     };
-
-    var categoryIdEdit = ko.observable();
-
-    var categoryChildIdEdit = ko.observable();
-
-    var supplierIdEdit = ko.observable();
-
-    var showChildEdit = ko.observable(false);
-
-    var categoriesChildsEdits = ko.observableArray([]);
-
+     
     var viewEditModal = function (obj, e) {
 
         changeStatus(true);
@@ -801,97 +530,28 @@
         config.docId(obj.model.id());
 
         itemEdit(new itemDto(obj.model));
-
-        categoryIdEdit(obj.model.categoryChildId());
-
-        supplierIdEdit(obj.model.supplierId());
-
-        categoryChildIdEdit(obj.model.categoryId());
-
-        showChildEdit(false);
-
-        if (categoryChildIdEdit() != 0) {
-            showChildEdit(true);
-        }
-
-
+           
         $('#ViewModalList').modal('show');
     };
-
-    supplierIdEdit.subscribe(function () {
-        if (supplierIdEdit()) {
-
-            itemEdit().supplierId(supplierIdEdit());
-
-            dataservice.getCategoriesFirstLevelBysupplierId(supplierIdEdit()).done(function (result) {
-                categories(result);
-
-            });
-        }
-    });
-
-    categoryIdEdit.subscribe(function () {
-
-        if (categoryIdEdit()) {
-
-            itemEdit().categoryId(categoryIdEdit());
-            itemEdit().categoryChildId(categoryIdEdit());
-
-            dataservice.getChildsCategories(categoryIdEdit()).done(function (result) {
-                categoriesChildsEdits(result);
-            });
-        }
-    });
-
-    categoryChildIdEdit.subscribe(function () {
-        if (categoryChildIdEdit()) {
-            itemEdit().categoryChildId(categoryChildIdEdit());
-        }
-    });
-
-    var vm = {
-        categoryIdEdit: categoryIdEdit,
-        categoryChildIdEdit: categoryChildIdEdit,
-        supplierIdEdit: supplierIdEdit,
-        showChildEdit: showChildEdit,
-        categoriesChildsEdits: categoriesChildsEdits,
-
-
+ 
+    var vm = { 
         changeValue: changeValue,
         changeRefCodeEdit: changeRefCodeEdit,
         itemEdit: itemEdit,
         loadMore: loadMore,
         addMultipleItems: addMultipleItems,
-        upload: upload,
-        showCategory: showCategory,
-        categoriesSecond: categoriesSecond,
-        supplierIdMulti: supplierIdMulti,
-        brandId: brandId,
-        secondaryId: secondaryId,
-        onSubmit: onSubmit,
-        onSubmitSupplierName: onSubmitSupplierName,
-        supplierName: supplierName,
-        primaryBrand: primaryBrand,
-        supplierId: supplierId,
+        upload: upload, 
+        onSubmit: onSubmit, 
         showDelete: showDelete,
         keyUpControl: keyUpControl,
         canActivate: canActivate,
-        changeRefCode: changeRefCode,
-        categoryChildId: categoryChildId,
-        showSuppliers: showSuppliers,
-        suppliersItems: suppliersItems,
-        categoryId: categoryId,
-        showChild: showChild,
-        categoriesChilds: categoriesChilds,
-        suppliers: suppliers,
-        categories: categories,
+        changeRefCode: changeRefCode,   
         title: config.language.itemDescription[config.currentLanguage()],
         activate: activate,
         attached: attached,
         language: config.language,
         currentLanguage: config.currentLanguage,
-        exportToExcel: exportToExcel,
-        exportToWord: exportToWord,
+        exportToExcel: exportToExcel, 
         editItem: editItem,
         addItem: addItem,
         item: item,

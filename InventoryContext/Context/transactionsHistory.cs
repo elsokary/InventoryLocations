@@ -28,10 +28,12 @@ namespace InventoryContext.Context
         public Nullable<double> total { get; set; }
         public Nullable<System.DateTime> creationDate { get; set; }
         public Nullable<int> serialNo { get; set; }
+        public int itemId { get; set; }
     
         public virtual branch branch { get; set; }
         public virtual branch branch1 { get; set; }
         public virtual location_items location_items { get; set; }
         public virtual transactionType transactionType { get; set; }
+        public virtual itemsDecription itemsDecription { get; set; }
     }
 }

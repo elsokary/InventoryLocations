@@ -29,7 +29,9 @@ namespace InventoryContext.Context
         public Nullable<System.DateTime> editDate { get; set; }
         public string comment { get; set; }
         public Nullable<bool> deleted { get; set; }
+        public int itemId { get; set; }
     
         public virtual location_items location_items { get; set; }
+        public virtual itemsDecription itemsDecription { get; set; }
     }
 }

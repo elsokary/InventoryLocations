@@ -8,14 +8,8 @@
     var add = function (obj, e) {
 
         if (config.isAllow(29)) {
-
             var indexOfCurrentTab = tabs.indexOf(currentTab());
-
-            if (currentTab() === "to") {
-                router.navigate("transferToMainAddEdit/0-false");
-            } else {
-                router.navigate("transferToMainAddEdit/0-true");
-            }
+            router.navigate("transferToMainAddEdit/0-true");
         }
     }
 
@@ -27,7 +21,7 @@
 
     var tabs = "";
 
-    var currentTab = ko.observable('to');
+    var currentTab = ko.observable('from');
 
     var changeTabFrom = function (obj, e) {
 
@@ -76,7 +70,7 @@
 
         disablePreviousTab(true);
 
-        currentTab('to');
+        currentTab('from');
     };
 
     var freeTabNavigating = ko.observable();

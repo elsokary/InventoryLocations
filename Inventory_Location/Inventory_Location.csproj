@@ -151,9 +151,7 @@
     <Content Include="app\viewmodels\Inventory\transferFromMain.js" />
     <Content Include="app\viewmodels\Inventory\transferMain.js" />
     <Content Include="app\viewmodels\Inventory\transferToMainAddEdit.js" />
-    <Content Include="app\viewmodels\Inventory\itemAddEdit.js" />
     <Content Include="app\viewmodels\Inventory\transferToMain.js" />
-    <Content Include="app\viewmodels\Inventory\items.js" />
     <Content Include="app\viewmodels\reports\rptSuppiersTotals.js" />
     <Content Include="app\viewmodels\reports\AccountStatmentCustomerRport.js" />
     <Content Include="app\viewmodels\reports\paymentsSupplierRport.js" />
@@ -179,19 +177,15 @@
     <Content Include="app\viewmodels\reports\itemsTransBySupplier.js" />
     <Content Include="app\viewmodels\reports\rptTransactionsbyUser.js" />
     <Content Include="app\viewmodels\reports\rptTransactionOnItem.js" />
-    <Content Include="app\viewmodels\shellInventory.js" />
     <Content Include="app\views\admin\discountSetting.html" />
     <Content Include="app\views\admin\invenSetting.html" />
     <Content Include="app\views\admin\retailSetting.html" />
-    <Content Include="app\views\admin\agents.html" />
     <Content Include="app\views\export\PrintPdf.html" />
     <Content Include="app\views\Inventory\printBarcode.html" />
     <Content Include="app\views\Inventory\transferFromMain.html" />
     <Content Include="app\views\Inventory\transferMain.html" />
     <Content Include="app\views\Inventory\transferToMainAddEdit.html" />
-    <Content Include="app\views\Inventory\itemAddEdit.html" />
     <Content Include="app\views\Inventory\transferToMain.html" />
-    <Content Include="app\views\Inventory\items.html" />
     <Content Include="app\views\reportsMenu.html" />
     <Content Include="app\viewmodels\reportsMenu.js" />
     <Content Include="app\views\reports\rptSuppiersTotals.html" />
@@ -434,7 +428,6 @@
     <Content Include="app\viewmodels\admin\accountsDefaultList.js" />
     <Content Include="app\viewmodels\admin\branches.js" />
     <Content Include="app\viewmodels\admin\cardDescription.js" />
-    <Content Include="app\viewmodels\admin\cardDescriptionList.js" />
     <Content Include="app\viewmodels\admin\category.js" />
     <Content Include="app\viewmodels\admin\customers.js" />
     <Content Include="app\viewmodels\admin\permissionsGroups.js" />
@@ -448,8 +441,6 @@
     <Content Include="app\views\admin\accountsDefaultList.html" />
     <Content Include="app\views\admin\branches.html" />
     <Content Include="app\views\admin\cardDescription.html" />
-    <Content Include="app\views\admin\cardDescriptionList.html" />
-    <Content Include="app\views\admin\category.html" />
     <Content Include="app\views\admin\customers.html" />
     <Content Include="app\views\admin\permissionsGroups.html" />
     <Content Include="app\views\admin\permissionsGroupsPermissions.html" />

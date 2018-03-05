@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
-            <h1 class="page-title txt-color-blueDark" data-bind="text: language.personal[currentLanguage()] + ' - ' + language.itemDescription[currentLanguage()]"></h1>
+            <h1 class="page-title txt-color-blueDark" data-bind="text: language.itemDescription[currentLanguage()]"></h1>
         </div>
     </div>
 
@@ -29,9 +29,6 @@
                                             <li role="presentation">
                                                 <a role="menuitem" tabindex="-1" data-bind="click: exportToExcel" href="javascript:void(0);">Excel</a>
                                             </li>
-                                            <li role="presentation">
-                                                <a role="menuitem" tabindex="-1" data-bind="click: exportToWord" href="javascript:void(0);">Word</a>
-                                            </li>
                                         </ul>
                                     </article>
                                 </div>
@@ -40,7 +37,7 @@
                                     <form class="smart-form" id="itemAddForm" tabindex="-1" novalidate="novalidate">
                                         <fieldset data-bind="with: item">
                                             <div class="row">
-                                                <section class="col col-sm-2">
+                                                <section class="col col-sm-3">
                                                     <label class="label" data-bind="text:$root.language.referenceCode[$root.currentLanguage()]"></label>
                                                     <label class="input">
                                                         <input type="text" name="code" id="code" class="TabOnEnter" data-bind="value: code, valueUpdate: 'changeRefCode',attr: { placeholder: $root.language.referenceCode[$root.currentLanguage()] }" tabindex="1" />
@@ -52,105 +49,20 @@
                                                         <input type="text" name="name" id="name" class="TabOnEnter" data-bind="value: subject, attr: { placeholder: $root.language.description[$root.currentLanguage()] }" tabindex="2" />
                                                     </label>
                                                 </section>
-                                                <section class="col col-sm-1">
+                                                <section class="col col-sm-2">
                                                     <label class="label" data-bind="text:$root.language.cost[$root.currentLanguage()]"></label>
                                                     <label class="input">
                                                         <input type="text" name="cost" id="cost" class="TabOnEnter" data-bind="value: cost,attr: { placeholder: $root.language.cost[$root.currentLanguage()] }" tabindex="3" />
                                                     </label>
                                                 </section>
-                                                <section class="col col-sm-1">
-                                                    <label class="label" data-bind="text: 'نسبة الربح'"></label>
-                                                    <label class="input">
-                                                        <input type="number" name="percentage" id="percentage" class="TabOnEnter" data-bind="value: percentage,attr: { placeholder: $root.language.price[$root.currentLanguage()] }" tabindex="4" />
-                                                    </label>
-                                                </section>
-                                                <section class="col col-sm-1">
-                                                    <label class="label" data-bind="text: 'قيمة الربح'"></label>
-                                                    <label class="input">
-                                                        <input type="text" name="value" id="value" class="TabOnEnter" data-bind="value: value, valueUpdate: 'changeValue',attr: { placeholder: $root.language.price[$root.currentLanguage()] }" tabindex="4" />
-                                                    </label>
-                                                </section>
-                                                <section class="col col-sm-2">
-                                                    <label class="label" data-bind="text: $root.language.price[$root.currentLanguage()]"></label>
-                                                    <label class="input">
-                                                        <input type="text" name="price" id="price" class="TabOnEnter" data-bind="value: price,attr: { placeholder: $root.language.price[$root.currentLanguage()] }" tabindex="4" />
-                                                    </label>
-                                                </section>
                                             </div>
-                                            <div class="row">
-                                                <section class="col col-sm-4">
-                                                    <label class="label" data-bind="text: $root.language.supplierName[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                    <label class="select">
-                                                        <select style="width:100%" id="supplierId" name="supplierId" class="TabOnEnter" data-bind="value: $root.supplierId,options: $root.suppliers, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="5"></select>
-                                                    </label>
-                                                </section>
-                                                <section class="col col-sm-4">
-                                                    <label class="label" data-bind="text: $root.language.primaryBrand[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                    <label class="select">
-                                                        <select style="width:100%" id="categoryId" name="categoryId" class="TabOnEnter" data-bind="value: $root.categoryId,options: $root.categories, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="6"></select>
-                                                    </label>
-                                                </section>
-                                                <section class="col col-sm-4" data-bind="visible: $root.showChild()">
-                                                    <label class="label" data-bind="text: $root.language.categoryChild[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                    <label class="select">
-                                                        <select style="width:100%" id="categoryIdItemId" name="categoryIdItemId" class="TabOnEnter" data-bind="value: $root.categoryChildId,options: $root.categoriesChilds, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="7"></select>
-                                                    </label>
-                                                </section>
-                                            </div>
-
                                         </fieldset>
                                         <footer style="text-align:center;border:0;background-color:#fff;">
                                             <button type="button" class="btn btn-primary TabOnEnter pull-left" style="margin-left: 5px;" id="addItem" data-bind="click: addItem, text: language.add[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
-
-                                            <!--<button type="submit" class="btn btn-primary TabOnEnter pull-left" data-loading-text="Saving...." name="addRow" id="addRow" data-bind="click: $root.addItem, text: $root.language.add[$root.currentLanguage()], style: { float: $root.language.btnFloat[$root.currentLanguage()] }" tabindex="8"></button>-->
                                         </footer>
                                     </form>
                                 </div>
-                                <hr class="simple" />
-                                <!--ko if: showSuppliers()===true -->
-                                <div>
-                                    <h3 data-bind="text: language.supplierForitems[currentLanguage()] + ' - ' + item().code()"></h3>
-                                    <table class="table table-hover table-bordered">
-                                        <tr>
-                                            <td data-bind="text: language.supplierName[currentLanguage()]"> </td>
-                                            <td data-bind="text: language.code[currentLanguage()]"> </td>
-                                            <td data-bind="text: language.invoiceNo[currentLanguage()]"> </td>
-                                            <td data-bind="text: language.cost[currentLanguage()]"> </td>
-                                            <td data-bind="text: language.price[currentLanguage()]"> </td>
-                                            <td data-bind="text: language.date[currentLanguage()]"> </td>
-                                        </tr>
-                                        <tbody data-bind="foreach: suppliersItems">
-                                            <tr>
-                                                <td style="width: 15%" data-bind="text: supplierName"> </td>
-                                                <td style="width: 15%" data-bind="text: code"> </td>
-                                                <td style="width: 15%" data-bind="text: invoiceNo"> </td>
-                                                <td style="width: 15%" data-bind="text: cost"> </td>
-                                                <td style="width: 15%" data-bind="text: price"> </td>
-                                                <td style="width: 15%" data-bind="text: date"> </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <hr class="simple" />
-                                <!--/ko-->
 
-                                <fieldset>
-                                    <div class="row">
-                                        <section class="col col-md-4">
-                                            <label class="label" style="color: #333333;" data-bind="text: $root.language.supplierName[$root.currentLanguage()]"></label>
-                                            <label class="input">
-                                                <input type="text" name="supplierName" id="supplierName" class="TabOnEnter" data-bind="value: supplierName, valueUpdate: 'afterkeydown', event: { 'keyup': onSubmitSupplierName }, attr: { placeholder: $root.language.searchBy[$root.currentLanguage()]+' '+ $root.language.supplierName[$root.currentLanguage()] }" />
-                                            </label>
-                                        </section>
-
-                                        <section class="col col-md-4">
-                                            <label class="label" style="color: #333333;" data-bind="text: $root.language.primaryBrand[$root.currentLanguage()]"></label>
-                                            <label class="input">
-                                                <input type="text" name="primaryBrand" id="primaryBrand" class="TabOnEnter" data-bind="value: primaryBrand, valueUpdate: 'afterkeydown', event: { 'keyup': onSubmit }, attr: { placeholder: $root.language.searchBy[$root.currentLanguage()]+' '+ $root.language.primaryBrand[$root.currentLanguage()] }" />
-                                            </label>
-                                        </section>
-                                    </div>
-                                </fieldset>
                                 <button type="button" class="btn btn-default" id="loadMore" data-bind="click: loadMore, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }">
                                     <i class="fa fa-download"></i>
                                 </button>
@@ -162,9 +74,6 @@
                                             <th data-sort-property="subject" data-bind="text: language.name[currentLanguage()]"></th>
                                             <th data-sort-property="code" data-bind="text: language.referenceCode[currentLanguage()]"></th>
                                             <th data-sort-property="cost" data-bind="text: language.cost[currentLanguage()]"></th>
-                                            <th data-sort-property="price" data-bind="text: language.price[currentLanguage()]"></th>
-                                            <th data-sort-property="categoryName" data-bind="text: language.categoryName[currentLanguage()]"></th>
-                                            <th data-sort-property="supplierName" data-bind="text: language.supplierName[currentLanguage()]"></th>
                                         </tr>
                                     </thead>
                                     <tbody data-bind="foreach: koTable.pagedItems">
@@ -172,9 +81,6 @@
                                             <td><span data-bind="text: subject"></span></td>
                                             <td><span data-bind="text: code"></span></td>
                                             <td><span data-bind="text: cost"></span></td>
-                                            <td><span data-bind="text: price"></span></td>
-                                            <td><span data-bind="text: categoryName"></span></td>
-                                            <td><span data-bind="text: supplierName"></span></td>
                                         </tr>
                                     </tbody>
 
@@ -210,27 +116,6 @@
 
                                                     <div class="row">
                                                         <section class="col col-4">
-                                                            <label class="label" data-bind="text: $root.language.supplierName[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                            <label class="select">
-                                                                <select style="width:100%" id="supplierIdEdit" name="supplierIdEdit" data-bind="value: $root.supplierIdEdit,options: $root.suppliers, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }"></select>
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-4">
-                                                            <label class="label" data-bind="text: $root.language.primaryBrand[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                            <label class="select">
-                                                                <select style="width: 100%;" id="categoryIdEdit" name="categoryIdEdit" data-bind="value: $root.categoryIdEdit,valueAllowUnset :true,options: $root.categories, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }"></select>
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-4" data-bind="visible: $root.showChildEdit()">
-                                                            <label class="label" data-bind="text: $root.language.categoryChild[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                            <label class="select">
-                                                                <select style="width:100%" id="categoryIdItemIdEdit" name="categoryIdItemIdEdit" data-bind="value: $root.categoryChildIdEdit, valueAllowUnset :true,options: $root.categoriesChildsEdits, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }"></select>
-                                                            </label>
-                                                        </section>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <section class="col col-4">
                                                             <label class="label" data-bind="text:$root.language.cost[$root.currentLanguage()]"></label>
                                                             <label class="input">
                                                                 <input type="text" name="costEdit" id="costEdit" data-bind="value: cost, attr: { placeholder: $root.language.cost[$root.currentLanguage()] }" />
@@ -244,17 +129,10 @@
                                                         </section>
                                                     </div>
                                                 </fieldset>
-                                                <!--ko if: changeStatus()-->
-                                                <section class="col col-lg-12" style="margin-bottom: 39px;">
-                                                    <!-- ko compose: { model: 'viewmodels/penals/audit', view: 'views/penals/audit' } -->
-                                                    <!-- /ko -->
-                                                </section>
-                                                <!-- /ko -->
+
                                                 <footer>
-                                                    
                                                     <button type="button" class="btn btn-primary TabOnEnter pull-left" style="margin-left: 5px;" id="editRow" data-bind="click: editItem, visible: changeStatus(), text: language.edit[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
 
-                                                   
                                                 </footer>
                                             </form>
                                         </div>
@@ -275,27 +153,7 @@
                                                 <fieldset>
                                                     <h5 class="section-title">
                                                         <span class="section-title-text" data-bind="text: $root.language.addList[$root.currentLanguage()]"></span>
-                                                    </h5>
-                                                    <div class="row">
-                                                        <section class="col col-sm-4">
-                                                            <label class="label" data-bind="text: $root.language.supplierName[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                            <label class="select">
-                                                                <select style="width:100%" id="supplierIdMulti" name="supplierIdMulti" data-bind="value: supplierIdMulti, options: suppliers, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="5"></select>
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-sm-4">
-                                                            <label class="label" data-bind="text: $root.language.primaryBrand[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                            <label class="select">
-                                                                <select style="width:100%" id="categoryIdMulti" name="categoryIdMulti" data-bind="value: brandId, options: categories, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="6"></select>
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-sm-4" data-bind="visible: showCategory()">
-                                                            <label class="label" data-bind="text: $root.language.categoryChild[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }"></label>
-                                                            <label class="select">
-                                                                <select style="width:100%" id="categoryIdItemIdMulti" name="categoryIdItemIdMulti" data-bind="value: secondaryId, options: categoriesSecond, optionsText: 'name', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.pleaseSelect[$root.currentLanguage()], allowClear: true }" tabindex="7"></select>
-                                                            </label>
-                                                        </section>
-                                                    </div>
+                                                    </h5> 
                                                     <div class="row">
                                                         <section>
                                                             <a data-bind="attr: { href: '/DownLoads/Excel/items.xls', download: 'items.xls' }">

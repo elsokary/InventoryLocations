@@ -7,10 +7,7 @@
             <ul class="dropdown-menu" data-bind="css: language.pullRight[currentLanguage()], attr: { dir: language.dir[currentLanguage()]}, style: { 'language[dir][currentLanguage()]':'15px;'}" role="menu" aria-labelledby="exportDropdownMenu">
                 <li role="presentation">
                     <a role="menuitem" tabindex="-1" data-bind="click: exportToExcel" href="javascript:void(0);">Excel</a>
-                </li>
-                <li role="presentation">
-                    <a role="menuitem" tabindex="-1" data-bind="click: exportToWord" href="javascript:void(0);">Word</a>
-                </li>
+                </li> 
             </ul>
         </article>
     </div>
@@ -25,10 +22,8 @@
             <tr>
                 <th data-sort-property="fromBranchName" data-bind="text: language.toBranch[currentLanguage()]"></th>
                 <th data-sort-property="resourceCod" data-bind="text: language.resourceCode[currentLanguage()]"></th>
-                <th data-sort-property="quantity" data-bind="text: language.quantity[currentLanguage()]"></th>
-                <th data-sort-property="price" data-bind="text: language.price[currentLanguage()]"></th>
-                <th data-sort-property="cost" data-bind="text: language.cost[currentLanguage()]"></th>
-                <th data-sort-property="total" data-bind="text: language.total[currentLanguage()]"></th>
+                <th data-sort-property="quantity" data-bind="text: language.quantity[currentLanguage()]"></th> 
+                <th data-sort-property="cost" data-bind="text: language.cost[currentLanguage()]"></th> 
                 <th data-sort-property="reason" data-bind="text: language.Notes[currentLanguage()]"></th>
                 <th data-sort-property="creationDate" data-bind="text: language.transferDate[currentLanguage()]"></th>
             </tr>
@@ -37,10 +32,8 @@
             <tr>
                 <td><span data-bind="text: toBranchName"></span></td>
                 <td><span data-bind="text: resourceCod"></span></td>
-                <td><span data-bind="text: quantity"></span></td>
-                <td><span data-bind="text: price"></span></td>
-                <td><span data-bind="text: cost"></span></td>
-                <td><span data-bind="text: total"></span></td>
+                <td><span data-bind="text: quantity"></span></td> 
+                <td><span data-bind="text: cost"></span></td> 
                 <td><span data-bind="text: reason"></span></td>
                 <td><span data-bind="text: (creationDate() ? moment(creationDate()).format('DD/MM/YYYY'):'')"></span></td>
             </tr>

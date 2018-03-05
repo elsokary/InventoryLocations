@@ -228,7 +228,7 @@ namespace Inventory_Location.api.inventory
 
             return Ok(primeData);
         }
-         
+
         #region Branches
 
         [AuthorizeUser]
@@ -331,7 +331,7 @@ namespace Inventory_Location.api.inventory
             _Branches.Save();
 
             _Branches.Reload(DocumentNew);
-             
+
             return Ok(DocumentNew);
         }
 
@@ -364,7 +364,7 @@ namespace Inventory_Location.api.inventory
                 actionDate = DateTime.Now.Date,
                 action = "Edit"
             };
-             
+
             #endregion
 
             return Ok(dtoDocument);
@@ -403,7 +403,7 @@ namespace Inventory_Location.api.inventory
 
 
         #endregion
-            
+
         #region accounts
         [AuthorizeUser]
         [HttpPost]
@@ -672,9 +672,8 @@ namespace Inventory_Location.api.inventory
             return Ok();
         }
         #endregion
-         
-         
-         
+
+
         [AuthorizeUser]
         [HttpGet]
         [Route("GetNextArrangeBranch")]
@@ -683,7 +682,75 @@ namespace Inventory_Location.api.inventory
             var result = _Branches.getNextArrange();
             return Ok(result);
         }
-         
+
+        #region items
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("AddItemsdecription")]
+        public IHttpActionResult AddItemsdecription(DtoItemsdecription dtoDocument)
+        {
+
+
+            var DocumentNew = new itemsDecription
+            {
+                code = dtoDocument.code,
+                subject = dtoDocument.subject,
+                cost = dtoDocument.cost,
+            };
+
+            _Itemsdecription.Add(DocumentNew);
+
+            if (_Itemsdecription.checkCodeExist(dtoDocument.code, dtoDocument.id) == false)
+            {
+                try
+                {
+                    _Itemsdecription.Save();
+
+                    _Itemsdecription.Reload(DocumentNew);
+
+
+                }
+                catch (Exception e)
+                {
+                    dtoDocument.subject = e.InnerException.ToString();
+                }
+            }
+            return Ok(dtoDocument);
+        }
+
+
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("CheckItemCodeExist")]
+        public IHttpActionResult CheckItemCodeExist(string code, int id)
+        {
+            var result = _Itemsdecription.checkCodeExist(code, id);
+            return Ok(result);
+        }
+
+
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetItemsdecription")]
+        public IHttpActionResult GetItemsdecription()
+        {
+            var result = new List<DtoItemsdecription>();
+            result = _Itemsdecription.selectAll(_language);
+            return Ok(result);
+        }
+
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetItemsdecriptionPagination")]
+        public IHttpActionResult GetItemsdecriptionPagination(int pageNumber, int pageSize)
+        {
+            var
+            result = _Itemsdecription.getChunkDataByBranch(pageSize, pageNumber);
+            return Ok(result);
+        }
+
+        #endregion
 
     }
 }

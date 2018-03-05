@@ -11,7 +11,7 @@ using System.Data.Entity.Infrastructure.MappingViews;
 
 [assembly: DbMappingViewCacheTypeAttribute(
     typeof(InventoryContext.Context.favStoreEntities),
-    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets834f9a8943aac2cc77abc2c24e4c6f94a750e1e3849a9487cc0ffa6d43489bf4))]
+    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets779ea5e2d47c0f008cc05a02ec855a626eb7d55bc82b2c0aa8a94d33d9f2122a))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -23,14 +23,14 @@ namespace Edm_EntityMappingGeneratedViews
     /// Implements a mapping view cache.
     /// </summary>
     [GeneratedCode("Entity Framework Power Tools", "0.9.0.0")]
-    internal sealed class ViewsForBaseEntitySets834f9a8943aac2cc77abc2c24e4c6f94a750e1e3849a9487cc0ffa6d43489bf4 : DbMappingViewCache
+    internal sealed class ViewsForBaseEntitySets779ea5e2d47c0f008cc05a02ec855a626eb7d55bc82b2c0aa8a94d33d9f2122a : DbMappingViewCache
     {
         /// <summary>
         /// Gets a hash value computed over the mapping closure.
         /// </summary>
         public override string MappingHashValue
         {
-            get { return "834f9a8943aac2cc77abc2c24e4c6f94a750e1e3849a9487cc0ffa6d43489bf4"; }
+            get { return "779ea5e2d47c0f008cc05a02ec855a626eb7d55bc82b2c0aa8a94d33d9f2122a"; }
         }
 
         /// <summary>
@@ -684,7 +684,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing transactions
-        [favStoreModel.Store.transactions](T1.transactions_id, T1.transactions_branchId, T1.transactions_locationItemId, T1.transactions_resourceCode, T1.transactions_description, T1.transactions_cost, T1.transactions_quantity, T1.transactions_price, T1.transactions_discount, T1.transactions_finishDate, T1.transactions_total, T1.transactions_editById, T1.transactions_editDate, T1.transactions_comment, T1.transactions_deleted)
+        [favStoreModel.Store.transactions](T1.transactions_id, T1.transactions_branchId, T1.transactions_locationItemId, T1.transactions_resourceCode, T1.transactions_description, T1.transactions_cost, T1.transactions_quantity, T1.transactions_price, T1.transactions_discount, T1.transactions_finishDate, T1.transactions_total, T1.transactions_editById, T1.transactions_editDate, T1.transactions_comment, T1.transactions_deleted, T1.transactions_itemId)
     FROM (
         SELECT 
             T.id AS transactions_id, 
@@ -702,6 +702,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.editDate AS transactions_editDate, 
             T.comment AS transactions_comment, 
             T.deleted AS transactions_deleted, 
+            T.itemId AS transactions_itemId, 
             True AS _from0
         FROM favStoreEntities.transactions AS T
     ) AS T1");
@@ -715,7 +716,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing transactionsHistory
-        [favStoreModel.Store.transactionsHistory](T1.transactionsHistory_id, T1.transactionsHistory_transactionId, T1.transactionsHistory_currentBranchId, T1.transactionsHistory_locationItemId, T1.transactionsHistory_price, T1.transactionsHistory_quantity, T1.transactionsHistory_cost, T1.transactionsHistory_transactionTypeId, T1.transactionsHistory_fromBranchId, T1.transactionsHistory_toBranchId, T1.transactionsHistory_reason, T1.transactionsHistory_total, T1.transactionsHistory_creationDate, T1.transactionsHistory_serialNo)
+        [favStoreModel.Store.transactionsHistory](T1.transactionsHistory_id, T1.transactionsHistory_transactionId, T1.transactionsHistory_currentBranchId, T1.transactionsHistory_locationItemId, T1.transactionsHistory_price, T1.transactionsHistory_quantity, T1.transactionsHistory_cost, T1.transactionsHistory_transactionTypeId, T1.transactionsHistory_fromBranchId, T1.transactionsHistory_toBranchId, T1.transactionsHistory_reason, T1.transactionsHistory_total, T1.transactionsHistory_creationDate, T1.transactionsHistory_serialNo, T1.transactionsHistory_itemId)
     FROM (
         SELECT 
             T.id AS transactionsHistory_id, 
@@ -732,6 +733,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.total AS transactionsHistory_total, 
             T.creationDate AS transactionsHistory_creationDate, 
             T.serialNo AS transactionsHistory_serialNo, 
+            T.itemId AS transactionsHistory_itemId, 
             True AS _from0
         FROM favStoreEntities.transactionsHistories AS T
     ) AS T1");
@@ -1171,7 +1173,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing transactions
-        [favStoreModel.transaction](T1.transaction_id, T1.transaction_branchId, T1.transaction_locationItemId, T1.transaction_resourceCode, T1.transaction_description, T1.transaction_cost, T1.transaction_quantity, T1.transaction_price, T1.transaction_discount, T1.transaction_finishDate, T1.transaction_total, T1.transaction_editById, T1.transaction_editDate, T1.transaction_comment, T1.transaction_deleted)
+        [favStoreModel.transaction](T1.transaction_id, T1.transaction_branchId, T1.transaction_locationItemId, T1.transaction_resourceCode, T1.transaction_description, T1.transaction_cost, T1.transaction_quantity, T1.transaction_price, T1.transaction_discount, T1.transaction_finishDate, T1.transaction_total, T1.transaction_editById, T1.transaction_editDate, T1.transaction_comment, T1.transaction_deleted, T1.transaction_itemId)
     FROM (
         SELECT 
             T.id AS transaction_id, 
@@ -1189,6 +1191,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.editDate AS transaction_editDate, 
             T.comment AS transaction_comment, 
             T.deleted AS transaction_deleted, 
+            T.itemId AS transaction_itemId, 
             True AS _from0
         FROM favStoreModelStoreContainer.transactions AS T
     ) AS T1");
@@ -1202,7 +1205,7 @@ namespace Edm_EntityMappingGeneratedViews
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing transactionsHistories
-        [favStoreModel.transactionsHistory](T1.transactionsHistory_id, T1.transactionsHistory_transactionId, T1.transactionsHistory_currentBranchId, T1.transactionsHistory_locationItemId, T1.transactionsHistory_price, T1.transactionsHistory_quantity, T1.transactionsHistory_cost, T1.transactionsHistory_transactionTypeId, T1.transactionsHistory_fromBranchId, T1.transactionsHistory_toBranchId, T1.transactionsHistory_reason, T1.transactionsHistory_total, T1.transactionsHistory_creationDate, T1.transactionsHistory_serialNo)
+        [favStoreModel.transactionsHistory](T1.transactionsHistory_id, T1.transactionsHistory_transactionId, T1.transactionsHistory_currentBranchId, T1.transactionsHistory_locationItemId, T1.transactionsHistory_price, T1.transactionsHistory_quantity, T1.transactionsHistory_cost, T1.transactionsHistory_transactionTypeId, T1.transactionsHistory_fromBranchId, T1.transactionsHistory_toBranchId, T1.transactionsHistory_reason, T1.transactionsHistory_total, T1.transactionsHistory_creationDate, T1.transactionsHistory_serialNo, T1.transactionsHistory_itemId)
     FROM (
         SELECT 
             T.id AS transactionsHistory_id, 
@@ -1219,6 +1222,7 @@ namespace Edm_EntityMappingGeneratedViews
             T.total AS transactionsHistory_total, 
             T.creationDate AS transactionsHistory_creationDate, 
             T.serialNo AS transactionsHistory_serialNo, 
+            T.itemId AS transactionsHistory_itemId, 
             True AS _from0
         FROM favStoreModelStoreContainer.transactionsHistory AS T
     ) AS T1");

@@ -64,6 +64,8 @@
         <AssociationConnector Association="favStoreModel.FK_refund_iems_refunds" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_supplyOrders_items_invoices" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_transactionsHistory_transactionTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="favStoreModel.FK_transactions_itemsDecription" />
+        <AssociationConnector Association="favStoreModel.FK_transactionsHistory_itemsDecription1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

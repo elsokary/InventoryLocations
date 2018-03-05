@@ -1,7 +1,7 @@
 ﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
     <div class="row">
         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
-            <h1 class="page-title txt-color-blueDark" data-bind="text: language.inventory[currentLanguage()] + ' - ' + title"></h1>
+            <h1 class="page-title txt-color-blueDark" data-bind="text: title"></h1>
         </div>
     </div>
     <div class="row">
@@ -47,7 +47,7 @@
                                 <!-- ko if: resourceCode() -->
                                 <div id="barcodes" class="super-print" data-bind="foreach: { data: barcodes, afterAdd: drawBarcode }">
                                     <img data-bind="attr: { id: 'inventory-barcode-' + $index() }" class="inventory-barcode" />
-                                    <span class="cBarcodeDesc">  <!-- ko text: 'Item code 20178 ya beeh'--><!--/ko--></span>
+                                    <span class="cBarcodeDesc">  <!-- ko text: description--><!--/ko--></span>
                                 </div>
                                 <!-- /ko -->
                             </div>
@@ -70,8 +70,7 @@
             <div class="modal-body">
                 <fieldset>
                     <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 39px;">
-                        <!-- ko compose: { model: 'viewmodels/penals/searchItemByBranchId', view: 'views/penals/searchItemByBranchId' } -->
-                        <!-- /ko -->
+                        
                     </section>
                 </fieldset>
             </div>

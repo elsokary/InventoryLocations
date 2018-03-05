@@ -20,6 +20,8 @@ namespace InventoryContext.Context
             this.invoice_items = new HashSet<invoice_items>();
             this.refund_iems = new HashSet<refund_iems>();
             this.supplyOrders_items = new HashSet<supplyOrders_items>();
+            this.transactions = new HashSet<transaction>();
+            this.transactionsHistories = new HashSet<transactionsHistory>();
         }
     
         public int id { get; set; }
@@ -41,5 +43,7 @@ namespace InventoryContext.Context
         public virtual supplier supplier { get; set; }
         public virtual ICollection<refund_iems> refund_iems { get; set; }
         public virtual ICollection<supplyOrders_items> supplyOrders_items { get; set; }
+        public virtual ICollection<transaction> transactions { get; set; }
+        public virtual ICollection<transactionsHistory> transactionsHistories { get; set; }
     }
 }

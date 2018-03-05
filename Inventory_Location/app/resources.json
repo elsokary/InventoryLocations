@@ -3292,7 +3292,7 @@
     },
     "itemDescription": {
         "en": "Item Description",
-        "ar": " كارت الصنف"
+        "ar": " تعريف الاصناف"
     },
     "projectInventory": {
         "en": "Project Inventory Log",
@@ -3540,11 +3540,11 @@
     },
     "fromBranchName": {
         "en": "From Branch Name",
-        "ar": "من فرع "
+        "ar": "من مخزن "
     },
     "toBranch": {
         "en": "To Branch Name",
-        "ar": "الى فرع "
+        "ar": "الى مخزن "
     },
     "constraints": {
         "en": "Constraints",
@@ -5457,12 +5457,12 @@
         "ar": "تغيير الرقم السرى"
     },
     "branch": {
-        "en": "Branches",
-        "ar": "الفروع"
+        "en": "Branches Stores",
+        "ar": "مخازن الفروع"
     },
     "branchNameEn": {
         "en": "Branch Name ",
-        "ar": "إسم الفرع "
+        "ar": "إسم المخزن "
     },
     "branchNameAr": {
         "en": "Branch Name (AR)",
@@ -5470,11 +5470,11 @@
     },
     "branch": {
         "en": "Branches",
-        "ar": "الفروع"
+        "ar": "مخازن الفروع"
     },
     "branchNameEn": {
         "en": "Branch Name ",
-        "ar": "إسم الفرع "
+        "ar": "إسم المخزن "
     },
     "branchNameAr": {
         "en": "Branch Name (AR)",

@@ -18,12 +18,12 @@
         nav: true,
         settings: { security: true, basicFeatures: true, permission: 24 }
     }, {
-        route: 'items',
-        moduleId: 'Inventory/items',
-        title: 'تحويل الى فرع',
+        route: 'accountsDefaultList',
+        moduleId: 'admin/accountsDefaultList',
+        title: 'بيانات اساسية',
         nav: true,
-        settings: { Inventory: true, isInventory: true, permission: 32 }
-    }, {
+        settings: { security: true, basicFeatures: true, permission: 24 }
+    } , {
         route: 'PrintPdf',
         moduleId: 'export/PrintPdf',
         title: 'طباعه',
@@ -31,7 +31,7 @@
     }, {
         route: 'transferMain',
         moduleId: 'Inventory/transferMain',
-        title: 'تحويل الى فرع رئيسى',
+        title: 'تحويل من مخزن رئيسى',
         nav: true,
         settings: { Inventory: true, isInventory: true, permission: 32 }
     }, {
@@ -40,12 +40,7 @@
         title: 'طباعة باركود',
         nav: true,
         settings: { Inventory: true, basicFeatures: true }
-    }, {
-        route: 'itemAddEdit/:param1*detail',
-        moduleId: 'Inventory/itemAddEdit',
-        title: 'التحويلات',
-        nav: true
-    }, {
+    } , {
         route: 'transferToMainAddEdit/:param1*detail',
         moduleId: 'Inventory/transferToMainAddEdit',
         title: 'التحويلات',
@@ -53,7 +48,7 @@
     }, {
         route: 'branches',
         moduleId: 'admin/branches',
-        title: 'الفروع',
+        title: 'المخازن',
         nav: true,
         settings: { admin: true }
     }, {
@@ -102,14 +97,7 @@
         nav: true,
         settings: { reportsItems: true, permission: 994, order: 5 }
 
-    }, {
-        route: 'rptTransactionsbyUser',
-        moduleId: 'reports/rptTransactionsbyUser',
-        title: 'مبيعات الموضف ',
-        nav: true,
-        settings: { reportsSales: true, permission: 995, order: 1 }
-
-    }, {
+    } , {
         route: 'itemsTransBySupplier',
         moduleId: 'reports/itemsTransBySupplier',
         title: 'حركة اصناف مورد معين ',

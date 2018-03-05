@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
-            <h1 class="page-title txt-color-blueDark" data-bind="text: language.personal[currentLanguage()] + ' - ' + language.customers[currentLanguage()]"></h1>
+            <h1 class="page-title txt-color-blueDark" data-bind="text:  language.customers[currentLanguage()]"></h1>
         </div>
     </div>
 
@@ -126,12 +126,7 @@
                                                         </section>
                                                     </div>
                                                 </fieldset>
-                                                <fieldset data-bind="visible: changeStatus()">
-                                                    <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 39px;">
-                                                        <!-- ko compose: { model: 'viewmodels/penals/audit', view: 'views/penals/audit' } -->
-                                                        <!-- /ko -->
-                                                    </section>
-                                                </fieldset>
+                                               
                                             </form>
                                         </div>
                                         <div class="modal-footer" style="text-align:center;border:0;">

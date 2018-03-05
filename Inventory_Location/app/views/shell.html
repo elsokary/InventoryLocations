@@ -1,5 +1,5 @@
 ﻿
-<nav id="verticalMenu" class="navbar navbar-default navbar-fixed-top" style="z-index: 999; position: relative !important;" data-bind="style:{'background' : isDefaultThem() ? '#131313 !important':'rgb(28, 24, 24)'}">
+<nav   class="navbar navbar-default navbar-fixed-top" style="z-index: 999; position: relative !important; background-color: rgb(83, 74, 74)"  >
     <div class="container-fluid no-padding">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -44,7 +44,7 @@
     </div>
 </nav>
 
-<aside id="left-panel" class="hidden-print clearfix" data-bind="style: { 'background' : isDefaultThem()? 'ivory': 'rgb(193, 193, 193) !important'}">
+<aside id="left-panel" class="hidden-print clearfix" >
     <!-- User info -->
     <div class="login-info hidden">
         <span>
@@ -117,14 +117,7 @@
                     <!-- /ko -->
                     <!-- /ko -->
                 </ul>
-            </li> 
-        
-            <li>
-                <a href="#reportsMenu" data-bind="visible: viewreportPermissions()">
-                    <i class="fa fa-lg fa-fw fa-pie-chart"></i>
-                    <span class="menu-item-parent" data-bind="text: 'التقارير'"></span>
-                </a>
-            </li>
+            </li>  
         </ul>
     </nav>
     <span class="minifyme" data-action="minifyMenu">

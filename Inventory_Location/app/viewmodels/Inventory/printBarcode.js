@@ -5,6 +5,7 @@
     var numberOfBarcods = ko.observable(0).extend({
         required: true, min: 1, max: 20
     });
+
     numberOfBarcods.subscribe(function (value) {
         var barCodeCount = parseInt(value);
 
