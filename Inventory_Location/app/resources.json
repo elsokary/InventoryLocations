@@ -3294,6 +3294,14 @@
         "en": "Item Description",
         "ar": " تعريف الاصناف"
     },
+    "locationType": {
+        "en": "Location Type",
+        "ar": " نوع مكان التخزين"
+    },
+    "locationName": {
+        "en": "Location Name",
+        "ar": " الموقع"
+    },
     "projectInventory": {
         "en": "Project Inventory Log",
         "ar": "سجل مخزن المشروع"

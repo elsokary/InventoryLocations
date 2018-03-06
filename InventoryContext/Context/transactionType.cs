@@ -17,6 +17,8 @@ namespace InventoryContext.Context
         public transactionType()
         {
             this.transactionsHistories = new HashSet<transactionsHistory>();
+            this.location_items = new HashSet<location_items>();
+            this.transactions = new HashSet<transaction>();
         }
     
         public int id { get; set; }
@@ -25,5 +27,7 @@ namespace InventoryContext.Context
         public string notes { get; set; }
     
         public virtual ICollection<transactionsHistory> transactionsHistories { get; set; }
+        public virtual ICollection<location_items> location_items { get; set; }
+        public virtual ICollection<transaction> transactions { get; set; }
     }
 }

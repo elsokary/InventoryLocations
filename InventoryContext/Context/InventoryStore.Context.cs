@@ -44,8 +44,8 @@ namespace InventoryContext.Context
         public virtual DbSet<supplier> suppliers { get; set; }
         public virtual DbSet<supplyOrder> supplyOrders { get; set; }
         public virtual DbSet<supplyOrders_items> supplyOrders_items { get; set; }
-        public virtual DbSet<transaction> transactions { get; set; }
         public virtual DbSet<transactionsHistory> transactionsHistories { get; set; }
         public virtual DbSet<transactionType> transactionTypes { get; set; }
+        public virtual DbSet<transaction> transactions { get; set; }
     }
 }

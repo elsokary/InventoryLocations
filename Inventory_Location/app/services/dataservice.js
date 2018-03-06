@@ -161,12 +161,12 @@
     var updateDefaultBranchById = function (id) {
         return $.post(config.remoteServerName + "/UpdateDefaultBranchById?id=" + id);
     };
-     
+
     var getChunckCustomersData = function (pageSize, pageNumber) {
         return $.getJSON(config.remoteServerName + "/GetChunckCustomersData?pageSize=" + pageSize + "&pageNumber=" + pageNumber);
 
     };
-     
+
     var getCustomers = function () {
         return $.getJSON(config.remoteServerName + "/GetCustomers");
 
@@ -1165,9 +1165,13 @@
         return config.postJson(config.remoteServerName + "/AddInventoryStoreWithItem", documnetObservable);
     };
 
+    var getStockState = function () {
+        return $.getJSON(config.remoteServerName + "/GetStockState");
+    };
 
     ///////////////////////////////////
     var dataservice = {
+        getStockState: getStockState,
         getNextInventoryStoreArrange: getNextInventoryStoreArrange,
 
         getInventoryStoreItems: getInventoryStoreItems,

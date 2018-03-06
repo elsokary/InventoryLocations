@@ -24,7 +24,6 @@
         <EntityTypeShape EntityType="favStoreModel.supplier" Width="1.5" PointX="5.25" PointY="47" IsExpanded="true" />
         <EntityTypeShape EntityType="favStoreModel.supplyOrder" Width="1.5" PointX="11.25" PointY="22.25" IsExpanded="true" />
         <EntityTypeShape EntityType="favStoreModel.supplyOrders_items" Width="1.5" PointX="14.5" PointY="31.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="favStoreModel.transaction" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="favStoreModel.transactionsHistory" Width="1.5" PointX="6" PointY="22" IsExpanded="true" />
         <EntityTypeShape EntityType="favStoreModel.transactionType" Width="1.5" PointX="3.75" PointY="34.75" IsExpanded="true" />
         <AssociationConnector Association="favStoreModel.FK_account_branchId" ManuallyRouted="false" />
@@ -59,13 +58,18 @@
         <AssociationConnector Association="favStoreModel.FK_itemsDecription_suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_refund_iems_itemsDecription" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_supplyOrders_items_itemsDecription" ManuallyRouted="false" />
-        <AssociationConnector Association="favStoreModel.FK_transactions_location_items" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_transactionsHistory_itemsDecription" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_refund_iems_refunds" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_supplyOrders_items_invoices" ManuallyRouted="false" />
         <AssociationConnector Association="favStoreModel.FK_transactionsHistory_transactionTypes" ManuallyRouted="false" />
-        <AssociationConnector Association="favStoreModel.FK_transactions_itemsDecription" />
         <AssociationConnector Association="favStoreModel.FK_transactionsHistory_itemsDecription1" />
+        <AssociationConnector Association="favStoreModel.FK_location_items_locations" />
+        <AssociationConnector Association="favStoreModel.FK_location_items_transactionTypes" />
+        <EntityTypeShape EntityType="favStoreModel.transaction" Width="1.5" PointX="10.75" PointY="16.375" />
+        <AssociationConnector Association="favStoreModel.FK_transactions_itemsDecription" />
+        <AssociationConnector Association="favStoreModel.FK_transactions_location_items" />
+        <AssociationConnector Association="favStoreModel.FK_transactions_locations" />
+        <AssociationConnector Association="favStoreModel.FK_transactions_transactionTypes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

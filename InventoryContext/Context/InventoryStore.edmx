@@ -281,25 +281,26 @@
           <Key>
             <PropertyRef Name="id" />
             <PropertyRef Name="branchId" />
-            <PropertyRef Name="locationItemId" />
             <PropertyRef Name="itemId" />
+            <PropertyRef Name="palltaId" />
+            <PropertyRef Name="palltaType" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="branchId" Type="int" Nullable="false" />
           <Property Name="locationItemId" Type="int" Nullable="false" />
+          <Property Name="itemId" Type="int" Nullable="false" />
+          <Property Name="palltaId" Type="int" Nullable="false" />
+          <Property Name="palltaType" Type="int" Nullable="false" />
           <Property Name="resourceCode" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="nvarchar" MaxLength="150" />
           <Property Name="cost" Type="float" />
           <Property Name="quantity" Type="int" />
           <Property Name="price" Type="float" />
-          <Property Name="discount" Type="float" />
-          <Property Name="finishDate" Type="date" />
           <Property Name="total" Type="float" StoreGeneratedPattern="Computed" />
           <Property Name="editById" Type="int" />
           <Property Name="editDate" Type="date" />
           <Property Name="comment" Type="nvarchar" MaxLength="50" />
           <Property Name="deleted" Type="bit" />
-          <Property Name="itemId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="transactionsHistory">
           <Key>
@@ -602,6 +603,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_location-items_locations">
+          <End Role="locations" Type="Self.locations" Multiplicity="0..1" />
+          <End Role="location-items" Type="Self.location-items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="locations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="location-items">
+              <PropertyRef Name="palltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_location-items_transactionTypes">
+          <End Role="transactionTypes" Type="Self.transactionTypes" Multiplicity="0..1" />
+          <End Role="location-items" Type="Self.location-items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transactionTypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="location-items">
+              <PropertyRef Name="palltaType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_refund_iems_itemsDecription">
           <End Role="itemsDecription" Type="Self.itemsDecription" Multiplicity="0..1" />
           <End Role="refund_iems" Type="Self.refund_iems" Multiplicity="*" />
@@ -747,6 +772,30 @@
             </Principal>
             <Dependent Role="transactions">
               <PropertyRef Name="locationItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_locations">
+          <End Role="locations" Type="Self.locations" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="locations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="palltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_transactionTypes">
+          <End Role="transactionTypes" Type="Self.transactionTypes" Multiplicity="1" />
+          <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transactionTypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transactions">
+              <PropertyRef Name="palltaType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -921,6 +970,14 @@
             <End Role="suppliers" EntitySet="suppliers" />
             <End Role="itemsDecription" EntitySet="itemsDecription" />
           </AssociationSet>
+          <AssociationSet Name="FK_location-items_locations" Association="Self.FK_location-items_locations">
+            <End Role="locations" EntitySet="locations" />
+            <End Role="location-items" EntitySet="location-items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_location-items_transactionTypes" Association="Self.FK_location-items_transactionTypes">
+            <End Role="transactionTypes" EntitySet="transactionTypes" />
+            <End Role="location-items" EntitySet="location-items" />
+          </AssociationSet>
           <AssociationSet Name="FK_refund_iems_itemsDecription" Association="Self.FK_refund_iems_itemsDecription">
             <End Role="itemsDecription" EntitySet="itemsDecription" />
             <End Role="refund_iems" EntitySet="refund_iems" />
@@ -967,6 +1024,14 @@
           </AssociationSet>
           <AssociationSet Name="FK_transactions_location-items" Association="Self.FK_transactions_location-items">
             <End Role="location-items" EntitySet="location-items" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_locations" Association="Self.FK_transactions_locations">
+            <End Role="locations" EntitySet="locations" />
+            <End Role="transactions" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_transactionTypes" Association="Self.FK_transactions_transactionTypes">
+            <End Role="transactionTypes" EntitySet="transactionTypes" />
             <End Role="transactions" EntitySet="transactions" />
           </AssociationSet>
           <AssociationSet Name="FK_transactionsHistory_branches" Association="Self.FK_transactionsHistory_branches">
@@ -1222,8 +1287,8 @@
           <NavigationProperty Name="supplier" Relationship="Self.FK_itemsDecription_suppliers" FromRole="itemsDecription" ToRole="suppliers" />
           <NavigationProperty Name="refund_iems" Relationship="Self.FK_refund_iems_itemsDecription" FromRole="itemsDecription" ToRole="refund_iems" />
           <NavigationProperty Name="supplyOrders_items" Relationship="Self.FK_supplyOrders_items_itemsDecription" FromRole="itemsDecription" ToRole="supplyOrders_items" />
-          <NavigationProperty Name="transactions" Relationship="favStoreModel.FK_transactions_itemsDecription" FromRole="itemsDecription" ToRole="transaction" />
           <NavigationProperty Name="transactionsHistories" Relationship="favStoreModel.FK_transactionsHistory_itemsDecription1" FromRole="itemsDecription" ToRole="transactionsHistory" />
+          <NavigationProperty Name="transactions" Relationship="favStoreModel.FK_transactions_itemsDecription" FromRole="itemsDecription" ToRole="transaction" />
         </EntityType>
         <EntityType Name="location_items">
           <Key>
@@ -1234,8 +1299,10 @@
           <Property Name="palltaId" Type="Int32" />
           <Property Name="isActive" Type="Boolean" />
           <Property Name="palltaType" Type="Int32" />
-          <NavigationProperty Name="transactions" Relationship="Self.FK_transactions_location_items" FromRole="location_items" ToRole="transactions" />
           <NavigationProperty Name="transactionsHistories" Relationship="Self.FK_transactionsHistory_itemsDecription" FromRole="location_items" ToRole="transactionsHistory" />
+          <NavigationProperty Name="location" Relationship="favStoreModel.FK_location_items_locations" FromRole="location_items" ToRole="location" />
+          <NavigationProperty Name="transactionType" Relationship="favStoreModel.FK_location_items_transactionTypes" FromRole="location_items" ToRole="transactionType" />
+          <NavigationProperty Name="transactions" Relationship="favStoreModel.FK_transactions_location_items" FromRole="location_items" ToRole="transaction" />
         </EntityType>
         <EntityType Name="location">
           <Key>
@@ -1247,6 +1314,8 @@
           <Property Name="parentId" Type="Int32" />
           <Property Name="isPallta" Type="Boolean" />
           <Property Name="serial" Type="Int32" />
+          <NavigationProperty Name="location_items" Relationship="favStoreModel.FK_location_items_locations" FromRole="location" ToRole="location_items" />
+          <NavigationProperty Name="transactions" Relationship="favStoreModel.FK_transactions_locations" FromRole="location" ToRole="transaction" />
         </EntityType>
         <EntityType Name="refund_iems">
           <Key>
@@ -1336,32 +1405,6 @@
           <NavigationProperty Name="itemsDecription" Relationship="Self.FK_supplyOrders_items_itemsDecription" FromRole="supplyOrders_items" ToRole="itemsDecription" />
           <NavigationProperty Name="supplyOrder" Relationship="Self.FK_supplyOrders_items_invoices" FromRole="supplyOrders_items" ToRole="supplyOrders" />
         </EntityType>
-        <EntityType Name="transaction">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="branchId" />
-            <PropertyRef Name="locationItemId" />
-            <PropertyRef Name="itemId" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="branchId" Type="Int32" Nullable="false" />
-          <Property Name="locationItemId" Type="Int32" Nullable="false" />
-          <Property Name="resourceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="cost" Type="Double" />
-          <Property Name="quantity" Type="Int32" />
-          <Property Name="price" Type="Double" />
-          <Property Name="discount" Type="Double" />
-          <Property Name="finishDate" Type="DateTime" Precision="0" />
-          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="editById" Type="Int32" />
-          <Property Name="editDate" Type="DateTime" Precision="0" />
-          <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="deleted" Type="Boolean" />
-          <NavigationProperty Name="location_items" Relationship="Self.FK_transactions_location_items" FromRole="transactions" ToRole="location_items" />
-          <Property Name="itemId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="itemsDecription" Relationship="favStoreModel.FK_transactions_itemsDecription" FromRole="transaction" ToRole="itemsDecription" />
-        </EntityType>
         <EntityType Name="transactionsHistory">
           <Key>
             <PropertyRef Name="id" />
@@ -1400,6 +1443,8 @@
           <Property Name="action" Type="Int32" />
           <Property Name="notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="transactionsHistories" Relationship="Self.FK_transactionsHistory_transactionTypes" FromRole="transactionTypes" ToRole="transactionsHistory" />
+          <NavigationProperty Name="location_items" Relationship="favStoreModel.FK_location_items_transactionTypes" FromRole="transactionType" ToRole="location_items" />
+          <NavigationProperty Name="transactions" Relationship="favStoreModel.FK_transactions_transactionTypes" FromRole="transactionType" ToRole="transaction" />
         </EntityType>
         <Association Name="FK_account_branchId">
           <End Role="branches" Type="Self.branch" Multiplicity="0..1" />
@@ -1789,18 +1834,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_transactions_location_items">
-          <End Role="location_items" Type="Self.location_items" Multiplicity="1" />
-          <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="location_items">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="transactions">
-              <PropertyRef Name="locationItemId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_transactionsHistory_itemsDecription">
           <End Role="location_items" Type="Self.location_items" Multiplicity="1" />
           <End Role="transactionsHistory" Type="Self.transactionsHistory" Multiplicity="*" />
@@ -1873,7 +1906,6 @@
           <EntitySet Name="suppliers" EntityType="Self.supplier" />
           <EntitySet Name="supplyOrders" EntityType="Self.supplyOrder" />
           <EntitySet Name="supplyOrders_items" EntityType="Self.supplyOrders_items" />
-          <EntitySet Name="transactions" EntityType="Self.transaction" />
           <EntitySet Name="transactionsHistories" EntityType="Self.transactionsHistory" />
           <EntitySet Name="transactionTypes" EntityType="Self.transactionType" />
           <AssociationSet Name="FK_account_branchId" Association="Self.FK_account_branchId">
@@ -2004,10 +2036,6 @@
             <End Role="itemsDecription" EntitySet="itemsDecriptions" />
             <End Role="supplyOrders_items" EntitySet="supplyOrders_items" />
           </AssociationSet>
-          <AssociationSet Name="FK_transactions_location_items" Association="Self.FK_transactions_location_items">
-            <End Role="location_items" EntitySet="location_items" />
-            <End Role="transactions" EntitySet="transactions" />
-          </AssociationSet>
           <AssociationSet Name="FK_transactionsHistory_itemsDecription" Association="Self.FK_transactionsHistory_itemsDecription">
             <End Role="location_items" EntitySet="location_items" />
             <End Role="transactionsHistory" EntitySet="transactionsHistories" />
@@ -2024,27 +2052,36 @@
             <End Role="transactionTypes" EntitySet="transactionTypes" />
             <End Role="transactionsHistory" EntitySet="transactionsHistories" />
           </AssociationSet>
-          <AssociationSet Name="FK_transactions_itemsDecription" Association="favStoreModel.FK_transactions_itemsDecription">
-            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
-            <End Role="transaction" EntitySet="transactions" />
-          </AssociationSet>
           <AssociationSet Name="FK_transactionsHistory_itemsDecription1" Association="favStoreModel.FK_transactionsHistory_itemsDecription1">
             <End Role="itemsDecription" EntitySet="itemsDecriptions" />
             <End Role="transactionsHistory" EntitySet="transactionsHistories" />
           </AssociationSet>
-        </EntityContainer>
-        <Association Name="FK_transactions_itemsDecription">
-          <End Type="favStoreModel.itemsDecription" Role="itemsDecription" Multiplicity="1" />
-          <End Type="favStoreModel.transaction" Role="transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="itemsDecription">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="transaction">
-              <PropertyRef Name="itemId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+          <AssociationSet Name="FK_location_items_locations" Association="favStoreModel.FK_location_items_locations">
+            <End Role="location" EntitySet="locations" />
+            <End Role="location_items" EntitySet="location_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_location_items_transactionTypes" Association="favStoreModel.FK_location_items_transactionTypes">
+            <End Role="transactionType" EntitySet="transactionTypes" />
+            <End Role="location_items" EntitySet="location_items" />
+          </AssociationSet>
+          <EntitySet Name="transactions" EntityType="favStoreModel.transaction" />
+          <AssociationSet Name="FK_transactions_itemsDecription" Association="favStoreModel.FK_transactions_itemsDecription">
+            <End Role="itemsDecription" EntitySet="itemsDecriptions" />
+            <End Role="transaction" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_location_items" Association="favStoreModel.FK_transactions_location_items">
+            <End Role="location_items" EntitySet="location_items" />
+            <End Role="transaction" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_locations" Association="favStoreModel.FK_transactions_locations">
+            <End Role="location" EntitySet="locations" />
+            <End Role="transaction" EntitySet="transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_transactions_transactionTypes" Association="favStoreModel.FK_transactions_transactionTypes">
+            <End Role="transactionType" EntitySet="transactionTypes" />
+            <End Role="transaction" EntitySet="transactions" />
+          </AssociationSet>
+          </EntityContainer>
         <Association Name="FK_transactionsHistory_itemsDecription1">
           <End Type="favStoreModel.itemsDecription" Role="itemsDecription" Multiplicity="1" />
           <End Type="favStoreModel.transactionsHistory" Role="transactionsHistory" Multiplicity="*" />
@@ -2057,7 +2094,108 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_location_items_locations">
+          <End Type="favStoreModel.location" Role="location" Multiplicity="0..1" />
+          <End Type="favStoreModel.location_items" Role="location_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="location_items">
+              <PropertyRef Name="palltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_location_items_transactionTypes">
+          <End Type="favStoreModel.transactionType" Role="transactionType" Multiplicity="0..1" />
+          <End Type="favStoreModel.location_items" Role="location_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transactionType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="location_items">
+              <PropertyRef Name="palltaType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="transaction">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="branchId" />
+            <PropertyRef Name="itemId" />
+            <PropertyRef Name="palltaId" />
+            <PropertyRef Name="palltaType" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchId" Type="Int32" Nullable="false" />
+          <Property Name="locationItemId" Type="Int32" Nullable="false" />
+          <Property Name="itemId" Type="Int32" Nullable="false" />
+          <Property Name="palltaId" Type="Int32" Nullable="false" />
+          <Property Name="palltaType" Type="Int32" Nullable="false" />
+          <Property Name="resourceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="cost" Type="Double" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <Property Name="total" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="editById" Type="Int32" />
+          <Property Name="editDate" Type="DateTime" Precision="0" />
+          <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="itemsDecription" Relationship="favStoreModel.FK_transactions_itemsDecription" FromRole="transaction" ToRole="itemsDecription" />
+          <NavigationProperty Name="location_items" Relationship="favStoreModel.FK_transactions_location_items" FromRole="transaction" ToRole="location_items" />
+          <NavigationProperty Name="location" Relationship="favStoreModel.FK_transactions_locations" FromRole="transaction" ToRole="location" />
+          <NavigationProperty Name="transactionType" Relationship="favStoreModel.FK_transactions_transactionTypes" FromRole="transaction" ToRole="transactionType" />
+        </EntityType>
+        <Association Name="FK_transactions_itemsDecription">
+          <End Type="favStoreModel.itemsDecription" Role="itemsDecription" Multiplicity="1" />
+          <End Type="favStoreModel.transaction" Role="transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="itemsDecription">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transaction">
+              <PropertyRef Name="itemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_location_items">
+          <End Type="favStoreModel.location_items" Role="location_items" Multiplicity="1" />
+          <End Type="favStoreModel.transaction" Role="transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location_items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transaction">
+              <PropertyRef Name="locationItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_locations">
+          <End Type="favStoreModel.location" Role="location" Multiplicity="1" />
+          <End Type="favStoreModel.transaction" Role="transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="location">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transaction">
+              <PropertyRef Name="palltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_transactions_transactionTypes">
+          <End Type="favStoreModel.transactionType" Role="transactionType" Multiplicity="1" />
+          <End Type="favStoreModel.transaction" Role="transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transactionType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transaction">
+              <PropertyRef Name="palltaType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -2341,28 +2479,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="transactions">
-            <EntityTypeMapping TypeName="favStoreModel.transaction">
-              <MappingFragment StoreEntitySet="transactions">
-                <ScalarProperty Name="itemId" ColumnName="itemId" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="branchId" ColumnName="branchId" />
-                <ScalarProperty Name="locationItemId" ColumnName="locationItemId" />
-                <ScalarProperty Name="resourceCode" ColumnName="resourceCode" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="cost" ColumnName="cost" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="discount" ColumnName="discount" />
-                <ScalarProperty Name="finishDate" ColumnName="finishDate" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="editById" ColumnName="editById" />
-                <ScalarProperty Name="editDate" ColumnName="editDate" />
-                <ScalarProperty Name="comment" ColumnName="comment" />
-                <ScalarProperty Name="deleted" ColumnName="deleted" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="transactionsHistories">
             <EntityTypeMapping TypeName="favStoreModel.transactionsHistory">
               <MappingFragment StoreEntitySet="transactionsHistory">
@@ -2391,6 +2507,28 @@
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="action" ColumnName="action" />
                 <ScalarProperty Name="notes" ColumnName="notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transactions">
+            <EntityTypeMapping TypeName="favStoreModel.transaction">
+              <MappingFragment StoreEntitySet="transactions">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="editDate" ColumnName="editDate" />
+                <ScalarProperty Name="editById" ColumnName="editById" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="resourceCode" ColumnName="resourceCode" />
+                <ScalarProperty Name="palltaType" ColumnName="palltaType" />
+                <ScalarProperty Name="palltaId" ColumnName="palltaId" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="locationItemId" ColumnName="locationItemId" />
+                <ScalarProperty Name="branchId" ColumnName="branchId" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

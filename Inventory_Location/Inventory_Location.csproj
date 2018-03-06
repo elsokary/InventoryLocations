@@ -147,6 +147,7 @@
     <Content Include="app\viewmodels\admin\retailSetting.js" />
     <Content Include="app\viewmodels\admin\agents.js" />
     <Content Include="app\viewmodels\export\PrintPdf.js" />
+    <Content Include="app\viewmodels\Inventory\stockState.js" />
     <Content Include="app\viewmodels\Inventory\printBarcode.js" />
     <Content Include="app\viewmodels\Inventory\transferFromMain.js" />
     <Content Include="app\viewmodels\Inventory\transferMain.js" />
@@ -181,6 +182,7 @@
     <Content Include="app\views\admin\invenSetting.html" />
     <Content Include="app\views\admin\retailSetting.html" />
     <Content Include="app\views\export\PrintPdf.html" />
+    <Content Include="app\views\Inventory\stockState.html" />
     <Content Include="app\views\Inventory\printBarcode.html" />
     <Content Include="app\views\Inventory\transferFromMain.html" />
     <Content Include="app\views\Inventory\transferMain.html" />

@@ -11,7 +11,7 @@ using System.Data.Entity.Infrastructure.MappingViews;
 
 [assembly: DbMappingViewCacheTypeAttribute(
     typeof(InventoryContext.Context.favStoreEntities),
-    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets779ea5e2d47c0f008cc05a02ec855a626eb7d55bc82b2c0aa8a94d33d9f2122a))]
+    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySets4fc56d95ad242a96f4453c51150661758639fbb2d75d3b9b176f7532d8e1b498))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -23,14 +23,14 @@ namespace Edm_EntityMappingGeneratedViews
     /// Implements a mapping view cache.
     /// </summary>
     [GeneratedCode("Entity Framework Power Tools", "0.9.0.0")]
-    internal sealed class ViewsForBaseEntitySets779ea5e2d47c0f008cc05a02ec855a626eb7d55bc82b2c0aa8a94d33d9f2122a : DbMappingViewCache
+    internal sealed class ViewsForBaseEntitySets4fc56d95ad242a96f4453c51150661758639fbb2d75d3b9b176f7532d8e1b498 : DbMappingViewCache
     {
         /// <summary>
         /// Gets a hash value computed over the mapping closure.
         /// </summary>
         public override string MappingHashValue
         {
-            get { return "779ea5e2d47c0f008cc05a02ec855a626eb7d55bc82b2c0aa8a94d33d9f2122a"; }
+            get { return "4fc56d95ad242a96f4453c51150661758639fbb2d75d3b9b176f7532d8e1b498"; }
         }
 
         /// <summary>
@@ -102,32 +102,32 @@ namespace Edm_EntityMappingGeneratedViews
                 return GetView10();
             }
 
-            if (extentName == "favStoreModelStoreContainer.refund_iems")
+            if (extentName == "favStoreModelStoreContainer.locations")
             {
                 return GetView11();
             }
 
-            if (extentName == "favStoreModelStoreContainer.refunds")
+            if (extentName == "favStoreModelStoreContainer.refund_iems")
             {
                 return GetView12();
             }
 
-            if (extentName == "favStoreModelStoreContainer.suppliers")
+            if (extentName == "favStoreModelStoreContainer.refunds")
             {
                 return GetView13();
             }
 
-            if (extentName == "favStoreModelStoreContainer.supplyOrders")
+            if (extentName == "favStoreModelStoreContainer.suppliers")
             {
                 return GetView14();
             }
 
-            if (extentName == "favStoreModelStoreContainer.supplyOrders_items")
+            if (extentName == "favStoreModelStoreContainer.supplyOrders")
             {
                 return GetView15();
             }
 
-            if (extentName == "favStoreModelStoreContainer.transactions")
+            if (extentName == "favStoreModelStoreContainer.supplyOrders_items")
             {
                 return GetView16();
             }
@@ -142,127 +142,127 @@ namespace Edm_EntityMappingGeneratedViews
                 return GetView18();
             }
 
-            if (extentName == "favStoreEntities.accounts")
+            if (extentName == "favStoreModelStoreContainer.transactions")
             {
                 return GetView19();
             }
 
-            if (extentName == "favStoreEntities.branches")
+            if (extentName == "favStoreEntities.accounts")
             {
                 return GetView20();
             }
 
-            if (extentName == "favStoreEntities.cashiers")
+            if (extentName == "favStoreEntities.branches")
             {
                 return GetView21();
             }
 
-            if (extentName == "favStoreEntities.cashier_items")
+            if (extentName == "favStoreEntities.cashiers")
             {
                 return GetView22();
             }
 
-            if (extentName == "favStoreEntities.customers")
+            if (extentName == "favStoreEntities.cashier_items")
             {
                 return GetView23();
             }
 
-            if (extentName == "favStoreEntities.groupPermissions")
+            if (extentName == "favStoreEntities.customers")
             {
                 return GetView24();
             }
 
-            if (extentName == "favStoreEntities.Groups")
+            if (extentName == "favStoreEntities.groupPermissions")
             {
                 return GetView25();
             }
 
-            if (extentName == "favStoreEntities.invoice_items")
+            if (extentName == "favStoreEntities.Groups")
             {
                 return GetView26();
             }
 
-            if (extentName == "favStoreEntities.invoices")
+            if (extentName == "favStoreEntities.invoice_items")
             {
                 return GetView27();
             }
 
-            if (extentName == "favStoreEntities.itemsDecriptions")
+            if (extentName == "favStoreEntities.invoices")
             {
                 return GetView28();
             }
 
-            if (extentName == "favStoreEntities.location_items")
+            if (extentName == "favStoreEntities.itemsDecriptions")
             {
                 return GetView29();
             }
 
-            if (extentName == "favStoreEntities.refund_iems")
+            if (extentName == "favStoreEntities.location_items")
             {
                 return GetView30();
             }
 
-            if (extentName == "favStoreEntities.refunds")
+            if (extentName == "favStoreEntities.locations")
             {
                 return GetView31();
             }
 
-            if (extentName == "favStoreEntities.suppliers")
+            if (extentName == "favStoreEntities.refund_iems")
             {
                 return GetView32();
             }
 
-            if (extentName == "favStoreEntities.supplyOrders")
+            if (extentName == "favStoreEntities.refunds")
             {
                 return GetView33();
             }
 
-            if (extentName == "favStoreEntities.supplyOrders_items")
+            if (extentName == "favStoreEntities.suppliers")
             {
                 return GetView34();
             }
 
-            if (extentName == "favStoreEntities.transactions")
+            if (extentName == "favStoreEntities.supplyOrders")
             {
                 return GetView35();
             }
 
-            if (extentName == "favStoreEntities.transactionsHistories")
+            if (extentName == "favStoreEntities.supplyOrders_items")
             {
                 return GetView36();
             }
 
-            if (extentName == "favStoreEntities.transactionTypes")
+            if (extentName == "favStoreEntities.transactionsHistories")
             {
                 return GetView37();
             }
 
-            if (extentName == "favStoreModelStoreContainer.default_list")
+            if (extentName == "favStoreEntities.transactionTypes")
             {
                 return GetView38();
             }
 
-            if (extentName == "favStoreEntities.default_list")
+            if (extentName == "favStoreEntities.transactions")
             {
                 return GetView39();
             }
 
-            if (extentName == "favStoreModelStoreContainer.inven_Settings")
+            if (extentName == "favStoreModelStoreContainer.default_list")
             {
                 return GetView40();
             }
 
-            if (extentName == "favStoreEntities.inven_Settings")
+            if (extentName == "favStoreEntities.default_list")
             {
                 return GetView41();
             }
 
-            if (extentName == "favStoreModelStoreContainer.locations")
+            if (extentName == "favStoreModelStoreContainer.inven_Settings")
             {
                 return GetView42();
             }
 
-            if (extentName == "favStoreEntities.locations")
+            if (extentName == "favStoreEntities.inven_Settings")
             {
                 return GetView43();
             }
@@ -553,10 +553,32 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for favStoreModelStoreContainer.refund_iems.
+        /// Gets the view for favStoreModelStoreContainer.locations.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView11()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing locations
+        [favStoreModel.Store.locations](T1.locations_id, T1.locations_description, T1.locations_code, T1.locations_parentId, T1.locations_isPallta, T1.locations_serial)
+    FROM (
+        SELECT 
+            T.id AS locations_id, 
+            T.description AS locations_description, 
+            T.code AS locations_code, 
+            T.parentId AS locations_parentId, 
+            T.isPallta AS locations_isPallta, 
+            T.serial AS locations_serial, 
+            True AS _from0
+        FROM favStoreEntities.locations AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for favStoreModelStoreContainer.refund_iems.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView12()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing refund_iems
@@ -579,7 +601,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreModelStoreContainer.refunds.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView12()
+        private static DbMappingView GetView13()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing refunds
@@ -605,7 +627,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreModelStoreContainer.suppliers.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView13()
+        private static DbMappingView GetView14()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing suppliers
@@ -629,7 +651,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreModelStoreContainer.supplyOrders.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView14()
+        private static DbMappingView GetView15()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing supplyOrders
@@ -656,7 +678,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreModelStoreContainer.supplyOrders_items.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView15()
+        private static DbMappingView GetView16()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing supplyOrders_items
@@ -673,38 +695,6 @@ namespace Edm_EntityMappingGeneratedViews
             T.total AS [supplyOrders_items.total], 
             True AS _from0
         FROM favStoreEntities.supplyOrders_items AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for favStoreModelStoreContainer.transactions.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView16()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing transactions
-        [favStoreModel.Store.transactions](T1.transactions_id, T1.transactions_branchId, T1.transactions_locationItemId, T1.transactions_resourceCode, T1.transactions_description, T1.transactions_cost, T1.transactions_quantity, T1.transactions_price, T1.transactions_discount, T1.transactions_finishDate, T1.transactions_total, T1.transactions_editById, T1.transactions_editDate, T1.transactions_comment, T1.transactions_deleted, T1.transactions_itemId)
-    FROM (
-        SELECT 
-            T.id AS transactions_id, 
-            T.branchId AS transactions_branchId, 
-            T.locationItemId AS transactions_locationItemId, 
-            T.resourceCode AS transactions_resourceCode, 
-            T.description AS transactions_description, 
-            T.cost AS transactions_cost, 
-            T.quantity AS transactions_quantity, 
-            T.price AS transactions_price, 
-            T.discount AS transactions_discount, 
-            T.finishDate AS transactions_finishDate, 
-            T.total AS transactions_total, 
-            T.editById AS transactions_editById, 
-            T.editDate AS transactions_editDate, 
-            T.comment AS transactions_comment, 
-            T.deleted AS transactions_deleted, 
-            T.itemId AS transactions_itemId, 
-            True AS _from0
-        FROM favStoreEntities.transactions AS T
     ) AS T1");
         }
 
@@ -760,10 +750,42 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for favStoreEntities.accounts.
+        /// Gets the view for favStoreModelStoreContainer.transactions.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView19()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing transactions
+        [favStoreModel.Store.transactions](T1.transactions_id, T1.transactions_branchId, T1.transactions_locationItemId, T1.transactions_itemId, T1.transactions_palltaId, T1.transactions_palltaType, T1.transactions_resourceCode, T1.transactions_description, T1.transactions_cost, T1.transactions_quantity, T1.transactions_price, T1.transactions_total, T1.transactions_editById, T1.transactions_editDate, T1.transactions_comment, T1.transactions_deleted)
+    FROM (
+        SELECT 
+            T.id AS transactions_id, 
+            T.branchId AS transactions_branchId, 
+            T.locationItemId AS transactions_locationItemId, 
+            T.itemId AS transactions_itemId, 
+            T.palltaId AS transactions_palltaId, 
+            T.palltaType AS transactions_palltaType, 
+            T.resourceCode AS transactions_resourceCode, 
+            T.description AS transactions_description, 
+            T.cost AS transactions_cost, 
+            T.quantity AS transactions_quantity, 
+            T.price AS transactions_price, 
+            T.total AS transactions_total, 
+            T.editById AS transactions_editById, 
+            T.editDate AS transactions_editDate, 
+            T.comment AS transactions_comment, 
+            T.deleted AS transactions_deleted, 
+            True AS _from0
+        FROM favStoreEntities.transactions AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for favStoreEntities.accounts.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView20()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing accounts
@@ -794,7 +816,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.branches.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView20()
+        private static DbMappingView GetView21()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing branches
@@ -818,7 +840,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.cashiers.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView21()
+        private static DbMappingView GetView22()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing cashiers
@@ -846,7 +868,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.cashier_items.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView22()
+        private static DbMappingView GetView23()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing cashier_items
@@ -869,7 +891,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.customers.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView23()
+        private static DbMappingView GetView24()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing customers
@@ -895,7 +917,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.groupPermissions.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView24()
+        private static DbMappingView GetView25()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing groupPermissions
@@ -915,7 +937,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.Groups.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView25()
+        private static DbMappingView GetView26()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing Groups
@@ -934,7 +956,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.invoice_items.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView26()
+        private static DbMappingView GetView27()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing invoice_items
@@ -962,7 +984,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.invoices.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView27()
+        private static DbMappingView GetView28()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing invoices
@@ -997,7 +1019,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.itemsDecriptions.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView28()
+        private static DbMappingView GetView29()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing itemsDecriptions
@@ -1024,7 +1046,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.location_items.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView29()
+        private static DbMappingView GetView30()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing location_items
@@ -1042,10 +1064,32 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
+        /// Gets the view for favStoreEntities.locations.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView31()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing locations
+        [favStoreModel.location](T1.location_id, T1.location_description, T1.location_code, T1.location_parentId, T1.location_isPallta, T1.location_serial)
+    FROM (
+        SELECT 
+            T.id AS location_id, 
+            T.description AS location_description, 
+            T.code AS location_code, 
+            T.parentId AS location_parentId, 
+            T.isPallta AS location_isPallta, 
+            T.serial AS location_serial, 
+            True AS _from0
+        FROM favStoreModelStoreContainer.locations AS T
+    ) AS T1");
+        }
+
+        /// <summary>
         /// Gets the view for favStoreEntities.refund_iems.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView30()
+        private static DbMappingView GetView32()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing refund_iems
@@ -1068,7 +1112,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.refunds.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView31()
+        private static DbMappingView GetView33()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing refunds
@@ -1094,7 +1138,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.suppliers.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView32()
+        private static DbMappingView GetView34()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing suppliers
@@ -1118,7 +1162,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.supplyOrders.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView33()
+        private static DbMappingView GetView35()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing supplyOrders
@@ -1145,7 +1189,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.supplyOrders_items.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView34()
+        private static DbMappingView GetView36()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing supplyOrders_items
@@ -1166,42 +1210,10 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for favStoreEntities.transactions.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView35()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing transactions
-        [favStoreModel.transaction](T1.transaction_id, T1.transaction_branchId, T1.transaction_locationItemId, T1.transaction_resourceCode, T1.transaction_description, T1.transaction_cost, T1.transaction_quantity, T1.transaction_price, T1.transaction_discount, T1.transaction_finishDate, T1.transaction_total, T1.transaction_editById, T1.transaction_editDate, T1.transaction_comment, T1.transaction_deleted, T1.transaction_itemId)
-    FROM (
-        SELECT 
-            T.id AS transaction_id, 
-            T.branchId AS transaction_branchId, 
-            T.locationItemId AS transaction_locationItemId, 
-            T.resourceCode AS transaction_resourceCode, 
-            T.description AS transaction_description, 
-            T.cost AS transaction_cost, 
-            T.quantity AS transaction_quantity, 
-            T.price AS transaction_price, 
-            T.discount AS transaction_discount, 
-            T.finishDate AS transaction_finishDate, 
-            T.total AS transaction_total, 
-            T.editById AS transaction_editById, 
-            T.editDate AS transaction_editDate, 
-            T.comment AS transaction_comment, 
-            T.deleted AS transaction_deleted, 
-            T.itemId AS transaction_itemId, 
-            True AS _from0
-        FROM favStoreModelStoreContainer.transactions AS T
-    ) AS T1");
-        }
-
-        /// <summary>
         /// Gets the view for favStoreEntities.transactionsHistories.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView36()
+        private static DbMappingView GetView37()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing transactionsHistories
@@ -1232,7 +1244,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.transactionTypes.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView37()
+        private static DbMappingView GetView38()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing transactionTypes
@@ -1249,10 +1261,42 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
+        /// Gets the view for favStoreEntities.transactions.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView39()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing transactions
+        [favStoreModel.transaction](T1.transaction_id, T1.transaction_branchId, T1.transaction_locationItemId, T1.transaction_itemId, T1.transaction_palltaId, T1.transaction_palltaType, T1.transaction_resourceCode, T1.transaction_description, T1.transaction_cost, T1.transaction_quantity, T1.transaction_price, T1.transaction_total, T1.transaction_editById, T1.transaction_editDate, T1.transaction_comment, T1.transaction_deleted)
+    FROM (
+        SELECT 
+            T.id AS transaction_id, 
+            T.branchId AS transaction_branchId, 
+            T.locationItemId AS transaction_locationItemId, 
+            T.itemId AS transaction_itemId, 
+            T.palltaId AS transaction_palltaId, 
+            T.palltaType AS transaction_palltaType, 
+            T.resourceCode AS transaction_resourceCode, 
+            T.description AS transaction_description, 
+            T.cost AS transaction_cost, 
+            T.quantity AS transaction_quantity, 
+            T.price AS transaction_price, 
+            T.total AS transaction_total, 
+            T.editById AS transaction_editById, 
+            T.editDate AS transaction_editDate, 
+            T.comment AS transaction_comment, 
+            T.deleted AS transaction_deleted, 
+            True AS _from0
+        FROM favStoreModelStoreContainer.transactions AS T
+    ) AS T1");
+        }
+
+        /// <summary>
         /// Gets the view for favStoreModelStoreContainer.default_list.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView38()
+        private static DbMappingView GetView40()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing default_list
@@ -1272,7 +1316,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.default_list.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView39()
+        private static DbMappingView GetView41()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing default_list
@@ -1292,7 +1336,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreModelStoreContainer.inven_Settings.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView40()
+        private static DbMappingView GetView42()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing inven_Settings
@@ -1312,7 +1356,7 @@ namespace Edm_EntityMappingGeneratedViews
         /// Gets the view for favStoreEntities.inven_Settings.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView41()
+        private static DbMappingView GetView43()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing inven_Settings
@@ -1325,50 +1369,6 @@ namespace Edm_EntityMappingGeneratedViews
             T.lastCheckDate AS [inven_Settings.lastCheckDate], 
             True AS _from0
         FROM favStoreModelStoreContainer.inven_Settings AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for favStoreModelStoreContainer.locations.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView42()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing locations
-        [favStoreModel.Store.locations](T1.locations_id, T1.locations_description, T1.locations_code, T1.locations_parentId, T1.locations_isPallta, T1.locations_serial)
-    FROM (
-        SELECT 
-            T.id AS locations_id, 
-            T.description AS locations_description, 
-            T.code AS locations_code, 
-            T.parentId AS locations_parentId, 
-            T.isPallta AS locations_isPallta, 
-            T.serial AS locations_serial, 
-            True AS _from0
-        FROM favStoreEntities.locations AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for favStoreEntities.locations.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView43()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing locations
-        [favStoreModel.location](T1.location_id, T1.location_description, T1.location_code, T1.location_parentId, T1.location_isPallta, T1.location_serial)
-    FROM (
-        SELECT 
-            T.id AS location_id, 
-            T.description AS location_description, 
-            T.code AS location_code, 
-            T.parentId AS location_parentId, 
-            T.isPallta AS location_isPallta, 
-            T.serial AS location_serial, 
-            True AS _from0
-        FROM favStoreModelStoreContainer.locations AS T
     ) AS T1");
         }
     }

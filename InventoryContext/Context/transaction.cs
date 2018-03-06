@@ -17,21 +17,23 @@ namespace InventoryContext.Context
         public int id { get; set; }
         public int branchId { get; set; }
         public int locationItemId { get; set; }
+        public int itemId { get; set; }
+        public int palltaId { get; set; }
+        public int palltaType { get; set; }
         public string resourceCode { get; set; }
         public string description { get; set; }
         public Nullable<double> cost { get; set; }
         public Nullable<int> quantity { get; set; }
         public Nullable<double> price { get; set; }
-        public Nullable<double> discount { get; set; }
-        public Nullable<System.DateTime> finishDate { get; set; }
         public Nullable<double> total { get; set; }
         public Nullable<int> editById { get; set; }
         public Nullable<System.DateTime> editDate { get; set; }
         public string comment { get; set; }
         public Nullable<bool> deleted { get; set; }
-        public int itemId { get; set; }
     
-        public virtual location_items location_items { get; set; }
         public virtual itemsDecription itemsDecription { get; set; }
+        public virtual location_items location_items { get; set; }
+        public virtual location location { get; set; }
+        public virtual transactionType transactionType { get; set; }
     }
 }

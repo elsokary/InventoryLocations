@@ -13,6 +13,7 @@ namespace Interface.IDataService
     public interface IInventoryRepository : IGenericRepository<transaction>
     {
         int GetNextArrange();
+        List<DtoInventory> GetStockState();
         
     }
 }

@@ -40,6 +40,12 @@
         title: 'طباعة باركود',
         nav: true,
         settings: { Inventory: true, basicFeatures: true }
+    }, {
+        route: 'stockState',
+        moduleId: 'Inventory/stockState',
+        title: 'اصناف المخزن',
+        nav: true,
+        settings: { Inventory: true, basicFeatures: true }
     } , {
         route: 'transferToMainAddEdit/:param1*detail',
         moduleId: 'Inventory/transferToMainAddEdit',

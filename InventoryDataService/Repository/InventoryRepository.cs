@@ -18,7 +18,7 @@ namespace DataServices.Repository
         {
             var serial = 0;
             var list = (from q in Context.transactionsHistories.AsNoTracking()
-                        
+
                         select q.serialNo ?? 0).ToList();
 
             if (list.Count > 0)
@@ -28,8 +28,22 @@ namespace DataServices.Repository
 
             return serial + 1;
         }
-       
-        
+
+
+        public List<DtoInventory> GetStockState()
+        {
+            var result = (from q in Context.transactions.AsNoTracking()
+                          select new DtoInventory
+                          {
+                              description = q.description,
+                              resourceCode = q.resourceCode,
+                              quantity = q.quantity,
+                              locationName = q.location.description,
+                              locationType = q.transactionType.title
+                          }).ToList();
+            return result;
+        }
+
     }
 }
 

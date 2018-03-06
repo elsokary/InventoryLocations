@@ -14,11 +14,20 @@ namespace InventoryContext.Context
     
     public partial class location
     {
+        public location()
+        {
+            this.location_items = new HashSet<location_items>();
+            this.transactions = new HashSet<transaction>();
+        }
+    
         public int id { get; set; }
         public string description { get; set; }
         public string code { get; set; }
         public Nullable<int> parentId { get; set; }
         public Nullable<bool> isPallta { get; set; }
         public Nullable<int> serial { get; set; }
+    
+        public virtual ICollection<location_items> location_items { get; set; }
+        public virtual ICollection<transaction> transactions { get; set; }
     }
 }

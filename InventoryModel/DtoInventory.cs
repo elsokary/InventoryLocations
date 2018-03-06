@@ -20,24 +20,24 @@ namespace InventoryModel
             get;
             set;
         }
-
-        public string itemName
+         
+        public string locationName
         {
             get;
             set;
         }
 
+        public string locationType
+        {
+            get;
+            set;
+        }
         public string resourceCode
         {
             get;
             set;
         }
-
-        public string department
-        {
-            get;
-            set;
-        }
+         
 
         public string description
         {
@@ -49,13 +49,7 @@ namespace InventoryModel
         {
             get;
             set;
-        }
-        public double? price
-        {
-            get;
-            set;
-        }
-
+        } 
         public double? lastCost
         {
             get;
@@ -94,17 +88,7 @@ namespace InventoryModel
         {
             get;
             set;
-        }
-        public string supplierName
-        {
-            get;
-            set;
-        }
-        public string categoryName
-        {
-            get;
-            set;
-        }
+        } 
 
         public double? total
         {
@@ -112,16 +96,7 @@ namespace InventoryModel
             set;
         }
 
-        public int? supplierId
-        {
-            get;
-            set;
-        }
-        public int? categoryId
-        {
-            get;
-            set;
-        }
+       
 
         public int? actualQuantity
         {

@@ -16,8 +16,8 @@ namespace InventoryContext.Context
     {
         public location_items()
         {
-            this.transactions = new HashSet<transaction>();
             this.transactionsHistories = new HashSet<transactionsHistory>();
+            this.transactions = new HashSet<transaction>();
         }
     
         public int id { get; set; }
@@ -26,7 +26,9 @@ namespace InventoryContext.Context
         public Nullable<bool> isActive { get; set; }
         public Nullable<int> palltaType { get; set; }
     
-        public virtual ICollection<transaction> transactions { get; set; }
         public virtual ICollection<transactionsHistory> transactionsHistories { get; set; }
+        public virtual location location { get; set; }
+        public virtual transactionType transactionType { get; set; }
+        public virtual ICollection<transaction> transactions { get; set; }
     }
 }

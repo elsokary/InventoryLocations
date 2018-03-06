@@ -756,6 +756,17 @@ namespace Inventory_Location.api.inventory
 
         [AuthorizeUser]
         [HttpGet]
+        [Route("GetStockState")]
+        public IHttpActionResult GetStockState()
+        {
+            var result = _inventory.GetStockState();
+
+            return Ok(result);
+        }
+
+
+        [AuthorizeUser]
+        [HttpGet]
         [Route("GetTransferItemsFromMain")]
         public IHttpActionResult GetTransferItemsFromMain(int pageNumber, int pageSize)
         {
@@ -803,7 +814,6 @@ namespace Inventory_Location.api.inventory
                     cost = item.cost,
                     branchId = (int)item.toBranchId,
                     description = item.description,
-                    discount = 0,
                     price = item.price
                 };
 
