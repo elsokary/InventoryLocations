@@ -1168,7 +1168,46 @@
     var getStockState = function () {
         return $.getJSON(config.remoteServerName + "/GetStockState");
     };
+  
+    var getLocations = function () {
+        return $.getJSON(config.remoteServerName + "/GetLocations");
+    }; 
+    var getPallta = function () {
+        return $.getJSON(config.remoteServerName + "/GetPallta");
+    }; 
+    var getNextArrangePallta = function () {
+        return $.getJSON(config.remoteServerName + "/GetNextArrangePallta");
+    };   
+    var getNextArrangeLocation = function () {
+        return $.getJSON(config.remoteServerName + "/GetNextArrangeLocation");
+    };
+    var getLocationsById = function (documnetObservable, id) {
+        return $.getJSON(config.remoteServerName + "/GetLocationsById?id=" + id).done(function (data) {
+            documnetObservable(data);
+        });
+    };
+    var deleteLocationsById = function (id) {
+        return $.getJSON(config.remoteServerName + "/DeleteLocationsById?id=" + id);
+    };
 
+    var editLocations = function (documnetObservable) {
+        return $.post(config.remoteServerName + "/EditLocations", documnetObservable);
+    };
+
+    var addLocations = function (documnetObservable) {
+        return $.post(config.remoteServerName + "/AddLocations", documnetObservable);
+    };
+    var deletePalltaById = function (id) {
+        return $.getJSON(config.remoteServerName + "/DeletePalltaById?id=" + id);
+    };
+
+    var editPallta = function (documnetObservable) {
+        return $.post(config.remoteServerName + "/EditPallta", documnetObservable);
+    };
+
+    var addPallta = function (documnetObservable) {
+        return $.post(config.remoteServerName + "/AddPallta", documnetObservable);
+    };
     ///////////////////////////////////
     var dataservice = {
         getStockState: getStockState,
@@ -1448,7 +1487,19 @@
         getItemsForListByPrice: getItemsForListByPrice,
         getItemByResourceCodeSupplierId: getItemByResourceCodeSupplierId,
         getItemsForSearch: getItemsForSearch,
-        ExportReport: ExportReport
+        ExportReport: ExportReport,
+
+        getLocations:getLocations,
+        addLocations:addLocations,
+        editLocations:editLocations,
+        deleteLocationsById:deleteLocationsById,
+        getLocationsById: getLocationsById,
+        getNextArrangePallta:getNextArrangePallta,
+        getNextArrangeLocation:getNextArrangeLocation,
+        getPallta:getPallta,
+        addPallta:addPallta,
+        editPallta:editPallta,
+        deletePalltaById: deletePalltaById
     };
 
     return dataservice;

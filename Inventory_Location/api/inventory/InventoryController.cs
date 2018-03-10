@@ -41,6 +41,7 @@ namespace Inventory_Location.api.inventory
         private readonly IGroupsRepository _Groups;
         private readonly IItemsdecriptionRepository _Itemsdecription;
         private readonly ISuppliersRepository _Suppliers;
+        private readonly ILocationsRepository _Locations;
 
         private readonly ICashierRepository _Cashier;
         private readonly IDefaultListRepository _defaultList;
@@ -74,6 +75,7 @@ namespace Inventory_Location.api.inventory
                                     IInventorylogRepository inventoryHistory,
                                     IAccountsRepository Accounts,
                                     IBranchesRepository Branches,
+                                    ILocationsRepository Locations,
                                     ICustomersRepository Customers,
                                     IGrouppermissionsRepository Grouppermissions, IGroupsRepository Groups,
                                     IItemsdecriptionRepository Itemsdecription, ISuppliersRepository Suppliers
@@ -103,6 +105,7 @@ namespace Inventory_Location.api.inventory
             _Branches = Branches;
             _Accounts = Accounts;
             _Grouppermissions = Grouppermissions;
+            _Locations = Locations;
 
             var langHeader = HttpContext.Current.Request.Headers.GetValues("Lang");
 
@@ -401,6 +404,182 @@ namespace Inventory_Location.api.inventory
             return Ok(result);
         }
 
+
+        #endregion
+
+        #region Locations
+
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetLocations")]
+        public IHttpActionResult GetLocations()
+        {
+            var result = new List<DtoLocations>();
+            result = _Locations.selectAll(_language).ToList();
+            return Ok(result);
+        }
+       
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetLocationsById")]
+        public IHttpActionResult GetLocationsById(int id)
+        {
+            var result = _Locations.selectById(id, _language);
+            return Ok(result);
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("DeleteLocationsById")]
+        public IHttpActionResult DeleteLocationsById(int id)
+        {
+            var pallta = _Locations.FindBy(x => x.parentId == id).SingleOrDefault();
+            var location = _Locations.FindBy(x => x.id == id).SingleOrDefault();
+
+            if (pallta != null)
+            {
+                _Locations.Delete(pallta);
+                _Locations.Delete(location);
+                _Locations.Save();
+
+            }
+            else
+            {
+                _Locations.Delete(location);
+                _Locations.Save();
+
+            } 
+            return Ok();
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("AddLocations")]
+        public IHttpActionResult AddLocations(DtoLocations dtoDocument)
+        {
+            var DocumentNew = new location
+            {
+                code = dtoDocument.code,
+                description = dtoDocument.description,
+                serial = dtoDocument.serial,
+                isPallta = false, 
+            };
+
+            _Locations.Add(DocumentNew);
+            _Locations.Save();
+            _Locations.Reload(DocumentNew);
+
+            return Ok(DocumentNew);
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("EditLocations")]
+        public IHttpActionResult EditLocations(DtoLocations dtoDocument)
+        {
+            var locationEntity = _Locations.FindBy(x => x.id == dtoDocument.id).SingleOrDefault();
+            if (locationEntity != null)
+            {
+                locationEntity.code = dtoDocument.code;
+                locationEntity.description = dtoDocument.description;
+                locationEntity.serial = dtoDocument.serial;
+                locationEntity.isPallta = dtoDocument.isPallta;
+                locationEntity.parentId = dtoDocument.parentId;
+
+            }
+
+            _Locations.Edit(locationEntity);
+            _Locations.Save();
+
+            return Ok(dtoDocument);
+        }
+
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetNextArrangeLocation")]
+        public IHttpActionResult GetNextArrangeLocation()
+        {
+            var result = _Locations.getNextArrange();
+            return Ok(result);
+        }
+
+        #endregion
+
+        #region pallta
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetPallta")]
+        public IHttpActionResult GetPallta()
+        {
+            var result = new List<DtoLocations>();
+            result = _Locations.selectAllPallta(_language).ToList();
+            return Ok(result);
+        }
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("DeletePalltaById")]
+        public IHttpActionResult DeletePalltaById(int id)
+        {
+            var result = _Locations.FindBy(x => x.id == id).SingleOrDefault();
+            if (result != null)
+            {
+                _Locations.Delete(result);
+                _Locations.Save();
+
+            }
+            return Ok();
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("AddPallta")]
+        public IHttpActionResult AddLocations(DtoLocations dtoDocument)
+        {
+            var DocumentNew = new location
+            {
+                code = dtoDocument.code,
+                description = dtoDocument.description,
+                serial = dtoDocument.serial,
+                isPallta = true,
+                parentId = dtoDocument.parentId
+            };
+
+            _Locations.Add(DocumentNew);
+            _Locations.Save();
+            _Locations.Reload(DocumentNew);
+
+            return Ok(DocumentNew);
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("EditPallta")]
+        public IHttpActionResult EditLocations(DtoLocations dtoDocument)
+        {
+            var locationEntity = _Locations.FindBy(x => x.id == dtoDocument.id).SingleOrDefault();
+            if (locationEntity != null)
+            {
+                locationEntity.code = dtoDocument.code;
+                locationEntity.description = dtoDocument.description;
+                locationEntity.serial = dtoDocument.serial;
+                locationEntity.isPallta = dtoDocument.isPallta;
+                locationEntity.parentId = dtoDocument.parentId; 
+            }
+
+            _Locations.Edit(locationEntity);
+            _Locations.Save();
+
+            return Ok(dtoDocument);
+        }
+
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetNextArrangePallta")]
+        public IHttpActionResult GetNextArrangePallta()
+        {
+            var result = _Locations.getNextArrangePallta();
+            return Ok(result);
+        }
 
         #endregion
 

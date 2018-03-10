@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDataService\DtoInvoiceItemsReport.cs" />
+    <Compile Include="IDataService\ILocationsRepository.cs" />
     <Compile Include="IDataService\ISupplyOrderItemsRepository.cs" />
     <Compile Include="IDataService\ISupplyOrderRepository.cs" />
     <Compile Include="IDataService\IDefaultListRepository.cs" />

@@ -1304,76 +1304,157 @@
           ]
         },
         {
+            "title": {
+                "en": "Payments",
+                "ar": "المدفوعات"
+            },
+            "id": 12,
+            "permissions": [
+                {
+                    "code": 114,
+                    "title": {
+                        "en": "Add",
+                        "ar": " اضافة مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 115,
+                    "title": {
+                        "en": "Edit",
+                        "ar": "تعديل مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 116,
+                    "title": {
+                        "en": "Delete",
+                        "ar": "مسح مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 117,
+                    "title": {
+                        "en": "View All",
+                        "ar": " عرض البيانات مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 118,
+                    "title": {
+                        "en": "Add",
+                        "ar": " اضافة مدفوعات الموردين"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 119,
+                    "title": {
+                        "en": "Edit",
+                        "ar": "تعديل مدفوعات الموردين"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 120,
+                    "title": {
+                        "en": "Delete",
+                        "ar": "مسح مدفوعات الموردين"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 121,
+                    "title": {
+                        "en": "View All",
+                        "ar": " عرض البيانات مدفوعات الموردين"
+                    },
+                    "value": false
+                }
+            ]
+        },
+        {
           "title": {
-            "en": "Payments",
-            "ar": "المدفوعات"
+            "en": "locations",
+            "ar": "المواقع"
           },
-          "id": 12,
+          "id": 13,
           "permissions": [
             {
-              "code": 114,
+              "code": 122,
               "title": {
                 "en": "Add",
-                "ar": " اضافة مدفوعات العملاء"
+                "ar": " اضافة موقع"
               },
               "value": false
             },
             {
-              "code": 115,
+              "code": 123,
               "title": {
                 "en": "Edit",
-                "ar": "تعديل مدفوعات العملاء"
+                "ar": "تعديل موقع"
               },
               "value": false
             },
             {
-              "code": 116,
+              "code": 124,
               "title": {
                 "en": "Delete",
-                "ar": "مسح مدفوعات العملاء"
+                "ar": "مسح موقع"
               },
               "value": false
             },
             {
-              "code": 117,
+              "code": 125,
               "title": {
                 "en": "View All",
-                "ar": " عرض البيانات مدفوعات العملاء"
+                "ar": " عرض بيانات المواقع"
               },
               "value": false
-            },
+            } 
+          ]
+        },{
+          "title": {
+            "en": "pallta",
+            "ar": "البليتات"
+          },
+          "id": 14,
+          "permissions": [
             {
-              "code": 118,
+              "code": 126,
               "title": {
                 "en": "Add",
-                "ar": " اضافة مدفوعات الموردين"
+                "ar": " اضافة بليت"
               },
               "value": false
             },
             {
-              "code": 119,
+              "code": 127,
               "title": {
                 "en": "Edit",
-                "ar": "تعديل مدفوعات الموردين"
+                "ar": "تعديل بليت"
               },
               "value": false
             },
             {
-              "code": 120,
+              "code": 128,
               "title": {
                 "en": "Delete",
-                "ar": "مسح مدفوعات الموردين"
+                "ar": "مسح بليت"
               },
               "value": false
             },
             {
-              "code": 121,
+              "code": 129,
               "title": {
                 "en": "View All",
-                "ar": " عرض البيانات مدفوعات الموردين"
+                "ar": " عرض بيانات البليتات"
               },
               "value": false
-            }
+            } 
           ]
         }
       ]
