@@ -1405,6 +1405,10 @@
         "en": "Location",
         "ar": "الموقع"
     },
+    "pallta": {
+        "en": "Pallta",
+        "ar": "البليتات"
+    },
     "locationRequired": {
         "en": "Please Select Location",
         "ar": "برجاء اختيار الموقع"

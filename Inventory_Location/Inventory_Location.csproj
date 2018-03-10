@@ -16,8 +16,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -147,6 +147,10 @@
     <Content Include="app\viewmodels\admin\retailSetting.js" />
     <Content Include="app\viewmodels\admin\agents.js" />
     <Content Include="app\viewmodels\export\PrintPdf.js" />
+    <Content Include="app\viewmodels\Inventory\location.js" />
+    <Content Include="app\viewmodels\Inventory\locationAddEdit.js" />
+    <Content Include="app\viewmodels\Inventory\pallta.js" />
+    <Content Include="app\viewmodels\Inventory\palltaAddEdit.js" />
     <Content Include="app\viewmodels\Inventory\stockState.js" />
     <Content Include="app\viewmodels\Inventory\printBarcode.js" />
     <Content Include="app\viewmodels\Inventory\transferFromMain.js" />
@@ -182,6 +186,10 @@
     <Content Include="app\views\admin\invenSetting.html" />
     <Content Include="app\views\admin\retailSetting.html" />
     <Content Include="app\views\export\PrintPdf.html" />
+    <Content Include="app\views\Inventory\location.html" />
+    <Content Include="app\views\Inventory\locationAddEdit.html" />
+    <Content Include="app\views\Inventory\pallta.html" />
+    <Content Include="app\views\Inventory\palltaAddEdit.html" />
     <Content Include="app\views\Inventory\stockState.html" />
     <Content Include="app\views\Inventory\printBarcode.html" />
     <Content Include="app\views\Inventory\transferFromMain.html" />
@@ -1736,24 +1744,6 @@
       <DependentUpon>salesDetails.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\invoiceDetailReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>invoiceDetailReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\recieptForm.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>recieptForm.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\salesDetailsReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>salesDetailsReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1793,20 +1783,6 @@
       <Project>{b03c1591-78ef-43e5-a120-0757f021d3e1}</Project>
       <Name>Inventory_Security</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Reports\invoiceDetailReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>invoiceDetailReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\recieptForm.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>recieptForm.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\salesDetailsReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>salesDetailsReport.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

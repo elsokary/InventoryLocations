@@ -74,6 +74,7 @@
     <Compile Include="DtoItemHistory.cs" />
     <Compile Include="DtoItemsDecription.cs" />
     <Compile Include="DtoItemSelect.cs" />
+    <Compile Include="DtoLocations.cs" />
     <Compile Include="DtoLogs.cs" />
     <Compile Include="DtoRefundIems.cs" />
     <Compile Include="DtoRefunds.cs" />

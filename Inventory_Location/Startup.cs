@@ -76,8 +76,10 @@ namespace Inventory_Location
 
             kernel.Bind<ICashierRepository>().To<CashierRepository>().InRequestScope();
             kernel.Bind<ICashierItemsRepository>().To<CashierItemsRepository>().InRequestScope();
-            kernel.Bind<IRefundIemsRepository>().To<RefundIemsRepository>().InRequestScope(); 
-            kernel.Bind<IRefundsRepository>().To<RefundsRepository>().InRequestScope(); 
+            kernel.Bind<IRefundIemsRepository>().To<RefundIemsRepository>().InRequestScope();
+            kernel.Bind<IRefundsRepository>().To<RefundsRepository>().InRequestScope();
+
+            kernel.Bind<ILocationsRepository>().To<LocationsRepository>().InRequestScope(); 
 
 
             return kernel;

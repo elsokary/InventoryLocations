@@ -252,7 +252,29 @@
         title: 'Reports Menu',
         nav: true,
         settings: { ReportsMenuTop: true }
-    }];
+    }, {
+        route: 'pallta',
+        moduleId: 'Inventory/pallta',
+        title: 'البليتات',
+        nav: true,
+        settings: { Inventory: true, permission: 129 }
+    }, {
+        route: 'location',
+        moduleId: 'Inventory/location',
+        title: 'المواقع',
+        nav: true,
+        settings: { Inventory: true, permission: 125 }
+    }, {
+        route: 'palltaAddEdit',
+        moduleId: 'Inventory/palltaAddEdit',
+        title: 'اضافه البليتات',
+        nav: true  
+    }, {
+        route: 'locationAddEdit',
+        moduleId: 'Inventory/locationAddEdit',
+        title: 'اضافه المواقع',
+        nav: true  
+    }, ];
 
     var isPageSetup = ko.observable(false);
 
