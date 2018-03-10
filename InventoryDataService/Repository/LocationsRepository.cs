@@ -141,6 +141,12 @@ namespace InventoryDataService.Repository
         }
 
 
+
+
+        public DtoLocations selectPalltaById(int id, string lang)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

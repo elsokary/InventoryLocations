@@ -533,7 +533,7 @@ namespace Inventory_Location.api.inventory
         [AuthorizeUser]
         [HttpPost]
         [Route("AddPallta")]
-        public IHttpActionResult AddLocations(DtoLocations dtoDocument)
+        public IHttpActionResult AddPallta(DtoLocations dtoDocument)
         {
             var DocumentNew = new location
             {
@@ -554,7 +554,7 @@ namespace Inventory_Location.api.inventory
         [AuthorizeUser]
         [HttpPost]
         [Route("EditPallta")]
-        public IHttpActionResult EditLocations(DtoLocations dtoDocument)
+        public IHttpActionResult EditPallta(DtoLocations dtoDocument)
         {
             var locationEntity = _Locations.FindBy(x => x.id == dtoDocument.id).SingleOrDefault();
             if (locationEntity != null)
