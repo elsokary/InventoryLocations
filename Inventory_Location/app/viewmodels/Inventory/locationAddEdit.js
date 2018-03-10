@@ -75,17 +75,16 @@
         location(new locationDto());
  
         if (id > 0) {
-             
-            dataservice.getNextArrangeLocation().done(function (result) {
-                location().serial(result);
-             });
-
+           
             changeStatus(true);
 
             dataservice.getLocationsById(location, id);
 
         } else {
-              
+
+            dataservice.getNextArrangeLocation().done(function (result) {
+                location().serial(result);
+            });
             changeStatus(false);
         }
     };

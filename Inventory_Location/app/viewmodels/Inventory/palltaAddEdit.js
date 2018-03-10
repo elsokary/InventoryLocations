@@ -13,6 +13,9 @@
 
     var pallta = ko.observable(new palltaDto());
 
+    var locations = ko.observableArray([]);
+    var locationId = ko.observable();
+
     var resetWarning = ko.computed(function () {
         return "<i class='text-warning fa fa-warning'></i> " + config.language.resetWarning[config.currentLanguage()];
     });
@@ -74,17 +77,21 @@
 
         pallta(new palltaDto());
 
-        if (id > 0) {
+        dataservice.getLocationsForDorp().done(function (result) {
+            locations(result);
+        });
 
-            dataservice.getNextArrangePallta().done(function (result) {
-                location().serial(result);
-            });
+        if (id > 0) {
 
             changeStatus(true);
 
             dataservice.getLocationsById(pallta, id);
 
         } else {
+
+            dataservice.getNextArrangePallta().done(function (result) {
+                pallta().serial(result);
+            });
 
             changeStatus(false);
         }
@@ -93,6 +100,9 @@
     function addEditPallta(obj, event) {
         var isValid = $('#palltaForm').valid();
         if (isValid) {
+
+            pallta().parentId(locationId());
+
             if (changeStatus()) {
 
                 dataservice.editPallta(pallta()).done(function (data) {
@@ -122,6 +132,7 @@
 
             }
             else {
+
 
                 dataservice.addPallta(pallta()).done(function (data) {
                     $.smallBox({
@@ -164,6 +175,8 @@
         currentLanguage: config.currentLanguage,
         resetWarning: resetWarning,
         addEditPallta: addEditPallta,
+        locations: locations,
+        locationId: locationId
 
     };
     return vm;

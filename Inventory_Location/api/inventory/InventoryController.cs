@@ -418,7 +418,15 @@ namespace Inventory_Location.api.inventory
             result = _Locations.selectAll(_language).ToList();
             return Ok(result);
         }
-       
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetLocationsForDorp")]
+        public IHttpActionResult GetLocationsForDorp()
+        {
+            var result = new List<DtoLocations>();
+            result = _Locations.selectAllForDrop(_language).ToList();
+            return Ok(result);
+        }
         [AuthorizeUser]
         [HttpGet]
         [Route("GetLocationsById")]

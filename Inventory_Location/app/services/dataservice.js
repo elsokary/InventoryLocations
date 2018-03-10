@@ -1171,7 +1171,10 @@
   
     var getLocations = function () {
         return $.getJSON(config.remoteServerName + "/GetLocations");
-    }; 
+    };
+    var getLocationsForDorp = function () {
+        return $.getJSON(config.remoteServerName + "/GetLocationsForDorp");
+    };
     var getPallta = function () {
         return $.getJSON(config.remoteServerName + "/GetPallta");
     }; 
@@ -1489,6 +1492,7 @@
         getItemsForSearch: getItemsForSearch,
         ExportReport: ExportReport,
 
+        getLocationsForDorp: getLocationsForDorp,
         getLocations:getLocations,
         addLocations:addLocations,
         editLocations:editLocations,

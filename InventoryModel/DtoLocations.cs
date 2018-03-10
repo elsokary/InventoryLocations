@@ -18,6 +18,11 @@ namespace InventoryModel
         {
             get;
             set;
+        }
+        public string location
+        {
+            get;
+            set;
         } 
         public string code
         {

@@ -61,6 +61,7 @@
     function activate() {
         exportColumns = [
             new config.ExportColumn(config.language.description[config.currentLanguage()], 'description', 's'),
+            new config.ExportColumn(config.language.location[config.currentLanguage()], 'location', 's'),
             new config.ExportColumn(config.language.code[config.currentLanguage()], 'code', 's'),
             new config.ExportColumn(config.language.serial[config.currentLanguage()], 'serial', 's') 
         ];

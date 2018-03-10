@@ -257,20 +257,20 @@
         moduleId: 'Inventory/pallta',
         title: 'البليتات',
         nav: true,
-        settings: { Inventory: true, permission: 129 }
+        settings: { Inventory: true, basicFeatures: true }
     }, {
         route: 'location',
         moduleId: 'Inventory/location',
         title: 'المواقع',
         nav: true,
-        settings: { Inventory: true, permission: 125 }
+        settings: { Inventory: true, basicFeatures: true }
     }, {
-        route: 'palltaAddEdit',
+        route: 'palltaAddEdit/:param1*detail',
         moduleId: 'Inventory/palltaAddEdit',
         title: 'اضافه البليتات',
         nav: true  
     }, {
-        route: 'locationAddEdit',
+        route: 'locationAddEdit/:param1*detail',
         moduleId: 'Inventory/locationAddEdit',
         title: 'اضافه المواقع',
         nav: true  
