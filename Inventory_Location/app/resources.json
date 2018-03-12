@@ -1405,6 +1405,10 @@
         "en": "Location",
         "ar": "الموقع"
     },
+    "assignToLocation": {
+        "en": "Assign To Location",
+        "ar": "وضع الصنف في موقع"
+    },
     "pallta": {
         "en": "Pallta",
         "ar": "البليتات"

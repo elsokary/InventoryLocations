@@ -42,6 +42,7 @@ namespace Inventory_Location.api.inventory
         private readonly IItemsdecriptionRepository _Itemsdecription;
         private readonly ISuppliersRepository _Suppliers;
         private readonly ILocationsRepository _Locations;
+        private readonly ILocationsItemsRepository _LocationsItems;
 
         private readonly ICashierRepository _Cashier;
         private readonly IDefaultListRepository _defaultList;
@@ -78,7 +79,9 @@ namespace Inventory_Location.api.inventory
                                     ILocationsRepository Locations,
                                     ICustomersRepository Customers,
                                     IGrouppermissionsRepository Grouppermissions, IGroupsRepository Groups,
-                                    IItemsdecriptionRepository Itemsdecription, ISuppliersRepository Suppliers
+                                    IItemsdecriptionRepository Itemsdecription, ISuppliersRepository Suppliers,
+                                    ILocationsItemsRepository LocationsItems
+
 )
         {
 
@@ -106,6 +109,8 @@ namespace Inventory_Location.api.inventory
             _Accounts = Accounts;
             _Grouppermissions = Grouppermissions;
             _Locations = Locations;
+            _LocationsItems =LocationsItems;
+
 
             var langHeader = HttpContext.Current.Request.Headers.GetValues("Lang");
 
@@ -410,6 +415,31 @@ namespace Inventory_Location.api.inventory
         #region Locations
 
         [AuthorizeUser]
+        [HttpPost]
+        [Route("AssignItemToLocation")]
+        public IHttpActionResult AssignItemToLocation(assignItemToLocation list)
+        {
+            var result = new List<DtoLocations>();
+
+            foreach (var id in list.itemIds)
+            { 
+                 var DocumentNew = new location_items
+            {
+                itemId = id,
+                palltaId = list.locationId,
+                isActive = true, 
+            };
+
+            _LocationsItems.Add(DocumentNew);
+            _LocationsItems.Save();
+            _LocationsItems.Reload(DocumentNew);
+               
+            }
+             
+            return Ok();
+        }
+        
+        [AuthorizeUser]
         [HttpGet]
         [Route("GetLocations")]
         public IHttpActionResult GetLocations()
@@ -418,10 +448,11 @@ namespace Inventory_Location.api.inventory
             result = _Locations.selectAll(_language).ToList();
             return Ok(result);
         }
+        
         [AuthorizeUser]
         [HttpGet]
-        [Route("GetLocationsForDorp")]
-        public IHttpActionResult GetLocationsForDorp()
+        [Route("GetPalltaForDorp")]
+        public IHttpActionResult GetPalltaForDorp()
         {
             var result = new List<DtoLocations>();
             result = _Locations.selectAllForDrop(_language).ToList();

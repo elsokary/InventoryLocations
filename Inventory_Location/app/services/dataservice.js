@@ -1168,12 +1168,22 @@
     var getStockState = function () {
         return $.getJSON(config.remoteServerName + "/GetStockState");
     };
-  
-    var getLocations = function () {
-        return $.getJSON(config.remoteServerName + "/GetLocations");
+    var assignItemToLocation = function (itemIds, locationId) {
+        var list = {};
+
+        list.itemIds = itemIds;
+        list.locationId = locationId;
+
+        return config.postJson(config.remoteServerName + "/AssignItemToLocation", list);
     };
+  var getLocations = function () {
+      return $.getJSON(config.remoteServerName + "/GetLocations");
+  };
     var getLocationsForDorp = function () {
         return $.getJSON(config.remoteServerName + "/GetLocationsForDorp");
+    };
+    var getPalltaForDorp = function () {
+        return $.getJSON(config.remoteServerName + "/GetPalltaForDorp");
     };
     var getPallta = function () {
         return $.getJSON(config.remoteServerName + "/GetPallta");
@@ -1492,7 +1502,9 @@
         getItemsForSearch: getItemsForSearch,
         ExportReport: ExportReport,
 
+        assignItemToLocation:assignItemToLocation,
         getLocationsForDorp: getLocationsForDorp,
+        getPalltaForDorp: getPalltaForDorp,
         getLocations:getLocations,
         addLocations:addLocations,
         editLocations:editLocations,

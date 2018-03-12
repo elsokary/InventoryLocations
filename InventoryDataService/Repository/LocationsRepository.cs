@@ -99,7 +99,7 @@ namespace InventoryDataService.Repository
         {
             var list = new List<DtoLocations>();
 
-            list = (from q in Context.locations.AsNoTracking().Where(x => x.parentId == null)
+            list = (from q in Context.locations.AsNoTracking().Where(x => x.parentId != null)
 
                     select new DtoLocations
                     {
