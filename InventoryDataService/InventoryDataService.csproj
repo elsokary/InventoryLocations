@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\InvoicesRepository - Copy.cs" />
+    <Compile Include="Repository\LocationsItemsRepository.cs" />
     <Compile Include="Repository\LocationsRepository.cs" />
     <Compile Include="Repository\SupplyOrderItemsRepository.cs" />
     <Compile Include="Repository\SupplyOrderRepository.cs" />

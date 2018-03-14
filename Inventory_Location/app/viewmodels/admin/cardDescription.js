@@ -6,6 +6,12 @@
 
     var changeStatus = ko.observable(false);
 
+    var selectedRows = ko.observableArray([]); 
+
+    var locations = ko.observableArray([]);
+
+    var locationId = ko.observable();
+
     var exportColumns = [];
 
     var exportToExcel = function () {
@@ -21,28 +27,15 @@
         self.code = ko.observable();
         self.subject = ko.observable("");
         self.cost = ko.observable(0);
-        self.price = ko.observable(0);
-        self.percentage = ko.observable(0);
-        self.value = ko.computed(function () {
-            if (self.percentage() && self.cost()) {
-                return (self.percentage() / 100) * self.cost();
-            } else { return 0 };
-        }, this);
+        self.price = ko.observable(0); 
+        self.alertDays = ko.observable();
 
-        self.supplierId = ko.observable();
-        self.categoryId = ko.observable();
-        self.categoryChildId = ko.observable();
-        self.supplierName = ko.observable("");
-        self.categoryName = ko.observable("");
         if (data) {
             self.id = data.id;
             self.code = data.code;
             self.subject = data.subject;
             self.cost = data.cost;
-            self.price = data.price;
-            self.supplierId = data.supplierId;
-            self.categoryChildId = data.categoryChildId;
-            self.categoryId = data.categoryId;
+            self.price = data.price; 
         }
     };
      
@@ -131,6 +124,10 @@
 
     function activate() {
 
+        dataservice.getPalltaForDorp().done(function (result) {
+            locations(result);
+        });
+
         item(new itemDto());
 
         exportColumns = [
@@ -179,6 +176,13 @@
     }
 
     var toolTipDone = function () {
+        $('.btn-floating').tooltip({
+            container: 'body'
+        });
+        return true;
+    };
+
+    var selectRecord = function () {
         $('.btn-floating').tooltip({
             container: 'body'
         });
@@ -397,14 +401,13 @@
     var koTableReady = function () {
 
         vm.koTable.addRowDeleteHandler(deleteItem);
-        vm.koTable.addRowClickedHandler(viewEditModal);
+    //    vm.koTable.addRowClickedHandler(viewEditModal);
 
         dataservice.getItemsdecriptionPagination(pageNumber(), config.pageSize()).success(function (data) {
             vm.koTable.setItems(data); 
         });
     };
-     
-     
+      
     var onSubmit = function () {
 
         if (primaryBrand() != "") {
@@ -520,7 +523,19 @@
 
         });
     };
-     
+    var assignToItem = function (obj, e) {
+         
+
+        $('#assignToLocationModalList').modal('show');
+    };
+    var saveAssignToLocation = function (obj, e) {
+ 
+        dataservice.assignItemToLocation(selectedRows(), locationId()).then(function (data) {
+            
+            $('#assignToLocationModalList').modal('hide');
+
+        });
+    };
     var viewEditModal = function (obj, e) {
 
         changeStatus(true);
@@ -534,7 +549,9 @@
         $('#ViewModalList').modal('show');
     };
  
-    var vm = { 
+    var vm = {
+        saveAssignToLocation:saveAssignToLocation,
+        assignToItem:assignToItem,
         changeValue: changeValue,
         changeRefCodeEdit: changeRefCodeEdit,
         itemEdit: itemEdit,
@@ -557,7 +574,12 @@
         item: item,
         deleteItem: deleteItem,
         changeStatus: changeStatus,
-        koTableReady: koTableReady
+        koTableReady: koTableReady,
+        selectRecord: selectRecord,
+        selectedRows: selectedRows, 
+        locations: locations,
+        locationId: locationId
+
     };
 
     return vm;

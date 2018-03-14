@@ -44,15 +44,17 @@
                                     <thead>
                                         <tr>
 
-                                            <th data-sort-property="userName" data-bind="text: language.description[currentLanguage()]"></th>
-                                            <th data-sort-property="contactName" data-bind="text: language.code[currentLanguage()]"></th>
-                                            <th data-sort-property="address" data-bind="text: language.serial[currentLanguage()]"></th>
+                                            <th data-sort-property="description" data-bind="text: language.description[currentLanguage()]"></th>
+                                            <th data-sort-property="location" data-bind="text: language.location[currentLanguage()]"></th>
+                                            <th data-sort-property="code" data-bind="text: language.code[currentLanguage()]"></th>
+                                            <th data-sort-property="serial" data-bind="text: language.serial[currentLanguage()]"></th>
                                         </tr>
                                     </thead>
                                     <tbody data-bind="foreach: koTable.pagedItems">
                                         <tr>
 
                                             <td><span data-bind="text: description"></span></td>
+                                            <td><span data-bind="text: location"></span></td>
                                             <td><span data-bind="text: code"></span></td>
                                             <td><span data-bind="text: serial"></span></td>
                                         </tr>

@@ -95,6 +95,20 @@ namespace InventoryDataService.Repository
                     }).ToList();
             return list;
         }
+        public List<DtoLocations> selectAllForDrop(string lang)
+        {
+            var list = new List<DtoLocations>();
+
+            list = (from q in Context.locations.AsNoTracking().Where(x => x.parentId != null)
+
+                    select new DtoLocations
+                    {
+                        id = q.id,
+                        description = q.description,
+                    }).ToList();
+            return list;
+        }
+
 
         public List<DtoLocations> selectAllPallta(string lang)
         {
@@ -109,7 +123,8 @@ namespace InventoryDataService.Repository
                         code = q.code,
                         parentId = q.parentId,
                         isPallta = q.isPallta,
-                        serial = q.serial
+                        serial = q.serial,
+                        location = Context.locations.FirstOrDefault(x => x.id == q.parentId).description
                     }).ToList();
             return list;
         }
@@ -131,7 +146,7 @@ namespace InventoryDataService.Repository
         {
             int arrange = 0;
             var serial = (from q in Context.locations.AsNoTracking().Where(x => x.isPallta == true && x.parentId != null)
-                        select q.serial).ToList().Max();
+                          select q.serial).ToList().Max();
             if (serial != null)
             {
                 arrange = Convert.ToInt32(serial);
@@ -145,7 +160,35 @@ namespace InventoryDataService.Repository
 
         public DtoLocations selectPalltaById(int id, string lang)
         {
-            throw new NotImplementedException();
+            var list = new DtoLocations();
+            if (lang == "en")
+            {
+                list = (from q in Context.locations
+                        where q.id == id
+                        select new DtoLocations
+                        {
+                            id = q.id,
+                            description = q.description,
+                            code = q.code,
+                            parentId = q.parentId,
+                            isPallta = q.isPallta,
+                            serial = q.serial
+                        }).FirstOrDefault();
+            }
+            else
+            {
+                list = (from q in Context.locations
+                        where q.id == id
+                        select new DtoLocations
+                        {
+                            id = q.id,
+                            description = q.description,
+                            code = q.code,
+                            parentId = q.parentId,
+                            isPallta = q.isPallta,
+                            serial = q.serial
+                        }).FirstOrDefault();
+            } return list;
         }
     }
 }

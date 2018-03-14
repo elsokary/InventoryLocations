@@ -1,0 +1,5540 @@
+﻿{
+    "name": "Language",
+    "language": {
+        "en": "Language",
+        "ar": "اللغة"
+    },
+    "lang": {
+        "en": "en",
+        "ar": "ar"
+    },
+    "rtl": {
+        "en": false,
+        "ar": true
+    },
+    "dir": {
+        "en": "ltr",
+        "ar": "rtl"
+    },
+    "loadMore": {
+        "en": "loadMore",
+        "ar": "تحميل"
+    },
+    "bankName": {
+        "en": "bankName",
+        "ar": "البنك المسحوب منه"
+    },
+    "actualInentory": {
+        "en": "Actual Inentory",
+        "ar": "الجرد الفعلى"
+    },
+    "inventoryDays": {
+        "en": "Inentory Days",
+        "ar": "جرد/ يوم"
+    },
+    "itemsTransBySupplierTotals": {
+        "en": "items Trans By SupplierTotals",
+        "ar": "جرد اصناف مورد معين"
+    },
+    "itemsTransBySupplier": {
+        "en": "items Trans By Supplier",
+        "ar": "حركة اصناف مورد معين"
+    },
+    "discountCash": {
+        "en": "discountCash",
+        "ar": "خصم نقدى"
+    },
+    "negativeQuantity": {
+        "en": "negative Quantity",
+        "ar": "الكميات السالبة"
+    },
+    "salesEmployee": {
+        "en": "Sales Employee",
+        "ar": "مبيعات الموظف"
+    },
+    "sales": {
+        "en": "Sales",
+        "ar": "مبيعات "
+    },
+    "discountCommercial": {
+        "en": "Discount Commercial",
+        "ar": "خصم تجارى"
+    },
+    "extraExpenses": {
+        "en": "Extra Expenses",
+        "ar": "مصاريف اضافية"
+    },
+    "totalInvoice": {
+        "en": "Total Invoice",
+        "ar": "اجمالى الفاتورة"
+    },
+    "browse": {
+        "en": "browse",
+        "ar": "الملف"
+    },
+    "rptRanking": {
+        "en": "Ranking Report",
+        "ar": "مبيعات خلال فترة"
+    },
+    "rptRankingCustomer": {
+        "en": "Ranking Customers Report",
+        "ar": "مبيعات العملاء خلال فترة"
+    },
+    "rptAccountSupplier": {
+        "en": " Account Supplier",
+        "ar": "تقرير استاذ مورد"
+    },
+    "primaryBrand": {
+        "en": "Primary Brand",
+        "ar": "براند رئيسى"
+    },
+    "pullRight": {
+        "en": "pull-right",
+        "ar": "pull-left"
+    },
+    "collapse": {
+        "en": "Collapse",
+        "ar": "اغلاق"
+    },
+    "sendDate": {
+        "en": "Send Date",
+        "ar": "تاريخ الارسال"
+    },
+    "priority": {
+        "en": "Priority",
+        "ar": "الاهمية"
+    },
+    "prioritySelect": {
+        "en": "-- Please Select Priority--",
+        "ar": "-- اختر الاهمية --"
+    },
+    "priorityRequired": {
+        "en": "Please Select Priority",
+        "ar": "برجاء اختر الاهمية"
+    },
+    "resetWarning": {
+        "en": "Warning! This will reset all your settings.",
+        "ar": "تحذير! انت علي وشك اعادة الاعدادات للوضع الافتراضي"
+    },
+    "fullscreen": {
+        "en": "Full Screen",
+        "ar": "ملئ الشاشة"
+    },
+    "btnFloat": {
+        "en": "right",
+        "ar": "left"
+    },
+    "direction": {
+        "en": "left",
+        "ar": "right"
+    },
+    "copy": {
+        "en": "Copy",
+        "ar": "انسخ"
+    },
+    "excel": {
+        "en": "Excel",
+        "ar": "اكسل"
+    },
+    "print": {
+        "en": "Print",
+        "ar": "طباعة"
+    },
+    "showHideColumns": {
+        "en": "Show / Hide Columns",
+        "ar": "اظهار / اخفاء الاعمدة"
+    },
+    "jqxGridLanguage": {
+        "en": {
+            "localizationobj": {
+                "pagergotopagestring": "Go to page",
+                "pagershowrowsstring": "Show rows",
+                "pagerrangestring": " of ",
+                "groupsheaderstring": "Drag a column and drop it here to group by that column"
+            }
+        },
+        "ar": {
+            "localizationobj": {
+                "pagergotopagestring": "اذهب الي صفة",
+                "pagershowrowsstring": "اظهار صفوف",
+                "pagerrangestring": " من ",
+                "groupsheaderstring": "اسحب عمود وأسقطه هنا للجمع حسب ذلك العمود"
+            }
+        }
+    },
+    "search": {
+        "en": "Search",
+        "ar": "ابحث"
+    },
+    "groupsPermissions": {
+        "en": "Groups Permissions",
+        "ar": "الصلاحيات"
+    },
+    "add": {
+        "en": "Add",
+        "ar": "اضف"
+    },
+    "edit": {
+        "en": "Edit",
+        "ar": "تعديل"
+    },
+    "cancel": {
+        "en": "Cancel",
+        "ar": "الغاء"
+    },
+    "categoryName": {
+        "en": "Category Name",
+        "ar": "اسم البراند"
+    },
+    "departmentName": {
+        "en": "Department Name",
+        "ar": "اسم القسم"
+    },
+    "Itemsstagnant": {
+        "en": "Items stagnant",
+        "ar": "الاصناف الراكده"
+    },
+    "categoryChild": {
+        "en": "Category Child",
+        "ar": "براند فرعى"
+    },
+    "addSalaryCategory": {
+        "en": "Add Category",
+        "ar": "اضافة شريحة مرتبات"
+    },
+    "categoryEnglishTitle": {
+        "en": "Category English Title",
+        "ar": "الاسم الانجليزي للشريحة"
+    },
+    "policyEnglishTitle": {
+        "en": "Policy English Title",
+        "ar": "الاسم الانجليزي للشريحة"
+    },
+    "categoryArabicTitle": {
+        "en": "Category Arabic Title",
+        "ar": "الاسم العربي للشريحة"
+    },
+    "policyArabicTitle": {
+        "en": "Policy Arabic Title",
+        "ar": "الاسم العربي للشريحة"
+    },
+    "salaryValue": {
+        "en": "Salary Value",
+        "ar": "قيمة المرتب"
+    },
+    "categoryEnglishTitleMessage": {
+        "en": "Please type an english title for the category",
+        "ar": "من فضك ادخل اسم انجليزي للشريحة"
+    },
+    "categoryArabicTitleMessage": {
+        "en": "Please type an arabic title for the category",
+        "ar": "من فضك ادخل اسم عربي للشريحة"
+    },
+    "salaryValueMessage": {
+        "en": "Please type a salary value for the category",
+        "ar": "من فضك ادخل قيمة مرتب للشريحة"
+    },
+    "salaryCategoryLogControls": {
+        "en": "Salary Category Log Controls",
+        "ar": "ادوات تحكم سجل شريحة المرتبات"
+    },
+    "salaryCategories": {
+        "en": "Salary Categories",
+        "ar": "شرائح المرتبات"
+    },
+    "category": {
+        "en": "Category",
+        "ar": "البراندات"
+    },
+    "salary": {
+        "en": "Salary",
+        "ar": "المرتب"
+    },
+    "configuration": {
+        "en": "Polices",
+        "ar": "سياسات"
+    },
+    "personal": {
+        "en": "Basic Data",
+        "ar": "بيانات اساسية"
+    },
+    "filterSalary": {
+        "en": "Filter Salary",
+        "ar": "تصفية مرتب"
+    },
+    "filterCategory": {
+        "en": "Filter Category",
+        "ar": "تصفية شريحة"
+    },
+    "titleEnRequired": {
+        "en": "Please enter an english title",
+        "ar": "من فضلك ادخل اسم الشريحة بالانجليزية"
+    },
+    "abbreviationValid": {
+        "en": "Please enter an abbreviation",
+        "ar": "من فضلك ادخل الاسم المختصر"
+    },
+    "designDiscipline": {
+        "en": "Design Discipline",
+        "ar": "قائمه بنود مجال التصميم"
+    },
+    "designDisciplineSections": {
+        "en": "Design Discipline Sections",
+        "ar": "مجال التصميم"
+    },
+    "AddDesignDiscipline": {
+        "en": "Add Design Discipline",
+        "ar": "اضافه مجال تصميم"
+    },
+    "dwgNoRequired": {
+        "en": "Please Enter Dgwno",
+        "ar": "برجاء ادخال رقم الوحده"
+    },
+    "dwgNo": {
+        "en": "dwgNo",
+        "ar": "رقم اللوحه"
+    },
+    "description": {
+        "en": "Description",
+        "ar": "اسم الصنف "
+    },
+    "descriptionEn": {
+        "en": "description En",
+        "ar": " اسم الصنف بالانجليزيه"
+    },
+    "descriptionAr": {
+        "en": "description Ar",
+        "ar": " اسم الصنف العربى"
+    },
+    "descriptionRequired": {
+        "en": "Plesae insert the Description",
+        "ar": "برجاء اضافة الوصف"
+    },
+    "abbreviation": {
+        "en": "Abbreviation",
+        "ar": "الاسم المختصر"
+    },
+    "abbreviationEn": {
+        "en": "English Abbreviation",
+        "ar": "الاسم المختصر بالانجليزية"
+    },
+    "abbreviationAr": {
+        "en": "Arabic Abbreviation",
+        "ar": "الاسم المختصر بالعربية"
+    },
+    "titleArRequired": {
+        "en": "Please enter an arabic title",
+        "ar": "من فضلك ادخل اسم الشريحة بالعربية"
+    },
+    "companyRoleRequired": {
+        "en": "Please select the Role",
+        "ar": "من فضلك اختر مجال الشركة"
+    },
+    "rateValueRequired": {
+        "en": "Please Enter a valid salary",
+        "ar": "من فضلك ادخل قيمة مرتب سليمة"
+    },
+    "numbersGreaterThanZero": {
+        "en": "Please insert value more than zero",
+        "ar": "برجاء ادخال قيمة اكبر من الصفر"
+    },
+    "onlyNumbers": {
+        "en": "This Field Only Accepts Number Entries",
+        "ar": "هذا الحقل لا يدعم مدخلات غير الارقام"
+    },
+    "price": {
+        "en": "Unit Price",
+        "ar": "سعر الوحدة"
+    },
+    "originalPrice": {
+        "en": "Original Unit Price",
+        "ar": "سعر الوحدةالاصلي"
+    },
+    "unit": {
+        "en": "Unit",
+        "ar": "الوحدة"
+    },
+    "unitSelection": {
+        "en": "-- Please Select Unit --",
+        "ar": "-- برجاء اختيار الوحدة --"
+    },
+    "priceRequired": {
+        "en": "Please insert Unit Price",
+        "ar": "برجاء ادخال سعر الوحدة"
+    },
+    "titleAccounts": {
+        "en": "Accounts",
+        "ar": "شاشه المستخدمين"
+    },
+    "addAccount": {
+        "en": "Add New",
+        "ar": "اضافه جديدة"
+    },
+    "UserCompanies": {
+        "en": "User Companies",
+        "ar": " شركات المستخدم"
+    },
+    "ContactName": {
+        "en": "Contact Name",
+        "ar": "الموظف"
+    },
+    "isHrManager": {
+        "en": "is HrManager",
+        "ar": "مدير موارد"
+    },
+    "passwordEdit": {
+        "en": "password Edit",
+        "ar": "تعديل كلمه المرور"
+    },
+    "active": {
+        "en": "active",
+        "ar": "نشط"
+    },
+    "inActive": {
+        "en": "In Active",
+        "ar": "غير نشط"
+    },
+    "isTaskAdmin": {
+        "en": "is TaskAdmin",
+        "ar": "مدير مهام"
+    },
+    "designTeam": {
+        "en": "design Team",
+        "ar": "فريق التصميم"
+    },
+    "employeeCode": {
+        "en": "employee Code",
+        "ar": "كود الموظف"
+    },
+    "Supervisor": {
+        "en": "Supervisor",
+        "ar": "المشرف"
+    },
+    "supplierName": {
+        "en": "Supplier Name",
+        "ar": "اسم المورد"
+    },
+    "searchBy": {
+        "en": "Search By",
+        "ar": "ابحث ب "
+    },
+    "suppliers": {
+        "en": "Suppliers ",
+        "ar": " الموردين"
+    },
+    "CompanyName": {
+        "en": "Company Name",
+        "ar": "اسم الشركه"
+    },
+    "GroupName": {
+        "en": "Group Name",
+        "ar": "اسم المجموعه"
+    },
+    "UserName": {
+        "en": "User Name",
+        "ar": "اسم المستخدم"
+    },
+    "users": {
+        "en": "Users",
+        "ar": "المستخدمين"
+    },
+    "TaskAdmin": {
+        "en": "Is Task Admin",
+        "ar": "مدير مهمات؟"
+    },
+    "Vacation": {
+        "en": "Vacation",
+        "ar": "ايام الاجازات"
+    },
+    "EPS": {
+        "en": "EPS",
+        "ar": "صلاحيات"
+    },
+    "addEPS": {
+        "en": "Add EPS",
+        "ar": "اضافة صلاحيات"
+    },
+    "Projects": {
+        "en": "Projects",
+        "ar": "مشاريع"
+    },
+    "Project": {
+        "en": "Project",
+        "ar": "مشروع"
+    },
+    "projectSelection": {
+        "en": "-- Please Select Project --",
+        "ar": "-- اختر المشروع --"
+    },
+    "View": {
+        "en": "View",
+        "ar": "عرض"
+    },
+    "hours": {
+        "en": "hours",
+        "ar": "عدد الساعات"
+    },
+    "day1": {
+        "en": "day1",
+        "ar": "اليوم الاول"
+    },
+    "day2": {
+        "en": "day2",
+        "ar": "day2"
+    },
+    "day3": {
+        "en": "day3",
+        "ar": "day3"
+    },
+    "day4": {
+        "en": "day4",
+        "ar": "عدد الساعات"
+    },
+    "day5": {
+        "en": "day5",
+        "ar": "عدد الساعات"
+    },
+    "day6": {
+        "en": "day6",
+        "ar": "عدد الساعات"
+    },
+    "day7": {
+        "en": "day7",
+        "ar": "عدد الساعات"
+    },
+    "timesheetApprovalDays": {
+        "en": "time sheet Approval Days",
+        "ar": "عدد ايام المسموح لها بالموافقه على سجل المواعيد "
+    },
+    "expensesApprovalDays": {
+        "en": "expenses Approval Days",
+        "ar": "عدد ايام المسموح لها بالموافقه على المصروفات "
+    },
+    "expenses": {
+        "en": "Expenses",
+        "ar": "المصروفات"
+    },
+    "expensesLog": {
+        "en": "Expenses Log",
+        "ar": "سجل المصروفات"
+    },
+    "expensesType": {
+        "en": "Expenses Type",
+        "ar": "نوع المصروفات"
+    },
+    "expensesTypeRequired": {
+        "en": "Please Select Expenses Type",
+        "ar": "برجاء اختيار نوع المصروفات"
+    },
+    "expensesTypeSelection": {
+        "en": "-- Please Select Expenses Type --",
+        "ar": "-- برجاء اختيار نوع المصروفات --"
+    },
+    "addExpenses": {
+        "en": "Add Expenses",
+        "ar": "اضافة المصروفات"
+    },
+    "from": {
+        "en": "From",
+        "ar": "من"
+    },
+    "to": {
+        "en": "To",
+        "ar": "الى"
+    },
+    "fromTo": {
+        "en": "From - To",
+        "ar": "من - الي"
+    },
+    "fromToRequired": {
+        "en": "Please insert From - To",
+        "ar": "برجاء اضافة من - الي"
+    }, 
+    "totalHours": {
+        "en": "Total Hours",
+        "ar": "مجموع الساعات"
+    },
+    "totalCost": {
+        "en": "Total Cost",
+        "ar": "اجمالى التكلفة"
+    },
+    "totalQuantity": {
+        "en": "Total Quantity",
+        "ar": "اجمالى الكميات"
+    },
+    "fileName": {
+        "en": "File Name",
+        "ar": "اسم الملف"
+    },
+    "todayExpenses": {
+        "en": "Today Expenses",
+        "ar": "مصروفات اليوم"
+    },
+    "yestrdayExpenses": {
+        "en": "Yesterday Expenses",
+        "ar": "مصروفات الامس"
+    },
+    "timesheetRequestDays": {
+        "en": "timesheetRequestDays",
+        "ar": "عدد ايام المسموح لها بالموافقه على سجل المواعيد "
+    },
+    "timesheetApprovalDays": {
+        "en": "time sheet Approval Days",
+        "ar": "عدد ايام المسموح لها بالموافقه على سجل المواعيد "
+    },
+    "expensesRequest": {
+        "en": " Expenses Request",
+        "ar": " طلب مصروفات "
+    },
+    "expensesRequestDays": {
+        "en": "expensesRequestDays",
+        "ar": "عدد ايام المسموح لها بالموافقه على سجل المواعيد "
+    },
+    "timesheetPolicy": {
+        "en": "Timesheet Policy",
+        "ar": "سياسه سجل الحضور "
+    },
+    "timesheetLog": {
+        "en": "Timesheet",
+        "ar": "سجل الحضور"
+    },
+    "quantityRedAlertPercent": {
+        "en": "quantity Red Alert Percent",
+        "ar": "سياسه سجل الحضور "
+    },
+    "quantityGreenAlertPercent": {
+        "en": "quantity Green Alert Percent",
+        "ar": "سياسه سجل الحضور "
+    },
+    "quantityYellowAlertPercent": {
+        "en": "quantity Yellow Alert Percent",
+        "ar": "سياسه سجل الحضور "
+    },
+    "quantityRequired": {
+        "en": "Please insert the Quantity",
+        "ar": "برجاء اضافة الكمية"
+    },
+    "requestInformation": {
+        "en": "Request for information",
+        "ar": "طلب معلومات"
+    },
+    "quantity": {
+        "en": "Quantity",
+        "ar": "الكمية"
+    },
+    "noData": {
+        "en": "No Data",
+        "ar": "لا يوجد بيانات"
+    },
+    "quantityRequired": {
+        "en": "Please insert Quantity",
+        "ar": "برجاء ادخال العدد"
+    },
+    "numberOfBarcods": {
+        "en": "عدد النسخ",
+        "ar": "عدد النسخ"
+    },
+    "codingTree": {
+        "en": "Coding Tree",
+        "ar": "شجرة الاكواد"
+    },
+    "expensesRedAlerts": {
+        "en": "expenses Red Alerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "expensesYellowAlerts": {
+        "en": "expenses Yellow Alerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "expensesGreenAlerts": {
+        "en": "expenses Green Alerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "paymentRedAlerts": {
+        "en": "payment Red Alerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "paymentGreenAlerts": {
+        "en": "payment Green Alerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "paymentYellowAlerts": {
+        "en": "payment Yellow Alerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "invoicesRedAlerts": {
+        "en": "invoicesRedAlerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "invoiceDate": {
+        "en": "Invoice Date",
+        "ar": "تاريخ الفاتورة "
+    },
+    "orderDate": {
+        "en": "Order Date",
+        "ar": "تاريخ الطلبية "
+    },
+    "supplyOrders": {
+        "en": "Supply Order ",
+        "ar": "امر توريد الطلبية "
+    },
+    "invoiceNumber": {
+        "en": "invoiceNumber",
+        "ar": "رقم  الفاتورة "
+    },
+    "orderNumber": {
+        "en": "Order Number",
+        "ar": "رقم  الطلبية "
+    },
+    "returnedDate": {
+        "en": "Returned Date",
+        "ar": "تاريخ المرتجع"
+    },
+    "returnedNo": {
+        "en": "Returned No",
+        "ar": "رقم  المرتجع "
+    },
+    "returneds": {
+        "en": "Returned",
+        "ar": " مردودات المشتريات "
+    },
+    "serialNo": {
+        "en": "serialNo",
+        "ar": "اذن الدخول"
+    },
+    "serial": {
+        "en": "serial",
+        "ar": "ترقيم"
+    },
+    "paymentType": {
+        "en": "paymentType",
+        "ar": "طريقة الدفع"
+    },
+    "rptCustomerPyments": {
+        "en": "Customer Payment",
+        "ar": "مدفوعات العملاء"
+    },
+    "invoicesYellowAlerts": {
+        "en": "invoicesYellowAlerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "invoicesGreenAlerts": {
+        "en": "invoicesGreenAlerts",
+        "ar": "سياسه سجل الحضور "
+    },
+    "useBoqPermission": {
+        "en": "useBoqPermission",
+        "ar": "سياسه سجل الحضور "
+    },
+    "fractionOfEngineering": {
+        "en": "fractionOfEngineering",
+        "ar": "سياسه سجل الحضور "
+    },
+    "pricingManHour": {
+        "en": "pricingManHour",
+        "ar": "سياسه سجل الحضور "
+    },
+    "incentiveFraction": {
+        "en": "incentiveFraction",
+        "ar": "سياسه سجل الحضور "
+    },
+    "pmIncentiveFraction": {
+        "en": "pm Incentive Fraction",
+        "ar": "سياسه سجل الحضور "
+    },
+    "deputyPmIncentiveFraction": {
+        "en": "quality Incentive Fraction",
+        "ar": "سياسه سجل الحضور "
+    },
+    "qualityIncentiveFraction": {
+        "en": "pmIncentiveFraction",
+        "ar": "سياسه سجل الحضور "
+    },
+    "averageHourCost": {
+        "en": "average Hour Cost",
+        "ar": "سياسه سجل الحضور "
+    },
+    "useCost": {
+        "en": " use Cost",
+        "ar": "سياسه سجل الحضور "
+    },
+    "useAVG": {
+        "en": "use AVG",
+        "ar": "سياسه سجل الحضور "
+    },
+    "useTransferToCompany": {
+        "en": "use Transfer To Company",
+        "ar": "سياسه سجل الحضور "
+    },
+    "usePermissionsOnLogs": {
+        "en": "use Permissions On Logs",
+        "ar": "سياسه سجل الحضور "
+    },
+    "GeneralConfig": {
+        "en": "Configuration",
+        "ar": "اعدادات "
+    },
+    "addDocument": {
+        "en": "add New Documnet",
+        "ar": "أضافه مستند جديد"
+    },
+    "answerDate": {
+        "en": "Answer Date",
+        "ar": "تاريخ الرد"
+    },
+    "answer": {
+        "en": "Answer",
+        "ar": "الرد"
+    },
+    "LogControls": {
+        "en": "Log Controls",
+        "ar": "عرض"
+    },
+    "titleEn": {
+        "en": "Title En",
+        "ar": "العنوان بالانجليزيه"
+    },
+    "titleAr": {
+        "en": "Title Ar",
+        "ar": "العنوان بالعربيه"
+    },
+    "titleArValid": {
+        "en": "Please Enter Title Ar",
+        "ar": "برجاء ادخال العنوان بالعربيه "
+    },
+    "titleEnValid": {
+        "en": "Please Enter Title En",
+        "ar": "برجاء ادخال العنوان بالانجليزيه"
+    },
+    "sentDate": {
+        "en": "Sent Date",
+        "ar": "تاريخ الارسال"
+    },
+    "title": {
+        "en": "Title",
+        "ar": "العنوان"
+    },
+    "ToContact": {
+        "en": "To Contact Name",
+        "ar": "مرسل الى"
+    },
+    "fromContact": {
+        "en": "From Contact",
+        "ar": "مرسل من"
+    },
+    "fromContactRequired": {
+        "en": "Please select from Contact Name",
+        "ar": "برجاء اختيار مرسل من"
+    },
+    "toContactRequired": {
+        "en": "Please select to Contact Name",
+        "ar": "برجاء اختيار مرسل الى"
+    },
+    "communicationRFI": {
+        "en": "RFI Addition",
+        "ar": " نموذج طلب معلومات"
+    },
+    "RFIView": {
+        "en": "RFI View",
+        "ar": "عرض نموذج طلب معلومات"
+    },
+    "communicationProposalAdd": {
+        "en": "Proposal Addition",
+        "ar": "اضافة عرض"
+    },
+    "communicationProposalView": {
+        "en": "Proposal View",
+        "ar": "مشاهدة عرض"
+    },
+    "toCompany": {
+        "en": "To Company",
+        "ar": "الى شركة"
+    },
+    "toCompanyRequired": {
+        "en": "Please select To Company",
+        "ar": "برجاء اختيار الى شركة"
+    },
+    "attention": {
+        "en": "Attention",
+        "ar": "عناية"
+    },
+    "changeOrder": {
+        "en": "Change Order",
+        "ar": "طلب التغيير المقترح"
+    },
+    "fromCompany": {
+        "en": "From Company",
+        "ar": "  من شركة"
+    },
+    "fromCompanyRequired": {
+        "en": "Please select from Company",
+        "ar": "برجاء اختيار من شركة"
+    },
+    "Postit": {
+        "en": "Postit",
+        "ar": "النتبيهات"
+    },
+    "AddPostit": {
+        "en": "Add Postit",
+        "ar": "اضافه تنبيه"
+    },
+    "SupplierAnalysisSection": {
+        "en": "Supplier Analysis Section",
+        "ar": "قسم توصيف المورين"
+    },
+    "AddSupplierAnalysisSection": {
+        "en": "Add Supplier Analysis Section",
+        "ar": "اضافة توصيف المورين"
+    },
+    "AddSupplierAnalysisSectionItems": {
+        "en": "Add Supplier Analysis Section Items",
+        "ar": "إضافة قسم توصيف بنود الموردين"
+    },
+    "ItemValue": {
+        "en": "Item Value",
+        "ar": "القيمة"
+    },
+    "value": {
+        "en": "Value",
+        "ar": "القيمة"
+    },
+    "ItemValueRequired": {
+        "en": "Please insert item value",
+        "ar": "من فضلك ادخل القيمة"
+    },
+    "SupplierAnalysisSectionsItems": {
+        "en": "Supplier Analysis Sections Items",
+        "ar": "قسم توصيف بنود الموردين"
+    },
+    "Companies": {
+        "en": "Companies",
+        "ar": "الشركات"
+    },
+    "addComapny": {
+        "en": "Add Comapny",
+        "ar": "اضافة شركة"
+    },
+    "ComapnyNameRequired": {
+        "en": "Please insert company name",
+        "ar": "من فضلك ادخل اسم الشركة"
+    },
+    "abbreviationRequired": {
+        "en": "Please insert the abbreviation",
+        "ar": "يرجى كتابة الاختصار"
+    },
+    "roleRequired": {
+        "en": "Please insert the company role",
+        "ar": "يرجى اختيار دور الشركة"
+    },
+    "disciplineRequired": {
+        "en": "Please insert company discipline",
+        "ar": "يرجى اختيار مجال الشركة"
+    },
+    "titleRequired": {
+        "en": "Please insert contact title",
+        "ar": "يرجى اختيار العنوان"
+    },
+    "contactNameRequired": {
+        "en": "Please insert contact name",
+        "ar": "يرجى ادخال اسم مسؤل الاتصال"
+    },
+    "emailRequired": {
+        "en": "Please insert contact E-mail",
+        "ar": "يرجى ادخال البريد الالكتروني"
+    },
+    "email": {
+        "en": "E-mail",
+        "ar": " البريد الالكتروني"
+    },
+    "useEmail": {
+        "en": "Use E-mail",
+        "ar": "استخدام البريد الالكتروني"
+    },
+    "useSSL": {
+        "en": "Use SSL",
+        "ar": "استخدام SSL"
+    },
+    "companyRole": {
+        "en": "Company Role",
+        "ar": "دور الشركة"
+    },
+    "discipline": {
+        "en": "Discipline",
+        "ar": "دور الشركة"
+    },
+    "disciplineSelection": {
+        "en": "-- Please Select Discipline --",
+        "ar": "--برجاء اختيار دور الشركة --"
+    },
+    "disciplineName": {
+        "en": "Discipline",
+        "ar": "نطاق الاعمال"
+    },
+    "companyField": {
+        "en": "Company Field",
+        "ar": "مجال الشركة"
+    },
+    "Telephone": {
+        "en": "Telephone",
+        "ar": "رقم الهاتف"
+    },
+    "logo": {
+        "en": "logo",
+        "ar": "الشعار"
+    },
+    "Fax": {
+        "en": "Fax",
+        "ar": "فاكس"
+    },
+    "Mobile": {
+        "en": "Mobile",
+        "ar": "رقم المحمول"
+    },
+    "EnglishAddress": {
+        "en": "English Address",
+        "ar": " العنوان بالانجليزية"
+    },
+    "ArabicAddress": {
+        "en": "Arabic Address",
+        "ar": " العنوان بالعربية"
+    },
+    "Address": {
+        "en": "Address",
+        "ar": "العنوان"
+    },
+    "Grade": {
+        "en": "Grade",
+        "ar": "الرجة"
+    },
+    "Notes": {
+        "en": "Notes",
+        "ar": "ملاحظات"
+    },
+    "agantName": {
+        "en": "Agent Name",
+        "ar": "اسم المندوب"
+    },
+    "NotesRequired": {
+        "en": "Please insert the Notes",
+        "ar": "من فضلك ادخل الملاحظات"
+    },
+    "EnglishPosition": {
+        "en": "English Position",
+        "ar": "اسم المنصب بالعربية"
+    },
+    "ArabicPosition": {
+        "en": "Arabic Position",
+        "ar": "اسم المنصب بالانجليزية"
+    },
+    "enteredBy": {
+        "en": "Entered By",
+        "ar": "تم الادخال بواسطة"
+    },
+    "openedBy": {
+        "en": "Opened By",
+        "ar": "تم الانشاء بواسطة"
+    },
+    "createdBy": {
+        "en": "Create By",
+        "ar": "تم اعداده بواسطة"
+    },
+    "creationDate": {
+        "en": "Creation Date",
+        "ar": "تاريخ البدأ"
+    },
+    "paymentDate": {
+        "en": "Creation Date",
+        "ar": "تاريخ السداد"
+    },
+    "closedBy": {
+        "en": "Closed By",
+        "ar": "تم الإغلاق بواسطة"
+    },
+    "lastEdit": {
+        "en": "Last Edit By",
+        "ar": "اخر تعيل بواسطة"
+    },
+    "lastEditDate": {
+        "en": "Last Edit Date",
+        "ar": "تاريخ اخر تعيل"
+    },
+    "keyContact": {
+        "en": "Key Contact",
+        "ar": "مسؤل الاتصال"
+    },
+    "name": {
+        "en": " Name",
+        "ar": "الاسم "
+    },
+    "ArabicName": {
+        "en": "Arabic Name",
+        "ar": "الاسم بالعربية"
+    },
+    "tenderAnalysySectionItems": {
+        "en": "Tender Analysis Section Items",
+        "ar": "بنود تحليل العطاء"
+    },
+    "tenderAnalysySection": {
+        "en": "Tender Analysis Sections",
+        "ar": "أقسام تحليل العطاء"
+    },
+    "addTenderAnalysySection": {
+        "en": "Add Tender Analysis Section",
+        "ar": "اضافة قسم تحليل العطاء"
+    },
+    "selectSection": {
+        "en": "-- Select Section --",
+        "ar": "-- تفضل باختيار القسم --"
+    },
+    "AddTenderAnalysisSectionItems": {
+        "en": "Add Supplier Analysis Section Items",
+        "ar": "إضافة بند لأقسام العطاء"
+    },
+    "addAccountsDefaultList": {
+        "en": "Add Accounts Default List",
+        "ar": "اضافة قائمة افتراضية"
+    },
+    "AccountsDefaultList": {
+        "en": "Default List",
+        "ar": "بنود القائمة الافتراضيه"
+    },
+    "selectAccountsDefaultList": {
+        "en": "-- Please Select a List Type --",
+        "ar": "-- تفضل باختيار نوع القائمة --"
+    },
+    "accounts": {
+        "en": "Accounts",
+        "ar": "المستخدمين"
+    },
+    "ContactsLog": {
+        "en": "Contacts Log",
+        "ar": "سجل أسماء الأشخاص"
+    },
+    "addContact": {
+        "en": "Add Contact",
+        "ar": "اضافة شخص"
+    },
+    "choosePermissions": {
+        "en": "choose Permissions",
+        "ar": "اختر صلاحية"
+    },
+    "userPermissions": {
+        "en": "User Permissions",
+        "ar": "صلاحيات المستخدم"
+    },
+    "sendNewEmail": {
+        "en": "Send new email",
+        "ar": "ارسال بريد الكتروني"
+    },
+ 
+    "details": {
+        "en": "Details",
+        "ar": "التفاصيل"
+    },
+    "contract": {
+        "en": "Contract",
+        "ar": "العقد"
+    },
+    "contractLog": {
+        "en": "Contract Log",
+        "ar": "سجل العقود"
+    },
+    "contractRequired": {
+        "en": "Please insert contract name",
+        "ar": "من فضلك ادخل اسم العقد"
+    },
+    "addContract": {
+        "en": "Add Contract",
+        "ar": "اضافة عقد"
+    },
+    "generalConditionsLog": {
+        "en": "General Conditions Log",
+        "ar": "سجل الشروط العامة"
+    },
+    "addGeneralConditionsLog": {
+        "en": "Add general conditions",
+        "ar": "إضافة شروط عامة"
+    },
+    "arrange": {
+        "en": "Doc.No",
+        "ar": "الترتيب"
+    },
+    "conditions": {
+        "en": "Conditions",
+        "ar": "الشروط"
+    },
+    "conditionsRequired": {
+        "en": "Please insert conditions",
+        "ar": "تفضل بادخال الشروط"
+    },
+    "particularConditionsLog": {
+        "en": "Particular Conditions Log",
+        "ar": "سجل الشروط الخاصة"
+    },
+    "addParticularConditions": {
+        "en": "Add particular Conditions",
+        "ar": "اضافة الشروط الخاصة"
+    },
+    "selectContract": {
+        "en": "-- Select Contract --",
+        "ar": "-- اختر العقد --"
+    },
+    "lastModified": {
+        "en": "Last Modified By",
+        "ar": "التعديل الاخير بواسطة"
+    },
+    "RfiNo": {
+        "en": "RFI NO.",
+        "ar": "رقم نموذج طلب المعلومات"
+    },
+    "RfiNoRequired": {
+        "en": "RFI NO. is required",
+        "ar": "برجاء ادخال رقم نموذج طلب المعلومات"
+    },
+    "selectStatus": {
+        "en": "--  Please select a status --",
+        "ar": "-- برجاء اختيار الحالة --"
+    },
+    "selectStatusRequired": {
+        "en": "Please select a status",
+        "ar": "برجاء اختيار الحالة"
+    },
+    "selectCompany": {
+        "en": "-- Please select a company --",
+        "ar": "-- برجاء اختيار الشركة --"
+    },
+    "selectContact": {
+        "en": "-- Please select a contact --",
+        "ar": "-- برجاء اختيار المسؤل --"
+    },
+    "oppened": {
+        "en": "Opened",
+        "ar": "مفتوح"
+    },
+    "gettingData": {
+        "en": "Getting Data",
+        "ar": "جارى الحصول على البيانات"
+    },
+    "searchBy": {
+        "en": "Search By...",
+        "ar": "ابحث"
+    },
+    "filterHere": {
+        "en": "Filter Here...",
+        "ar": "تنقية"
+    },
+    "closed": {
+        "en": "Closed",
+        "ar": "مغلق"
+    },
+    "unRead": {
+        "en": "unRead",
+        "ar": "مفتوح"
+    },
+    "read": {
+        "en": "read",
+        "ar": "مغلق"
+    },
+    "requiredDate": {
+        "en": "Required Date",
+        "ar": "التاريخ المطلوب"
+    },
+    "requiredDateRequired": {
+        "en": "Please insert Required Date",
+        "ar": "برجاء ادخال التاريخ المطلوب"
+    },
+    "communicationRFI": {
+        "en": "Communication RFI",
+        "ar": "سجل طلب المعلومات"
+    },
+    "dateFormatRequired": {
+        "en": "Please insert a correct Date format MM/DD/YYYY",
+        "ar": "برجاء ادخال التاريخ بطريقة صحيحة شهر/يوم/سنة"
+    },
+    "area": {
+        "en": "Area",
+        "ar": "المنطقة"
+    },
+    "areaRequired": {
+        "en": "Please insert Area",
+        "ar": "برجاء ادخال المنطقة"
+    },
+    "communicationEmails": {
+        "en": "Email Records",
+        "ar": "سجلات البريد الالكتروني"
+    },
+    "communicationEmailsView": {
+        "en": "Email Records View",
+        "ar": "عرض سجلات البريد الالكتروني"
+    },
+    "smartAddMessage": {
+        "en": {
+            "successTitle": "Operation completed successfuly",
+            "successContent": "<i>Record Added Successfuly...</i>",
+            "failureTitle": "Operation was canceled",
+            "failureContent": "<i>Your Maximum Allowed Value for Working Hours is</i>"
+        },
+        "ar": {
+            "successTitle": "تمت العملية بنجاح",
+            "successContent": "<i>...تم اضافة السجل</i>",
+            "failureTitle": "تم الغاء العملية",
+            "failureContent": "<i>عدد ساعات العمل المتاحة لك اضافتها اصبح</i>"
+        }
+    },
+    "smartDeleteMessage": {
+        "en": {
+            "title": "Caution hazardous operation!",
+            "content": "Are you sure you want to delete this?",
+            "buttons": "[No][Yes]",
+            "successTitle": "Operation completed successfuly",
+            "successContent": "<i class='fa fa-clock-o'></i> <i>Record deleted successfuly...</i>",
+            "failureTitle": "Operation was canceled",
+            "failureContent": "<i class='fa fa-clock-o'></i> <i>Canceled delete...</i>",
+            "yes": "Yes",
+            "no": "No"
+        },
+        "ar": {
+            "title": "!احذر عملية خطيرة",
+            "content": "هل انت متاكدة انك تريد حذف هذا؟",
+            "buttons": "[لا][نعم]",
+            "successTitle": "تمت العملية بنجاح",
+            "successContent": "<i class='fa fa-clock-o'></i> <i>...تم حذف السجل</i>",
+            "failureTitle": "تم الغاء العملية",
+            "failureContent": "<i class='fa fa-clock-o'></i> <i>...تم الغاء الحذف</i>",
+            "yes": "نعم",
+            "no": "لا"
+        }
+    },
+    "projectAddErrorMessages": {
+        "en": {
+            "EnglishNameExists": "project name english already exsists",
+            "ArabicNameExists": "project name arabic already exsists",
+            "ReferenceCodeExists": "reference code already exsists"
+        },
+        "ar": {
+            "EnglishNameExists": "اسم المشروع بالأنجليزي موجود بالفعل",
+            "ArabicNameExists": "اسم المشروع بالعربي موجود بالفعل",
+            "ReferenceCodeExists": "كود المشروع موجود بالفعل"
+        }
+    },
+    "projectsAdd": {
+        "en": "Projects Add",
+        "ar": "اضافة مشاريع"
+    },
+    "projectNo": {
+        "en": "Projects NO",
+        "ar": "رقم المشروع"
+    },
+    "projectType": {
+        "en": "Projects Type",
+        "ar": "نوع المشروع"
+    },
+    "pleaseSelectProjectType": {
+        "en": "Please Select a Project Type",
+        "ar": "من فضلك اختر نوع المشروع"
+    },
+    "projectNameEnglish": {
+        "en": "Project Name English",
+        "ar": "اسم المشروع بالانجليزية"
+    },
+    "projectRequired": {
+        "en": "Please select a Project",
+        "ar": "برجاء اختيار المشروع"
+    },
+    "projectNameArabic": {
+        "en": "Project Name Arabic",
+        "ar": "اسم المشروع بالعربية"
+    },
+    "projectName": {
+        "en": "Project Name",
+        "ar": "اسم المشروع"
+    },
+    "abbreviationArabic": {
+        "en": "Abbreviation Arabic",
+        "ar": "الاختصار بالعربية"
+    },
+    "abbreviationEnglish": {
+        "en": "Abbreviation English",
+        "ar": "الاختصار بالانجليزية"
+    },
+    "referenceCode": {
+        "en": "Code",
+        "ar": "الكود"
+    },
+    "Building": {
+        "en": "Building/Job/Contract",
+        "ar": "رقم المبنى"
+    },
+    "buildingNumber": {
+        "en": "Building Number",
+        "ar": "رقم المبنى"
+    },
+    "buildingNumberSelection": {
+        "en": "Please Select Building Number",
+        "ar": "برجاء اختيار رقم المبنى"
+    },
+    "apartmentNumber": {
+        "en": "Apartment Number",
+        "ar": "رقم الشقة"
+    },
+    "apartmentNumberSelection": {
+        "en": "Please Select Apartment Number",
+        "ar": "برجاء اختيار رقم الشقة"
+    },
+    "docNo": {
+        "en": "Document Number",
+        "ar": "رقم الوثيقة"
+    },
+    "newCommunicationCorrespondenceSent": {
+        "en": "Correspondence Sent Addition",
+        "ar": "إضافة المراسلات الصادرة"
+    },
+    "newCommunicationCorrespondenceReceived": {
+        "en": "Correspondence Received Addition",
+        "ar": "إضافة المراسلات الواردة"
+    },
+    "sendingMethod": {
+        "en": "Sending Method",
+        "ar": "طريقة الارسال"
+    },
+    "sendingMethodRequired": {
+        "en": "Please Select Sending Method",
+        "ar": "برجاء اختيار طريقة الارسال"
+    },
+    "location": {
+        "en": "Location",
+        "ar": "الموقع"
+    },
+    "assignToLocation": {
+        "en": "Assign To Location",
+        "ar": "وضع الصنف في موقع"
+    },
+    "pallta": {
+        "en": "Pallta",
+        "ar": "البليتات"
+    },
+    "locationRequired": {
+        "en": "Please Select Location",
+        "ar": "برجاء اختيار الموقع"
+    },
+    "correspondenceSentLog": {
+        "en": "Correspondence Sent Log",
+        "ar": "سجل المراسلات الصادرة"
+    },
+    "projectManagerCompany": {
+        "en": "Project Manager Company",
+        "ar": "شركة مدير المشروع"
+    },
+    "pleaseSelectProjectManagerCompany": {
+        "en": "Please Select a Project Manager Contact",
+        "ar": "من فضلك اختر شركة مدير المشروع"
+    },
+    "projectManagerContact": {
+        "en": "Project Manager Company",
+        "ar": "اسم مدير المشروع"
+    },
+    "pleaseSelectProjectManagerContact": {
+        "en": "Please Select a Project Manager Contact",
+        "ar": "من فضلك اختر اسم مدير المشروع"
+    },
+    "executiveManagerCompany": {
+        "en": "Executive Manager Company",
+        "ar": "شركة المدير التنفيذي"
+    },
+    "pleaseSelectExecutiveManagerCompany": {
+        "en": "Please Select a Executive Manager Contact",
+        "ar": "من فضلك اختر شركة المدير التنفيذي"
+    },
+    "executiveManagerContact": {
+        "en": "Executive Manager Company",
+        "ar": "اسم المدير التنفيذي"
+    },
+    "pleaseSelectExecutiveManagerContact": {
+        "en": "Please Select a Executive Manager Contact",
+        "ar": "من فضلك اختر اسم المدير التنفيذي"
+    },
+    "contractValue": {
+        "en": "Contract Value",
+        "ar": "قيمة العقد"
+    },
+    "currency": {
+        "en": "Currency",
+        "ar": "العملة"
+    },
+    "docType": {
+        "en": "Document Type",
+        "ar": "نوع الوثيقة"
+    },
+    "docTypeSelect": {
+        "en": "-- Please Select Document Type --",
+        "ar": "-- اختر نوع الوثيقة --"
+    },
+    "sendMethodSelect": {
+        "en": "-- Please Select Sending Method --",
+        "ar": "-- اختر طريقة الارسال --"
+    },
+    "docTypeRequired": {
+        "en": "Please select Document Type",
+        "ar": "برجاء اختيار نوع الوثيقة"
+    },
+    "pleaseSelectCurrency": {
+        "en": "Please Select a Currency",
+        "ar": "من فضلك اختر العملة"
+    },
+    "country": {
+        "en": "Country",
+        "ar": "الدولة"
+    },
+    "BOQCostCoding": {
+        "en": "BOQ Cost Coding",
+        "ar": "كود تكلفة قائمة الكميات"
+    },
+    "pleaseSelectCountry": {
+        "en": "Please Select a Country",
+        "ar": "من فضلك اختر الدولة"
+    },
+    "projectNeeds": {
+        "en": "Project Needs",
+        "ar": "احتياجات المشروع"
+    },
+    "clientsConstraints": {
+        "en": "Clients Constraints",
+        "ar": "قيود العملاء"
+    },
+    "yourCompany": {
+        "en": "Your Company",
+        "ar": "شركتك"
+    },
+    "pleaseSelectYourCompany": {
+        "en": "Please Select Your Company",
+        "ar": "من فضلك اختر شركتك"
+    },
+    "yourCompanyRole": {
+        "en": "Your Company Role",
+        "ar": "دورالشركة"
+    },
+    "pleaseSelectYourCompanyRole": {
+        "en": "Please Select Your Company Role",
+        "ar": "من فضلك اختر دورالشركة"
+    },
+    "owner": {
+        "en": "Owner",
+        "ar": "المالك"
+    },
+    "pleaseSelectOwner": {
+        "en": "Please Select Owner",
+        "ar": "من فضلك اختر المالك"
+    },
+    "generalContractor": {
+        "en": "General Contractor",
+        "ar": "المقاول العام"
+    },
+    "pleaseSelectGeneralContractor": {
+        "en": "Please Select a General Contractor",
+        "ar": "من فضلك اختر المقاول العام"
+    },
+    "engineerofRecord": {
+        "en": "Engineer Of Record",
+        "ar": "سجل المهندس"
+    },
+    "pleaseSelectEngineerOfRecord": {
+        "en": "Please Select a Engineer Of Record",
+        "ar": "من فضلك اختر سجل المهندس"
+    },
+    "projectManagementCompany": {
+        "en": "Project Management Company",
+        "ar": "شركة إدارة المشاريع"
+    },
+    "pleaseSelectProjectManagementCompany": {
+        "en": "Please Select a Project Management Company",
+        "ar": "من فضلك اختر شركة إدارة المشاريع"
+    },
+    "submittalCoordinator": {
+        "en": "Submittal Coordinator",
+        "ar": "منثق التقديمات"
+    },
+    "pleaseSelectSubmittalCoordinator": {
+        "en": "Please Select a Submittal Coordinator",
+        "ar": "من فضلك اختر منثق التقديمات"
+    },
+    "projectStatus": {
+        "en": "Projects Status",
+        "ar": "حالة المشاريع"
+    },
+    "activeInactive": {
+        "en": "Active / Inactive",
+        "ar": "مفعل / غير مفعل"
+    },
+    "password": {
+        "en": "Password",
+        "ar": "كلمة المرور"
+    },
+    "passwordRequired": {
+        "en": "Please Enter Password",
+        "ar": "برجاء إدخال كلمة المرور"
+    },
+    "port": {
+        "en": "Port",
+        "ar": "مدخل"
+    },
+    "holded": {
+        "en": "Holded",
+        "ar": "معلقة"
+    },
+    "unHolded": {
+        "en": "UnHolded",
+        "ar": "غير معلقة"
+    },
+    "pop3Server": {
+        "en": "Pop3 Server",
+        "ar": "Pop3 Server"
+    },
+    "yes": {
+        "en": "Yes",
+        "ar": "نعم"
+    },
+    "no": {
+        "en": "No",
+        "ar": "لا"
+    },
+    "managementEmployees": {
+        "en": " Employees Management",
+        "ar": "إدارة الموظفين"
+    },
+    "accountPermissionsGroups": {
+        "en": "Permissions Groups",
+        "ar": " سياسات للحساب"
+    },
+    "timehours": {
+        "en": "Time Sheet Hours",
+        "ar": "عدد الساعات"
+    },
+    "Task": {
+        "en": "Task",
+        "ar": "مهمة"
+    },
+    "taskName": {
+        "en": "Task Name",
+        "ar": "اسم مهمة"
+    },
+    "timesheettitle": {
+        "en": "Today Time Sheet",
+        "ar": "تقريرالحضور والإنصراف اليوم "
+    },
+    "lettertitle": {
+        "en": "Letters",
+        "ar": "خطابات "
+    },
+    "letterEdittion": {
+        "en": "Letter Edittion",
+        "ar": "تعديل خطاب "
+    },
+    "letterAddition": {
+        "en": "Letter Addittion",
+        "ar": "اضافة خطاب "
+    },
+    "newCycle": {
+        "en": "New Cycle",
+        "ar": "مرحله جديده "
+    },
+    "cycleNo": {
+        "en": "Cycle Number",
+        "ar": "رقم مرحله"
+    },
+    "attachFile": {
+        "en": "Attach File",
+        "ar": "رفع ملف "
+    },
+    "status": {
+        "en": "Status",
+        "ar": "الحاله"
+    },
+    "subject": {
+        "en": "Subject",
+        "ar": "العنوان"
+    },
+    "subjectRequired": {
+        "en": "Please insert subject",
+        "ar": "برجاء ادخال العنوان"
+    },
+    "addProjectsForms": {
+        "en": "Add Project Form",
+        "ar": "اضافة النماذج"
+    },
+    "projectsForms": {
+        "en": "Projects Forms Log",
+        "ar": "النماذج العامة"
+    },
+    "docClosedate": {
+        "en": "Doc Close Date",
+        "ar": "تاريخ الاغلاق"
+    },
+    "docDate": {
+        "en": "Doc Date",
+        "ar": "تاريخ المستند"
+    },
+    "formDate": {
+        "en": "Form Date",
+        "ar": "تاريخ المستند"
+    },
+    "formDateRequired": {
+        "en": "Please insert Form Date",
+        "ar": "برجاء اخال تاريخ المستند"
+    },
+    "docDateRequired": {
+        "en": "Please insert Doc Date",
+        "ar": "برجاء ادخال تاريخ المستند"
+    },
+    "sendDateRequired": {
+        "en": "Please insert Send Date",
+        "ar": "برجاء ادخال تاريخ ارسال المستند"
+    },
+    "replyDate": {
+        "en": "Reply Date",
+        "ar": "تاريخ الرد"
+    },
+    "refDoc": {
+        "en": "References Document",
+        "ar": "فهرس المستند"
+    },
+    "refDocSupplier": {
+        "en": "References Document For Supplier",
+        "ar": "رقم الحركة للمورد"
+    },
+    "transNo": {
+        "en": "Transaction No",
+        "ar": "رقم الحركة "
+    },
+    "transType": {
+        "en": "Transaction Type",
+        "ar": "نوع الحركة "
+    },
+    "reference": {
+        "en": "Reference",
+        "ar": "المراجع"
+    },
+    "document": {
+        "en": "documents",
+        "ar": "الوثائق"
+    },
+    "documentRequired": {
+        "en": "Please Select a Document",
+        "ar": "برجاء اختيار الوثيقة"
+    },
+    "proposal": {
+        "en": "Proposal",
+        "ar": "العروض "
+    },
+    "addProposal": {
+        "en": "Add Proposal",
+        "ar": "اضافة عرض "
+    },
+    "message": {
+        "en": "Message",
+        "ar": "الرساله"
+    },
+    "writeMessage": {
+        "en": "Write Message here",
+        "ar": "اكتب الرسالة هنا"
+    },
+    "writeAnswer": {
+        "en": "Write Answer here",
+        "ar": "اكتب الرسالة هنا"
+    },
+    "replyletter": {
+        "en": "Reply Letter",
+        "ar": "رد على خطاب"
+    },
+    "numberCall": {
+        "en": "Number Call",
+        "ar": "رقم التليفون"
+    },
+    "callTime": {
+        "en": "Call Time",
+        "ar": "مده المكالمة"
+    },
+    "enteredBy": {
+        "en": "Entered By",
+        "ar": "تم ادخالها بواسطه"
+    },
+    "descriptionCall": {
+        "en": "Description Call",
+        "ar": "وصف المكالمه "
+    },
+    "phoneTitle": {
+        "en": "Phone Record",
+        "ar": "تسجيل التليفون"
+    },
+    "requestProposal": {
+        "en": "Request Proposal",
+        "ar": "طلب لعرض"
+    },
+    "communication": {
+        "en": "Communication",
+        "ar": "متابعة الاتصالات"
+    },
+    "communicationInternalMemo": {
+        "en": " Internal Memo Log",
+        "ar": "سجل المذكرات الداخلية"
+    },
+    "Reports": {
+        "en": "Reports",
+        "ar": "التقارير"
+    },
+    "addReport": {
+        "en": "Add Report",
+        "ar": "اضافة تقرير"
+    },
+    "reportView": {
+        "en": "Report View",
+        "ar": "مشاهدة تقرير"
+    },
+    "reportType": {
+        "en": "Report Type",
+        "ar": "نوع التقرير"
+    },
+    "reportTypeRequired": {
+        "en": "Please insert Report Type",
+        "ar": "برجاء ادخال نوع التقرير"
+    },
+    "addReport": {
+        "en": "Add Report",
+        "ar": "اضافة تقرير"
+    },
+    "pleaseSelectReportType": {
+        "en": "Please Select a Report Type",
+        "ar": "من فضلك اختر نوع التقرير"
+    },
+    "communicationCorrespondenceReceived": {
+        "en": " Correspondence Received Log",
+        "ar": " سجل المراسلات الواردة"
+    },
+    "projectTaskGroups": {
+        "en": " Task Group",
+        "ar": " مجموعة المهام"
+    },
+    "projectTaskGroupsAdd": {
+        "en": " Task Group Add",
+        "ar": " اضافة مجموعةالمهام"
+    },
+    "accountUserName": {
+        "en": "Account User Name",
+        "ar": " اسم مستخدم الحساب"
+    },
+    "workFlow": {
+        "en": "Work Flow",
+        "ar": "الدورة المستندية"
+    },
+    "historyDoc": {
+        "en": "Prevouise Modification",
+        "ar": "تعديلات على البيانات"
+    },
+    "workFlowStatus": {
+        "en": "Request Status",
+        "ar": "حالة الطلب"
+    },
+    "addWorkFlow": {
+        "en": "Add Work Flow",
+        "ar": "اضافة الدورة المستندية"
+    },
+    "redAlert": {
+        "en": "Red Alert",
+        "ar": "التنبيه باللون الاحمر"
+    },
+    "yellowAlert": {
+        "en": "Yellow Alert",
+        "ar": "التنبيه باللون الاصفر"
+    },
+    "GreenAlert": {
+        "en": "Green Alert",
+        "ar": "التنبيه باللون الاخضر"
+    },
+    "redAlertDays": {
+        "en": "Days To Red Alert",
+        "ar": "أيام التنبيه باللون الأحمر"
+    },
+    "yellowAlertDays": {
+        "en": "Days To Yellow Alert",
+        "ar": "أيام التنبيه باللون الاصفر"
+    },
+    "greenAlertDays": {
+        "en": "Days To Green Alert",
+        "ar": "أيام التنبيه باللون الاخضر"
+    },
+    "redAlertDaysRequired": {
+        "en": "Please insert Days To Red Alert",
+        "ar": "برجاء اخال أيام التنبيه باللون الأحمر"
+    },
+    "yellowAlertDaysRequired": {
+        "en": "Please insert Days To Yellow Alert",
+        "ar": "برجاء اخال أيام التنبيه باللون الاصفر"
+    },
+    "greenAlertDaysRequired": {
+        "en": "Please insert Days To Green Alert",
+        "ar": "برجاء اخال أيام التنبيه باللون الاخضر"
+    },
+    "alerts": {
+        "en": "Alerts",
+        "ar": "التنبيهات"
+    },
+    "alertDate": {
+        "en": "Alert Date",
+        "ar": "تاريخ التنبيه"
+    },
+    "general": {
+        "en": "General/ ",
+        "ar": "عام/"
+    },
+    "items": {
+        "en": "Items",
+        "ar": "عناصر"
+    },
+    "supplierForitems": {
+        "en": "Supplier For Items",
+        "ar": "المواردين للعنصر.."
+    },
+    "checkList": {
+        "en": "Check List",
+        "ar": "قائمة التحقق"
+    },
+    "checkListAdd": {
+        "en": "Add Check List",
+        "ar": "اضافة قائمة التحقق"
+    },
+    "distributionList": {
+        "en": "Distribution List",
+        "ar": "قائمه التوزيع"
+    },
+    "chequeNo": {
+        "en": "Cheque No",
+        "ar": "رقم الشيك"
+    },
+    "addDistributionList": {
+        "en": "Add Distribution List",
+        "ar": "اضافة قائمه التوزيع"
+    },
+    "projectPictures": {
+        "en": "Project Pictures",
+        "ar": "صور المشروع"
+    },
+    "addProjectPictures": {
+        "en": "Add Project Pictures",
+        "ar": "اضافة صور المشروع"
+    },
+    "picDate": {
+        "en": "Picture Date",
+        "ar": "تاريخ الصورة"
+    },
+    "calledByCompany": {
+        "en": "CalledBy Company",
+        "ar": "الشركة الداعية للاجتماع"
+    },
+    "calledByCompanyRequired": {
+        "en": "Please Select CalledBy Company",
+        "ar": "برجاء اختيار الشركة الداعية للاجتماع"
+    },
+    "calledByCompanySelect": {
+        "en": "-- Please Select CalledBy Company --",
+        "ar": "-- برجاء اختيار الشركة الداعية للاجتماع --"
+    },
+    "calledByContact": {
+        "en": "CalledBy Contact",
+        "ar": "الشخص الداعي للاجتماع"
+    },
+    "calledByContactRequired": {
+        "en": "Please Select CalledBy Contact",
+        "ar": "برجاء اختيار الشخص الداعي للاجتماع"
+    },
+    "calledByContactRequiredSelect": {
+        "en": "-- Please Select CalledBy Contact --",
+        "ar": "-- برجاء اختيار الشخص الداعي للاجتماع --"
+    },
+    "facilitatorCompany": {
+        "en": "Facilitator Company",
+        "ar": "الشركة المنسقة للاجتماع"
+    },
+    "facilitatorCompanyRequired": {
+        "en": "Please Select Facilitator Company",
+        "ar": "برجاء اختيار الشركة المنسقة للاجتماع"
+    },
+    "facilitatorCompanySelect": {
+        "en": "-- Please Select Facilitator Company --",
+        "ar": "-- برجاء اختيار الشركة المنسقة للاجتماع --"
+    },
+    "facilitatorContact": {
+        "en": "Facilitator Contact",
+        "ar": "الشخص المنسقة للاجتماع"
+    },
+    "facilitatorContactReuired": {
+        "en": "Please Select Facilitator Contact",
+        "ar": "برجاء اختيار الشخص المنسقة للاجتماع"
+    },
+    "facilitatorContactSelect": {
+        "en": "-- Please Select Facilitator Contact --",
+        "ar": "-- برجاء اختيار الشخص المنسقة للاجتماع --"
+    },
+    "noteTakerCompany": {
+        "en": "Note Taker Company",
+        "ar": "الشركة آخذة الملاحظات"
+    },
+    "noteTakerCompanyReuired": {
+        "en": "Please Select Note Taker Company",
+        "ar": "برجاء اختيار الشركة آخذة الملاحظات"
+    },
+    "noteTakerCompanySelect": {
+        "en": "-- Please Select Note Taker Company --",
+        "ar": "-- برجاء اختيار الشركة آخذة الملاحظات --"
+    },
+    "noteTakerContact": {
+        "en": "Note Taker Contact",
+        "ar": "الشخص القائم بأخذ الملاحظات"
+    },
+    "noteTakerContactRequired": {
+        "en": "Please Select Note Taker Contact",
+        "ar": "برجاء اختيار الشخص القائم بأخذ الملاحظات"
+    },
+    "noteTakerContactSelect": {
+        "en": "-- Please Select Note Taker Contact --",
+        "ar": "-- برجاء اختيار الشخص القائم بأخذ الملاحظات --"
+    },
+    "meetingMinutes": {
+        "en": "Meeting Minutes",
+        "ar": "محاضر الإجتماعات"
+    },
+    "meetingAganda": {
+        "en": "Meeting Aganda",
+        "ar": "اجندة الإجتماعات"
+    },
+    "agents": {
+        "en": "Agents",
+        "ar": "المندوبين"
+    },
+    "handouts": {
+        "en": "Handouts",
+        "ar": "تسليمات الإجتماع"
+    },
+    "meetingAgendaLog": {
+        "en": "Meeting Agenda Log",
+        "ar": "سجل أجندة الإجتماعات"
+    },
+    "addMeetingAgenda": {
+        "en": "Add Meeting Agenda",
+        "ar": "إضافة أجندة إجتماع"
+    },
+    "addMeetingMinutes": {
+        "en": "Add Meeting Minutes",
+        "ar": "إضافة سجل إجتماع"
+    },
+    "picDateRequired": {
+        "en": "Please insert Picture Date",
+        "ar": "برجاء ادخال تاريخ الصورة"
+    },
+    "meetingMinutesLog": {
+        "en": "Minutes Of Meeting Log ",
+        "ar": "سجل الإجتماعات"
+    },
+    "headerAndFooter": {
+        "en": "Header And Footer",
+        "ar": "رأس وتذييل صفحة المشروع"
+    },
+    "addHeaderAndFooter": {
+        "en": "Add Header And Footer",
+        "ar": "اضافة رأس وتذييل صفحة المشروع"
+    },
+    "header": {
+        "en": "Header",
+        "ar": "رأس الصفحة"
+    },
+    "footer": {
+        "en": "Footer",
+        "ar": "التذييل"
+    },
+    "type": {
+        "en": "Type",
+        "ar": "النوع"
+    },
+    "typeSelect": {
+        "en": "Please Select Type",
+        "ar": "من فضلك اختر النوع"
+    },
+    "communicationTrasmittalLog": {
+        "en": "Communication Trasmittal Log",
+        "ar": "سجل نماذج التسليمات"
+    },
+    "addCommunicationTrasmittal": {
+        "en": "Add Communication Trasmittal",
+        "ar": "اضافة نموذج تسليم"
+    },
+    "submittedFor": {
+        "en": "Submitted For",
+        "ar": "مقدم الى"
+    },
+    "submittedForSelect": {
+        "en": "-- Please Select Submitted For --",
+        "ar": "-- اختر مقدم الى --"
+    },
+    "addAlert": {
+        "en": "Add New Alert",
+        "ar": "اضافة تنبيه جديد"
+    },
+    "schedule": {
+        "en": "Schedule",
+        "ar": "الجدول الزمني"
+    },
+    "scheduleAdd": {
+        "en": "Add Schedule",
+        "ar": "اضافة الجدول الزمني"
+    },
+    "scheduleStart": {
+        "en": "Schedule Start",
+        "ar": "تاريخ بداية الجدول الزمني"
+    },
+    "scheduleFinish": {
+        "en": "Schedule Finish",
+        "ar": "تاريخ نهاية الجدول الزمني"
+    }, 
+    "startDate": {
+        "en": "Start Date",
+        "ar": "تاريخ البداية"
+    },
+    "finishDate": {
+        "en": "Finish Date",
+        "ar": "تاريخ الانتهاء"
+    }, 
+    "prevoiuseStartDate": {
+        "en": "Start Date",
+        "ar": "تاريخ البداية السابق"
+    }, 
+    "prevoiuseValue": {
+        "en": "Prevoiuse Value",
+        "ar": "قيمة الفترة السابقة"
+    }, 
+    "currentValue": {
+        "en": "Prevoiuse Value",
+        "ar": "قيمة الفترة الحالية"
+    },
+    "prevoiuseFinishDate": {
+        "en": "Finish Date",
+        "ar": "تاريخ الانتهاء السابق"
+    },
+    "startDateRequired": {
+        "en": "Please Enter Start Date",
+        "ar": "برجاء إدخال تاريخ البداية"
+    },
+    "finishDateRequired": {
+        "en": "Please Enter Finish Date",
+        "ar": "برجاء إدخال تاريخ الانتهاء"
+    },
+    "actionByCompany": {
+        "en": "Action By Company",
+        "ar": "الشركة المسئولة"
+    },
+    "actionByCompanyRequired": {
+        "en": "Please Enter Action By Company",
+        "ar": "برجاء إدخال الشركة المسئولة"
+    },
+    "actionByContact": {
+        "en": "Action By Contact",
+        "ar": "الشخص المسئول"
+    },
+    "actionByContactRequired": {
+        "en": "Please Enter Action By Contact",
+        "ar": "برجاء إدخال الشخص المسئول"
+    },
+    "timeCordination": {
+        "en": "Time Cordination",
+        "ar": "ادارة الجداول الزمنية"
+    },
+    "estimateTime": {
+        "en": "Estimate Time",
+        "ar": "الوقت المتوقع"
+    },
+    "primaveraLog": {
+        "en": "Primavera Schedule",
+        "ar": "سجل جداول البريمافيرا"
+    },
+    "addPrimavera": {
+        "en": "Add New Primavera Schedule",
+        "ar": "تسجيل بنود جدول البريمافيرا"
+    },
+    "xERFormatFile": {
+        "en": "XER Format File",
+        "ar": "ملف بريمافيرا"
+    },
+    "comment": {
+        "en": "Comment",
+        "ar": "تعليق"
+    },
+    "commentRequired": {
+        "en": "Please Enter Comment",
+        "ar": "برجاء إدخال تعليق"
+    },
+    "activityId": {
+        "en": "Activity Id",
+        "ar": "نشاط"
+    },
+    "suspeneded": {
+        "en": "Suspended",
+        "ar": "معلق"
+    },
+    "resumed": {
+        "en": "Resumed",
+        "ar": "استئناف"
+    },
+    "ccCompany": {
+        "en": "CC Company",
+        "ar": "إضافة النسخة إلي شركة"
+    },
+    "ccContact": {
+        "en": "CC Contact",
+        "ar": "المندوبين"
+    },
+    "approvedTo": {
+        "en": "Approved To",
+        "ar": "تم الموافقة بواسطة"
+    },
+    "approved": {
+        "en": "Approved",
+        "ar": "تم الموافقة"
+    },
+    "dueDate": {
+        "en": "Due Date",
+        "ar": "تاريخ الإستحقاق"
+    },
+    "dueBack": {
+        "en": "Due Back",
+        "ar": "تاريخ الإستحقاق"
+    },
+    "dueDateRequired": {
+        "en": "Please insert Due Date",
+        "ar": "برجاء ادخال تاريخ الإستحقاق"
+    },
+    "taskId": {
+        "en": "Task Id",
+        "ar": "تعريف المهمة"
+    },
+    "activityDescription": {
+        "en": "Activity Description",
+        "ar": "توصيف البند"
+    },
+    "earlyStartDate": {
+        "en": "Early Start Date",
+        "ar": "تاريخ البداية المبكرة"
+    },
+    "earlyEndDate": {
+        "en": "Early End Date",
+        "ar": "تاريخ النهاية المبكرة"
+    },
+    "earlyStartDate": {
+        "en": "Early Start Date",
+        "ar": "تاريخ البداية المبكرة"
+    },
+    "actionByCompany": {
+        "en": "Action By Company",
+        "ar": "الشركة المسؤلة"
+    },
+    "actionByContact": {
+        "en": "Action By Contact",
+        "ar": "الشخص المسؤل"
+    },
+    "lateEndDate": {
+        "en": "Late End Date",
+        "ar": "تاريخ البداية المتاخرة"
+    },
+    "lateStartDate": {
+        "en": "Late Start Date",
+        "ar": "تاريخ النهاية المتاخرة"
+    },
+    "action": {
+        "en": "Action",
+        "ar": "الحدث"
+    },
+    "selectAction": {
+        "en": "Please select a Action",
+        "ar": "برجاء اختيار الحدث"
+    },
+    "information": {
+        "en": "Information",
+        "ar": "المعلومات"
+    },
+    "informationAddition": {
+        "en": "Addition Information",
+        "ar": "معلومات الاضافات"
+    },
+    "informationDeductions": {
+        "en": "Deductions Details",
+        "ar": "تفاصيل الخصومات"
+    },
+    "selectTask": {
+        "en": "-- Select Task --",
+        "ar": "-- اختر المهة --"
+    },
+    "selectLocation": {
+        "en": "-- Select Location --",
+        "ar": "-- اختر الموقع --"
+    },
+    "mutliApproval": {
+        "en": "Mutli Approval",
+        "ar": "موافقة عدة اطراف"
+    },
+    "singleApproval": {
+        "en": "Single Approval",
+        "ar": "موافقة طرف واحد"
+    },
+    "boqLog": {
+        "en": "BOQ Log",
+        "ar": "سجل قائمة الكميات"
+    },
+    "boq": {
+        "en": "BOQ",
+        "ar": "قائمة الكميات"
+    },
+    "selectBoq": {
+        "en": "Please select a BOQ",
+        "ar": "برجاء اختيار قائمة الكميات"
+    },
+    "newBoq": {
+        "en": "Add New BOQ",
+        "ar": "تسجيل بيانات قائمة الكميات"
+    },
+    "contractsQs": {
+        "en": "Quantity Survey",
+        "ar": "الحصر"
+    },
+    "disciplineTitle": {
+        "en": "discipline",
+        "ar": "مجال"
+    },
+    "pco": {
+        "en": "PCO",
+        "ar": "طلبات التغيير المقترحة"
+    },
+    "pcoAdd": {
+        "en": "Add PCO",
+        "ar": "اضافة طلبات التغيير المقترحة"
+    },
+    "timeExtension": {
+        "en": "Time Extension",
+        "ar": "الوقت الإضافي"
+    },
+    "timeExtensionRequired": {
+        "en": "Please insert Time Extension",
+        "ar": "برجاء ادخال الوقت الإضافي"
+    },
+    "lumpSum": {
+        "en": "Lump Sum",
+        "ar": "القيمة الكلية"
+    },
+    "useLumpSum": {
+        "en": "Use Lump Sum",
+        "ar": "استخدام القيمة الكلية"
+    },
+    "subContractor": {
+        "en": "Sub Contractor",
+        "ar": "مقاول الباطن"
+    },
+    "materialCost": {
+        "en": "Material Cost",
+        "ar": "تكلفة المواد"
+    },
+    "materialCode": {
+        "en": "Material Code",
+        "ar": "كود المواد"
+    },
+    "materialCodeSelection": {
+        "en": "Please Select Material Code",
+        "ar": "برجاء اختيار كود المواد"
+    },
+    "material": {
+        "en": "Material",
+        "ar": "المواد"
+    },
+    "materialDelivery": {
+        "en": "Material Delivery",
+        "ar": "استلام المواد"
+    },
+    "addMaterialDelivery": {
+        "en": "Add Material Delivery",
+        "ar": "اضافةاستلام المواد"
+    },
+    "materialDeliveryType": {
+        "en": "Material Delivery Type",
+        "ar": "نوع استلام المواد"
+    },
+    "selectMaterialDeliveryType": {
+        "en": "Please select a Material Delivery Type",
+        "ar": "برجاء اختيار نوع استلام المواد"
+    },
+    "cost": {
+        "en": "Cost",
+        "ar": "تكلفة "
+    },
+    "price": {
+        "en": "Price",
+        "ar": "السعر"
+    },
+    "equipmentCost": {
+        "en": "Equipment Cost",
+        "ar": "تكلفة المعدة"
+    },
+    "equipment": {
+        "en": "Equipment",
+        "ar": "المعدة"
+    },
+    "equipmentType": {
+        "en": "Equipment Type",
+        "ar": "نوع المعدة"
+    },
+    "equipmentTypeSelection": {
+        "en": "Please Select Equipment Type",
+        "ar": "برجاء اختيار نوع المعدة"
+    },
+    "overHead": {
+        "en": "Over Head",
+        "ar": "مصروفات غير مباشرة"
+    },
+    "overHeadRequired": {
+        "en": "Please insert Over Head",
+        "ar": "برجاء ادخال مصروفات غير مباشرة"
+    },
+    "profit": {
+        "en": "Profit",
+        "ar": "الربح"
+    },
+    "profitRequired": {
+        "en": "Please insert Profit",
+        "ar": "برجاء ادخال الربح"
+    },
+    "subTotal": {
+        "en": "Sub Total",
+        "ar": "الإجمالي"
+    },
+    "actualExecuted": {
+        "en": "Actual Executed",
+        "ar": "المنفذ غعليا"
+    },
+    "actualValue": {
+        "en": "Actual Value",
+        "ar": "القيمة الفعلية"
+    },
+    "actualValueSelection": {
+        "en": "Please Select actual value",
+        "ar": "برجاء اختيار القيمة الفعلية"
+    },
+    "contracts": {
+        "en": "Contracts /",
+        "ar": " العقود/"
+    },
+    "contractsTitle": {
+        "en": "Contracts Log",
+        "ar": "العقود"
+    },
+    "approvalStatus": {
+        "en": "Approval Status",
+        "ar": "وضع الإعتماد"
+    },
+    "approvalStatusSelection": {
+        "en": "Please Select Approval Status",
+        "ar": "برجاء اختيار وضع الإعتماد"
+    },
+    "completionDate": {
+        "en": "Completion Date",
+        "ar": "تاريخ الاكتمال"
+    },
+    "completionDateSelection": {
+        "en": "Please Select Completion Date",
+        "ar": "برجاء اختيار تاريخ الاكتمال"
+    },
+    "contractTo": {
+        "en": "Contract To",
+        "ar": "عقد مع"
+    },
+    "contractWithContact": {
+        "en": "Contract With Contact",
+        "ar": "عقد مع اسم"
+    },
+    "contractGroups": {
+        "en": "Contract Groups",
+        "ar": "مجموعات العقد"
+    },
+    "addContractQs": {
+        "en": "Add Quantity Survey",
+        "ar": "اضافة حصر"
+    },
+    "titleContractQs": {
+        "en": "Quantity Survey",
+        "ar": "شاشة الحصر"
+    },
+    "pricedItem": {
+        "en": "priced Item",
+        "ar": "تسعير العناصر"
+    },
+    "cos": {
+        "en": "change Orders",
+        "ar": "تسعير العناصر"
+    },
+    "paymentRequisitions": {
+        "en": "Payment Requisitions",
+        "ar": "طلبات المستخلصات"
+    },
+    "conditions": {
+        "en": "Conditions",
+        "ar": "تسعير العناصر"
+    },
+    "insurance": {
+        "en": "Insurance",
+        "ar": "تامينات"
+    },
+    "maximumInsurance": {
+        "en": "Maximum Insurance",
+        "ar": "الحد الاقصي تامينات"
+    },
+    "subContracts": {
+        "en": "Sub Contracts",
+        "ar": "عقود فرعيه"
+    },
+    "subPOs": {
+        "en": "Sub POs",
+        "ar": "اوامر شراء فرعية"
+    },
+    "NewQuantitySurvey": {
+        "en": "New Quantity Survey",
+        "ar": "اضافة حصر جديد"
+    },
+    "days": {
+        "en": "Days",
+        "ar": "الأيام"
+    },
+    "daysRequired": {
+        "en": "Please insert Days",
+        "ar": "برجاء ادخال الأيام"
+    },
+    "resourceCode": {
+        "en": "Resource Code",
+        "ar": "كود"
+    },
+    "specsSection": {
+        "en": "Specs Section",
+        "ar": "Specs Section"
+    },
+    "specification": {
+        "en": "Specification",
+        "ar": "المواصفات"
+    },
+    "subSpecification": {
+        "en": "Sub Specification",
+        "ar": "المواصفات الفرعية"
+    },
+    "specificationSelection": {
+        "en": "-- Please Select Specification --",
+        "ar": "-- برجاء اختيار المواصفات --"
+    },
+    "subSpecificationSelection": {
+        "en": "-- Please Select Sub Specification --",
+        "ar": "-- برجاء اختيار المواصفات الفرعية --"
+    },
+    "specsSectionSelection": {
+        "en": "-- Please Select Specs Section --",
+        "ar": "-- برجاء اختيار المواصفات --"
+    },
+    "specs": {
+        "en": "Specs",
+        "ar": "المواصفات"
+    },
+    "revQuantity": {
+        "en": "Revised Quantity",
+        "ar": "الكمية المرجعة"
+    },
+    "unitPrice": {
+        "en": "Unit Price",
+        "ar": "سعر الوحدة"
+    },
+    "unitPriceRequired": {
+        "en": "Please insert Unit Price",
+        "ar": "برجاء ادخال سعر الوحدة"
+    } ,
+    "itemType": {
+        "en": "Item Type",
+        "ar": "نوع الوحدة"
+    },
+    "itemTypeSelection": {
+        "en": "-- Please Select Item Type --",
+        "ar": "-- برجاء اختيار نوع الوحدة --"
+    },
+    "dateApproved": {
+        "en": "Date Approved",
+        "ar": "تاريخ الاعتماد"
+    },
+    "executed": {
+        "en": " Executed",
+        "ar": "المنفذ "
+    },
+    "newCondition": {
+        "en": " آew Condition",
+        "ar": "شرط جديد "
+    },
+    "fromContract": {
+        "en": " From Contract",
+        "ar": "من عقد "
+    },
+    "totalEarned": {
+        "en": "Total Earned",
+        "ar": "اجمالي المستحقات"
+    },
+    "earnedHours": {
+        "en": "Earned Hours",
+        "ar": "ساعات الأستحقاق"
+    },
+    "totalWeight": {
+        "en": "Total Weight",
+        "ar": "الوزن الاجمالي"
+    },
+    "paymentDue": {
+        "en": "Payment Due",
+        "ar": "الدفعة المستحقة"
+    }, 
+    "transaction": {
+        "en": "Transaction",
+        "ar": "نوع التعاقد"
+    },
+    "transactionType": {
+        "en": "Transaction Type",
+        "ar": "نوع القيد"
+    },
+    "selectTransaction": {
+        "en": "--  Please select a Transaction Type --",
+        "ar": "-- برجاء اختيار نوع القيد --"
+    },
+    "transactionTypeRequired": {
+        "en": "Please insert Transaction Type",
+        "ar": "برجاء ادخال نوع القيد"
+    },
+    "collectedStatus": {
+        "en": "Collected Status",
+        "ar": "حالة التحصيل"
+    },
+    "collectedType": {
+        "en": "Collected Type",
+        "ar": "نوع التحصيل"
+    },
+    "collectedTypeRequired": {
+        "en": "Please insert Collected Type",
+        "ar": "برجاء ادخال نوع التحصيل"
+    },
+    "paymentRequistionLog": {
+        "en": "Payment Requistion Log",
+        "ar": "سجل المستخلصات"
+    },
+    "siteRequest": {
+        "en": "Site Request",
+        "ar": "طلبات الموقع"
+    },
+    "siteRequestAdd": {
+        "en": "Add Site Request",
+        "ar": "اضافة طلبات الموقع"
+    },
+    "finish": {
+        "en": "Finish",
+        "ar": "انتهاء"
+    },
+    "stock": {
+        "en": "Stock",
+        "ar": "المخزون"
+    },
+    "stockRequired": {
+        "en": "Please insert Stock",
+        "ar": "برجاء ادخال  المخزون"
+    },
+    "addManyItems": {
+        "en": "Add Many Items",
+        "ar": "اضافة  العديد من الوحدات"
+    },
+    "excelFileFormat": {
+        "en": "Excel Format File",
+        "ar": "ملف إكسيل"
+    },
+    "addList": {
+        "en": "Add List",
+        "ar": "اضافة مجموعة"
+    },
+    "normal": {
+        "en": "Normal",
+        "ar": "Normal"
+    },
+    "projectSchedule": {
+        "en": "Project Schedule",
+        "ar": "جدولة المشروع"
+    },
+    "policyLimit": {
+        "en": "Policy Limit",
+        "ar": "فترة السياسة"
+    },
+    "policyType": {
+        "en": "Policy Type",
+        "ar": "نوع السياسة"
+    },
+    "date": {
+        "en": "Date",
+        "ar": "تاريخ الدخول"
+    },
+    "AddedItems": {
+        "en": "Added Items",
+        "ar": " المجموعة المضافة"
+    },
+    "revQuantityRequired": {
+        "en": "Please insert Revised Quantity",
+        "ar": "برجاء ادخال  الكمية المرجعة"
+    },
+    "resourceCodeRequired": {
+        "en": "Please insert Resource Code",
+        "ar": "برجاء ادخال  الكود    "
+    },
+    "resourceCodeResearch": {
+        "en": "searchby Code or Description",
+        "ar": "بحث بالكود او اسم الصنف  "
+    },
+    "itemCodeRequired": {
+        "en": "Please insert Item Code",
+        "ar": "برجاء ادخال  الكود    "
+    },
+    "costCodingTree": {
+        "en": "Cost Coding Tree",
+        "ar": "سجل شجرة كود التكلفة "
+    },
+    "costCoding": {
+        "en": "Cost Coding",
+        "ar": "كود التكلفة"
+    },
+    "codeTitle": {
+        "en": "Code Title",
+        "ar": "عنوان الكود "
+    },
+    "budgetThisPeriod": {
+        "en": "Budgeted This Period",
+        "ar": "ميزانية عن الفترة "
+    },
+    "budgetAtComplete": {
+        "en": "Budgeted At Complete",
+        "ar": "الميزانية عند الانتهاء "
+    },
+    "originalBudget": {
+        "en": "Original Budget",
+        "ar": "الميزانيةالاصلية "
+    },
+    "costForcast": {
+        "en": "Cost Forcast",
+        "ar": "التكلفة المتوقعة "
+    },
+    "upload": {
+        "en": "Upload",
+        "ar": "التحميل "
+    },
+    "costCodeTree": {
+        "en": "Cost Code Tree",
+        "ar": " شجرة كود التكلفة "
+    },
+    "titleSelection": {
+        "en": "Please Insert Title",
+        "ar": " برجاء ادخال العنوان "
+    },
+    "budgetThisPeriodSelection": {
+        "en": "Please Insert Budget This Period",
+        "ar": " برجاء ادخال ميزانية عن الفترة "
+    },
+    "budgetAtCompleteSelection": {
+        "en": "Please Insert Budget At Complete ",
+        "ar": " برجاء ادخال الميزانية عند الانتهاء "
+    },
+    "costForcastSelection": {
+        "en": "Please Insert Cost Forcast ",
+        "ar": " برجاء ادخال التكلفة المتوقعة "
+    },
+    "originalBudgetRequire": {
+        "en": "Please Insert Original Budgett ",
+        "ar": " برجاء ادخال الميزانيةالاصلية "
+    },
+    "addCostCodeTree": {
+        "en": "Add Cost Code Tree ",
+        "ar": " اضافة  شجرة كود التكلفة "
+    },
+    "editCostCodeTree": {
+        "en": "Edit Cost Code Tree ",
+        "ar": " تعديل  شجرة كود التكلفة "
+    },
+    "deleteCostCodeTree": {
+        "en": "Delete Cost Code Tree ",
+        "ar": " حذف  شجرة كود التكلفة "
+    },
+    "showInCostCoding": {
+        "en": "Show In Cost Coding",
+        "ar": "تظهر فى تكويد الكميات"
+    },
+    "showInSiteRequest": {
+        "en": "Show In Site Request",
+        "ar": "تظهر فى طلب الموقع"
+    },
+    "showOptemization": {
+        "en": "Show Optemization",
+        "ar": "اظهار التسعير"
+    },
+    "changeParent": {
+        "en": "Change Prent ",
+        "ar": " تغيير الاب "
+    },
+    "requestedQuantity": {
+        "en": "Request Quantity",
+        "ar": "طلب الكمية"
+    },
+    "requestedVariance": {
+        "en": "varinace Request",
+        "ar": "فرق الطلب"
+    },
+    "totalRequest": {
+        "en": "Total Request",
+        "ar": "مجموع الطلب"
+    },
+    "originalQuantity": {
+        "en": "Original Quantity",
+        "ar": "الكمية الأصلية"
+    },
+    "remainingQuantity": {
+        "en": "Remaining  Quantity",
+        "ar": "الكمية المتبقية"
+    },
+    "remaining": {
+        "en": "Remaining",
+        "ar": "المتبقية"
+    },
+    "nothing": {
+        "en": "Nothing",
+        "ar": "لا شيئ"
+    },
+    "purchaseOrder": {
+        "en": "Purchase Order",
+        "ar": "امر الشراء"
+    },
+    "addPurchaseOrder": {
+        "en": "Add Purchase Order",
+        "ar": "اضافة امر الشراء"
+    },
+    "selectPurchaseOrder": {
+        "en": "Please Enter Purchase Order ",
+        "ar": "برجاء ادخال امر الشراء     "
+    },
+    "useRevised": {
+        "en": "Revised Quantity And Revised Total",
+        "ar": "الكمية والإجمالي المراجع"
+    },
+    "advancePaymentPercent": {
+        "en": "Advance Payment Percent",
+        "ar": "الدفعة المقدمة"
+    },
+    "advancePayment": {
+        "en": "Advance Payment",
+        "ar": "الدفعة المقدمة"
+    },
+    "moveUp": {
+        "en": "Move Up",
+        "ar": "التحرك الي اعلي"
+    },
+    "moveDown": {
+        "en": "Move Down",
+        "ar": "التحرك الي اسفل"
+    },
+    "openDate": {
+        "en": "Open Date",
+        "ar": "تاريخ الفتح"
+    },
+    "openDateRequired": {
+        "en": "Please insert Open Date",
+        "ar": "برجاء ادخال تاريخ الفتح"
+    },
+    "projectIssuesLog": {
+        "en": "Project Issues Log",
+        "ar": "سجل مواضيع المشروع"
+    },
+    "addNewIssue": {
+        "en": "Add New Issue",
+        "ar": "اضافه موضوع جديد"
+    },
+    "addDocAttachment": {
+        "en": "Add Doc. Attachment",
+        "ar": "اضافة مستندات مرفقة"
+    },
+    "addInvoicesForPO": {
+        "en": "Add Invoices For PO",
+        "ar": "اضافة فواتيرأوامر الشراء"
+    },
+    "invoicesForPO": {
+        "en": "Invoices For PO",
+        "ar": "فواتيرأوامر الشراء"
+    },
+    "invoiceQuantity": {
+        "en": "Invoice Quantity",
+        "ar": "كميات الفاتورة"
+    },
+    "projectCode": {
+        "en": "Project Code",
+        "ar": "كود المشروع"
+    },
+    "newDrawing": {
+        "en": "Add  New  Drawing",
+        "ar": "اضافة  سجل اللوحات"
+    },
+    "editDrawing": {
+        "en": "Edit Drawing",
+        "ar": "تعديل سجل اللوحات"
+    },
+    "drawingNo": {
+        "en": "Drawing  Number",
+        "ar": "رقم اللوحة"
+    },
+    "cyclesCount": {
+        "en": "Cycles",
+        "ar": "الدورات"
+    },
+    "progressPercent": {
+        "en": "Progress %",
+        "ar": "نسبة الانجاز"
+    },
+    "cycleDate": {
+        "en": "Cycle Date",
+        "ar": "تاريخ الدورة"
+    },
+    "drawing": {
+        "en": "Drawings",
+        "ar": " سجل اللوحات"
+    },
+    "selectdrawing": {
+        "en": "Please Enter Drawings",
+        "ar": "برجاء ادخال سجل اللوحات "
+    },
+    "refNo": {
+        "en": "Refrence Number",
+        "ar": "الرقم المرجعي"
+    },
+    "invoices": {
+        "en": "Invoices",
+        "ar": "الفواتير"
+    },
+    "deductions": {
+        "en": "Deductions",
+        "ar": "الخصومات"
+    },
+    "dailyDeductions": {
+        "en": "Daily Deductions",
+        "ar": "الخصومات اليومية"
+    },
+    "monthlyDeductions": {
+        "en": "Monthly Deductions",
+        "ar": "الخصومات الشهرية"
+    },
+    "factor": {
+        "en": "Factor",
+        "ar": "القيمة"
+    },
+    "addition": {
+        "en": "Addition",
+        "ar": "اضافات"
+    },
+    "dailyAddition": {
+        "en": "Daily Addition",
+        "ar": "اضافات يومية"
+    },
+    "monthlyAddition": {
+        "en": "Monthly Addition",
+        "ar": "اضافات شهرية"
+    },
+    "fileNumber": {
+        "en": "File Number",
+        "ar": "رقم الملف"
+    },
+    "CycleDetails": {
+        "en": "Cycle Details",
+        "ar": "تفاصيل الدورة "
+    },
+    "reasonForIssue": {
+        "en": "Reason For Issue",
+        "ar": "سبب الاصدار "
+    },
+    "selectFileNumber": {
+        "en": "Please Enter FileNumber",
+        "ar": "برجاء ادخال رقم الملف "
+    },
+    "selectRefNo": {
+        "en": "Please Enter Reference Number",
+        "ar": "برجاء أدخال  الرقم المرجعي "
+    },
+    "SelectReasonForIssueId": {
+        "en": "Please Enter Reason For Issue ",
+        "ar": "برجاء ادخال سبب  الإصدار   "
+    },
+    "selectArea": {
+        "en": "Please Enter Area ",
+        "ar": "برجاء ادخال المنطقة     "
+    },
+    "selectprogressPercent": {
+        "en": "Please Enter progressPercent ",
+        "ar": " برجاء ادخال نسبة الإنجاز      "
+    },
+    "in": {
+        "en": "In",
+        "ar": "داخل"
+    },
+    "percentageValue": {
+        "en": "percentage",
+        "ar": "نسبة"
+    },
+    "percentageValue2": {
+        "en": "Vaue",
+        "ar": "قيمة"
+    },
+    "out": {
+        "en": "Out",
+        "ar": "خارج"
+    },
+    "collected": {
+        "en": "Collected",
+        "ar": "قيمة التحصيل"
+    },
+    "nonCollected": {
+        "en": "Non Collected",
+        "ar": "لم تحصل"
+    },
+    "addNewCycle": {
+        "en": "Add New Cycle ",
+        "ar": " اضافة دورة جديدة"
+    },
+    "newSubmittal": {
+        "en": "New Submittal",
+        "ar": "تقديمات جديدة"
+    },
+    "Submittal": {
+        "en": " Submittal",
+        "ar": "تقديمات "
+    },
+    "submittalSets": {
+        "en": "Submittal Sets",
+        "ar": "مجموعات تقديمات"
+    },
+    "selectSubmittalSets": {
+        "en": "Please Enter Submittal Sets ",
+        "ar": "برجاء ادخال مجموعات تقديمات     "
+    },
+    "submittalSetsAdd": {
+        "en": "Add Submittal Sets",
+        "ar": "اضافة مجموعات تقديمات"
+    },
+    "delay": {
+        "en": " Delay",
+        "ar": "تاخير "
+    },
+    "cycleCloseDate": {
+        "en": " Cycle Close Date",
+        "ar": "تاريخ الاغلاق "
+    },
+    "canceled": {
+        "en": "Canceled",
+        "ar": "ألغيت"
+    },
+    "submittalType": {
+        "en": "Submittal Type",
+        "ar": "نوع التقديمات"
+    },
+    "SubmittalDetails": {
+        "en": "Submittal Details",
+        "ar": "تفاصيل  التقديمات"
+    },
+    "SubmittalItems": {
+        "en": "Submittal Items",
+        "ar": "عناصر  التقديمات"
+    },
+    "dailyReports": {
+        "en": "Daily Reports",
+        "ar": "التقارير  اليومية"
+    },
+    "dailyReportsAdd": {
+        "en": "Add Daily Reports",
+        "ar": "اضافة التقارير اليومية"
+    },
+    "recievedFrom": {
+        "en": "Recieved From",
+        "ar": "استلام من"
+    },
+    "recievedDate": {
+        "en": "Recieved Date",
+        "ar": "تاريخ الاستلام"
+    },
+    "nextDate": {
+        "en": "Next Date",
+        "ar": "تاريخ التسليم التالي"
+    },
+    "sendTo": {
+        "en": "Send TO",
+        "ar": "ارسال من"
+    },
+    "returnedBy": {
+        "en": "Returned By",
+        "ar": "ارجاع الي "
+    },
+    "forwardedTo": {
+        "en": "Forwarded To",
+        "ar": "احالة الي  "
+    },
+    "workActivity": {
+        "en": "Work Activity",
+        "ar": "بند العمل"
+    },
+    "fieldForce": {
+        "en": "Field Force",
+        "ar": "مجال القوة"
+    },
+    "visitors": {
+        "en": "Visitors",
+        "ar": "الزائرين"
+    },
+    "weather": {
+        "en": "Weather",
+        "ar": "حالة الجو"
+    },
+    "selectWeather": {
+        "en": "Please Enter Weather",
+        "ar": "برجاء ادخال حالة الجو"
+    },
+    "submitalDate": {
+        "en": "Submital Date",
+        "ar": "تاريخ التقديمات"
+    },
+    "selectFieldForce": {
+        "en": "Please Enter Field Force ",
+        "ar": "برجاء ادخال مجال القوة"
+    },
+    "number": {
+        "en": "Number",
+        "ar": "رقم"
+    },
+    "selectNumber": {
+        "en": "Please Enter Number",
+        "ar": "برجاء ادخال رقم"
+    },
+    "deliveredQuantity": {
+        "en": "Delivered Quantity",
+        "ar": "كمية التوريد"
+    },
+    "remarks": {
+        "en": "Remarks",
+        "ar": "ملاحظات"
+    },
+    "time": {
+        "en": "Time",
+        "ar": "الوقت"
+    },
+    "procurement": {
+        "en": "Procurement",
+        "ar": "المشتريات"
+    },
+    "procurementTitle": {
+        "en": "Procurement",
+        "ar": "المشتريات"
+    },
+    "procurementItems": {
+        "en": "Procurement Items",
+        "ar": "عناصرالمشتريات"
+    },
+    "procurementContractors": {
+        "en": "Procurement Suppliers Addition",
+        "ar": "موردين المشتريات"
+    },
+    "procurementContractorsItems": {
+        "en": "Procurement Suppliers Items",
+        "ar": "عناصر موردين المشتريات"
+    },
+    "drawingSets": {
+        "en": "Drawing Sets",
+        "ar": "مجموعات الرسم"
+    },
+    "drawingSetsAdd": {
+        "en": "Add Drawing Sets",
+        "ar": "اضافة مجموعات الرسم"
+    },
+    "drawingList": {
+        "en": " Drawing Lists",
+        "ar": " قائمة الرسم"
+    },
+    "receivedFor": {
+        "en": "Received For",
+        "ar": "وارد من اجل"
+    },
+    
+    "selectOrder": {
+        "en": "Please select an Order",
+        "ar": "برجاء اختيار الحالة"
+    },
+    "scale": {
+        "en": "Scale",
+        "ar": "مقياس  الرسم"
+    },
+    "paper": {
+        "en": "Paper",
+        "ar": "اوراق  "
+    },
+    "estimatedTime": {
+        "en": "Estimate Time",
+        "ar": "الوقت المحدد  "
+    },
+    "estimatedCost": {
+        "en": "Estimate Cost",
+        "ar": "التكلفة المحددة  "
+    },
+    "addDrawingList": {
+        "en": "Add Drawing List",
+        "ar": "اضافة قاءمة الرسم "
+    },
+    "siteCoordination": {
+        "en": "Site Coordination",
+        "ar": "متابعة الموقع"
+    },
+    "addDrawingListItems": {
+        "en": "Add Drawing List Items",
+        "ar": "اضافة عناصر قاءمة الرسم "
+    },
+    "designPhasingLog": {
+        "en": "Design Phasing ",
+        "ar": "سجل مراحل التصميم"
+    },
+    "designPhasing": {
+        "en": "Design Phasing",
+        "ar": "مراحل تقسيم التصميم"
+    },
+    "orderFrom": {
+        "en": "Order From",
+        "ar": "مطلوب من"
+    },
+    "materialRelease": {
+        "en": "Material Release",
+        "ar": "امر صرف مواد"
+    },
+    "varianceRelease": {
+        "en": "Variance Release",
+        "ar": "فرق امر الصرف"
+    },
+    "totalRelease": {
+        "en": "Total Release",
+        "ar": "مجموع امر الصرف"
+    },
+    "drawingNumber": {
+        "en": "Drawing Number",
+        "ar": "رقم اللوحة"
+    },
+    "drawingNumber": {
+        "en": "Drawing Number",
+        "ar": "رقم اللوحة"
+    },
+    "descriptionTransaction": {
+        "en": "Description Transaction ",
+        "ar": "وصف الحركة"
+    },
+    "drawingDescription": {
+        "en": "Drawing Description",
+        "ar": "قسم اللوحة"
+    },
+    "actualTotal": {
+        "en": "Actual",
+        "ar": "الفعلي"
+    },
+    "userProgress": {
+        "en": "User Progress",
+        "ar": "انجاز المستخدم"
+    },
+    "actualProgress": {
+        "en": "Actual Progress",
+        "ar": "انجاز الحقيقي"
+    },
+    "etc": {
+        "en": "Estimate To Complete",
+        "ar": "التكلفة التقديرية للانتهاء"
+    },
+    "orderFromContact": {
+        "en": "Order From Contact",
+        "ar": "مطلوب من "
+    },
+    "materialReleaseType": {
+        "en": "Material Release Type",
+        "ar": "نوع امر صرف مواد"
+    },
+    "approvedQuantity": {
+        "en": "Approved Quantity",
+        "ar": "الكمية المعتمدة"
+    },
+    "rejectedQuantity": {
+        "en": "Rejected Quantity",
+        "ar": "الكمية المرفوضة"
+    },
+    "pendingQuantity": {
+        "en": "Pending Quantity",
+        "ar": "الكمية المعلقة"
+    },
+    "releasedQuantity": {
+        "en": "Released Quantity",
+        "ar": "الكمية المصروفة"
+    },
+    "releasePrice": {
+        "en": "Release Price",
+        "ar": "سعر التوريد"
+    },
+    "lastQuantity": {
+        "en": "Last Quantity",
+        "ar": "اخر رصيد وارد"
+    },
+    "lastCashierDate": {
+        "en": "Last sale Date",
+        "ar": "اخر تاريخ بيع "
+    },
+    "lastDeliveryDate": {
+        "en": "Last Delivery Date",
+        "ar": "اخر ميعاد استلام"
+    },
+    "lastApproveDate": {
+        "en": "Last Approve Date",
+        "ar": "اخر ميعاد للموافقة"
+    },
+    "itemDescription": {
+        "en": "Item Description",
+        "ar": " تعريف الاصناف"
+    },
+    "locationType": {
+        "en": "Location Type",
+        "ar": " نوع مكان التخزين"
+    },
+    "locationName": {
+        "en": "Location Name",
+        "ar": " الموقع"
+    },
+    "projectInventory": {
+        "en": "Project Inventory Log",
+        "ar": "سجل مخزن المشروع"
+    },
+    "projectInventoryAddition": {
+        "en": "Project Inventory Addition",
+        "ar": "اضافة مخزن مشروع"
+    },
+    "addMaterialRelease": {
+        "en": "Add Material Release",
+        "ar": "اضافة امر صرف"
+    },
+    "retainagePercent": {
+        "en": "Retainage Percent",
+        "ar": "النسبة المتبقية"
+    },
+    "addToExpenses": {
+        "en": "Add To Expenses",
+        "ar": "يضاف إلى المصروفات"
+    },
+    "useQuantity": {
+        "en": "Use Quantity",
+        "ar": "يرجي استخدم الكميات"
+    },
+    "close": {
+        "en": "Close",
+        "ar": "اغلاق"
+    },
+    "calculate": {
+        "en": "Calculate",
+        "ar": "حساب"
+    },
+    "tenderAnalysis": {
+        "en": "Tender Analysis",
+        "ar": "تحليل العطاء"
+    },
+    "tenderAnalysisAdd": {
+        "en": "Add Tender Analysis",
+        "ar": "اضافة تحليل العطاء"
+    },
+    "decision": {
+        "en": "Decision",
+        "ar": "القرار"
+    },
+    "estimation": {
+        "en": "Estimation",
+        "ar": "التسعير"
+    },
+    "estimationTitle": {
+        "en": "Estimation Title",
+        "ar": "عنوان التسعير"
+    },
+    "projectEstimation": {
+        "en": "Project Estimation",
+        "ar": "تسعيرالمشروع"
+    },
+    "projectEstimationAdd": {
+        "en": "Add Project Estimation",
+        "ar": "اضافة تسعيرالمشروع"
+    },
+    "projectEstimationTitle": {
+        "en": "Project Estimation",
+        "ar": " تسعيرالمشروع"
+    },
+    "totalSubContractorCost": {
+        "en": "Total SubContractor Cost",
+        "ar": "اجمالي تكلفة العقد الفرعي"
+    },
+    "totalEquipemntCost": {
+        "en": "Total Equipemnt Cost",
+        "ar": "اجمالي تكلفة المعدات"
+    },
+    "totalLaborCost": {
+        "en": "Total Labor Cost",
+        "ar": "اجمالي تكلفة العمالة"
+    },
+    "totalMterialCost": {
+        "en": "Total Mterial Cost",
+        "ar": "اجمالي تكلفة المواد"
+    },
+    "job": {
+        "en": "Job",
+        "ar": "الوظيفة"
+    },
+    "budgetFile": {
+        "en": "Budget File",
+        "ar": " ملف الاحتياجات المتوقعه"
+    },
+    "save": {
+        "en": "Save",
+        "ar": "حفظ"
+    },
+    "resourcesTree": {
+        "en": "Resources Tree",
+        "ar": "شجرة الموارد"
+    },
+    "resourcesTreeTitle": {
+        "en": "Resources Tree ",
+        "ar": "عنوان شجرة الموارد"
+    },
+    "site": {
+        "en": "Site/",
+        "ar": "موقع/"
+    },
+    "punchList": {
+        "en": "Punch List",
+        "ar": "قوائم الملاحظات علي الاعمال "
+    },
+    "punchListItems": {
+        "en": "Punch List Items",
+        "ar": "عناصر قوائم الملاحظات علي الاعمال"
+    },
+    "openedDate": {
+        "en": "Opened Date",
+        "ar": "تاريخ البدء"
+    },
+    "addPunchList": {
+        "en": "Add Punch List",
+        "ar": " اضافة قوائم الملاحظات علي الاعمال "
+    },
+    "addPunchListItems": {
+        "en": "Add Punch List Items",
+        "ar": "اضافة عناصر قوائم الملاحظات علي الاعمال "
+    },
+    "pending": {
+        "en": "pending",
+        "ar": "قيد الانتظار "
+    },
+    "estimationBaseLog": {
+        "en": "Estimation Base",
+        "ar": "سجل قاعدة التكلفة التقديرية"
+    },
+    "estimationBase": {
+        "en": "Estimation Base",
+        "ar": "قاعدة التكلفة التقديرية"
+    },
+    "estimation": {
+        "en": "Estimation /",
+        "ar": "قاعدة بيانات التسعير/"
+    },
+    "clientModificationLog": {
+        "en": "Client Modification Log",
+        "ar": "سجل تعديلات العميل"
+    },
+    "clientModificationAddition": {
+        "en": "Client Modification Addition",
+        "ar": "اضافة تعديلات العميل"
+    },
+    "qualityControl": {
+        "en": "Quality Control",
+        "ar": "سجل مراقبة الجودة"
+    },
+    "design": {
+        "en": " Design /",
+        "ar": "التصميم/"
+    },
+    "consultatnt": {
+        "en": " Consultatnt",
+        "ar": "الاستشاري"
+    },
+    "weekNumber": {
+        "en": " Week Number",
+        "ar": "رقم الاسبوع"
+    },
+    "projectManager": {
+        "en": "Project Manager",
+        "ar": "المشروع المختص بالادارة"
+    },
+    "projectContact": {
+        "en": "Project Contact",
+        "ar": "المدير"
+    },
+    "siteCompany": {
+        "en": "Site Company",
+        "ar": "المشروع المختص بالتنفيذ"
+    },
+    "siteEngineer": {
+        "en": "Site Engineer",
+        "ar": "مهندس الموقع"
+    },
+    "time": {
+        "en": " Time ",
+        "ar": "الوقت"
+    },
+    "deliveredWorkShopDrawings": {
+        "en": "Delivered WorkShop Drawings",
+        "ar": "الرسومات التشفيلية الواردة"
+    },
+    "requiredWorkShopDrawings": {
+        "en": "Required WorkShop Drawings",
+        "ar": "الرسومات التشفيلية المطلوبة"
+    },
+    "architicturalContractorsSituations": {
+        "en": "Architictural Contractors Situations",
+        "ar": "موقف اعتماد العينات والمقاولين معمارى"
+    },
+    "electricianAndMechanicContractorsSituations": {
+        "en": "Electrician and Mechanic Contractors Situations",
+        "ar": "موقف اعتماد العينات والمقاولين كهرباء وميكلنيكا"
+    },
+    "architicturalContractorsSituations": {
+        "en": "Architictural Contractors Situations",
+        "ar": "موقف اعتماد العينات والمقاولين معمارى"
+    },
+    "weeklyReport": {
+        "en": "Weekly Reports",
+        "ar": "تقارير اسبوعية"
+    },
+    "materialInventory": {
+        "en": "Material  Inventory",
+        "ar": "مخزن مواد "
+    },
+    "inventory": {
+        "en": "Inventory",
+        "ar": "المخازن"
+    },
+    "transferBranches": {
+        "en": "Transfer To Branches",
+        "ar": "تحويل لفرع"
+    },
+    "transferToMainBranches": {
+        "en": "Transfer To Main Branch",
+        "ar": "تحويل لفرع رئيسى"
+    },
+    "apperanceDate": {
+        "en": "Apperance Date",
+        "ar": "تاريخ ظهورها حسب الجدول الزمنى"
+    },
+    "transferTo": {
+        "en": "Transfer To",
+        "ar": "تحويل الى الرئيسى"
+    },
+    "transferFrom": {
+        "en": "Transfer From",
+        "ar": "تحويل من الرئيسى "
+    },
+    "transferDate": {
+        "en": "Transfer Date",
+        "ar": "تاريخ التحويل "
+    },
+    "transfer": {
+        "en": "Transfer",
+        "ar": " تحويل "
+    },
+    "fromBranchName": {
+        "en": "From Branch Name",
+        "ar": "من مخزن "
+    },
+    "toBranch": {
+        "en": "To Branch Name",
+        "ar": "الى مخزن "
+    },
+    "constraints": {
+        "en": "Constraints",
+        "ar": "المعوقات"
+    },
+    "clientSelectionLog": {
+        "en": "Client Selection Log",
+        "ar": "سجل اختيارات العميل"
+    },
+    "clientSelectionDtoAddition": {
+        "en": "Client Selection Addition",
+        "ar": "اضافة سجل اختيارات العميل"
+    },
+    "previousDelivery": {
+        "en": "Previous Delivery",
+        "ar": "التوريدة السابقة"
+    },
+    "deliveried": {
+        "en": "Deliveried",
+        "ar": "المورد"
+    },
+    "totalInSite": {
+        "en": "Total In Site",
+        "ar": "اجمالى الموحود بالموقع"
+    },
+    "arraivalDate": {
+        "en": "Arraival Date",
+        "ar": "تاريخ توريده"
+    },
+    "cashier": {
+        "en": "Cashier",
+        "ar": "المبيعات"
+    },
+    "refunds": {
+        "en": "Refunds",
+        "ar": "المرتجعات"
+    },
+    "constraintsCode": {
+        "en": "Constraints Code",
+        "ar": "كود البند"
+    },
+    "firstQuantity": {
+        "en": "First Quantity",
+        "ar": "كمية الحصر المبدئى"
+    },
+    "doneQuantity": {
+        "en": "Done Quantity",
+        "ar": "الكمية المنفذة"
+    },
+    "calculatedQuantity": {
+        "en": "Calculated Quantity",
+        "ar": "كمية المقايسة"
+    },
+    "percintageOfWork": {
+        "en": "Percintage Of Work",
+        "ar": "نسبة الانجاز"
+    },
+    "technicalOffice": {
+        "en": "Technical Office",
+        "ar": "اعمال المكتب الفنى بالموقع"
+    },
+    "delivery": {
+        "en": "Delivery",
+        "ar": "التوريدات"
+    },
+    "needs": {
+        "en": "Needs",
+        "ar": "الاحتياجات"
+    },
+    "implementationWork": {
+        "en": "Implementation Work",
+        "ar": "أعمال التنفيذ"
+    },
+    "predictedQuantity": {
+        "en": "Predicted Quantity",
+        "ar": "الكمية المتوقع انجازها خلال"
+    },
+    "nextWeek": {
+        "en": "Next Week",
+        "ar": "أعمال الاسبوع القادم"
+    },
+    "budgetExpenses": {
+        "en": "Budget Expenses",
+        "ar": "ميزانية المصروفات"
+    },
+    "budget": {
+        "en": "Budget",
+        "ar": "الميزانية"
+    },
+    "expenseType": {
+        "en": " Expenses Type",
+        "ar": "نوع  المصروفات"
+    },
+    "coordination": {
+        "en": "Coordination",
+        "ar": "بيان تسوية العهدة"
+    },
+    "previous": {
+        "en": "Previous",
+        "ar": "السابقة"
+    },
+    "current": {
+        "en": "Current",
+        "ar": "الحالية"
+    },
+    "total": {
+        "en": "Total",
+        "ar": "الاجمالي"
+    },
+    "totalPrice": {
+        "en": "total Price",
+        "ar": "اجمالى سعر البيع"
+    },
+    "originalTotal": {
+        "en": "Original Total",
+        "ar": "الاجمالي الاصلي"
+    },
+    "totalVariance": {
+        "en": "Total Variance",
+        "ar": "اجمالي الفرق"
+    },
+    "subOrderTotal": {
+        "en": "Sub Order Total",
+        "ar": "اجمالي طلب الكميات من الباطن"
+    },
+    "totalInventoryRecived": {
+        "en": "Total Inventory Recived",
+        "ar": "اجمالى العهد المنصرفة للموقع"
+    },
+    "consumed": {
+        "en": "Consumed",
+        "ar": "ما تم تسويته"
+    },
+    "remainder": {
+        "en": "Remainder",
+        "ar": "المتبقى"
+    },
+    "required": {
+        "en": "Required",
+        "ar": "العهد المطلوبة"
+    },
+    "addQualityControl": {
+        "en": "Add Quality Control",
+        "ar": "اضافة سجل مراقبة الجودة "
+    },
+    "editQualityControl": {
+        "en": "Edit Quality Control",
+        "ar": "تعديل سجل مراقبة الجودة "
+    },
+    "addQualityControlItems": {
+        "en": "add Quality Control Items",
+        "ar": "اضافةعناصر سجل مراقبة الجودة "
+    },
+    "balance": {
+        "en": "Balance",
+        "ar": "الفرق "
+    },
+    "budgetVariance": {
+        "en": "Budget Variance",
+        "ar": "موازنة التغير "
+    },
+    "code": {
+        "en": "Code",
+        "ar": "الكود "
+    },
+    "expensesTotal": {
+        "en": "Expenses Total",
+        "ar": "الميزانية الأصلية "
+    },
+    "invoicesTotal": {
+        "en": "Invoices Total",
+        "ar": "إجمالي المصروفات "
+    },
+    "actualCost": {
+        "en": "Actual Cost",
+        "ar": "التكاليف الفعلية "
+    },
+    "paymentTotal": {
+        "en": "Payment Requisitions Total",
+        "ar": "إجمالي المستخلصات "
+    },
+    "budgetComplete": {
+        "en": "Budgeted At Complete",
+        "ar": "الميزانية عند الإنتهاء "
+    },
+    "forcastBudgetVariance": {
+        "en": "Forecast Budget Variance",
+        "ar": "فروق الميزانية المتوقعة "
+    },
+    "complete": {
+        "en": "%Complete",
+        "ar": "نسبة الإنجاز "
+    },
+    "budgetForPeroid": {
+        "en": "Budget This Period",
+        "ar": "ميزانية عن الفترة "
+    },
+    "viewReport": {
+        "en": "View Report",
+        "ar": "عرض التقرير "
+    },
+    "executedQuantity": {
+        "en": "Executed Quantity",
+        "ar": "الكمية المنجزة "
+    },
+    "variance": {
+        "en": "Variance",
+        "ar": "الفرق "
+    },
+    "totalExecuted": {
+        "en": "Total Executed",
+        "ar": "الاجمالي المنفذ "
+    },
+    "boqQuantities": {
+        "en": "BOQ Quantities",
+        "ar": "الكميات المطلوبة من قائمة الكميات"
+    },
+    "designStatusReport": {
+        "en": "Design Status Report",
+        "ar": "تقرير حالة التصمميم"
+    },
+    "totalEstimatedTime": {
+        "en": "Total Estimated Time",
+        "ar": "إجمالي الوقت التقديري"
+    },
+    "totalUserInputs": {
+        "en": "Total User Inputs",
+        "ar": "إجمالي مدخلات المستخدم"
+    },
+    "userInputsHours": {
+        "en": "User Inputs Hours",
+        "ar": "ساعات مدخلات المستخدم"
+    },
+    "earnedProgress": {
+        "en": "Earned Progress",
+        "ar": "القيمة المكتسبة"
+    },
+    "totalRemaining": {
+        "en": "Total Remaining",
+        "ar": "إجمالي الباقى"
+    },
+    "estimated": {
+        "en": "Estimated",
+        "ar": "تقييم"
+    },
+    "userInput": {
+        "en": "User Input",
+        "ar": "مدخلات المستخدم"
+    },
+    "taskStatus": {
+        "en": "Task Status",
+        "ar": "تقرير حالة المهمة"
+    },
+    "taskTimeSheet": {
+        "en": "Task Time Sheet",
+        "ar": "تقرير أوقات المهمة"
+    },
+    "lastTimeSheet": {
+        "en": "Last Time Sheet",
+        "ar": "اخر وقت المهمة"
+    },
+    "timeSheetReport": {
+        "en": "Employees Without Time Sheet",
+        "ar": "موظفين ليس لهم اوقات مهمة"
+    },
+    "estimatedHours": {
+        "en": "Estimated Hours",
+        "ar": "تقييم الساعات"
+    },
+    "actualHours": {
+        "en": "Actual Hours",
+        "ar": " الساعات الفعلية"
+    },
+    "companyTimeSheet": {
+        "en": "Company Time Sheet Report",
+        "ar": " تقرير مهام للشركة"
+    },
+    "refrenceCode": {
+        "en": "Refrence Code",
+        "ar": "رقم مرجعي"
+    },
+    "refrences": {
+        "en": "Refrences",
+        "ar": "المراجع"
+    },
+    "users": {
+        "en": " Users",
+        "ar": "المستخدمين"
+    },
+    "all": {
+        "en": " All",
+        "ar": "الكل"
+    }, 
+    "approvedHours": {
+        "en": "Total Approved Hours",
+        "ar": "الساعات المعتمدة"
+    },
+    "approve": {
+        "en": "Approve",
+        "ar": "الاعتماد"
+    },
+    "approveConfirm": {
+        "en": "Are you sure you want to approve?",
+        "ar": "هل انت واثق من انك تريد الاعتماد؟"
+    },
+    "deleteConfirm": {
+        "en": "Are you sure you want to delete Records?",
+        "ar": "هل انت واثق من انك تريد المسح؟"
+    },
+    "reject": {
+        "en": "Reject",
+        "ar": "الرفض"
+    },
+    "userRate": {
+        "en": "User Rate",
+        "ar": "معدل الاستخدام"
+    },
+    "rejectedHours": {
+        "en": "Total Rejected Hours",
+        "ar": "ساعات المرفوضة "
+    },
+    "peroidExpenses": {
+        "en": "Total Peroid Expenses",
+        "ar": "مدة المصروفات الكلية "
+    },
+    "pendingHours": {
+        "en": "Total Pending Hours",
+        "ar": "الساعات المعلقة  "
+    },
+    "totalBudgeted": {
+        "en": "Total Budgeted",
+        "ar": "إجمالي الموازنة"
+    },
+    "totalBudgeted": {
+        "en": "Total Budgeted",
+        "ar": "إجمالي الموازنة"
+    },
+    "openedSummary": {
+        "en": "Oppened Summary",
+        "ar": "ملخص الجداول المفتوحة"
+    },
+    "notCodedExpensesSummary": {
+        "en": "Not Coded Expenses Summary",
+        "ar": "مصروفات غير مكوده"
+    },
+    "inboxSummary": {
+        "en": "Inbox Summary",
+        "ar": "ملخص التنبيهات"
+    },
+    "notCodedInvoicesSummary": {
+        "en": "Not Coded Invoices Summary",
+        "ar": "ملخص فواتير غير مكوده"
+    },
+    "distributionSummary": {
+        "en": "Distribution Summary",
+        "ar": "إجمالي الموازنة"
+    },
+    "assessmentSummary": {
+        "en": "Assessment Summary",
+        "ar": "ملخص"
+    },
+    "addWidget": {
+        "en": "Add Widgets",
+        "ar": "اضافة صندوق"
+    },
+    "equal": {
+        "en": "Equal",
+        "ar": "يساوي"
+    },
+    "positive": {
+        "en": "Positive",
+        "ar": "ايجابي"
+    },
+    "negative": {
+        "en": "Negative",
+        "ar": "سلبي"
+    },
+    "closeDate": {
+        "en": "Close Date",
+        "ar": "تاريخ الاغلاق"
+    },
+    "client": {
+        "en": "Client",
+        "ar": "العميل"
+    },
+    "AlertOnItemsCostGreaterPrice": {
+        "en": "Alert On Items Cost Greater Price",
+        "ar": "تنبيه عن سعر العنصر اقل من تكلفته"
+    },
+    "alertItemsChangePrices": {
+        "en": "AlertItems Change Prices",
+        "ar": "عدد الاصناف تم تغيير سعرها"
+    },
+    "alertOnItemsNoTransactions": {
+        "en": "AlertItems Change Prices",
+        "ar": "الاصناف الراكده"
+    },
+    "projectsList": {
+        "en": "Projects List Report",
+        "ar": " تقرير قائمة المشاريع"
+    },
+    "durationDays": {
+        "en": "Duration Days",
+        "ar": "عدد الايام"
+    },
+    "actionBySummary": {
+        "en": "Action By Summary",
+        "ar": "ملخص عن الشخص المسئول"
+    },
+    "alertingQntySummary": {
+        "en": "Quantities Alerting Summary",
+        "ar": "ملخص تنبيه الكميات"
+    },
+    "alertSummary": {
+        "en": "Alert Summary",
+        "ar": "ملخص التنبيهات"
+    },
+    "closedSummary": {
+        "en": "Closed Documents Summary",
+        "ar": "ملخص الجداول المغلقة"
+    },
+    "normalSummary": {
+        "en": "Normal",
+        "ar": "عادى الاهمية"
+    },
+    "low": {
+        "en": "Low",
+        "ar": "اقل اهمية"
+    },
+    "high": {
+        "en": "High",
+        "ar": "هام جدا"
+    },
+    "Today": {
+        "en": "Today",
+        "ar": "اليوم"
+    },
+    "cashFlow": {
+        "en": "Cash Flow Report",
+        "ar": "تقرير التدفقات النقدية"
+    },
+    "collectedPaymentRequisition": {
+        "en": "Collected Payment Requisition",
+        "ar": "تقرير البنود الجديدة للشركات"
+    },
+    "taskEstimatedHoursVariance": {
+        "en": "Task Estimated Hours Variance Report",
+        "ar": "تقرير الساعات المتوقعة للمهام"
+    },
+    "myTasks": {
+        "en": "My Tasks",
+        "ar": "مهامي"
+    },
+    "attachments": {
+        "en": "Attachments",
+        "ar": "المرفقات"
+    },
+    "endDate": {
+        "en": "End Date",
+        "ar": "تاريخ النهاية"
+    },
+    "listDetails": {
+        "en": "List Details",
+        "ar": "تفاصيل المهام"
+    },
+    "accepted": {
+        "en": "Accepted",
+        "ar": "مقبول"
+    },
+    "rejected": {
+        "en": "Rejected",
+        "ar": "مرفوض"
+    },
+    "rejectedTo": {
+        "en": "Rejected To",
+        "ar": "تم الرفوض بواسطة"
+    },
+    "acceptedRejected": {
+        "en": "Accepted / Rejected",
+        "ar": "مقبول / مرفوض"
+    },
+    "projectInvoices": {
+        "en": "Project Invoices",
+        "ar": "فواتير المشروع"
+    },
+    "resultDate": {
+        "en": "Result Date",
+        "ar": "تاريخ النتيجة"
+    },
+    "resultDateRequired": {
+        "en": "Please insert Result Date",
+        "ar": "برجاء ادخال تاريخ النتيجة"
+    },
+    "NCRLog": {
+        "en": "NCR Log",
+        "ar": "جدول تقرير عدم المطابقه"
+    },
+    "expnesesUserRequests": {
+        "en": "Expneses User Requests",
+        "ar": "تقديمات المصروفات"
+    },
+    "requestCount": {
+        "en": "Request Count",
+        "ar": "عدد الطلبات"
+    },
+    "Requests": {
+        "en": "Requests",
+        "ar": "عدد الطلبات"
+    },
+    "reviewResult": {
+        "en": "Review Result",
+        "ar": "مراجعة النتيجة"
+    },
+    "selectResult": {
+        "en": "-- Select Result --",
+        "ar": "-- اختر النتيجة --"
+    },
+    "id": {
+        "en": "Id",
+        "ar": "رقم البيان"
+    },
+    "defaultHours": {
+        "en": "Default Hours",
+        "ar": "ساعات الافتراضية "
+    },
+    "overTimeSheet": {
+        "en": " Over Time Time Sheet",
+        "ar": "تقرير الحضور والانصراف الاضافي"
+    },
+    "myActivities": {
+        "en": "  My Activities Time Sheet",
+        "ar": "تقرير المهام"
+    },
+    "calendar": {
+        "en": "My Calendar",
+        "ar": "الاجندة"
+    },
+    "po": {
+        "en": "PO",
+        "ar": "امر شراء"
+    },
+    "invoiceNo": {
+        "en": "invoiceNo",
+        "ar": "كود الفاتورة"
+    },
+    "invoicesReport": {
+        "en": "Invoices Log Report",
+        "ar": "سجل فواتيرأوامر الشراء"
+    },
+    "communicationCorrespondenceReceivedRpt": {
+        "en": " Correspondence Received Report",
+        "ar": " تقرير المراسلات الواردة"
+    },
+    "inspectionRequest": {
+        "en": "Inspection Request",
+        "ar": "طلب المعاينة"
+    },
+    "materialInspectionRequest": {
+        "en": "Material Inspection Request",
+        "ar": "طلب معاينة الخامات"
+    },
+    "materialInspectionRequestAdd": {
+        "en": "Add Material Inspection Request",
+        "ar": "اضافة طلب معاينة الخامات"
+    },
+    "inspectionRequestAdd": {
+        "en": "Add Inspection Request",
+        "ar": "اضافة طلب المعاينة"
+    },
+    "revisionNo": {
+        "en": "Revision No",
+        "ar": "رقم المرجع"
+    },
+    "notCodedPayment": {
+        "en": "Not Coded Payment Summarry",
+        "ar": " ملخص مدفوعات غير مكوده"
+    },
+    "unitRate": {
+        "en": "Unit Rate",
+        "ar": " معدل الوحدة"
+    },
+    "userMenu": {
+        "en": "User",
+        "ar": "المستخدم"
+    },
+    "accountMenu": {
+        "en": "Account",
+        "ar": "الحساب"
+    },
+    "polices": {
+        "en": "Attendance Detail",
+        "ar": "سياسة"
+    },
+    "projectMenu": {
+        "en": "Project",
+        "ar": "المشروع"
+    },
+    "logout": {
+        "en": "Log Out",
+        "ar": "الخروج"
+    },
+    "condition": {
+        "en": "Condition",
+        "ar": "شرط"
+    },
+    "defaultContract": {
+        "en": "Use This Condition As A Default Term For BOQ And Procurement Orders",
+        "ar": "استخدام الشرط "
+    },
+    "termsLog": {
+        "en": "Terms Log",
+        "ar": "شروط "
+    },
+    "resultItems": {
+        "en": "Result Items",
+        "ar": "نتيجة العناصر "
+    },
+    "downloadExcelFormatFile": {
+        "en": "Download Excel Format File",
+        "ar": "تنزيل ملف إكسيل "
+    },
+    "logs": {
+        "en": "Logs",
+        "ar": "السجلات"
+    },
+    "pOGreenAlert": {
+        "en": "PO(contract) Green Alert",
+        "ar": "تنبيه أخضر"
+    },
+    "pOYellowAlert": {
+        "en": "PO(contract) Yellow Alert",
+        "ar": "تنبيه أصفر"
+    },
+    "pORedAlert": {
+        "en": "PO(contract) Red Alert",
+        "ar": "تنبيه أحمر"
+    },
+    "useAlert": {
+        "en": "Use Alert",
+        "ar": "استخدام التنبيه"
+    },
+    "pOandContractConfig": {
+        "en": "PO and Contract Config",
+        "ar": "اعدادات التحذير لامر الشراء والعقود"
+    },
+    "internalMessage": {
+        "en": "Internal Messages",
+        "ar": "رسائل داخلية"
+    },
+    "distbutionMessage": {
+        "en": "Distbution Inbox Messages",
+        "ar": " ملخص صندوق الوارد"
+    },
+    "importQnty": {
+        "en": "Import Quantity",
+        "ar": "  الوارد"
+    },
+    "excuteQnty": {
+        "en": "Execute Quantity",
+        "ar": " المنصرف"
+    },
+    "delete": {
+        "en": "Delete",
+        "ar": "حذف"
+    },
+    "schedualActionBy": {
+        "en": "Schedual Action By",
+        "ar": "ملخص علي الشخص المسئول بمهام الجدول الزمني"
+    },
+    "copyTo": {
+        "en": "Copy To",
+        "ar": "نسخ الي"
+    },
+    "sendByEmail": {
+        "en": "Send By Email",
+        "ar": "ارسال بالبريد الالكتروني"
+    },
+    "send": {
+        "en": "Send",
+        "ar": "ارسال"
+    },
+    "lateTimeSheet": {
+        "en": "Late Time Sheet",
+        "ar": "حضور وانصراف متاخر"
+    },
+    "pricing": {
+        "en": "Pricing",
+        "ar": "التسعير"
+    },
+    "use": {
+        "en": "Use",
+        "ar": "استخدم"
+    },
+    "countingFromRequestedQuantityToOriginalQuantity": {
+        "en": "Counting From Requested Quantity To Original Quantity",
+        "ar": "الحساب من الكمية المطلوبة إلي الأصلية"
+    },
+    "quantitiesAlertingEdit": {
+        "en": "Quantities Alerting Edit",
+        "ar": "تعديل بيانات التنبيه للكميات"
+    },
+    "ScheduleAlertsSummary": {
+        "en": "ScheduleAlertsSummary",
+        "ar": "ملخص تنبيهات الجدول"
+    },
+    "useSelection": {
+        "en": "Use Selection Mode",
+        "ar": "  تنبيهات  "
+    },
+    "closeAfterApproval": {
+        "en": "Close Document After Approval",
+        "ar": "غلق الملف بعد الاعتماد"
+    },
+    "rejectionOption": {
+        "en": "Rejection Option",
+        "ar": "اختيارات الرفض"
+    },
+    "purchases": {
+        "en": "purchases",
+        "ar": "المشتريات"
+    },
+    "multiApproval": {
+        "en": "multiApproval",
+        "ar": "تعددية الاعتماد"
+    },
+    "estimationItemTypeName": {
+        "en": "estimation Item Type Name",
+        "ar": "اسم تقييم نوع العنصر"
+    },
+    "parentName": {
+        "en": "parentName",
+        "ar": "الاب"
+    },
+    "originalEstimatedTime": {
+        "en": "Original Estimated Time",
+        "ar": "تقييم الوقت الاصلي"
+    },
+    "estimatedTime": {
+        "en": "Estimated Time",
+        "ar": "تقييم الوقت "
+    },
+    "taskTree": {
+        "en": " Task Tree",
+        "ar": " شجرة المهام "
+    },
+    "projectTask": {
+        "en": " Project Task",
+        "ar": " مهام المشروع "
+    },
+    "discount": {
+        "en": "Discount",
+        "ar": " خصم  "
+    },
+    "transmittal": {
+        "en": "Transmittal",
+        "ar": "سجل نماذج التسليمات"
+    },
+    "check": {
+        "en": "Check",
+        "ar": "اضف"
+    },
+    "quantityComplete": {
+        "en": "quantity Complete",
+        "ar": "الكمية المنفذة"
+    },
+    "todayTimeSheet": {
+        "en": "Today Time Sheet",
+        "ar": "الجدول الزمني لهذا اليوم"
+    },
+    "yesterdayTimeSheet": {
+        "en": "Yesterday Time Sheet",
+        "ar": "الجدول الزمني ليوم امس"
+    },
+    "addGeneralCondition": {
+        "en": "add general Condition",
+        "ar": "اضف شرط عام"
+    },
+    "addParticularCondition": {
+        "en": "add Particular Condition",
+        "ar": "اضف شرط جزئى"
+    },
+    "vacationName": {
+        "en": "Vacation Name",
+        "ar": "الاجازات الرسمية"
+    },
+    "insuranceName": {
+        "en": "Insurance",
+        "ar": "اسم التامين"
+    },
+    "isAmount": {
+        "en": "Is Amount",
+        "ar": "لديه تامين "
+    },
+    "formalVacations": {
+        "en": "Formal Vacations",
+        "ar": "الاجازات الرسمية"
+    },
+    "englishName": {
+        "en": "English Name",
+        "ar": "الاسم باللغة الإنجليزية"
+    },
+    "arabicName": {
+        "en": "Arabic Name",
+        "ar": "الاسم باللغة العربية"
+    },
+    "percentFromBasicSalary": {
+        "en": "staffBasic%",
+        "ar": "نسبة راتب فريق العمل الثابت"
+    },
+    "percentFromVariableSalary": {
+        "en": "staffVariable%",
+        "ar": "نسبة راتب فريق العمل المتغير "
+    },
+    "statusName": {
+        "en": "status Name",
+        "ar": "اسم الحالة "
+    },
+    "deduction": {
+        "en": " Deduction /",
+        "ar": "/استقطاعات  "
+    },
+    "insurance": {
+        "en": " Insurance",
+        "ar": "التامينات  "
+    },
+    "amount": {
+        "en": "Amount",
+        "ar": "قيمة"
+    },
+    "amountRequired": {
+        "en": "Please Select Amount",
+        "ar": "برجاء اختيار القيمة"
+    },
+    "endOfService": {
+        "en": "End Of Service",
+        "ar": "نهاية الخدمة"
+    },
+    "bonusValue": {
+        "en": "Bonus Value",
+        "ar": "قيمة الحافز"
+    },
+    "withResignation": {
+        "en": "With Resignation",
+        "ar": "مع الاستقالة"
+    },
+    "insuranceNameAr": {
+        "en": "Arabic Insurance Name",
+        "ar": "اسم التامين عربي"
+    },
+    "insuranceNameEn": {
+        "en": "Engilsh Insurance Name",
+        "ar": "اسم التامين انجليزي"
+    },
+    "absence": {
+        "en": "Absence Policy",
+        "ar": "اتفاصيل الغياب"
+    },
+    "durationPerDay": {
+        "en": " Period",
+        "ar": "المدة"
+    },
+    "numberOfRepeates": {
+        "en": " number Of Repeates",
+        "ar": "عدد مرات التكرار"
+    },
+    "unitName": {
+        "en": " Unit Name",
+        "ar": "اسم الوحدة"
+    },
+    "unitPenality": {
+        "en": " Unit Penality",
+        "ar": "قيمة الخصم"
+    },
+    "startNumberOfYears": {
+        "en": "Start Number Of Years",
+        "ar": "من سنة"
+    },
+    "fromDate": {
+        "en": "From Date",
+        "ar": "من تاريخ"
+    },
+    "toDate": {
+        "en": "to Date",
+        "ar": "الى تاريخ"
+    },
+    "endNumberOfYears": {
+        "en": "End Number Of Years",
+        "ar": "الى سنة"
+    },
+    "overTimePolicy": {
+        "en": "over Time Policy",
+        "ar": "وقت زياده"
+    },
+    "permissionPolicy": {
+        "en": "Execuses Policy",
+        "ar": "السماحية"
+    },
+    "bonusPolicy": {
+        "en": "Bonus Policy",
+        "ar": "مكافاءة"
+    },
+    "bonusPolicyRequired": {
+        "en": "Please Select Bonus",
+        "ar": "برجاء اختر مكافاءة"
+    },
+    "penalityPolicy": {
+        "en": "Penality Policy",
+        "ar": "الجزاءات"
+    },
+    "delayDetails": {
+        "en": "Delay Details ",
+        "ar": "تفاصيل التاخير"
+    },
+    "shiftPolicy": {
+        "en": "Shift Policy ",
+        "ar": "الورديات"
+    },
+    "penaltyDetails": {
+        "en": "Penality Details ",
+        "ar": "تفاصيل الجزاءات"
+    },
+    "transactionPenality": {
+        "en": "Transaction Penality ",
+        "ar": "إجراء الجزاءات"
+    },
+    "customerName": {
+        "en": "Customer Name",
+        "ar": "اسم العميل"
+    },
+    "salesCustomer": {
+        "en": "Sales For Customer",
+        "ar": "مبيعات عميل خلال فترة"
+    },
+    "customers": {
+        "en": "Customers",
+        "ar": "العملاء"
+    },
+    "isCash": {
+        "en": "Is Cash",
+        "ar": "نقدي"
+    },
+    "cash": {
+        "en": "Cash",
+        "ar": "نقدي"
+    },
+    "visa": {
+        "en": "Visa",
+        "ar": "فيزا"
+    },
+    "bonusNameAr": {
+        "en": "Bonus Name Arabic",
+        "ar": "كتابة نوع المكافأة بالعربية"
+    },
+    "bonusName": {
+        "en": "Bonus Name",
+        "ar": "اسم المكافاة"
+    },
+    "bonus": {
+        "en": "Bonus",
+        "ar": "الحوافز"
+    },
+    "allowanceName": {
+        "en": "allowance Name",
+        "ar": "اسم البدل"
+    },
+    "allowanceNameEn": {
+        "en": "allowance Name English ",
+        "ar": "اسم البدل باللغة الإنجليزية "
+    },
+    "allowanceNameAr": {
+        "en": "allowance Name Arabic ",
+        "ar": "اسم البدل باللغة العربية "
+    },
+    "percentOfSalary": {
+        "en": "percent Of Salary % ",
+        "ar": "النسبة المئوية من المرتب "
+    },
+    "percentOfSalaryValue": {
+        "en": "percent Of Salary",
+        "ar": "النسبة المئوية من المرتب "
+    },
+    "salaryType": {
+        "en": "Salary Type ",
+        "ar": "نوع الراتب "
+    },
+    "allowenceDetails": {
+        "en": "Allowence Details ",
+        "ar": "تفاصيل البدلات "
+    },
+    "checkIn": {
+        "en": "Check In",
+        "ar": "وقت الحضور "
+    },
+    "checkOut": {
+        "en": "Check Out",
+        "ar": "وقت الانصراف "
+    },
+    "shiftName": {
+        "en": "shift Name",
+        "ar": "اسم الوردية"
+    },
+    "useOvertime": {
+        "en": "Use Overtime",
+        "ar": "اسم الوردية"
+    },
+    "penaltyItems": {
+        "en": "Penalty Items",
+        "ar": "تفاصيل الجزاءات"
+    },
+    "durationTime": {
+        "en": "Duration Time",
+        "ar": "المدة لكل ساعة"
+    },
+    "overTime": {
+        "en": "Over Time",
+        "ar": "الوقت الاضافي"
+    },
+    "vacationNameEn": {
+        "en": "Vacation Name English",
+        "ar": "اسم الاجازة باللغة العربية "
+    },
+    "vacationNameAr": {
+        "en": "Vacation Name Arabic",
+        "ar": "اسم الاجازة باللغة بالانجليزية"
+    },
+    "vacationCredit": {
+        "en": "Vacation Credit",
+        "ar": "عطلة الائتمان"
+    },
+    "employeeVacationCredit": {
+        "en": "Employees Vacation Credit",
+        "ar": "رصيد أجازات الموظفين"
+    },
+    "renewalPeriodInDays": {
+        "en": "Renewal Period",
+        "ar": "تجديد فترة"
+    },
+    "renewalRepeatsCount": {
+        "en": "Renewal Repeats",
+        "ar": "تجديد يكرر"
+    },
+    "formalVacation": {
+        "en": "Vacation Calendar",
+        "ar": "اجازات الرسمية "
+    },
+    "durationPerHour": {
+        "en": "Duration Per Hour",
+        "ar": "المدة "
+    },
+    "oneFingerPrint": {
+        "en": "One Finger Print",
+        "ar": "بصمة واحدة"
+    },
+    "hrSettings": {
+        "en": "HR Settings",
+        "ar": "الإعدادات"
+    },
+    "startDayOfMonth": {
+        "en": "Start Day Of Month",
+        "ar": "يوم بداية الشهر"
+    },
+    "maximumTransferVacationBalance": {
+        "en": "Maximum Transfer Vacation Balance",
+        "ar": "اقصي عدد ترحيل اجازات"
+    },
+    "taxIsCalculatedOnThe": {
+        "en": "Tax Is Calculated On The",
+        "ar": "يتم حساب الضرائب بناء علي"
+    },
+    "taxDeductedFrom": {
+        "en": "Tax Deducted From",
+        "ar": "يتم خصم الضرائب من"
+    },
+    "paymentVacationBalance": {
+        "en": "Payment Vacation Balance",
+        "ar": "استرداد باقي الاجازات نقدا"
+    },
+    "excusesPolicy": {
+        "en": "Excuses Policy",
+        "ar": "سياسة الاذونات"
+    },
+    "payments": {
+        "en": "Payments",
+        "ar": "سداد"
+    },
+    "taxValue": {
+        "en": "Tax Value",
+        "ar": "قيمة الضريبة"
+    },
+    "tax": {
+        "en": "Tax",
+        "ar": "الضريبة"
+    },
+    "employeeName": {
+        "en": "Employee Name",
+        "ar": "اسم الموظف "
+    },
+    "employeeNameRequired": {
+        "en": "Please Select employee",
+        "ar": "برجاء اختر الموظف"
+    },
+    "hrManagerName": {
+        "en": "HR Manger",
+        "ar": "مدير شئون الموظفين  "
+    },
+    "hrManagerRequired": {
+        "en": "Please insert hr manager",
+        "ar": "برجاء ادخال مدير شئون الموظفين"
+    },
+    "duration": {
+        "en": "Duration",
+        "ar": "المدة"
+    }, 
+    "supervisorApprovalStatus": {
+        "en": "Supervisor Approval Status",
+        "ar": "حالة اعتماد المدير المباشر "
+    },
+    "hrManagerApprovalStatus": {
+        "en": "HR Manager Approval Status",
+        "ar": "حالة اعتماد مدير الموارد البشرية "
+    },
+    "hrSupervisor": {
+        "en": "HR Supervisor",
+        "ar": "المدير المباشر لشئون الموظفين "
+    },
+    "hrMangerApprovalDate": {
+        "en": "HR Manger Approval Date",
+        "ar": "تاريخ اعتماد مدير شءون الموظفين "
+    }, 
+    "vacationTransaction": {
+        "en": "Vacation Transaction",
+        "ar": "طلب اجازة  "
+    },
+    "excusesName": {
+        "en": "Transfer",
+        "ar": "اذن تحويل"
+    },
+    "excusesType": {
+        "en": "Excuses Type",
+        "ar": "نوع الاذن"
+    },
+    "excusesTime": {
+        "en": "Excuses Time",
+        "ar": "وقت الاذن"
+    },
+    "excuseRequired": {
+        "en": "Please insert excuse",
+        "ar": "برجاء ادخال مدير الاذن"
+    },
+    "excuses": {
+        "en": "Excuses",
+        "ar": "الاذونات"
+    },
+    "employees": {
+        "en": "Employees",
+        "ar": "الموظفين"
+    },
+    "employeesAttend": {
+        "en": "Employees Attendance",
+        "ar": "حضور الموظفين"
+    },
+    "contactNameEn": {
+        "en": "Contact Name in English",
+        "ar": "اسم الموظف باللغة الانجليزية"
+    },
+    "contactNameAr": {
+        "en": "Contact Name in Arabic",
+        "ar": "اسم الموظف باللغة العربية"
+    },
+    "pleaseSelect": {
+        "en": "Please Select",
+        "ar": "برجاء الاختيار"
+    },
+    "absencePolicy": {
+        "en": "Absence Policy",
+        "ar": "لائحة الغياب"
+    },
+    "delayPolicy": {
+        "en": "Delay Policy",
+        "ar": "لائحة التأخيرات"
+    },
+    "insurancePolicy": {
+        "en": "Insurance Policy",
+        "ar": "لائحة التأمين"
+    },
+    "socialInsurance": {
+        "en": "Social Insurance",
+        "ar": "التأمين الاجتماعي"
+    },
+    "medicalInsurance": {
+        "en": "Medical Insurance",
+        "ar": "التأمين الصحي"
+    },
+    "penaltyPolicy": {
+        "en": "Penalty Policy",
+        "ar": "لائحة الجزاءات"
+    },
+    "penalty": {
+        "en": "Penality",
+        "ar": "الجزاءات"
+    },
+    "penaltySelection": {
+        "en": "-- Please Select penalty --",
+        "ar": "-- برجاء اختيار الجزاء --"
+    },
+    "overtimePolicy": {
+        "en": "Overtime Policy",
+        "ar": "لائحة الوقت الإضافي"
+    },
+    "allowancePolicy": {
+        "en": "Allowance  Policy",
+        "ar": "لائحة البدلات"
+    },
+    "vacationPolicy": {
+        "en": "Vacation  Policy",
+        "ar": "سياسة الاجازات"
+    },
+    "useCredit": {
+        "en": "Use Credit",
+        "ar": "استخدام بطاقة الائتمان "
+    },
+    "vacationSelection": {
+        "en": "-- Please Select Vacation --",
+        "ar": "-- برجاء اختيار الاجازة --"
+    },
+    "vacationTypeSelection": {
+        "en": "-- Please Select Vacation Type --",
+        "ar": "-- برجاء اختيار نوع الاجازة --"
+    },
+    "employeeSelection": {
+        "en": "-- Please Select Employee  --",
+        "ar": "-- برجاء اختيار  الموظف --"
+    },
+    "hrMangerSelection": {
+        "en": "-- Please Select Hr Manger  --",
+        "ar": "-- برجاء اختيار  المدير --"
+    },
+    "vacationType": {
+        "en": "Vacation Type",
+        "ar": "نوع الاجازة"
+    },
+    "basicSalary": {
+        "en": "Salary",
+        "ar": "المرتب الاساسي"
+    },
+    "expiryDateofResidence": {
+        "en": "Expiry Date of Residence",
+        "ar": "تاريخ إنتهاء الإقامة"
+    },
+    "dateFinishPassport": {
+        "en": "Date Finish Passport",
+        "ar": "تاريخ إنتهاء جواز السفر"
+    },
+    "useAttendance": {
+        "en": "Use Attendance",
+        "ar": "تطبيق البصمة"
+    },
+    "timeSheet": {
+        "en": "Time Sheet",
+        "ar": "تطبيق ساعات العمل"
+    },
+    "allowanceHousing": {
+        "en": "Allowance Housing",
+        "ar": "بدل السكن"
+    },
+    "allowanceHousing": {
+        "en": "Allowance Housing",
+        "ar": "بدل السكن"
+    },
+    "allowanceTransmission": {
+        "en": "Allowance transmission",
+        "ar": "بدل الإنتقالات"
+    },
+    "joinDate": {
+        "en": "Join Date",
+        "ar": "تاريخ الالتحاق"
+    },
+    "requestTransaction": {
+        "en": " Request Transactions",
+        "ar": "اجراء طلبات "
+    },
+    "attendEmployee": {
+        "en": "Employee Attendance",
+        "ar": " حضور الموظفين   "
+    },
+    "attendaceDate": {
+        "en": "Attendace Date",
+        "ar": " تاريخ الحضور    "
+    },
+    "transDate": {
+        "en": "Transaction Date",
+        "ar": " تاريخ الحركة    "
+    }, 
+    "morning": {
+        "en": "Morning",
+        "ar": "صباحي"
+    },
+    "night": {
+        "en": "Night",
+        "ar": "مسائي"
+    },
+    "attendDateSelect": {
+        "en": "enter attend Date",
+        "ar": "ادخل تاريخ الحضور"
+    },
+    "checkInSelect": {
+        "en": "enter checkIn",
+        "ar": "ادخل بصمة الحضور   "
+    },
+    "checkOutSelect": {
+        "en": "enter check Out",
+        "ar": "ادخل بصمة الانصراف   "
+    },
+    "durationPerDayRequired": {
+        "en": "Please Select Duration Per Day ",
+        "ar": "ادخل المدة "
+    },
+    "numberOfRepeatesRequired": {
+        "en": "enter Number Of repeats ",
+        "ar": "ادخل عدد مرات التكرار "
+    },
+    "unitValueRequired": {
+        "en": "enter Unit Value ",
+        "ar": "ادخل قيمة الوحدة "
+    },
+    "allowanceNameArRequired": {
+        "en": "enter Allowence Arabic Name ",
+        "ar": "ادخل اسم البدل العربي  "
+    },
+    "allowanceNameEnRequired": {
+        "en": "enter Allowence English Name ",
+        "ar": "ادخل اسم البدل الانجليزي  "
+    },
+    "percentOfSalaryRequired": {
+        "en": "enter Percent of Salary ",
+        "ar": "ادخل نسبة الراتب "
+    },
+    "percentOfSalaryRequired": {
+        "en": "enter Percent of Salary ",
+        "ar": "ادخل نسبة الراتب "
+    },
+    "supervisorStatus": {
+        "en": "Supervisor Status",
+        "ar": "موافقة المشرف"
+    },
+    "hrSupervisorStatus": {
+        "en": "HR Supervisor Status",
+        "ar": "موافقة مدير الموارد البسرية"
+    },
+    "missionPolicy": {
+        "en": "Mission Policy",
+        "ar": "سياسة المهمات"
+    },
+    "durationInMinutes": {
+        "en": "Duration In Minutes",
+        "ar": "المدة بالدقائق"
+    },
+    "supervisorApprovalDate": {
+        "en": "Supervisor Approval Date",
+        "ar": "تاريخ موافقة المشرف"
+    },
+    "hrManagerApprovalDate": {
+        "en": "HR Manager Approval Date",
+        "ar": "تاريخ موافقة مشرف الموارد البشرية"
+    },
+    "missionHour": {
+        "en": "Mission Hour",
+        "ar": "سجل المهمة بالساعات"
+    },
+    "missionDay": {
+        "en": "Mission Day",
+        "ar": "سجل المأموريات بالأيام"
+    },
+    "loanTotal": {
+        "en": "Total Loans",
+        "ar": "القرض  الاجمالي  "
+    },
+    "hrStatusApproval": {
+        "en": "HR Manger Status Approval ",
+        "ar": "حالة اعتماد رئيس شئون الموظفين   "
+    },
+    "numberOfMonths": {
+        "en": " Number Of Months ",
+        "ar": " عدد الشهور  "
+    },
+    "collectedMonths": {
+        "en": " Collected Paid Months  ",
+        "ar": "اجمالي الشهور المدفوعة"
+    },
+    "valueOfInstallment": {
+        "en": " Value of Installment",
+        "ar": " قيمة القسط"
+    },
+    "transactionLoan": {
+        "en": "Transaction Loans",
+        "ar": " اجراء القرض "
+    },
+    "transactionExcuse": {
+        "en": "Excuse Transaction ",
+        "ar": "اجراء الإذن"
+    },
+    "approved": {
+        "en": "Approved",
+        "ar": " أعتمدت "
+    },
+    "withSalary": {
+        "en": "With Salary",
+        "ar": "بمرتب"
+    },
+    "vacationSummary": {
+        "en": "Vacation Summary",
+        "ar": "ملخص عن الاجازات"
+    },
+    "hrVacationSummary": {
+        "en": "HR Vacation / Excuses Summary",
+        "ar": " اعتماد مدير الموارد البشرية"
+    },
+    "supervisorVacationSummary": {
+        "en": "Supervisor Vacation / Excuses Summary",
+        "ar": " اعتماد المدير المباشر"
+    },
+    "InstallmentRequired": {
+        "en": "enter Value of Installment",
+        "ar": " من فضلك ادخل قيمة القسط "
+    }, 
+    "loanTotalRequired": {
+        "en": "enter  Total Loan",
+        "ar": " من فضلك ادخل قيمة القرض "
+    },
+    "loanSummary": {
+        "en": "Loans Summary",
+        "ar": " القروض "
+    },
+    "requestedFrom": {
+        "en": "Requested From",
+        "ar": "مقدمة من"
+    },
+    "missionName": {
+        "en": "Mission Name",
+        "ar": "اسم المهمة"
+    },
+    "missionLocation": {
+        "en": "Mission Location",
+        "ar": "مكان المهمة"
+    },
+     "missionLocationRequired": {
+        "en": "Please Enter Mission Location ",
+        "ar": "مكان المهمة"
+    },
+    "invalidPassword": {
+        "en": "Invalid Password",
+        "ar": " كلمة المرور غير صحيحة"
+    },
+    "loans": {
+        "en": "Loans",
+        "ar": "القروض"
+    },
+    "hrStaus": {
+        "en": "HR Manger Action",
+        "ar": "قرار رئيس شئون الموظفين"
+    },
+    "loanMessage": {
+        "en": "This Employee Has Loans",
+        "ar": " هذا الموظف لديه قروض "
+    },
+    "loanMessageManger": {
+        "en": "This Loan Has been approved by Manger",
+        "ar": " هذاالقرض تم اعتماده من المدير "
+    },
+    "fingerPrint": {
+        "en": "FingerPrint",
+        "ar": " البصمة "
+    },
+    "fingerPrintReport": {
+        "en": "FingerPrint Report",
+        "ar": " تقرير البصمة "
+    },
+    "reportAbsence": {
+        "en": "Report Absence",
+        "ar": "سجل الغيابات"
+    },
+    "attendDay": {
+        "en": "Attend Day",
+        "ar": " يوم الحضور "
+    },
+    "attendTime": {
+        "en": "Attend Time",
+        "ar": " وقت الحضور "
+    },
+    "delayMinutes": {
+        "en": " Delay Minutes",
+        "ar": " دقائق التاخير  "
+    },
+    "leaveTime": {
+        "en": " Leave time ",
+        "ar": " وقت الانصراف   "
+    },
+    "delayAmount": {
+        "en": "Delay Amount ",
+        "ar": " معدل التاخير "
+    },
+    "overTimeMinutes": {
+        "en": "Overtime Minutes ",
+        "ar": " دقائق الاضافة"
+    },
+    "overTimeAmount": {
+        "en": "Overtime Amount ",
+        "ar": " قيمة الاضافة"
+    },
+    "case": {
+        "en": " Case ",
+        "ar": " الحالة "
+    },
+    "fingerPrintPenality": {
+        "en": " finger Print Penality ",
+        "ar": " جزاءات البصمة "
+    },
+    "policy": {
+        "en": "policy",
+        "ar": "السياسة"
+    },
+    "absencesReport": {
+        "en": "Absences Report",
+        "ar": "تقرير الغيابات"
+    },
+    "missionsReport": {
+        "en": "Missions Report",
+        "ar": "تقرير المهمات"
+    },
+    "execuseReport": {
+        "en": "Execuse Report",
+        "ar": "تقرير الاذونات"
+    },
+    "vacationsReport": {
+        "en": "Vacations Report",
+        "ar": "تقرير الاجازات"
+    },
+    "execusesReport": {
+        "en": "Execuses Report",
+        "ar": "تقرير الاذونات"
+    },
+    "maximumCredit": {
+        "en": "Maximum Credit",
+        "ar": "الحد الاقصي للرصيد"
+    },
+    "credit": {
+        "en": " Credit",
+        "ar": "دائن"
+    },
+    "creditAccount": {
+        "en": " Credit",
+        "ar": "دائن"
+    },
+    "debitAccount": {
+        "en": " debit",
+        "ar": "مدين"
+    },
+    "balanceDebit": {
+        "en": "Debit Balance",
+        "ar": "رصيد مدين"
+    },
+    "balanceCredit": {
+        "en": "Credit Balance",
+        "ar": "رصيد  دائن"
+    },
+    "listType": {
+        "en": "List Type",
+        "ar": "نوع القائمة "
+    },
+    "selectSListType": {
+        "en": "--  Please select a List Type --",
+        "ar": "-- برجاء اختيار نوع القائمة --"
+    },
+    "militaryStatus": {
+        "en": "Military Status",
+        "ar": "الحالة العسكرية"
+    },
+    "religion": {
+        "en": "Religion ",
+        "ar": "الديانة "
+    },
+    "socialStatus": {
+        "en": "Social Status ",
+        "ar": "الحالة الاجتماعية "
+    },
+    "visaName": {
+        "en": "Visa Name ",
+        "ar": "اسم الفيزا  "
+    },
+    "visaType": {
+        "en": "Visa Type ",
+        "ar": "نوع الفيزا  "
+    },
+    "defaultList": {
+        "en": "Default List ",
+        "ar": " القائمة الافتراضية "
+    },
+    "grossSalary": {
+        "en": "Gross Salary",
+        "ar": "الراتب الاجمالي"
+    }, 
+    "netPurchase": {
+        "en": "Net Purchase",
+        "ar": "صافي المشتريات"
+    },
+    "netSales": {
+        "en": "Net Sales",
+        "ar": "صافي المبيعات"
+    },
+    "totalSales": {
+        "en": "Total Sales",
+        "ar": "قيمة المبيعات"
+    },
+    "totalPayment": {
+        "en": "Total Payment",
+        "ar": "قيمة السداد"
+    }, 
+    "durationTimeRequired": {
+        "en": "Enter Duration Time",
+        "ar": "من فضلك المدة لكل ساعة"
+    },
+    "numberOfRepeatesRequired": {
+        "en": "enter number Of Repeates",
+        "ar": " ادخل عدد مرات التكرار"
+    },
+    "type": {
+        "en": "Type",
+        "ar": " النوع"
+    },
+    "listTypeRequired": {
+        "en": "please choose a Type",
+        "ar": " من فضلك اختر النوع"
+    },
+    "multipleApproval": {
+        "en": "Multiple Approval",
+        "ar": "اعتماد اكثر من شخص في نفس المستوي"
+    },
+    "requestDate": {
+        "en": "Request Date",
+        "ar": "  تاريخ الطلب"
+    },
+    "rerun": {
+        "en": "Rerun",
+        "ar": "تهيئة يومية الموظف"
+    },
+    "showAll": {
+        "en": "Show All",
+        "ar": "عرض كل أيام الموظفين"
+    },
+    "insuranceNameArReuired": {
+        "en": "Enter Arabic Insurance Name",
+        "ar": "ادخل اسم التامين عربي"
+    },
+    "insuranceNameEnRequired": {
+        "en": "Enter Engilsh Insurance Name",
+        "ar": " ادخل اسم التامين انجليزي"
+    },
+    "percentFromBasicSalaryRequired": {
+        "en": "enter staff Basic ",
+        "ar": " ادخل نسبة راتب فريق العمل الثابت"
+    },
+    "percentFromVariableSalaryRequired": {
+        "en": "enter staff Variable",
+        "ar": "ادخل نسبة راتب فريق العمل المتغير"
+    },
+    "policyNameArRequired": {
+        "en": "enter Policy Name arabic",
+        "ar": "ادخل اسم السياسة "
+    },
+    "policyNameEnRequired": {
+        "en": "enter Policy Name arabic",
+        "ar": "ادخل اسم السياسة"
+    },
+    "durationTypeSelect": {
+        "en": "selectDuration Type",
+        "ar": "اختر نوع مدة الاجازة"
+    },
+    "durationType": {
+        "en": "Duration Type",
+        "ar": "نوع  مدة الاجازة"
+    },
+    "expenses": {
+        "en": "Expenses",
+        "ar": "المصروفات"
+    },
+    "myExpenses": {
+        "en": "My Expenses",
+        "ar": " مصروفاتي"
+    },
+    "lateExpenses": {
+        "en": "Late Expenses",
+        "ar": " المصروفات المتاخرة"
+    },
+    "workHours": {
+        "en": "Work Hr(s)",
+        "ar": "ساعات العمل"
+    },
+    "hoursAbbreviation": {
+        "en": "Hr(s)",
+        "ar": "ساعة"
+    },
+    "isRequiredField": {
+        "en": "This Field cannot be Empty Please Provide/Select a Valid Value",
+        "ar": "لا يمكن ترك هذا الحقل بدون بيانات برجاء ادخال/اختيار قيمة مناسبة"
+    },
+    "docSubject": {
+        "en": "Doc Subject",
+        "ar": "عنوان الوثيقة "
+    },
+    "smartVacationMessage": {
+        "en": {
+            "title": "Operation was canceled",
+            "content": "<i>Cannot add Time Sheet on a Vacation Date...</i>"
+        },
+        "ar": {
+            "title": "تم الغاء العملية",
+            "content": "<i>...لا يمكن اضافة جدول زمني في يوم عطلة</i>"
+        }
+    },
+    "numbersGreaterThanOrEqualHalf": {
+        "en": "Please Insert Value Greater Than or Equal 0.5",
+        "ar": "برجاء ادخال قيمة اكبر او تساوي 0.5"
+    },
+    "missingPermissions": {
+        "en": "You Don't Have a Permission to access this page",
+        "ar": " ليس لديك صلاحية للدخول على هذه الصفحة "
+    },
+    "goAdd": {
+        "en": "Add",
+        "ar": "اضافة"
+    }, 
+    "personal": {
+        "en": "Basic Data",
+        "ar": "البيانات الاساسية"
+    },
+    "vacationCancelled": {
+        "en": "can't add transaction for this  Start Date  ",
+        "ar": "عفوا لا يمكن اضافة اجازة بهذا التاريخ"
+    },
+    "exportPDF": {
+        "en": "Export PDF",
+        "ar": "ملف "
+    },
+    "exportWord": {
+        "en": "Export Word",
+        "ar": "ملف وورد"
+    },
+    "exportExcel": {
+        "en": "Export Excel",
+        "ar": "  ملف اكسل"
+    },
+    "requestSetting": {
+        "en": "Request Setting",
+        "ar": "  اعداد الطلب "
+    },
+    "selectExecuses": {
+        "en": "select Execuses Type",
+        "ar": "اختر نوع الازن "
+    },
+    "accountsGroup": {
+        "en": "Accounts Group",
+        "ar": "مجموعة المستخدمين"
+    },
+    "contacts": {
+        "en": " Contacts",
+        "ar": " مستخدمين "
+    },
+    "userType": {
+        "en": "user Type",
+        "ar": "نوع المستخدم"
+    },
+    "addNew": {
+        "en": "Add New",
+        "ar": "اضافة جديدة"
+    },
+    "select": {
+        "en": "select ",
+        "ar": " اختر"
+    },
+    "editTitle": {
+        "en": "Add",
+        "ar": "اضافة"
+    },
+    "addTitle": {
+        "en": "Edit",
+        "ar": "تعديل"
+    },
+    "telephoneRequired": {
+        "en": "Please insert Telephone Number",
+        "ar": "يرجى ادخال رقم الهاتف "
+    },
+    "mobileRequired": {
+        "en": "Please insert Mobile Number",
+        "ar": "يرجى ادخال رقم الموبايل "
+    },
+    "goEdit": {
+        "en": "Edit",
+        "ar": "تعديل"
+    },
+    "otherProjects": {
+        "en": "Other Projects",
+        "ar": "مشاريع اخري"
+    },
+    "timeSheetProject": {
+        "en": "Hours On Project",
+        "ar": "Hours On Project"
+    },
+    "totalTimeSheetProject": {
+        "en": "Total Hours",
+        "ar": "Total Hours"
+    },
+    "docApproval": {
+        "en": "Doc Approval",
+        "ar": "اعتماد وثائق"
+    },
+    "SummaryNetSalaryForAccounting": {
+        "en": "Net Salary Approval",
+        "ar": "Total Hours"
+    },
+    "accounting": {
+        "en": "Accounting",
+        "ar": "الحسابات"
+    },
+    "inventoryStore": {
+        "en": "Inventory Store",
+        "ar": "اذن تسوية جرد"
+    },
+    "transfereAccounting": {
+        "en": "Transfer To Accounting",
+        "ar": "ارسال للحسابات"
+    },
+    "failError": {
+        "en": "Error During Complete Opertion",
+        "ar": "حدث خطا"
+    },
+    "variableSalary": {
+        "en": "Variable Salary",
+        "ar": "المرتب المتغير"
+    },
+    "baseSalary": {
+        "en": "basic Salary",
+        "ar": "مرتب ثابت"
+    },
+    "variableSalaryRequired": {
+        "en": "Please insert variable Salaryr",
+        "ar": "يرجى ادخال  المرتب "
+    },
+    "basicSalaryRequired": {
+        "en": "Please insert Basic Salary",
+        "ar": "يرجى ادخال المرتب الاساسي   "
+    },
+    "export": {
+        "en": "Export",
+        "ar": " استخراج "
+    },
+    "timeSheetRequest": {
+        "en": " Time Sheet Request",
+        "ar": " طلب ساعات العمل "
+    },
+    "requestApproval": {
+        "en": " Request Approval",
+        "ar": " ارسال للاعتمادات"
+    },
+    "userInfo": {
+        "en": " User Information",
+        "ar": " معلومات المستخدم"
+    },
+    "currentPassword": {
+        "en": "Current Password",
+        "ar": "كلمة المرور الحالية"
+    },
+    "newPassword": {
+        "en": "New Password",
+        "ar": "كلمة المرور الجديدة"
+    },
+    "passwordRequired": {
+        "en": "Please Enter Password",
+        "ar": "برجاء إدخال كلمة المرور"
+    },
+    "currentPasswordRequired": {
+        "en": "Please Enter Current Password",
+        "ar": "برجاء إدخال كلمة المرور الحالية"
+    },
+    "userNameRequired": {
+        "en": "Please Enter User Name",
+        "ar": "برجاء إدخال إسم المستخدم "
+    },
+    "newPasswordRequired": {
+        "en": "Please Enter New Password",
+        "ar": "برجاء إدخال كلمة المرور الجديدة"
+    },
+    "uploadPhoto": {
+        "en": "Upload Photo",
+        "ar": "تحميل صورة شخصية"
+    },
+    "uploadSignature": {
+        "en": "Upload Signature",
+        "ar": "تحميل صورة التوقيع"
+    },
+    "itemCode": {
+        "en": " Item Code",
+        "ar": "كود الصنف"
+    },
+    "policiesDetails": {
+        "en": "Policies Details ",
+        "ar": "تفاصيل السياسات"
+    },
+    "changePassword": {
+        "en": "Change Password",
+        "ar": "تغيير الرقم السرى"
+    },
+    "branch": {
+        "en": "Branches Stores",
+        "ar": "مخازن الفروع"
+    },
+    "branchNameEn": {
+        "en": "Branch Name ",
+        "ar": "إسم المخزن "
+    },
+    "branchNameAr": {
+        "en": "Branch Name (AR)",
+        "ar": "إسم القسم عربى"
+    },
+    "branch": {
+        "en": "Branches",
+        "ar": "مخازن الفروع"
+    },
+    "branchNameEn": {
+        "en": "Branch Name ",
+        "ar": "إسم المخزن "
+    },
+    "branchNameAr": {
+        "en": "Branch Name (AR)",
+        "ar": "إسم القسم عربى"
+    },
+    "employeesWithoutDepts": {
+        "en": "Employees Without Departments",
+        "ar": "موظفين ليس لهم أقسام"
+    },
+    "departmentNameEnRequired": {
+        "en": "Please Enter Department Name ",
+        "ar": "إسم القسم إنجليزى"
+    },
+    "departmentNameArRequired": {
+        "en": "Please Enter Department Name",
+        "ar": "إسم القسم عربى"
+    },
+    "departmentName": {
+        "en": "Department Name",
+        "ar": "إسم القسم "
+    },
+    "isDaily": {
+        "en": "Is Daily",
+        "ar": "isDaily "
+    },
+    "missionType": {
+        "en": "Mission Type",
+        "ar": "نوع المأمورية "
+    },
+    "transactionMission": {
+        "en": "Mission Transactions",
+        "ar": "سجل المأموريات "
+    },
+    "execuseCancelled": {
+        "en": "can't add transaction for this  Start Date  ",
+        "ar": "عفوا لا يمكن اضافة إذن بهذا التاريخ"
+    },
+    "durationFormate": {
+        "en": "Duration with Format (00:00:00)",
+        "ar": "المدة"
+    },
+    "employeesRequests": {
+        "en": " Employees Requests",
+        "ar": " طلبات الموظف"
+    }
+
+}

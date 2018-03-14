@@ -12,6 +12,8 @@ namespace InventoryInterface.IDataService
     public interface ILocationsRepository : IGenericRepository<location>
     {
         List<DtoLocations> selectAll(string lang);
+        List<DtoLocations> selectAllForDrop(string lang);
+
         DtoLocations selectById(int id, string lang);
         List<DtoLocations> selectAllPallta(string lang);
         DtoLocations selectPalltaById(int id, string lang);

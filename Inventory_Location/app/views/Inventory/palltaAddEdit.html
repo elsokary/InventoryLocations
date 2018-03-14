@@ -37,6 +37,16 @@
                                             </label>
                                         </section>
                                     </div>
+                                    <div class="row">
+
+                                        <section class="col col-sm-2">
+                                            <label class="label" data-bind="text: $root.language.location[$root.currentLanguage()]"></label>
+                                            <label class="select">
+                                                <select id="locationId" name="locationId" style="width: 100%;" data-bind="value: $root.locationId, options: $root.locations, optionsText: 'description', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.location[$parent.currentLanguage()], allowClear: true }"></select>
+                                            </label>
+                                        </section>
+                                    </div>
+
                                 </fieldset>
                                 <footer style="text-align:center;border:0;background-color: #FFF;">
                                     <button type="submit" data-bind="click: addEditPallta" class="btn btn-default">
