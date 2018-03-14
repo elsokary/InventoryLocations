@@ -40,6 +40,19 @@ namespace DataServices.Repository
             return list.AsQueryable();
         }
 
+        public IQueryable<DtoTransactionTypes> selectAllForDrop()
+        {
+            var list = new List<DtoTransactionTypes>();
+          
+                list = (from q in Context.transactionTypes.AsNoTracking()
+                        select new DtoTransactionTypes
+                        {
+                            title = q.title, 
+                            id = q.id 
+                        }).ToList();
+             return list.AsQueryable();
+        }
+
         //WriteMethod2
 
         public DtoTransactionTypes selectById(int id, string lang)

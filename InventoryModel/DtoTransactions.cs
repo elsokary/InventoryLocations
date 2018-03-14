@@ -7,80 +7,83 @@ using System.Text;
 namespace InventoryModel
 {
 
-    public class DtoLocations
+    public class DtoTransactions
     {
-        public int id
-        {
-            get;
-            set;
-        }
-        public string description
-        {
-            get;
-            set;
-        }
-        public string location
-        {
-            get;
-            set;
-        }
-        public string code
-        {
-            get;
-            set;
-        }
-        public int? parentId
-        {
-            get;
-            set;
-        }
-        public int? serial
+        public int branchId
         {
             get;
             set;
         }
 
-        public bool? isPallta
+        public int locationItemId
         {
             get;
             set;
         }
 
+        public int itemId
+        {
+            get;
+            set;
+        }
+
+        public int palltaId
+        {
+            get;
+            set;
+        }
+
+        public int palltaType
+        {
+            get;
+            set;
+        }
+
+        public string resourceCode
+        {
+            get;
+            set;
+        }
+        public string  description
+        {
+            get;
+            set;
+        }
+        public int? cost
+        {
+            get;
+            set;
+        }
+        public int? quantity
+        {
+            get;
+            set;
+        }
+        public int price
+        {
+            get;
+            set;
+        }
+        public int? editById
+        {
+            get;
+            set;
+        }
+        public string comment
+        {
+            get;
+            set;
+        }
+        public bool? deleted
+        {
+            get;
+            set;
+        }
+        public DateTime? editDate
+        {
+            get;
+            set;
+        }
     }
-
-    public class assignItemToLocation
-    {
-        public int locationId
-        {
-            get;
-            set;
-        }
-        public int transactionTypeId
-        {
-            get;
-            set;
-        }
-        public double? cost
-        {
-            get;
-            set;
-        }
-        public string code
-        {
-            get;
-            set;
-        }
-        public string subject
-        {
-            get;
-            set;
-        }
-        public List<int> itemIds
-        {
-            get;
-            set;
-        }
-    }
-
 }
 

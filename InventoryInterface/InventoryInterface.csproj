@@ -73,6 +73,7 @@
     <Compile Include="IDataService\IGroupsRepository.cs" />
     <Compile Include="IDataService\IItemsDecriptionRepository.cs" />
     <Compile Include="IDataService\ISuppliersRepository.cs" />
+    <Compile Include="IDataService\ITransactionsRepository.cs" />
     <Compile Include="IDataService\ITransactionTypesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

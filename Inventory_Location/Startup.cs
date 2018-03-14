@@ -81,6 +81,7 @@ namespace Inventory_Location
 
             kernel.Bind<ILocationsRepository>().To<LocationsRepository>().InRequestScope();
 
+            kernel.Bind<ITransactionsRepository>().To<TransactionsRepository>().InRequestScope(); 
             kernel.Bind<ILocationsItemsRepository>().To<LocationsItemsRepository>().InRequestScope(); 
 
             return kernel;

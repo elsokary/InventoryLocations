@@ -15,6 +15,9 @@ namespace Interface.IDataService
         IQueryable<DtoTransactionTypes> selectAll(string lang);
          
         DtoTransactionTypes selectById(int id, string lang);
+
+        IQueryable<DtoTransactionTypes> selectAllForDrop();
+
          
     }
 }

@@ -7,8 +7,15 @@
     var changeStatus = ko.observable(false);
 
     var selectedRows = ko.observableArray([]); 
+
     var locations = ko.observableArray([]);
+
+    var transactionTypes = ko.observableArray([]);
+
     var locationId = ko.observable();
+
+    var transactionTypesId = ko.observable();
+
     var exportColumns = [];
 
     var exportToExcel = function () {
@@ -135,6 +142,10 @@
 
         dataservice.getPalltaForDorp().done(function (result) {
             locations(result);
+        });
+        
+        dataservice.getTransactionTypesForDrop().done(function (result) {
+            transactionTypes(result);
         });
 
         item(new itemDto());
@@ -537,7 +548,7 @@
     };
     var saveAssignToLocation = function (obj, e) {
  
-        dataservice.assignItemToLocation(selectedRows(), locationId()).then(function (data) {
+        dataservice.assignItemToLocation(selectedRows(), locationId(), transactionTypesId()).then(function (data) {
             
             $('#assignToLocationModalList').modal('hide');
 
@@ -583,9 +594,11 @@
         changeStatus: changeStatus,
         koTableReady: koTableReady,
         selectRecord: selectRecord,
-        selectedRows: selectedRows, 
+        selectedRows: selectedRows,
+        transactionTypes:transactionTypes,
         locations: locations,
-        locationId: locationId
+        locationId: locationId,
+        transactionTypesId: transactionTypesId
 
     };
 

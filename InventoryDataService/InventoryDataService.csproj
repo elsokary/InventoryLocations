@@ -75,6 +75,7 @@
     <Compile Include="Repository\GroupsRepository.cs" />
     <Compile Include="Repository\ItemsDecriptionRepository.cs" />
     <Compile Include="Repository\SuppliersRepository.cs" />
+    <Compile Include="Repository\TransactionsRepository.cs" />
     <Compile Include="Repository\TransactionTypesRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -32,6 +32,7 @@ namespace Inventory_Location.api.inventory
 
         private readonly IInventoryRepository _inventory;
         private readonly ITransactionTypesRepository _transactionType;
+        private readonly ITransactionsRepository _transactions;
         private readonly IInventorylogRepository _inventoryHistory;
 
         private readonly IAccountsRepository _Accounts;
@@ -72,7 +73,7 @@ namespace Inventory_Location.api.inventory
                                     IRefundsRepository Refunds,
                                     IInvoiceItemsRepository InvoiceItems,
                                     IInvoicesRepository Invoices,
-                                    IInventoryRepository inventory, ITransactionTypesRepository transactionType,
+                                    IInventoryRepository inventory, ITransactionTypesRepository transactionType, ITransactionsRepository transactions,
                                     IInventorylogRepository inventoryHistory,
                                     IAccountsRepository Accounts,
                                     IBranchesRepository Branches,
@@ -100,6 +101,7 @@ namespace Inventory_Location.api.inventory
             _inventory = inventory;
             _inventoryHistory = inventoryHistory;
             _transactionType = transactionType;
+            _transactions = transactions;
 
             _Customers = Customers;
             _Groups = Groups;
@@ -109,7 +111,7 @@ namespace Inventory_Location.api.inventory
             _Accounts = Accounts;
             _Grouppermissions = Grouppermissions;
             _Locations = Locations;
-            _LocationsItems =LocationsItems;
+            _LocationsItems = LocationsItems;
 
 
             var langHeader = HttpContext.Current.Request.Headers.GetValues("Lang");
@@ -411,7 +413,43 @@ namespace Inventory_Location.api.inventory
 
 
         #endregion
+        #region transactionTypes
 
+        [AuthorizeUser]
+        [HttpGet]
+        [Route("GetTransactionTypesForDrop")]
+        public IHttpActionResult GetTransactionTypesForDrop()
+        {
+            var result = new List<DtoTransactionTypes>();
+            result = _transactionType.selectAllForDrop().ToList();
+            return Ok(result);
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("AddTransactions")]
+        public IHttpActionResult AddTransactions(DtoTransactions dtoDocument)
+        {
+            var DocumentNew = new transaction
+            {
+                locationItemId = dtoDocument.locationItemId,
+                description = dtoDocument.description,
+                itemId = dtoDocument.itemId,
+                palltaId = dtoDocument.palltaId,
+                palltaType = dtoDocument.palltaType,
+                resourceCode = dtoDocument.resourceCode,
+                cost = dtoDocument.cost,
+                editById = _accountId,
+                editDate = DateTime.Now.Date
+            };
+
+            _transactions.Add(DocumentNew);
+            _transactions.Save();
+            _transactions.Reload(DocumentNew);
+
+            return Ok(DocumentNew);
+        }
+        #endregion
         #region Locations
 
         [AuthorizeUser]
@@ -419,26 +457,49 @@ namespace Inventory_Location.api.inventory
         [Route("AssignItemToLocation")]
         public IHttpActionResult AssignItemToLocation(assignItemToLocation list)
         {
+
             var result = new List<DtoLocations>();
+            var locationItemId = 0;
 
             foreach (var id in list.itemIds)
-            { 
-                 var DocumentNew = new location_items
             {
-                itemId = id,
-                palltaId = list.locationId,
-                isActive = true, 
-            };
+                var DocumentNew = new location_items
+                {
+                    itemId = id,
+                    palltaId = list.locationId,
+                    palltaType = list.transactionTypeId,
+                    isActive = true,
+                };
 
-            _LocationsItems.Add(DocumentNew);
-            _LocationsItems.Save();
-            _LocationsItems.Reload(DocumentNew);
-               
+                _LocationsItems.Add(DocumentNew);
+                _LocationsItems.Save();
+                _LocationsItems.Reload(DocumentNew);
+
+                locationItemId = DocumentNew.id;
+
+
+                var transactionNew = new transaction
+                {
+                    locationItemId = locationItemId,
+                    //description = list.subject,
+                    itemId = id,
+                    palltaId = list.locationId,
+                    palltaType = list.transactionTypeId,
+                    //resourceCode = list.code,
+                   // cost = list.cost,
+                    editById = _accountId,
+                    editDate = DateTime.Now.Date
+                };
+
+                _transactions.Add(transactionNew);
+                _transactions.Save();
+                _transactions.Reload(transactionNew);
+
             }
-             
+
             return Ok();
         }
-        
+
         [AuthorizeUser]
         [HttpGet]
         [Route("GetLocations")]
@@ -448,7 +509,7 @@ namespace Inventory_Location.api.inventory
             result = _Locations.selectAll(_language).ToList();
             return Ok(result);
         }
-        
+
         [AuthorizeUser]
         [HttpGet]
         [Route("GetPalltaForDorp")]
@@ -487,7 +548,7 @@ namespace Inventory_Location.api.inventory
                 _Locations.Delete(location);
                 _Locations.Save();
 
-            } 
+            }
             return Ok();
         }
 
@@ -501,7 +562,7 @@ namespace Inventory_Location.api.inventory
                 code = dtoDocument.code,
                 description = dtoDocument.description,
                 serial = dtoDocument.serial,
-                isPallta = false, 
+                isPallta = false,
             };
 
             _Locations.Add(DocumentNew);
@@ -602,7 +663,7 @@ namespace Inventory_Location.api.inventory
                 locationEntity.description = dtoDocument.description;
                 locationEntity.serial = dtoDocument.serial;
                 locationEntity.isPallta = dtoDocument.isPallta;
-                locationEntity.parentId = dtoDocument.parentId; 
+                locationEntity.parentId = dtoDocument.parentId;
             }
 
             _Locations.Edit(locationEntity);

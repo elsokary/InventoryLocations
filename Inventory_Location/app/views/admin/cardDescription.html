@@ -112,6 +112,12 @@
                                                                 <select id="locationId" name="locationId" style="width: 100%;" data-bind="value: $root.locationId, options: $root.locations, optionsText: 'description', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.location[$parent.currentLanguage()], allowClear: true }"></select>
                                                             </label>
                                                         </section>
+                                                        <section class="col col-6">
+                                                            <label class="label" data-bind="text: $root.language.type[$root.currentLanguage()]"></label>
+                                                            <label class="select">
+                                                                <select id="transactionTypesId" name="transactionTypesId" style="width: 100%;" data-bind="value: $root.transactionTypesId, options: $root.transactionTypes, optionsText: 'title', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.typeSelect[$parent.currentLanguage()], allowClear: true }"></select>
+                                                            </label>
+                                                        </section>
                                                     </div>
                                                 </fieldset>
 
