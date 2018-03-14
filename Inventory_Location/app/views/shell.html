@@ -99,21 +99,13 @@
                 </a>
                 <ul>
                     <!-- ko foreach: router.navigationModel -->
-                    <!-- ko if: !!($data.settings) && !!(settings.Inventory) && (!!(settings.isInventory) || !!(settings.basicFeatures)) -->
-                    <!--ko if : !!(settings.isInventory)  -->
-                    <li data-bind="css: { active: isActive },visible: ($root.isInventory)">
+                    <!-- ko if: !!($data.settings) && !!(settings.Inventory)-->
+                  
+                    <li data-bind="css: { active: isActive }">
                         <a data-bind="attr: { href: hash }">
                             <span data-bind="text: title"></span>
                         </a>
-                    </li>
-                    <!-- /ko -->
-                    <!--ko if : !!(settings.basicFeatures) -->
-                    <li data-bind="css: { active: isActive },visible: ($root.basicFeatures )">
-                        <a data-bind="attr: { href: hash }">
-                            <span data-bind="text: title"></span>
-                        </a>
-                    </li>
-                    <!-- /ko -->
+                    </li> 
                     <!-- /ko -->
                     <!-- /ko -->
                 </ul>

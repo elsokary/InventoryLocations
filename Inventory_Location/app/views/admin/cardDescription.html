@@ -1,9 +1,5 @@
 ﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
-    <div class="fixed-action-btn" data-toggle="tooltip" data-placement="right" data-bind="attr: { title: language.add[currentLanguage()] }, click: addMultipleItems">
-        <a class="btn-floating btn-large waves-effect red">
-            <i class="mdi-content-add"></i>
-        </a>
-    </div>
+  
     <div class="row">
         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
             <h1 class="page-title txt-color-blueDark" data-bind="text: language.itemDescription[currentLanguage()]"></h1>
@@ -53,6 +49,12 @@
                                                     <label class="label" data-bind="text:$root.language.cost[$root.currentLanguage()]"></label>
                                                     <label class="input">
                                                         <input type="text" name="cost" id="cost" class="TabOnEnter" data-bind="value: cost,attr: { placeholder: $root.language.cost[$root.currentLanguage()] }" tabindex="3" />
+                                                    </label>
+                                                </section>
+                                                <section class="col col-sm-2">
+                                                    <label class="label" data-bind="text:$root.language.alertDays[$root.currentLanguage()]"></label>
+                                                    <label class="input">
+                                                        <input type="text" name="alertDays" id="alertDays" class="TabOnEnter" data-bind="value: alertDays,attr: { placeholder: $root.language.alertDays[$root.currentLanguage()] }" tabindex="3" />
                                                     </label>
                                                 </section>
                                             </div>
@@ -130,101 +132,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal fade" id="ViewModalList" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="ViewModalList" style="display:none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header" style=" padding: 2px !important;">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="style: {float: $root.language.btnFloat[$root.currentLanguage()] }">
-                                                x
-                                            </button>
-                                            <h4 class="modal-title" data-bind="visible: changeStatus(), text: $root.language.edit[$root.currentLanguage()]"></h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="smart-form" id="itemEditForm" novalidate="novalidate" style=" margin: -20px !important;">
-                                                <fieldset data-bind="with: itemEdit">
-                                                    <div class="row">
-                                                        <section class="col col-4">
-                                                            <label class="label" data-bind="text:$root.language.referenceCode[$root.currentLanguage()]"></label>
-                                                            <label class="input">
-                                                                <input type="text" name="codeEdit" id="codeEdit" data-bind="value: code, valueUpdate: 'changeRefCodeEdit', attr: { placeholder: $root.language.referenceCode[$root.currentLanguage()] }" />
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-4">
-                                                            <label class="label" data-bind="text:$root.language.description[$root.currentLanguage()]"></label>
-                                                            <label class="input">
-                                                                <input type="text" name="subjectEdit" id="subjectEdit" data-bind="value: subject, attr: { placeholder: $root.language.description[$root.currentLanguage()] }" />
-                                                            </label>
-                                                        </section>
+                      
 
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <section class="col col-4">
-                                                            <label class="label" data-bind="text:$root.language.cost[$root.currentLanguage()]"></label>
-                                                            <label class="input">
-                                                                <input type="text" name="costEdit" id="costEdit" data-bind="value: cost, attr: { placeholder: $root.language.cost[$root.currentLanguage()] }" />
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-4">
-                                                            <label class="label" data-bind="text:$root.language.price[$root.currentLanguage()]"></label>
-                                                            <label class="input">
-                                                                <input type="text" name="priceEdit" id="priceEdit" data-bind="value: price, attr: { placeholder: $root.language.price[$root.currentLanguage()] }" />
-                                                            </label>
-                                                        </section>
-                                                    </div>
-                                                </fieldset>
-
-                                                <footer>
-                                                    <button type="button" class="btn btn-primary TabOnEnter pull-left" style="margin-left: 5px;" id="editRow" data-bind="click: editItem, visible: changeStatus(), text: language.edit[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
-
-                                                </footer>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="modal fade" id="viewModalMultipleItems" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="viewModalMultipleItems" style="display:none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="style: {float: $root.language.btnFloat[$root.currentLanguage()] }">
-                                                x
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="smart-form" id="viewModalMultipleItemsForm" novalidate="novalidate">
-                                                <fieldset>
-                                                    <h5 class="section-title">
-                                                        <span class="section-title-text" data-bind="text: $root.language.addList[$root.currentLanguage()]"></span>
-                                                    </h5>
-                                                    <div class="row">
-                                                        <section>
-                                                            <a data-bind="attr: { href: '/DownLoads/Excel/items.xls', download: 'items.xls' }">
-                                                                <span data-bind="text: $root.language.downloadExcelFormatFile[$root.currentLanguage()]"></span>
-                                                            </a>
-                                                        </section>
-                                                    </div>
-                                                    <div class="row co">
-                                                        <section class="col col-6 col-sm-6 col-md-6 col-xs-6 col-lg-6">
-                                                            <label for="file1" class="input input-file">
-                                                                <span class="button">
-                                                                    <input type="file" id="file1" name="file" onchange=" this.parentNode.nextElementSibling.value=this.value "><span data-bind="text: $root.language.browse[$root.currentLanguage()], style: { 'text-align': $root.language.direction[$root.currentLanguage()] }">
-                                                                    </span>
-                                                                </span>
-                                                                <input type="text" placeholder="Include some files" readonly="">
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-6 col-sm-6 col-md-6 col-xs-6 col-lg-6">
-                                                            <button id="upload" type="submit" data-loading-text="Uploading" class="btn btn-primary btn-sm" data-bind="text: $root.language.upload[$root.currentLanguage()], click: $root.upload"></button>
-                                                        </section>
-                                                    </div>
-                                                </fieldset>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+ 
                         </div><!-- end widget div -->
                     </div><!-- end widget -->
                 </article>

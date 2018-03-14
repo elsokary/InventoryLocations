@@ -1,0 +1,1463 @@
+﻿{
+  "authorization": [
+    {
+      "title": {
+        "en": "Admin",
+        "ar": "الادارة"
+      },
+      "modules": [
+        {
+          "title": {
+            "en": "Branches",
+            "ar": "الفروع"
+          },
+          "id": 1,
+          "permissions": [
+            {
+              "code": 1,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 2,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 3,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 4,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Supplier",
+            "ar": "الموردين"
+          },
+          "id": 2,
+          "permissions": [
+            {
+              "code": 5,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 6,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 7,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 8,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "supply Orders",
+            "ar": "امر توريد طلبية"
+          },
+          "id": 32,
+          "permissions": [
+            {
+              "code": 320,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 321,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 322,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 323,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Customer",
+            "ar": "العملاء"
+          },
+          "id": 3,
+          "permissions": [
+            {
+              "code": 9,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 10,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 11,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 12,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Card Description",
+            "ar": "كارت الصنف"
+          },
+          "id": 4,
+          "permissions": [
+            {
+              "code": 13,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 14,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 15,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 16,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "permissions Group",
+            "ar": "الصلاحيات"
+          },
+          "id": 5,
+          "permissions": [
+            {
+              "code": 17,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 18,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 19,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 20,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Accounts",
+            "ar": "المستخدمين"
+          },
+          "id": 6,
+          "permissions": [
+            {
+              "code": 21,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 22,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 23,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 24,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Categories",
+            "ar": "البراندات"
+          },
+          "id": 7,
+          "permissions": [
+            {
+              "code": 25,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 26,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 27,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 28,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            },
+            {
+              "code": 208,
+              "title": {
+                "en": "retail Setting",
+                "ar": "اعدادات"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Accounting",
+        "ar": "الحسابات"
+      },
+      "modules": [
+        {
+          "title": {
+            "en": "Invoice",
+            "ar": "فاتورة بيع"
+          },
+          "id": 10,
+          "permissions": [
+            {
+              "code": 100,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 101,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 102,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 103,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Cashier Limit",
+            "ar": " مؤقت 3 ايام فاتورة بيع"
+          },
+          "id": 14,
+          "permissions": [
+            {
+              "code": 109,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Cashier Only",
+            "ar": "شاشة نقطة بيع"
+          },
+          "id": 1109,
+          "permissions": [
+            {
+              "code": 1109,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "alert Items Change Prices",
+            "ar": "اصناف تم تغيير سعرها"
+          },
+          "id": 1111,
+          "permissions": [
+            {
+              "code": 1111,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "alert On Items No Transactions",
+            "ar": "الرواكد"
+          },
+          "id": 1112,
+          "permissions": [
+            {
+              "code": 1112,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "negative Quantity",
+            "ar": "الكمية السالبة"
+          },
+          "id": 1113,
+          "permissions": [
+            {
+              "code": 1113,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Cashier Customers",
+            "ar": " مبيعات العملاء"
+          },
+          "id": 122,
+          "permissions": [
+            {
+              "code": 122,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            },
+            {
+              "code": 123,
+              "title": {
+                "en": "add",
+                "ar": "اضافة"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Reports",
+        "ar": "التقارير"
+      },
+      "modules": [
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير متابعة حركة صنف"
+          },
+          "id": 992,
+          "permissions": [
+            {
+              "code": 992,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير جرد براند بالكميات فقط"
+          },
+          "id": 13,
+          "permissions": [
+            {
+              "code": 993,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير جرد براند "
+          },
+          "id": 14,
+          "permissions": [
+            {
+              "code": 994,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "مبيعات الموضف"
+          },
+          "id": 15,
+          "permissions": [
+            {
+              "code": 995,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "حركة اصناف مورد معين"
+          },
+          "id": 996,
+          "permissions": [
+            {
+              "code": 996,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "جرد اصناف مورد معين"
+          },
+          "id": 997,
+          "permissions": [
+            {
+              "code": 997,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "كشف حساب استاذ مورد"
+          },
+          "id": 998,
+          "permissions": [
+            {
+              "code": 998,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "كشف حساب استاذ عميل"
+          },
+          "id": 999,
+          "permissions": [
+            {
+              "code": 999,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "أذن تسوية"
+          },
+          "id": 1000,
+          "permissions": [
+            {
+              "code": 1000,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "مبيعات خلال 3 يام"
+          },
+          "id": 1001,
+          "permissions": [
+            {
+              "code": 1001,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "جرد فعلى"
+          },
+          "id": 1002,
+          "permissions": [
+            {
+              "code": 1002,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير مبيعات خلال فترة"
+          },
+          "id": 1003,
+          "permissions": [
+            {
+              "code": 1003,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير مبيعات العملاء خلال فترة"
+          },
+          "id": 1004,
+          "permissions": [
+            {
+              "code": 1004,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير مبيعات عميل خلال فترة"
+          },
+          "id": 1005,
+          "permissions": [
+            {
+              "code": 1005,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير مدفوعات عميل خلال فترة"
+          },
+          "id": 1006,
+          "permissions": [
+            {
+              "code": 1006,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير اجماليات العملاء"
+          },
+          "id": 1007,
+          "permissions": [
+            {
+              "code": 1007,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير اجماليات الموردين"
+          },
+          "id": 1015,
+          "permissions": [
+            {
+              "code": 1015,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير مدفوعات مورد"
+          },
+          "id": 1008,
+          "permissions": [
+            {
+              "code": 1008,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "مدفوعات مورد"
+          },
+          "id": 1009,
+          "permissions": [
+            {
+              "code": 1009,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقريرالاصناف الراكدة"
+          },
+          "id": 1010,
+          "permissions": [
+            {
+              "code": 1010,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير حالة الموردين"
+          },
+          "id": 1011,
+          "permissions": [
+            {
+              "code": 1011,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير مقارنة مبيعات فترات"
+          },
+          "id": 1012,
+          "permissions": [
+            {
+              "code": 1012,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تقرير تحليل مبيعات المواقع"
+          },
+          "id": 1013,
+          "permissions": [
+            {
+              "code": 1013,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تنبيهات الميات السالبة"
+          },
+          "id": 110,
+          "permissions": [
+            {
+              "code": 110,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "تنبيهات الاصناف الراكده"
+          },
+          "id": 111,
+          "permissions": [
+            {
+              "code": 111,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "عدد الاصناف تغير سعرها"
+          },
+          "id": 112,
+          "permissions": [
+            {
+              "code": 112,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "سعر البيع اقل من التكلفة"
+          },
+          "id": 113,
+          "permissions": [
+            {
+              "code": 113,
+              "title": {
+                "en": "view",
+                "ar": "عرض"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Inventory",
+        "ar": "المخازن"
+      },
+      "modules": [
+        {
+          "title": {
+            "en": "Transfer to Main Branch",
+            "ar": "تحويل الى فرع رئيسى"
+          },
+          "id": 8,
+          "permissions": [
+            {
+              "code": 29,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 30,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 31,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 32,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Transfer to Branch",
+            "ar": "تحويل الى فرع "
+          },
+          "id": 9,
+          "permissions": [
+            {
+              "code": 33,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 34,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 35,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 36,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Invoices",
+            "ar": "الفواتير "
+          },
+          "id": 10,
+          "permissions": [
+            {
+              "code": 37,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 38,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 39,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 40,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            },
+            {
+              "code": 41,
+              "title": {
+                "en": "show All Branches",
+                "ar": "عرض كل الفروع"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Expenses",
+            "ar": "مصروفات"
+          },
+          "id": 35,
+          "permissions": [
+            {
+              "code": 329,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 330,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 331,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 332,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            },
+            {
+              "code": 333,
+              "title": {
+                "en": "show All Branches",
+                "ar": "عرض كل الفروع"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "inventoryStore",
+            "ar": "اذن تسوية "
+          },
+          "id": 33,
+          "permissions": [
+            {
+              "code": 324,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 325,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 326,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 327,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            },
+            {
+              "code": 328,
+              "title": {
+                "en": "show All Branches",
+                "ar": "عرض كل الفروع"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "refunds",
+            "ar": "مرتجعات "
+          },
+          "id": 36,
+          "permissions": [
+            {
+              "code": 340,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 341,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 342,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 343,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            },
+            {
+              "code": 344,
+              "title": {
+                "en": "show All Branches",
+                "ar": "عرض كل الفروع"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "title": {
+            "en": "Returned",
+            "ar": "المردودات "
+          },
+          "id": 11,
+          "permissions": [
+            {
+              "code": 42,
+              "title": {
+                "en": "Add",
+                "ar": "اضافة"
+              },
+              "value": false
+            },
+            {
+              "code": 43,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل"
+              },
+              "value": false
+            },
+            {
+              "code": 44,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح"
+              },
+              "value": false
+            },
+            {
+              "code": 45,
+              "title": {
+                "en": "View All",
+                "ar": "عرض البيانات"
+              },
+              "value": false
+            },
+            {
+              "code": 46,
+              "title": {
+                "en": "show All Branches",
+                "ar": "عرض كل الفروع"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+            "title": {
+                "en": "Payments",
+                "ar": "المدفوعات"
+            },
+            "id": 12,
+            "permissions": [
+                {
+                    "code": 114,
+                    "title": {
+                        "en": "Add",
+                        "ar": " اضافة مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 115,
+                    "title": {
+                        "en": "Edit",
+                        "ar": "تعديل مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 116,
+                    "title": {
+                        "en": "Delete",
+                        "ar": "مسح مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 117,
+                    "title": {
+                        "en": "View All",
+                        "ar": " عرض البيانات مدفوعات العملاء"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 118,
+                    "title": {
+                        "en": "Add",
+                        "ar": " اضافة مدفوعات الموردين"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 119,
+                    "title": {
+                        "en": "Edit",
+                        "ar": "تعديل مدفوعات الموردين"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 120,
+                    "title": {
+                        "en": "Delete",
+                        "ar": "مسح مدفوعات الموردين"
+                    },
+                    "value": false
+                },
+                {
+                    "code": 121,
+                    "title": {
+                        "en": "View All",
+                        "ar": " عرض البيانات مدفوعات الموردين"
+                    },
+                    "value": false
+                }
+            ]
+        },
+        {
+          "title": {
+            "en": "locations",
+            "ar": "المواقع"
+          },
+          "id": 13,
+          "permissions": [
+            {
+              "code": 122,
+              "title": {
+                "en": "Add",
+                "ar": " اضافة موقع"
+              },
+              "value": false
+            },
+            {
+              "code": 123,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل موقع"
+              },
+              "value": false
+            },
+            {
+              "code": 124,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح موقع"
+              },
+              "value": false
+            },
+            {
+              "code": 125,
+              "title": {
+                "en": "View All",
+                "ar": " عرض بيانات المواقع"
+              },
+              "value": false
+            } 
+          ]
+        },{
+          "title": {
+            "en": "pallta",
+            "ar": "البليتات"
+          },
+          "id": 14,
+          "permissions": [
+            {
+              "code": 126,
+              "title": {
+                "en": "Add",
+                "ar": " اضافة بليت"
+              },
+              "value": false
+            },
+            {
+              "code": 127,
+              "title": {
+                "en": "Edit",
+                "ar": "تعديل بليت"
+              },
+              "value": false
+            },
+            {
+              "code": 128,
+              "title": {
+                "en": "Delete",
+                "ar": "مسح بليت"
+              },
+              "value": false
+            },
+            {
+              "code": 129,
+              "title": {
+                "en": "View All",
+                "ar": " عرض بيانات البليتات"
+              },
+              "value": false
+            } 
+          ]
+        }
+      ]
+    }
+  ]
+}

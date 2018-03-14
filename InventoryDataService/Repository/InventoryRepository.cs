@@ -35,6 +35,11 @@ namespace DataServices.Repository
             var result = (from q in Context.transactions.AsNoTracking()
                           select new DtoInventory
                           {
+                              id = q.id,
+                              itemId = q.itemId,
+                              palltaId = q.palltaId,
+                              locationItemId = q.locationItemId,
+
                               description = q.description,
                               resourceCode = q.resourceCode,
                               quantity = q.quantity,

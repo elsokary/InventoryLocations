@@ -20,6 +20,16 @@ namespace InventoryModel
             get;
             set;
         }
+        public int? palltaId
+        {
+            get;
+            set;
+        }
+        public int? locationItemId
+        {
+            get;
+            set;
+        }
          
         public string locationName
         {

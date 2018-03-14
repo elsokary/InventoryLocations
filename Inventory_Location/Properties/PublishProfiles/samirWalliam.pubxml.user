@@ -10,22 +10,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="app/config.js">
-      <publishTime>02/23/2018 15:40:55</publishTime>
+      <publishTime>03/12/2018 19:48:27</publishTime>
     </File>
     <File Include="app/main.js">
       <publishTime>02/24/2018 14:43:29</publishTime>
     </File>
     <File Include="app/permissions.json">
-      <publishTime>02/23/2018 00:40:06</publishTime>
+      <publishTime>03/10/2018 16:17:08</publishTime>
     </File>
     <File Include="app/resources.json">
-      <publishTime>02/17/2018 22:52:33</publishTime>
+      <publishTime>03/12/2018 19:48:27</publishTime>
     </File>
     <File Include="app/services/authInterceptor.js">
       <publishTime>09/25/2016 16:15:20</publishTime>
     </File>
     <File Include="app/services/dataservice.js">
-      <publishTime>02/21/2018 18:26:59</publishTime>
+      <publishTime>03/12/2018 19:48:27</publishTime>
     </File>
     <File Include="app/services/export.js">
       <publishTime>06/19/2016 17:02:25</publishTime>
@@ -100,7 +100,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2018 15:37:29</publishTime>
     </File>
     <File Include="app/viewmodels/admin/accountsDefaultList.js">
-      <publishTime>06/19/2016 17:02:25</publishTime>
+      <publishTime>03/05/2018 23:06:08</publishTime>
     </File>
     <File Include="app/viewmodels/admin/accountsEdit.js">
       <publishTime>06/19/2016 17:02:25</publishTime>
@@ -112,7 +112,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2018 21:58:34</publishTime>
     </File>
     <File Include="app/viewmodels/admin/cardDescription.js">
-      <publishTime>01/19/2018 20:21:00</publishTime>
+      <publishTime>03/12/2018 19:48:27</publishTime>
     </File>
     <File Include="app/viewmodels/admin/cardDescriptionList.js">
       <publishTime>01/11/2018 10:12:07</publishTime>
@@ -148,7 +148,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2017 19:30:18</publishTime>
     </File>
     <File Include="app/viewmodels/dashboard.js">
-      <publishTime>02/23/2018 15:53:03</publishTime>
+      <publishTime>03/02/2018 15:21:50</publishTime>
     </File>
     <File Include="app/viewmodels/export/PrintPdf.js">
       <publishTime>09/19/2016 22:18:25</publishTime>
@@ -159,14 +159,29 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/viewmodels/Inventory/items.js">
       <publishTime>10/28/2016 20:45:07</publishTime>
     </File>
+    <File Include="app/viewmodels/Inventory/location.js">
+      <publishTime>03/10/2018 16:17:08</publishTime>
+    </File>
+    <File Include="app/viewmodels/Inventory/locationAddEdit.js">
+      <publishTime>03/12/2018 19:48:27</publishTime>
+    </File>
+    <File Include="app/viewmodels/Inventory/pallta.js">
+      <publishTime>03/12/2018 19:48:27</publishTime>
+    </File>
+    <File Include="app/viewmodels/Inventory/palltaAddEdit.js">
+      <publishTime>03/12/2018 19:48:27</publishTime>
+    </File>
     <File Include="app/viewmodels/Inventory/printBarcode.js">
-      <publishTime>02/21/2018 18:33:53</publishTime>
+      <publishTime>03/05/2018 23:16:23</publishTime>
+    </File>
+    <File Include="app/viewmodels/Inventory/stockState.js">
+      <publishTime>03/06/2018 23:51:22</publishTime>
     </File>
     <File Include="app/viewmodels/Inventory/transferFromMain.js">
       <publishTime>10/28/2016 20:45:20</publishTime>
     </File>
     <File Include="app/viewmodels/Inventory/transferMain.js">
-      <publishTime>06/19/2016 17:02:26</publishTime>
+      <publishTime>03/05/2018 23:09:39</publishTime>
     </File>
     <File Include="app/viewmodels/Inventory/transferToMain.js">
       <publishTime>10/28/2016 20:45:13</publishTime>
@@ -379,13 +394,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/30/2017 15:51:03</publishTime>
     </File>
     <File Include="app/views/admin/accounts.html">
-      <publishTime>03/03/2017 23:28:45</publishTime>
+      <publishTime>03/05/2018 23:39:23</publishTime>
     </File>
     <File Include="app/views/admin/accountsAdd.html">
       <publishTime>02/23/2018 15:36:26</publishTime>
     </File>
     <File Include="app/views/admin/accountsDefaultList.html">
-      <publishTime>12/15/2016 23:00:24</publishTime>
+      <publishTime>03/05/2018 23:05:16</publishTime>
     </File>
     <File Include="app/views/admin/accountsEdit.html">
       <publishTime>06/19/2016 17:02:26</publishTime>
@@ -394,10 +409,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/03/2017 23:28:45</publishTime>
     </File>
     <File Include="app/views/admin/branches.html">
-      <publishTime>03/11/2017 17:54:42</publishTime>
+      <publishTime>03/05/2018 23:39:23</publishTime>
     </File>
     <File Include="app/views/admin/cardDescription.html">
-      <publishTime>12/23/2017 22:26:49</publishTime>
+      <publishTime>03/12/2018 19:48:27</publishTime>
     </File>
     <File Include="app/views/admin/cardDescriptionList.html">
       <publishTime>02/16/2018 10:37:25</publishTime>
@@ -406,7 +421,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/29/2017 20:53:26</publishTime>
     </File>
     <File Include="app/views/admin/customers.html">
-      <publishTime>03/03/2017 23:28:44</publishTime>
+      <publishTime>03/05/2018 23:40:06</publishTime>
     </File>
     <File Include="app/views/admin/discountSetting.html">
       <publishTime>12/15/2016 22:49:50</publishTime>
@@ -430,7 +445,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/15/2016 22:49:50</publishTime>
     </File>
     <File Include="app/views/admin/suppliers.html">
-      <publishTime>03/03/2017 23:28:44</publishTime>
+      <publishTime>03/05/2018 23:40:06</publishTime>
     </File>
     <File Include="app/views/dashboard.html">
       <publishTime>03/03/2017 23:28:44</publishTime>
@@ -444,14 +459,29 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="app/views/Inventory/items.html">
       <publishTime>03/03/2017 23:28:44</publishTime>
     </File>
+    <File Include="app/views/Inventory/location.html">
+      <publishTime>03/10/2018 16:17:08</publishTime>
+    </File>
+    <File Include="app/views/Inventory/locationAddEdit.html">
+      <publishTime>03/10/2018 16:17:08</publishTime>
+    </File>
+    <File Include="app/views/Inventory/pallta.html">
+      <publishTime>03/12/2018 19:48:27</publishTime>
+    </File>
+    <File Include="app/views/Inventory/palltaAddEdit.html">
+      <publishTime>03/12/2018 19:48:27</publishTime>
+    </File>
     <File Include="app/views/Inventory/printBarcode.html">
-      <publishTime>02/21/2018 18:34:54</publishTime>
+      <publishTime>03/05/2018 23:40:59</publishTime>
+    </File>
+    <File Include="app/views/Inventory/stockState.html">
+      <publishTime>03/06/2018 23:44:12</publishTime>
     </File>
     <File Include="app/views/Inventory/transferFromMain.html">
-      <publishTime>12/15/2016 22:49:50</publishTime>
+      <publishTime>03/05/2018 23:10:54</publishTime>
     </File>
     <File Include="app/views/Inventory/transferMain.html">
-      <publishTime>03/03/2017 23:28:44</publishTime>
+      <publishTime>03/05/2018 23:38:14</publishTime>
     </File>
     <File Include="app/views/Inventory/transferToMain.html">
       <publishTime>12/15/2016 22:49:50</publishTime>
@@ -553,7 +583,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/30/2017 18:16:17</publishTime>
     </File>
     <File Include="app/views/shell.html">
-      <publishTime>02/24/2018 14:10:03</publishTime>
+      <publishTime>03/10/2018 16:27:26</publishTime>
     </File>
     <File Include="app/views/shellInventory.html">
       <publishTime>12/13/2017 22:34:02</publishTime>
@@ -610,19 +640,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2016 17:02:29</publishTime>
     </File>
     <File Include="bin/InventoryContext.dll">
-      <publishTime>02/21/2018 00:22:50</publishTime>
+      <publishTime>03/12/2018 19:52:33</publishTime>
     </File>
     <File Include="bin/InventoryDataService.dll">
-      <publishTime>02/24/2018 15:09:57</publishTime>
+      <publishTime>03/12/2018 19:52:35</publishTime>
     </File>
     <File Include="bin/InventoryInterface.dll">
-      <publishTime>02/21/2018 00:22:52</publishTime>
+      <publishTime>03/12/2018 19:52:34</publishTime>
     </File>
     <File Include="bin/InventoryModel.dll">
-      <publishTime>02/21/2018 00:22:50</publishTime>
+      <publishTime>03/12/2018 19:52:33</publishTime>
+    </File>
+    <File Include="bin/Inventory_Location.dll">
+      <publishTime>03/12/2018 19:52:37</publishTime>
     </File>
     <File Include="bin/Inventory_Security.dll">
-      <publishTime>02/16/2018 21:34:54</publishTime>
+      <publishTime>03/12/2018 19:52:33</publishTime>
     </File>
     <File Include="bin/Inventory_v2.dll">
       <publishTime>02/24/2018 15:13:32</publishTime>
@@ -652,19 +685,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2016 17:02:29</publishTime>
     </File>
     <File Include="bin/Ninject.Extensions.NamedScope.dll">
-      <publishTime>06/19/2016 17:02:26</publishTime>
+      <publishTime>03/10/2018 16:17:08</publishTime>
     </File>
     <File Include="bin/Ninject.Web.Common.dll">
-      <publishTime>06/19/2016 17:02:26</publishTime>
+      <publishTime>03/10/2018 16:17:08</publishTime>
     </File>
     <File Include="bin/Ninject.Web.Common.OwinHost.dll">
-      <publishTime>06/19/2016 17:02:26</publishTime>
+      <publishTime>03/10/2018 16:17:08</publishTime>
     </File>
     <File Include="bin/Ninject.Web.WebApi.dll">
-      <publishTime>06/19/2016 17:02:26</publishTime>
+      <publishTime>03/10/2018 16:17:08</publishTime>
     </File>
     <File Include="bin/Ninject.Web.WebApi.OwinHost.dll">
-      <publishTime>06/19/2016 17:02:26</publishTime>
+      <publishTime>03/10/2018 16:17:08</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>06/19/2016 17:02:29</publishTime>
@@ -2629,7 +2662,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2016 17:02:27</publishTime>
     </File>
     <File Include="index.html">
-      <publishTime>02/24/2018 14:59:54</publishTime>
+      <publishTime>03/02/2018 14:12:57</publishTime>
     </File>
     <File Include="JavaScript/crypto/core-min.js">
       <publishTime>06/19/2016 17:02:27</publishTime>
@@ -4927,7 +4960,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2016 17:02:28</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>02/24/2018 15:13:35</publishTime>
+      <publishTime>03/12/2018 19:52:43</publishTime>
     </File>
     <File Include="PrintReportDetail.aspx">
       <publishTime>10/23/2017 22:01:45</publishTime>
@@ -4978,7 +5011,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2016 17:02:28</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/21/2018 00:22:58</publishTime>
+      <publishTime>03/12/2018 19:52:40</publishTime>
     </File>
   </ItemGroup>
 </Project>

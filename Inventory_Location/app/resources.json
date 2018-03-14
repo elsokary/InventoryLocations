@@ -634,6 +634,10 @@
         "en": "عدد النسخ",
         "ar": "عدد النسخ"
     },
+    "alertDays": {
+        "en": "Alert Days",
+        "ar": "عدد ايام"
+    },
     "codingTree": {
         "en": "Coding Tree",
         "ar": "شجرة الاكواد"

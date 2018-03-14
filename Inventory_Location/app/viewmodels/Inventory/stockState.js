@@ -1,8 +1,29 @@
 ﻿define(['plugins/router', 'services/dataservice', 'config', 'services/tokenstore'], function (router, dataservice, config, tokenStore) {
-
     var pageNumber = ko.observable(0);
-     
+
     var showTable = ko.observable(false);
+
+    var itemDto = function (data) {
+        var self = this;
+
+        self.id = ko.observable();
+        self.resourceCode = ko.observable();
+        self.description = ko.observable("");
+        self.palltaId = ko.observable();
+        self.palltaType = ko.observable();
+        self.quantity = ko.observable(0);
+        self.itemId = ko.observable();
+        if (data) {
+            self.id = data.id;
+            self.itemId = data.itemId;
+            self.resourceCode = data.resourceCode;
+            self.description = data.description;
+            self.palltaId = data.palltaId;
+            self.palltaType = data.palltaType;
+        }
+    };
+
+    var item = ko.observable(new itemDto());
 
     function attached() {
 
@@ -10,11 +31,11 @@
 
         $(".fixed-action-btn").tooltip({ container: 'body' });
 
-       
+
     };
-     
+
     var dataModel = function () {
-        var self = this; 
+        var self = this;
         self.itemId = ko.observable();
         self.id = ko.observable();
         self.quantity = ko.observable();
@@ -29,11 +50,11 @@
     var createData = function (item) {
         var cashierItemObject = new dataModel();
 
-        if (item) {  
+        if (item) {
             cashierItemObject.locationName(item.locationName);
             cashierItemObject.locationType(item.locationType);
             cashierItemObject.id(item.id);
-            cashierItemObject.quantity(item.quantity);  
+            cashierItemObject.quantity(item.quantity);
             cashierItemObject.cost(item.cost);
             cashierItemObject.description(item.description);
             cashierItemObject.resourceCode(item.resourceCode);
@@ -45,7 +66,7 @@
     var dataModelList = ko.observableArray([]);
 
     var koTableReady = function () {
-         
+
         dataModelList([]);
 
         dataservice.getStockState().done(function (data) {
@@ -62,7 +83,11 @@
     };
 
     function activate() {
-         
+
+        dataservice.getPalltaForDorp().done(function (result) {
+            locations(result);
+        });
+
         exportColumns = [
             new config.ExportColumn(config.language.description[config.currentLanguage()], 'suplierName', 's'),
             new config.ExportColumn(config.language.resourceCode[config.currentLanguage()], 'totalCost', 's'),
@@ -131,12 +156,14 @@
 
         config.exportJson(exportData, exportColumns, 'excel', 'Ranking Supliers');
     };
-      
+
     function canActivate() {
         if (config.isAllow(107)) {
             return true;
         }
     };
+
+    var locations = ko.observableArray([]);
 
     function canDeActivate() {
 
@@ -155,20 +182,31 @@
 
     };
 
+    var transferToPallta = function (obj, e) {
+         
+        $('#transferQuantityToLocation').modal('show');
+    };
+
+    var saveAssignToLocation = function (obj, e) { };
+
     var vm = {
+        saveAssignToLocation: saveAssignToLocation,
+        item: item,
+        transferToPallta: transferToPallta,
+        locations: locations,
         loadMore: loadMore,
         itemsTable: itemsTable,
         itemsColumnDefenition: itemsColumnDefenition,
-        PrintToExcel: PrintToExcel, 
+        PrintToExcel: PrintToExcel,
         exportToExcel: exportToExcel,
-        canDeActivate: canDeActivate, 
-        showTable: showTable, 
+        canDeActivate: canDeActivate,
+        showTable: showTable,
         canActivate: canActivate,
         title: config.language.items[config.currentLanguage()],
         activate: activate,
         attached: attached,
         language: config.language,
-        currentLanguage: config.currentLanguage, 
+        currentLanguage: config.currentLanguage,
         koTableReady: koTableReady
     };
 
