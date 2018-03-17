@@ -109,7 +109,7 @@ namespace Inventory_Location.api.inventory
             _Accounts = Accounts;
             _Grouppermissions = Grouppermissions;
             _Locations = Locations;
-            _LocationsItems =LocationsItems;
+            _LocationsItems = LocationsItems;
 
 
             var langHeader = HttpContext.Current.Request.Headers.GetValues("Lang");
@@ -422,23 +422,23 @@ namespace Inventory_Location.api.inventory
             var result = new List<DtoLocations>();
 
             foreach (var id in list.itemIds)
-            { 
-                 var DocumentNew = new location_items
             {
-                itemId = id,
-                palltaId = list.locationId,
-                isActive = true, 
-            };
+                var DocumentNew = new location_items
+           {
+               itemId = id,
+               palltaId = list.locationId,
+               isActive = true,
+           };
 
-            _LocationsItems.Add(DocumentNew);
-            _LocationsItems.Save();
-            _LocationsItems.Reload(DocumentNew);
-               
+                _LocationsItems.Add(DocumentNew);
+                _LocationsItems.Save();
+                _LocationsItems.Reload(DocumentNew);
+
             }
-             
+
             return Ok();
         }
-        
+
         [AuthorizeUser]
         [HttpGet]
         [Route("GetLocations")]
@@ -448,7 +448,7 @@ namespace Inventory_Location.api.inventory
             result = _Locations.selectAll(_language).ToList();
             return Ok(result);
         }
-        
+
         [AuthorizeUser]
         [HttpGet]
         [Route("GetPalltaForDorp")]
@@ -487,7 +487,7 @@ namespace Inventory_Location.api.inventory
                 _Locations.Delete(location);
                 _Locations.Save();
 
-            } 
+            }
             return Ok();
         }
 
@@ -501,7 +501,7 @@ namespace Inventory_Location.api.inventory
                 code = dtoDocument.code,
                 description = dtoDocument.description,
                 serial = dtoDocument.serial,
-                isPallta = false, 
+                isPallta = false,
             };
 
             _Locations.Add(DocumentNew);
@@ -602,7 +602,7 @@ namespace Inventory_Location.api.inventory
                 locationEntity.description = dtoDocument.description;
                 locationEntity.serial = dtoDocument.serial;
                 locationEntity.isPallta = dtoDocument.isPallta;
-                locationEntity.parentId = dtoDocument.parentId; 
+                locationEntity.parentId = dtoDocument.parentId;
             }
 
             _Locations.Edit(locationEntity);
@@ -982,6 +982,69 @@ namespace Inventory_Location.api.inventory
             return Ok(result);
         }
 
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("TransferItemQuantityToAnotherLocation")]
+        public IHttpActionResult TransferItemQuantityToAnotherLocation(DtoInventory obj)
+        {
+            var targetLocation = _inventory.FindBy(x => x.itemId == obj.itemId && x.palltaId == obj.palltaId && x.palltaType == obj.palltaTypeId).FirstOrDefault();
+            if (targetLocation != null)
+            {
+                #region increase qnty to new location
+
+                targetLocation.quantity = targetLocation.quantity + obj.quantity;
+                _inventory.Edit(targetLocation);
+                _inventory.Save();
+
+                #endregion
+
+            }
+            else
+            {
+                targetLocation = new transaction
+                {
+                    itemId = (int)obj.itemId,
+                    locationItemId = (int)obj.locationItemId,
+                    palltaType = (int)obj.palltaTypeId,
+                    palltaId = (int)obj.palltaId,
+                    branchId = _branchId,
+                    quantity = obj.quantity,
+                    resourceCode = obj.resourceCode,
+                    description = obj.description
+                };
+                _inventory.Add(targetLocation);
+                _inventory.Save();
+                _inventory.Reload(targetLocation);
+            }
+            #region add row history
+
+            var transhistory = new transactionsHistory
+            {
+                itemId = (int)obj.itemId,
+                transactionId = targetLocation.id,
+                transactionTypeId = obj.palltaTypeId,
+                quantity = obj.quantity,
+                creationDate = DateTime.Now.Date,
+                currentBranchId = (int)obj.branchId,
+                locationItemId = (int)obj.locationItemId
+            };
+            _inventoryHistory.Add(transhistory);
+            _inventoryHistory.Save();
+            #endregion
+
+            #region decrease qnty from old location
+
+            var deitentionLocation = _inventory.FindBy(x => x.itemId == obj.itemId && x.locationItemId == obj.locationItemId && x.id == obj.id).FirstOrDefault();
+            if (deitentionLocation != null)
+            {
+                deitentionLocation.quantity = deitentionLocation.quantity - obj.quantity;
+                _inventory.Edit(deitentionLocation);
+                _inventory.Save();
+            }
+            #endregion
+
+            return Ok();
+        }
 
         [AuthorizeUser]
         [HttpGet]

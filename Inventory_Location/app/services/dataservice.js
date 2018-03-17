@@ -1064,6 +1064,9 @@
         return $.post(config.remoteServerName + "/AddSupplyOrdersItems", documnetObservable);
     };
 
+    var transferItemQuantityToAnotherLocation = function (documnetObservable) {
+        return $.post(config.remoteServerName + "/TransferItemQuantityToAnotherLocation", documnetObservable);
+    };
     var getSupplyOrdersItems = function (invoiceId, branchId) {
         return $.getJSON(config.remoteServerName + "/GetSupplyOrdersItems?invoiceId=" + invoiceId + "&branchId=" + branchId);
 
@@ -1176,9 +1179,9 @@
 
         return config.postJson(config.remoteServerName + "/AssignItemToLocation", list);
     };
-  var getLocations = function () {
-      return $.getJSON(config.remoteServerName + "/GetLocations");
-  };
+    var getLocations = function () {
+        return $.getJSON(config.remoteServerName + "/GetLocations");
+    };
     var getLocationsForDorp = function () {
         return $.getJSON(config.remoteServerName + "/GetLocationsForDorp");
     };
@@ -1187,10 +1190,10 @@
     };
     var getPallta = function () {
         return $.getJSON(config.remoteServerName + "/GetPallta");
-    }; 
+    };
     var getNextArrangePallta = function () {
         return $.getJSON(config.remoteServerName + "/GetNextArrangePallta");
-    };   
+    };
     var getNextArrangeLocation = function () {
         return $.getJSON(config.remoteServerName + "/GetNextArrangeLocation");
     };
@@ -1294,6 +1297,7 @@
         getCountNegativeQuantityDetails: getCountNegativeQuantityDetails,
         getCountTodayDetails: getCountTodayDetails,
 
+        transferItemQuantityToAnotherLocation: transferItemQuantityToAnotherLocation,
 
         getCountNoTransactionsDetails: getCountNoTransactionsDetails,
         getCountNoTransactions: getCountNoTransactions,
@@ -1502,19 +1506,19 @@
         getItemsForSearch: getItemsForSearch,
         ExportReport: ExportReport,
 
-        assignItemToLocation:assignItemToLocation,
+        assignItemToLocation: assignItemToLocation,
         getLocationsForDorp: getLocationsForDorp,
         getPalltaForDorp: getPalltaForDorp,
-        getLocations:getLocations,
-        addLocations:addLocations,
-        editLocations:editLocations,
-        deleteLocationsById:deleteLocationsById,
+        getLocations: getLocations,
+        addLocations: addLocations,
+        editLocations: editLocations,
+        deleteLocationsById: deleteLocationsById,
         getLocationsById: getLocationsById,
-        getNextArrangePallta:getNextArrangePallta,
-        getNextArrangeLocation:getNextArrangeLocation,
-        getPallta:getPallta,
-        addPallta:addPallta,
-        editPallta:editPallta,
+        getNextArrangePallta: getNextArrangePallta,
+        getNextArrangeLocation: getNextArrangeLocation,
+        getPallta: getPallta,
+        addPallta: addPallta,
+        editPallta: editPallta,
         deletePalltaById: deletePalltaById
     };
 
