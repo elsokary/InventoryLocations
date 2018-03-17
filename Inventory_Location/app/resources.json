@@ -1413,6 +1413,10 @@
         "en": "Assign To Location",
         "ar": "وضع الصنف في موقع"
     },
+     "assignToPallta": {
+        "en": "Assign To Pallta",
+        "ar": "وضع الصنف في البليتات"
+    },
     "pallta": {
         "en": "Pallta",
         "ar": "البليتات"

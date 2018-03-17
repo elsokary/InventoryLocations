@@ -460,12 +460,61 @@ namespace Inventory_Location.api.inventory
 
             var result = new List<DtoLocations>();
             var locationItemId = 0;
-
-            foreach (var id in list.itemIds)
+            foreach (var obj in list.itemObj)
             {
+                foreach (var item in list.transactions)
+                {
+                    var DocumentNew = new location_items
+                    {
+                        itemId = obj.id,
+                        palltaId = item.locationId,
+                        palltaType = item.id,
+                        isActive = true,
+                    };
+
+                    _LocationsItems.Add(DocumentNew);
+                    _LocationsItems.Save();
+                    _LocationsItems.Reload(DocumentNew);
+
+                    locationItemId = DocumentNew.id;
+
+
+                    var transactionNew = new transaction
+                    {
+                        locationItemId = locationItemId,
+                        description = obj.subject,
+                        itemId = obj.id,
+                        palltaId = item.locationId,
+                        palltaType = item.id,
+                        resourceCode = obj.code,
+                        cost = obj.cost,
+                        editById = _accountId,
+                        editDate = DateTime.Now.Date
+                    };
+
+                    _transactions.Add(transactionNew);
+                    _transactions.Save();
+                    _transactions.Reload(transactionNew);
+
+                }
+            }
+            return Ok();
+        }
+
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("EditAssignItemToLocation")]
+        public IHttpActionResult EditAssignItemToLocation(assignItemToLocation list)
+        {
+
+            var result = new List<DtoLocations>();
+            var locationItemId = 0;
+            foreach (var obj in list.itemObj)
+            {
+
                 var DocumentNew = new location_items
                 {
-                    itemId = id,
+                    itemId = obj.id,
                     palltaId = list.locationId,
                     palltaType = list.transactionTypeId,
                     isActive = true,
@@ -481,12 +530,12 @@ namespace Inventory_Location.api.inventory
                 var transactionNew = new transaction
                 {
                     locationItemId = locationItemId,
-                    //description = list.subject,
-                    itemId = id,
+                    description = obj.subject,
+                    itemId = obj.id,
                     palltaId = list.locationId,
                     palltaType = list.transactionTypeId,
-                    //resourceCode = list.code,
-                   // cost = list.cost,
+                    resourceCode = obj.code,
+                    cost = obj.cost,
                     editById = _accountId,
                     editDate = DateTime.Now.Date
                 };
@@ -496,7 +545,6 @@ namespace Inventory_Location.api.inventory
                 _transactions.Reload(transactionNew);
 
             }
-
             return Ok();
         }
 

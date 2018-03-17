@@ -44,7 +44,7 @@ namespace InventoryModel
             get;
             set;
         }
-        public string  description
+        public string description
         {
             get;
             set;

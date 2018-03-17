@@ -80,6 +80,16 @@ namespace InventoryModel
             get;
             set;
         }
+        public List<DtoItemsdecription> itemObj
+        {
+            get;
+            set;
+        }
+        public List<DtoTransactionTypes> transactions
+        {
+            get;
+            set;
+        }
     }
 
 }

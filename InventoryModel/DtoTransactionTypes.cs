@@ -14,7 +14,11 @@ namespace InventoryModel
             get;
             set;
         }
-
+        public int locationId
+        {
+            get;
+            set;
+        }
         public string title
         {
             get;

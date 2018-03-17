@@ -86,7 +86,9 @@
     <Compile Include="DtoSearch.cs" />
     <Compile Include="DtoSuppliers.cs" />
     <Compile Include="DtoSupplliersStatus.cs" />
-    <Compile Include="DtoTransactions.cs" />
+    <Compile Include="DtoTransactions.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DtoTransactionTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="salesDetailDto.cs" />

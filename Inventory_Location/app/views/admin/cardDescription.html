@@ -1,5 +1,5 @@
 ﻿<div id="content" style="padding-top: 0px; background: #eeeeee !important;">
-  
+
     <div class="row">
         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-12" style="height: 50px;">
             <h1 class="page-title txt-color-blueDark" data-bind="text: language.itemDescription[currentLanguage()]"></h1>
@@ -69,7 +69,9 @@
                                     <i class="fa fa-download"></i>
                                 </button>
 
-                                <button type="button" class="btn btn-default" id="assignToItem" data-bind="visible: $root.selectedRows().length>0 ,click: assignToItem, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }">
+                                <button type="button" class="btn btn-default" id="assignToItem" data-bind="visible: $root.selectedRows().length>0 , text: language.assignToPallta[currentLanguage()],click: assignToItem, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }"></button>
+
+                                <button type="button" class="btn btn-default" id="assignMultipleToItem" data-bind="visible: $root.selectedRows().length>0 ,click: editAssignToLocation, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }">
                                     <i class="fa fa-backward"></i>
                                 </button>
                                 <table id="card-descriptionTransfer-table" class="table table-striped table-bordered table-hover" data-bind="koTable: { pageSize: 20, showSearch: true, initialSortProperty: 'name', initialSortDirection: 'desc', showDeleteButton: showDelete() }">
@@ -94,7 +96,7 @@
 
                                 </table>
                             </div>
-                            <div class="modal fade" id="assignToLocationModalList" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="assignToLocationModalList" style="display:none;">
+                            <div class="modal fade" id="editAssignToLocationModal" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="editAssignToLocationModal" style="display:none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header" style=" padding: 2px !important;">
@@ -124,6 +126,57 @@
                                                 </fieldset>
 
                                                 <footer>
+                                                    <button type="button" class="btn btn-primary TabOnEnter pull-left" style="margin-left: 5px;" id="editRow" data-bind="click: saveEditAssignToLocation, text: language.edit[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
+
+                                                </footer>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id="assignToLocationModalList" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="assignToLocationModalList" style="display:none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style=" padding: 2px !important;">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="style: {float: $root.language.btnFloat[$root.currentLanguage()] }">
+                                                x
+                                            </button>
+                                            <h4 class="modal-title" data-bind=" text: $root.language.assignToLocation[$root.currentLanguage()]"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="smart-form" id="itemEditForm" novalidate="novalidate" style=" margin: -20px !important;">
+                                                <fieldset>
+                                                    <h1>
+                                                        <span>اضافة متعدده</span>
+                                                    </h1>
+                                                    <table class="table table-bordered table-striped table-hover table-condensed">
+                                                        <thead>
+                                                            <tr>
+                                                                <td>Actions</td>
+                                                                <td data-bind="text: $root.language.type[$root.currentLanguage()]"></td>
+
+                                                                <td data-bind="text: $root.language.location[$root.currentLanguage()]"></td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody data-bind="foreach:  $root.transactionTypes">
+                                                            <tr>
+                                                                <td width="3%">
+                                                                    <input type="checkbox" name="isSelected" id="isSelected" data-bind="checkedValue: id, checked: $root.selectedTransactionTypes" />
+                                                                </td>
+                                                                <td width="15%"><span data-bind="text: title"></span></td>
+                                                                <td width="15%">
+                                                                    <label class="select">
+                                                                        <select id="locationId" name="locationId" style="width: 100%;" data-bind="value: locationId, options: $root.locations, optionsText: 'description', optionsValue: 'id', optionsCaption: '', select2: { placeholder: $root.language.location[$root.currentLanguage()], allowClear: true }"></select>
+                                                                    </label>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </fieldset>
+
+                                                <footer>
                                                     <button type="button" class="btn btn-primary TabOnEnter pull-left" style="margin-left: 5px;" id="editRow" data-bind="click: saveAssignToLocation, text: language.edit[currentLanguage()]" data-loading-text="<img src='/img/712.gif' style='width: 30px; height: 30px; margin: 0 auto;' />"></button>
 
                                                 </footer>
@@ -132,9 +185,8 @@
                                     </div>
                                 </div>
                             </div>
-                      
 
- 
+
                         </div><!-- end widget div -->
                     </div><!-- end widget -->
                 </article>

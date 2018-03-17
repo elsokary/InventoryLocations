@@ -1168,16 +1168,24 @@
     var getStockState = function () {
         return $.getJSON(config.remoteServerName + "/GetStockState");
     };
-    var assignItemToLocation = function (itemIds, locationId, transactionTypesId) {
+
+    var assignItemToLocation = function (transactions, itemObj) {
         var list = {};
 
-        list.itemIds = itemIds;
-        list.locationId = locationId;
-        list.transactionTypeId = transactionTypesId;
+        list.transactions = transactions;
+        list.itemObj = itemObj; 
 
         return config.postJson(config.remoteServerName + "/AssignItemToLocation", list);
     };
+    var editAssignItemToLocation = function (locationId , transactionTypeId, itemObj) {
+        var list = {};
 
+        list.locationId = locationId;
+        list.transactionTypeId = transactionTypeId;
+        list.itemObj = itemObj;
+
+        return config.postJson(config.remoteServerName + "/EditAssignItemToLocation", list);
+    };
     var getTransactionTypesForDrop = function () {
         return $.getJSON(config.remoteServerName + "/GetTransactionTypesForDrop");
     };
@@ -1511,7 +1519,8 @@
 
         getTransactionTypesForDrop:getTransactionTypesForDrop,
 
-        assignItemToLocation:assignItemToLocation,
+        assignItemToLocation: assignItemToLocation,
+        editAssignItemToLocation:editAssignItemToLocation,
         getLocationsForDorp: getLocationsForDorp,
         getPalltaForDorp: getPalltaForDorp,
         getLocations:getLocations,
