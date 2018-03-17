@@ -1413,9 +1413,13 @@
         "en": "Assign To Location",
         "ar": "وضع الصنف في موقع"
     },
-     "assignToPallta": {
+    "assignToPallta": {
         "en": "Assign To Pallta",
-        "ar": "وضع الصنف في البليتات"
+        "ar": "توزيع الاصناف علي المواقع"
+    },
+     "selectPalltaForItems": {
+        "en": "Select Pallta For Items",
+        "ar": "تحديد الموقع"
     },
     "pallta": {
         "en": "Pallta",

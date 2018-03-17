@@ -64,13 +64,7 @@
             self.locationId = data.locationId;
         }
     };
-
-    //item().value.subscribe(function () {
-    //    if (item().value()) {
-    //        item().price(item().value() + item().cost());
-    //    }
-    //});
-
+     
     var itemEdit = ko.observable(new itemDto());
 
     function attached() {
@@ -331,14 +325,7 @@
 
         }
     });
-
-    //var changeValue = ko.computed(function () {
-
-    //    if (item().value()) {
-    //        item().price(parseFloat(item().value()) + parseFloat(item().cost()));
-    //    }
-    //});
-
+     
     var changeRefCodeEdit = ko.computed(function () {
 
         if (itemEdit().code()) {
@@ -609,8 +596,7 @@
         saveAssignToLocation: saveAssignToLocation,
         saveEditAssignToLocation: saveEditAssignToLocation,
         assignToItem: assignToItem,
-        editAssignToLocation: editAssignToLocation,
-        //changeValue: changeValue,
+        editAssignToLocation: editAssignToLocation, 
         changeRefCodeEdit: changeRefCodeEdit,
         itemEdit: itemEdit,
         loadMore: loadMore,

@@ -71,7 +71,7 @@
 
                                 <button type="button" class="btn btn-default" id="assignToItem" data-bind="visible: $root.selectedRows().length>0 , text: language.assignToPallta[currentLanguage()],click: assignToItem, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }"></button>
 
-                                <button type="button" class="btn btn-default" id="assignMultipleToItem" data-bind="visible: $root.selectedRows().length>0 ,click: editAssignToLocation, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }">
+                                <button type="button" class="btn btn-default" id="assignMultipleToItem" data-bind="visible: $root.selectedRows().length>0 , text: language.selectPalltaForItems[currentLanguage()],click: editAssignToLocation, style: { float: $root.language.btnFloat[$root.currentLanguage()],'border-radius': '15px' }">
                                     <i class="fa fa-backward"></i>
                                 </button>
                                 <table id="card-descriptionTransfer-table" class="table table-striped table-bordered table-hover" data-bind="koTable: { pageSize: 20, showSearch: true, initialSortProperty: 'name', initialSortDirection: 'desc', showDeleteButton: showDelete() }">
