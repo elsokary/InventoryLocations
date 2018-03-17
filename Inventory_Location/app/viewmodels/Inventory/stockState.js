@@ -3,6 +3,8 @@
 
     var showTable = ko.observable(false);
 
+    var maxQuantity = ko.observable(0);
+
     var itemDto = function (data) {
         var self = this;
 
@@ -10,8 +12,9 @@
         self.resourceCode = ko.observable();
         self.description = ko.observable("");
         self.palltaId = ko.observable();
-        self.palltaType = ko.observable();
-        self.quantity = ko.observable(0);
+        self.locationItemId = ko.observable();
+        self.palltaTypeId = ko.observable();
+        self.quantity = ko.observable(0).extend({ required: true, min: 0, max: maxQuantity(), step: 1 });
         self.itemId = ko.observable();
         if (data) {
             self.id = data.id;
@@ -19,7 +22,7 @@
             self.resourceCode = data.resourceCode;
             self.description = data.description;
             self.palltaId = data.palltaId;
-            self.palltaType = data.palltaType;
+            self.palltaTypeId = data.palltaTypeId;
         }
     };
 
@@ -42,6 +45,9 @@
         self.locationName = ko.observable('');
         self.locationType = ko.observable('');
         self.price = ko.observable();
+        self.locationItemId = ko.observable();
+        self.palltaTypeId = ko.observable();
+        self.palltaId = ko.observable();
         self.cost = ko.observable();
         self.description = ko.observable();
         self.resourceCode = ko.observable();
@@ -57,13 +63,20 @@
             cashierItemObject.quantity(item.quantity);
             cashierItemObject.cost(item.cost);
             cashierItemObject.description(item.description);
-            cashierItemObject.resourceCode(item.resourceCode);
+            cashierItemObject.resourceCode(item.resourceCode); 
+
+            cashierItemObject.palltaId(item.palltaId);
+            cashierItemObject.itemId(item.itemId);
+            cashierItemObject.palltaTypeId(item.palltaTypeId);
+            cashierItemObject.locationItemId(item.locationItemId);
         }
 
         return cashierItemObject;
     };
 
     var dataModelList = ko.observableArray([]);
+
+    var locationTypes = ko.observableArray([]);
 
     var koTableReady = function () {
 
@@ -87,6 +100,10 @@
         dataservice.getPalltaForDorp().done(function (result) {
             locations(result);
         });
+
+        //dataservice.getPalltaTypes().done(function (result) {
+        //    locationTypes(result);
+        //});
 
         exportColumns = [
             new config.ExportColumn(config.language.description[config.currentLanguage()], 'suplierName', 's'),
@@ -183,13 +200,43 @@
     };
 
     var transferToPallta = function (obj, e) {
-         
+
+        maxQuantity(obj.quantity());
+
+        item(new itemDto());
+
+        item().locationItemId(obj.locationItemId());
+        item().id(obj.id());
+        item().itemId(obj.itemId());
+        item().resourceCode(obj.resourceCode());
+        item().description(obj.description());
+
         $('#transferQuantityToLocation').modal('show');
     };
 
-    var saveAssignToLocation = function (obj, e) { };
+    var saveAssignToLocation = function (obj, e) {
+        var isValid = $('#itemEditForm').valid();
+
+        if (isValid) {
+
+            $(e.target).button('loading');
+
+            dataservice.transferItemQuantityToAnotherLocation(ko.toJS(item())).success(function (data) {
+                config.alertSuccess();
+
+                $('#transferQuantityToLocation').modal('hide');
+
+                $(e.target).button('reset');
+            });
+
+        } else {
+            $('#itemEditForm').validate();
+        }
+    };
 
     var vm = {
+        maxQuantity: maxQuantity,
+        locationTypes: locationTypes,
         saveAssignToLocation: saveAssignToLocation,
         item: item,
         transferToPallta: transferToPallta,

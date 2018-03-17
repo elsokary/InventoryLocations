@@ -39,6 +39,7 @@ namespace DataServices.Repository
                               itemId = q.itemId,
                               palltaId = q.palltaId,
                               locationItemId = q.locationItemId,
+                              palltaTypeId = q.palltaType,
 
                               description = q.description,
                               resourceCode = q.resourceCode,

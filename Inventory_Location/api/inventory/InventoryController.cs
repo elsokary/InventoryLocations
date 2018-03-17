@@ -478,7 +478,6 @@ namespace Inventory_Location.api.inventory
 
                     locationItemId = DocumentNew.id;
 
-
                     var transactionNew = new transaction
                     {
                         locationItemId = locationItemId,
@@ -543,6 +542,7 @@ namespace Inventory_Location.api.inventory
                 _transactions.Add(transactionNew);
                 _transactions.Save();
                 _transactions.Reload(transactionNew);
+
 
             }
             return Ok();
@@ -1091,6 +1091,69 @@ namespace Inventory_Location.api.inventory
             return Ok(result);
         }
 
+        [AuthorizeUser]
+        [HttpPost]
+        [Route("TransferItemQuantityToAnotherLocation")]
+        public IHttpActionResult TransferItemQuantityToAnotherLocation(DtoInventory obj)
+        {
+            var targetLocation = _inventory.FindBy(x => x.itemId == obj.itemId && x.palltaId == obj.palltaId && x.palltaType == obj.palltaTypeId).FirstOrDefault();
+            if (targetLocation != null)
+            {
+                #region increase qnty to new location
+
+                targetLocation.quantity = targetLocation.quantity + obj.quantity;
+                _inventory.Edit(targetLocation);
+                _inventory.Save();
+
+                #endregion
+
+            }
+            else
+            {
+                targetLocation = new transaction
+                {
+                    itemId = (int)obj.itemId,
+                    locationItemId = (int)obj.locationItemId,
+                    palltaType = (int)obj.palltaTypeId,
+                    palltaId = (int)obj.palltaId,
+                    branchId = _branchId,
+                    quantity = obj.quantity,
+                    resourceCode = obj.resourceCode,
+                    description = obj.description
+                };
+                _inventory.Add(targetLocation);
+                _inventory.Save();
+                _inventory.Reload(targetLocation);
+            }
+            #region add row history
+
+            var transhistory = new transactionsHistory
+            {
+                itemId = (int)obj.itemId,
+                transactionId = targetLocation.id,
+                transactionTypeId = obj.palltaTypeId,
+                quantity = obj.quantity,
+                creationDate = DateTime.Now.Date,
+                currentBranchId = (int)obj.branchId,
+                locationItemId = (int)obj.locationItemId
+            };
+            _inventoryHistory.Add(transhistory);
+            _inventoryHistory.Save();
+            #endregion
+
+            #region decrease qnty from old location
+
+            var deitentionLocation = _inventory.FindBy(x => x.itemId == obj.itemId && x.locationItemId == obj.locationItemId && x.id == obj.id).FirstOrDefault();
+            if (deitentionLocation != null)
+            {
+                deitentionLocation.quantity = deitentionLocation.quantity - obj.quantity;
+                _inventory.Edit(deitentionLocation);
+                _inventory.Save();
+            }
+            #endregion
+
+            return Ok();
+        }
 
         [AuthorizeUser]
         [HttpGet]
